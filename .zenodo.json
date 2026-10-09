@@ -1,0 +1,34 @@
+{
+  "title": "SWELL: a cheap automated expansion microscope (X-WOW invention #1), desk-stage design package",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "X-WOW"
+    }
+  ],
+  "license": "cc-zero",
+  "access_right": "open",
+  "language": "eng",
+  "description": "<p><strong>SWELL</strong> is an open design for a cheap, automated expansion microscope that uses the sarcomeres of chicken muscle as a built-in ruler for local expansion. It is X-WOW invention #1, given away free: whoever builds it is welcome to claim the success.</p><p><strong>Simulation only. Never built.</strong> This is a desk-stage (G0) design package: the original brief, an audit, every design decision, a priced bill of materials, optics and photon budgets, and simulation code with synthetic data and tests. No SWELL has been built or tested, and every result in this package comes from simulation. The wet-lab protocol, the CAD and the instrument software are not final.</p><p>This archive is a snapshot of the x-wow.com site repository at the release tag. The SWELL package itself is the zip in <code>src/downloads/</code>, which is also attached to the matching GitHub release with its SHA-256 in the release notes.</p><p><strong>Licences:</strong> text, data and code CC0 1.0; hardware design files CERN-OHL-P v2; the vendored three.js keeps its MIT licence. <strong>Excluded from every licence here:</strong> the X-WOW name and logo. X-WOW is a trade mark, and the X-WOW logo (which includes the name) is a registered UK trade mark, UK00003425680.</p><p>Expansion microscopy is covered by patents held by MIT; read the legal notes at https://x-wow.com/swell/#legal before any commercial use. Made with AI assistance (Claude by Anthropic, used through Claude Code), directed by the X-WOW owner.</p>",
+  "keywords": [
+    "expansion microscopy",
+    "ExM",
+    "open hardware",
+    "low-cost microscope",
+    "sarcomere",
+    "myofibril",
+    "chicken muscle",
+    "intrinsic ruler",
+    "expansion factor",
+    "strain map",
+    "simulation",
+    "defensive publication",
+    "X-WOW"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://x-wow.com/swell/",
+      "relation": "isDocumentedBy"
+    }
+  ]
+}

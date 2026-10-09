@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use SWELL, please cite it with the metadata below."
+type: software
+title: "SWELL: a cheap automated expansion microscope (X-WOW invention #1), desk-stage design package"
+authors:
+  - name: "X-WOW"
+version: "0.1.0-g0"
+date-released: "2026-10-10"
+license: CC0-1.0
+url: "https://x-wow.com/swell/"
+repository-code: "https://github.com/khcy82dyc2/x-wow"
+abstract: >-
+  An open design for a cheap, automated expansion microscope that uses the
+  sarcomeres of chicken muscle as a built-in ruler for local expansion.
+  Desk-stage (G0) package: simulation only, never built. Text, data and code
+  are CC0 1.0 and hardware design files CERN-OHL-P v2. The X-WOW name and logo
+  are excluded: X-WOW is a trade mark, and the X-WOW logo (which includes the
+  name) is a registered UK trade mark, UK00003425680.
+keywords:
+  - expansion microscopy
+  - open hardware
+  - low-cost microscope
+  - sarcomere
+  - intrinsic ruler
+  - simulation

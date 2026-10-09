@@ -267,6 +267,38 @@ def check_site():
     return problems
 
 
+ROOT_TEXT_FILES = ("README.md", ".zenodo.json", "CITATION.cff")  # public too: GitHub and Zenodo show them
+
+
+def check_root_files():
+    """The repo-root files that GitHub and Zenodo publish get the same privacy scan as the pages, and the
+    archive metadata must parse and carry the fields a Zenodo release needs."""
+    problems = []
+    for name in ROOT_TEXT_FILES:
+        f = ROOT / name
+        if not f.exists():
+            continue
+        text = f.read_text(encoding="utf-8")
+        for pat, why in FORBIDDEN:
+            m = re.search(pat, text, 0 if "[A-Z]" in pat else re.I)
+            if m:
+                problems.append(f"{name}: forbidden ({why}): '{m.group(0)}'")
+    zj = ROOT / ".zenodo.json"
+    if zj.exists():
+        try:
+            meta = json.loads(zj.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as e:
+            return problems + [f".zenodo.json: not valid JSON ({e})"]
+        for key in ("title", "upload_type", "creators", "license", "description"):
+            if not meta.get(key):
+                problems.append(f".zenodo.json: missing {key}")
+        if meta.get("license") not in ("cc-zero", "cc0-1.0"):
+            problems.append(".zenodo.json: licence must be CC0 (cc-zero or cc0-1.0)")
+        if [c.get("name") for c in meta.get("creators", [])] != ["X-WOW"]:
+            problems.append(".zenodo.json: creators must be X-WOW only (no personal names)")
+    return problems
+
+
 def main():
     numbers = load_numbers()
     if OUT.exists():
@@ -277,7 +309,7 @@ def main():
     copy_static()
     build_redirects(pages)
     write_seo(pages)
-    problems = check_site()
+    problems = check_site() + check_root_files()
     for pr in problems:
         print("  PROBLEM " + pr)
     if problems:
