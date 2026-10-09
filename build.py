@@ -190,8 +190,9 @@ def copy_static():
         if (SRC / name).exists():
             shutil.copytree(SRC / name, OUT / name)
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
-    if (SRC / "CNAME").exists():  # custom domain (added at launch, when x-wow.com points here)
-        shutil.copy(SRC / "CNAME", OUT / "CNAME")
+    for name in ("CNAME", "favicon.ico", "site.webmanifest"):  # custom domain and site icons live at the root
+        if (SRC / name).exists():
+            shutil.copy(SRC / name, OUT / name)
 
 
 def write_seo(pages):
@@ -214,12 +215,20 @@ class Links(HTMLParser):
         for k in ("href", "src"):
             if a.get(k):
                 self.refs.append((tag, a[k]))
+        for cand in (a.get("srcset") or "").split(","):  # every size of a responsive image must exist
+            if cand.strip():
+                self.refs.append((tag, cand.split()[0]))
         if tag == "img" and "alt" not in a:
             self.refs.append(("img-missing-alt", a.get("src", "?")))
 
 
 def check_site():
     problems, parsed = [], {}
+    manifest = OUT / "site.webmanifest"
+    if manifest.exists():
+        for icon in json.loads(manifest.read_text(encoding="utf-8")).get("icons", []):
+            if not (OUT / icon["src"]).exists():
+                problems.append(f"site.webmanifest: missing icon {icon['src']}")
     files = sorted(OUT.rglob("*.html"))
     for f in files:
         p = Links()

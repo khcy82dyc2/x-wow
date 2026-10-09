@@ -44,6 +44,12 @@
     for (var i = 0; i < lines.length; i++) inner += '<div class="boot-line">' + lines[i] + "</div>";
     inner += '<div class="boot-bar"><i></i></div></div><div class="boot-skip">' + (lang() === "zh" ? "点击跳过" : "click to skip") + "</div>";
     el.innerHTML = inner;
+    var logo = document.querySelector(".brand-logo"); // the X-WOW logo opens the boot screen
+    if (logo) {
+      var bl = logo.cloneNode(false), bi = el.querySelector(".boot-inner");
+      bl.className = "boot-logo"; bl.alt = ""; bl.sizes = "98px";
+      bi.insertBefore(bl, bi.firstChild);
+    }
     document.body.appendChild(el);
     doc.classList.remove("boot-pending");
     var done = false;
