@@ -1,0 +1,262 @@
+{
+  "laser.sl.normal": {
+    "value": "1.69 µm",
+    "source": "src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci & Puolanne 2020, doi:10.1080/1828051X.2020.1761271)",
+    "how": "F-10 as published (laser diffraction, normal breast)"
+  },
+  "laser.sl.wb": {
+    "value": "1.91 µm",
+    "source": "src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci & Puolanne 2020, doi:10.1080/1828051X.2020.1761271)",
+    "how": "F-10 as published (laser diffraction, wooden breast)"
+  },
+  "laser.ref.normal_um": {
+    "value": "1.69",
+    "source": "src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci & Puolanne 2020, doi:10.1080/1828051X.2020.1761271)",
+    "how": "F-10 normal, bare number for the calculator"
+  },
+  "laser.ref.wb_um": {
+    "value": "1.91",
+    "source": "src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci & Puolanne 2020, doi:10.1080/1828051X.2020.1761271)",
+    "how": "F-10 wooden breast, bare number for the calculator"
+  },
+  "laser.sl.diff": {
+    "value": "0.22 µm",
+    "source": "src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci & Puolanne 2020, doi:10.1080/1828051X.2020.1761271)",
+    "how": "wooden breast minus normal"
+  },
+  "laser.sl.diff_pct": {
+    "value": "13%",
+    "source": "src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci & Puolanne 2020, doi:10.1080/1828051X.2020.1761271)",
+    "how": "wooden breast / normal - 1"
+  },
+  "laser.lambda.red": {
+    "value": "650 nm",
+    "source": "tools/numbers_laser.py",
+    "how": "nominal pointer wavelength (input)"
+  },
+  "laser.lambda.green": {
+    "value": "532 nm",
+    "source": "tools/numbers_laser.py",
+    "how": "nominal pointer wavelength (input)"
+  },
+  "laser.theta.red.L10.normal": {
+    "value": "22.6°",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "first-order angle asin(λ/SL), λ 650 nm"
+  },
+  "laser.x1.red.L10.normal": {
+    "value": "41.7 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 650 nm, L 10 cm, m = 1"
+  },
+  "laser.span.red.L10.normal": {
+    "value": "83.3 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "distance between the two first-order spots, 2x"
+  },
+  "laser.x2.red.L10.normal": {
+    "value": "120 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 650 nm, L 10 cm, m = 2 (none if 2λ/SL ≥ 1)"
+  },
+  "laser.theta.red.L10.wb": {
+    "value": "19.9°",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "first-order angle asin(λ/SL), λ 650 nm"
+  },
+  "laser.x1.red.L10.wb": {
+    "value": "36.2 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 650 nm, L 10 cm, m = 1"
+  },
+  "laser.span.red.L10.wb": {
+    "value": "72.4 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "distance between the two first-order spots, 2x"
+  },
+  "laser.x2.red.L10.wb": {
+    "value": "93 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 650 nm, L 10 cm, m = 2 (none if 2λ/SL ≥ 1)"
+  },
+  "laser.gap.red.L10": {
+    "value": "5.5 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x1(normal) - x1(wooden breast): how far apart the two predictions land"
+  },
+  "laser.dsl.red.L10": {
+    "value": "0.035 µm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "|dSL/dx| = λL²/(x²√(x²+L²)) at the normal SL: SL change for a 1 mm misreading of x"
+  },
+  "laser.theta.red.L20.normal": {
+    "value": "22.6°",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "first-order angle asin(λ/SL), λ 650 nm"
+  },
+  "laser.x1.red.L20.normal": {
+    "value": "83.3 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 650 nm, L 20 cm, m = 1"
+  },
+  "laser.span.red.L20.normal": {
+    "value": "166.7 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "distance between the two first-order spots, 2x"
+  },
+  "laser.x2.red.L20.normal": {
+    "value": "241 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 650 nm, L 20 cm, m = 2 (none if 2λ/SL ≥ 1)"
+  },
+  "laser.theta.red.L20.wb": {
+    "value": "19.9°",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "first-order angle asin(λ/SL), λ 650 nm"
+  },
+  "laser.x1.red.L20.wb": {
+    "value": "72.4 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 650 nm, L 20 cm, m = 1"
+  },
+  "laser.span.red.L20.wb": {
+    "value": "144.8 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "distance between the two first-order spots, 2x"
+  },
+  "laser.x2.red.L20.wb": {
+    "value": "186 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 650 nm, L 20 cm, m = 2 (none if 2λ/SL ≥ 1)"
+  },
+  "laser.gap.red.L20": {
+    "value": "11.0 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x1(normal) - x1(wooden breast): how far apart the two predictions land"
+  },
+  "laser.dsl.red.L20": {
+    "value": "0.017 µm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "|dSL/dx| = λL²/(x²√(x²+L²)) at the normal SL: SL change for a 1 mm misreading of x"
+  },
+  "laser.theta.green.L10.normal": {
+    "value": "18.3°",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "first-order angle asin(λ/SL), λ 532 nm"
+  },
+  "laser.x1.green.L10.normal": {
+    "value": "33.2 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 532 nm, L 10 cm, m = 1"
+  },
+  "laser.span.green.L10.normal": {
+    "value": "66.3 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "distance between the two first-order spots, 2x"
+  },
+  "laser.x2.green.L10.normal": {
+    "value": "81 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 532 nm, L 10 cm, m = 2 (none if 2λ/SL ≥ 1)"
+  },
+  "laser.theta.green.L10.wb": {
+    "value": "16.2°",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "first-order angle asin(λ/SL), λ 532 nm"
+  },
+  "laser.x1.green.L10.wb": {
+    "value": "29.0 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 532 nm, L 10 cm, m = 1"
+  },
+  "laser.span.green.L10.wb": {
+    "value": "58.0 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "distance between the two first-order spots, 2x"
+  },
+  "laser.x2.green.L10.wb": {
+    "value": "67 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 532 nm, L 10 cm, m = 2 (none if 2λ/SL ≥ 1)"
+  },
+  "laser.gap.green.L10": {
+    "value": "4.2 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x1(normal) - x1(wooden breast): how far apart the two predictions land"
+  },
+  "laser.dsl.green.L10": {
+    "value": "0.046 µm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "|dSL/dx| = λL²/(x²√(x²+L²)) at the normal SL: SL change for a 1 mm misreading of x"
+  },
+  "laser.theta.green.L20.normal": {
+    "value": "18.3°",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "first-order angle asin(λ/SL), λ 532 nm"
+  },
+  "laser.x1.green.L20.normal": {
+    "value": "66.3 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 532 nm, L 20 cm, m = 1"
+  },
+  "laser.span.green.L20.normal": {
+    "value": "132.7 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "distance between the two first-order spots, 2x"
+  },
+  "laser.x2.green.L20.normal": {
+    "value": "162 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 532 nm, L 20 cm, m = 2 (none if 2λ/SL ≥ 1)"
+  },
+  "laser.theta.green.L20.wb": {
+    "value": "16.2°",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "first-order angle asin(λ/SL), λ 532 nm"
+  },
+  "laser.x1.green.L20.wb": {
+    "value": "58.0 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 532 nm, L 20 cm, m = 1"
+  },
+  "laser.span.green.L20.wb": {
+    "value": "116.0 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "distance between the two first-order spots, 2x"
+  },
+  "laser.x2.green.L20.wb": {
+    "value": "134 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x = L·tan(asin(mλ/SL)), λ 532 nm, L 20 cm, m = 2 (none if 2λ/SL ≥ 1)"
+  },
+  "laser.gap.green.L20": {
+    "value": "8.3 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x1(normal) - x1(wooden breast): how far apart the two predictions land"
+  },
+  "laser.dsl.green.L20": {
+    "value": "0.023 µm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "|dSL/dx| = λL²/(x²√(x²+L²)) at the normal SL: SL change for a 1 mm misreading of x"
+  },
+  "laser.demo.x": {
+    "value": "83 mm",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "x1 for red, L 20 cm, normal SL, rounded to 1 mm"
+  },
+  "laser.demo.x_mm": {
+    "value": "83",
+    "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",
+    "how": "laser.demo.x as a bare number (calculator default)"
+  },
+  "laser.demo.sl": {
+    "value": "1.70 µm",
+    "source": "tools/numbers_laser.py",
+    "how": "SL = λ√(x²+L²)/x with that rounded x (red, L 20 cm)"
+  },
+  "laser.demo.L": {
+    "value": "20 cm",
+    "source": "tools/numbers_laser.py",
+    "how": "worked-measurement screen distance (input)"
+  }
+}

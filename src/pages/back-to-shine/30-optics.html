@@ -1,0 +1,66 @@
+<section class="block" id="bts-optics">
+  <style>
+    #bts-optics svg .st{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    #bts-optics svg .grey{stroke:var(--muted);stroke-width:2;opacity:.55}
+    #bts-optics svg .gold{stroke:var(--gold);stroke-width:2.5}
+    #bts-optics svg .cyan{stroke:var(--cyan);stroke-width:2.5}
+    #bts-optics svg .dash{stroke:var(--cyan);stroke-width:2;stroke-dasharray:5 6}
+    #bts-optics svg text{font-family:var(--mono);font-size:11px}
+    #bts-optics svg .t-grey{fill:var(--muted)}
+    #bts-optics svg .t-cyan{fill:var(--cyan)}
+  </style>
+  <p class="kicker"><span class="en">The new idea · proposal</span><span class="zh">新做法 · 提案</span> <span class="tag untested"><span class="en">untested</span><span class="zh">未验证</span></span></p>
+  <h2><span class="en">Ship the optics, not the stand</span><span class="zh">只寄光学件，不寄镜架</span></h2>
+  <div class="grid-2">
+    <div>
+      <p class="lead en">Most of a microscope's weight is the stand: the cast base, the pillar, the stage and the lamp. Most of what makes it see is small and light: the objectives, the eyepieces and the camera.</p>
+      <p class="lead zh">一台显微镜的重量大多在镜架上：铸铁底座、立柱、载物台和灯。真正让它“看得见”的部分却又小又轻：物镜、目镜和相机。</p>
+      <p class="en">So post the light part. A padded parcel of objectives costs far less to send than a crated stand, clears customs more easily and is easier to re-home. The receiver builds or 3D-prints a stand locally. One ready-made answer is the open-source <a href="https://openflexure.org/" rel="noopener" target="_blank">OpenFlexure Microscope</a>: a 3D-printed stage that can take laboratory-grade RMS-threaded objectives or low-cost webcam optics, with a Raspberry Pi camera.</p>
+      <p class="zh">所以只寄轻的那部分。一包垫好的物镜，邮费远低于一个装箱的镜架，过海关也更容易，更好找到新家。收件人在当地自己做或 3D 打印一个镜架。现成的方案之一是开源的 <a href="https://openflexure.org/" rel="noopener" target="_blank">OpenFlexure 显微镜</a>：3D 打印的载物台，可以装实验室级的 RMS 螺纹物镜，也可以用便宜的网络摄像头镜头，配树莓派相机。</p>
+    </div>
+    <figure class="fig" style="margin:0">
+      <svg viewBox="0 0 320 220" role="img" aria-labelledby="bts-svg-t" style="width:100%;height:auto;display:block">
+        <title id="bts-svg-t">A microscope split in two: the heavy stand stays, the light optics travel in a small parcel</title>
+        <g class="st grey">
+          <path d="M30 196 H130"/><path d="M40 196 V184 H120 V196"/>
+          <path d="M100 184 V70 Q100 52 82 52 H70"/>
+          <path d="M44 128 H112"/><path d="M58 128 V138 H98 V128"/>
+          <circle cx="78" cy="166" r="8"/>
+        </g>
+        <g class="st gold">
+          <path d="M60 26 L68 54 H78 L86 26 Z"/>
+          <path d="M66 54 V74 H80 V54"/>
+          <path d="M69 74 V92 H77 V74"/>
+          <circle cx="73" cy="18" r="6"/>
+        </g>
+        <g class="st dash">
+          <path d="M120 60 C170 40 200 60 214 92"/>
+        </g>
+        <path class="st cyan" d="M208 88 l6 8 l4 -10"/>
+        <g class="st cyan">
+          <path d="M196 112 L250 100 L300 112 L246 126 Z"/>
+          <path d="M196 112 V160 L246 174 V126"/>
+          <path d="M300 112 V160 L246 174"/>
+        </g>
+        <g class="st gold"><circle cx="232" cy="146" r="7"/><circle cx="262" cy="146" r="7"/><circle cx="282" cy="138" r="5"/></g>
+        <text class="t-grey" x="80" y="214" text-anchor="middle">stand: stays</text>
+        <text class="t-cyan" x="248" y="196" text-anchor="middle">optics: travel</text>
+      </svg>
+      <figcaption><span class="en">Gold travels, grey stays.</span><span class="zh">金色的寄走，灰色的留下：镜架留在原地，物镜、目镜和相机装进小包裹。</span></figcaption>
+    </figure>
+  </div>
+  <ol class="steps">
+    <li><span class="en"><strong>Donor:</strong> unscrew the objectives, cap or wrap both ends, and photograph the markings on each barrel (magnification, numerical aperture, tube length or ∞, thread). Add eyepieces and the camera if there is one.</span><span class="zh"><strong>捐赠人：</strong>拧下物镜，两头盖好或包好，把每支镜筒上的标记拍下来（放大倍数、数值孔径、筒长或 ∞、螺纹）。有目镜和相机的话一起放进去。</span></li>
+    <li><span class="en"><strong>Post</strong> a small padded parcel instead of arranging freight.</span><span class="zh"><strong>邮寄</strong>一个垫好的小包裹，而不是安排货运。</span></li>
+    <li><span class="en"><strong>Receiver:</strong> build or print a stand, fit the objective, then check focus and illumination on a known slide.</span><span class="zh"><strong>收件人：</strong>做或打印一个镜架，装上物镜，再用一张熟悉的切片检查对焦和照明。</span></li>
+    <li><span class="en"><strong>The stand</strong> stays local: offer it to a nearby school, or recycle it properly.</span><span class="zh"><strong>镜架</strong>留在本地：送给附近的学校，或者按规定回收。</span></li>
+  </ol>
+  <div class="warn">
+    <p class="en"><strong>Don't post lamps.</strong> Mercury and xenon arc lamps from fluorescence microscopes contain hazardous material and pressurised gas. Leave them with the stand and dispose of them through proper hazardous-waste routes. Immersion oil travels only sealed and labelled.</p>
+    <p class="zh"><strong>灯泡不要寄。</strong>荧光显微镜的汞灯、氙灯含有害物质和高压气体，留在镜架上，按危险废物渠道处理。浸油只能密封并贴好标签再寄。</p>
+  </div>
+  <aside class="loupe">
+    <p class="en">This is a proposal, not yet a track record. The physics is sound; the postage savings are estimated, not measured.</p>
+    <p class="zh">这是提案，还没有实际记录。道理站得住；省下的邮费是估计的，不是测出来的。</p>
+  </aside>
+</section>

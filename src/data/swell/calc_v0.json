@@ -1,0 +1,295 @@
+{
+  "params": {
+    "lam_em": 0.52,
+    "na_4x": 0.65,
+    "na_10x": 0.4,
+    "e_4x": [
+      4.0,
+      4.5,
+      4.8
+    ],
+    "e_10x": 10.0,
+    "n_water": 1.333,
+    "cam_px": 3.45,
+    "cam_w": 1456,
+    "cam_h": 1088,
+    "bytes_per_px": 2,
+    "overlap": 0.1,
+    "xy_step_nm": 70.0,
+    "z_step_nm": 50.0,
+    "step_rate": [
+      500.0,
+      1000.0
+    ],
+    "settle_s": 0.3,
+    "exposure_s": 0.1,
+    "readout_s": 0.02,
+    "usable_travel_mm": 10.0,
+    "centring_tol_mm": 0.5,
+    "gel_thickness_cast": 150.0,
+    "myofibril_thickness": [
+      1.0,
+      2.0
+    ],
+    "a_band": 1.6,
+    "sl_breast_mean": 1.69,
+    "sl_breast_sd": 0.08,
+    "zdisc_width_nm": [
+      30.0,
+      50.0,
+      80.0,
+      140.0
+    ],
+    "overview_wd_mm": 100.0,
+    "water_depth_mm": 3.0,
+    "illum_area_factor": [
+      1.0,
+      3.0
+    ],
+    "n_af_exposures": 0
+  },
+  "resolution": {
+    "4x": {
+      "rayleigh_nm": 108.44444444444443,
+      "fwhm_nm": 90.66666666666667,
+      "nyquist_px_um": 0.2,
+      "dof_water_um": 1.6406153846153844,
+      "axial_nyquist_um": 1.5364813514569042,
+      "mag_required": 17.25,
+      "focal_shift_paraxial": 1.333,
+      "focal_shift_marginal": 1.5314249369989825
+    },
+    "10x": {
+      "rayleigh_nm": 79.29999999999998,
+      "fwhm_nm": 66.29999999999998,
+      "nyquist_px_um": 0.325,
+      "dof_water_um": 4.332249999999999,
+      "axial_nyquist_um": 4.232425441761794,
+      "mag_required": 10.615384615384615,
+      "focal_shift_paraxial": 1.333,
+      "focal_shift_marginal": 1.3873960707537187
+    }
+  },
+  "magnification_options": {
+    "finite_f40_d10": {
+      "M": 8.888888888888888,
+      "sensor_dist_mm": 31.111111111111107,
+      "px_um": 0.38812500000000005
+    },
+    "finite_f40_d30": {
+      "M": 10.0,
+      "sensor_dist_mm": 30.0,
+      "px_um": 0.34500000000000003
+    },
+    "finite_f50_d10": {
+      "M": 10.526315789473685,
+      "sensor_dist_mm": 36.8421052631579,
+      "px_um": 0.32775
+    },
+    "finite_f50_d30": {
+      "M": 11.764705882352938,
+      "sensor_dist_mm": 35.29411764705882,
+      "px_um": 0.29325000000000007
+    },
+    "finite_f75_d10": {
+      "M": 13.953488372093021,
+      "sensor_dist_mm": 48.837209302325576,
+      "px_um": 0.24725000000000005
+    },
+    "finite_f75_d30": {
+      "M": 15.384615384615385,
+      "sensor_dist_mm": 46.15384615384615,
+      "px_um": 0.22425
+    },
+    "finite_f100_d10": {
+      "M": 16.666666666666664,
+      "sensor_dist_mm": 58.33333333333333,
+      "px_um": 0.20700000000000005
+    },
+    "finite_f100_d30": {
+      "M": 18.181818181818183,
+      "sensor_dist_mm": 54.54545454545455,
+      "px_um": 0.18975
+    },
+    "infinity_f75": {
+      "M": 15.0,
+      "px_um": 0.23
+    },
+    "infinity_f100": {
+      "M": 20.0,
+      "px_um": 0.17250000000000001
+    },
+    "infinity_f125": {
+      "M": 25.0,
+      "px_um": 0.138
+    }
+  },
+  "scan": {
+    "punch2.0mm_E4.0": {
+      "diam_mm": 8.0,
+      "tiles_per_plane": 1049,
+      "z_planes": 9,
+      "raw_GB": 29.911504896,
+      "hours": [
+        2.8637699999999997,
+        1.6329433333333332
+      ],
+      "travel_needed_mm": 8.7088
+    },
+    "punch2.0mm_E4.5": {
+      "diam_mm": 9.0,
+      "tiles_per_plane": 1318,
+      "z_planes": 10,
+      "raw_GB": 41.75761408,
+      "hours": [
+        3.6713622222222217,
+        2.1102644444444447
+      ],
+      "travel_needed_mm": 9.7088
+    },
+    "punch2.0mm_E4.8": {
+      "diam_mm": 9.6,
+      "tiles_per_plane": 1497,
+      "z_planes": 10,
+      "raw_GB": 47.42879232,
+      "hours": [
+        4.189936666666665,
+        2.406843333333333
+      ],
+      "travel_needed_mm": 10.3088
+    },
+    "punch1.5mm_E4.0": {
+      "diam_mm": 6.0,
+      "tiles_per_plane": 602,
+      "z_planes": 9,
+      "raw_GB": 17.165611008,
+      "hours": [
+        1.6434599999999995,
+        0.9371133333333332
+      ],
+      "travel_needed_mm": 6.7088
+    },
+    "punch1.5mm_E4.5": {
+      "diam_mm": 6.75,
+      "tiles_per_plane": 759,
+      "z_planes": 10,
+      "raw_GB": 24.04706304,
+      "hours": [
+        2.1142366666666663,
+        1.2152433333333335
+      ],
+      "travel_needed_mm": 7.4588
+    },
+    "punch1.5mm_E4.8": {
+      "diam_mm": 7.2,
+      "tiles_per_plane": 858,
+      "z_planes": 10,
+      "raw_GB": 27.18363648,
+      "hours": [
+        2.401446666666666,
+        1.379473333333333
+      ],
+      "travel_needed_mm": 7.908799999999999
+    },
+    "punch1.0mm_E10": {
+      "diam_mm": 10.0,
+      "tiles_per_plane": 639,
+      "travel_needed_mm": 10.5268
+    },
+    "punch0.75mm_E10": {
+      "diam_mm": 7.5,
+      "tiles_per_plane": 366,
+      "travel_needed_mm": 8.0268
+    }
+  },
+  "rulers": {
+    "4x": {
+      "sl_min_for_iband_um": 1.7813333333333334,
+      "fraction_usable_normal_breast": 0.12679630068510211,
+      "iband_each_side_at_mean_nm": 44.99999999999993,
+      "zdisc_measured_fwhm_nm": {
+        "30.0": 95.50101802831448,
+        "50.0": 103.53957912047183,
+        "80.0": 120.91502985338276,
+        "140.0": 166.7946175523792
+      }
+    },
+    "10x": {
+      "sl_min_for_iband_um": 1.7326000000000001,
+      "fraction_usable_normal_breast": 0.2971898709083255,
+      "iband_each_side_at_mean_nm": 44.99999999999993,
+      "zdisc_measured_fwhm_nm": {
+        "30.0": 72.77149167084592,
+        "50.0": 83.0402914253075,
+        "80.0": 103.90230988770172,
+        "140.0": 154.90542275853352
+      }
+    }
+  },
+  "period_ruler_rel_error": {
+    "3": 0.01501993957461531,
+    "5": 0.005962990738570054,
+    "10": 0.0018872035159753148,
+    "20": 0.0009303410995046699
+  },
+  "period_ratio_rel_error": {
+    "DPC/oblique, 5% modulation, 5,000 e\u207b/px": {
+      "5": 0.009596100541609795,
+      "10": 0.0035286329092377657,
+      "20": 0.00133885747708728
+    },
+    "DPC/oblique, 15% modulation, 5,000 e\u207b/px": {
+      "5": 0.006318056613203814,
+      "10": 0.0021346504354695208,
+      "20": 0.0009734150339291412
+    },
+    "crossed polarisers, 50% modulation, 300 e\u207b/px": {
+      "5": 0.006500468054482626,
+      "10": 0.002267215388476019,
+      "20": 0.0009443340139664936
+    }
+  },
+  "misc": {
+    "gel_volume_12mm_150um_uL": 16.964600329384883,
+    "overview_scale_bias_pct": 0.7494373593398348,
+    "dose_multiplicity": {
+      "1.0": 12.100000000000001,
+      "3.0": 36.300000000000004
+    },
+    "dose_multiplicity_with_per_tile_AF5": 51.300000000000004
+  },
+  "snr_first_pass": {
+    "irradiance_W_cm2": 1.0,
+    "exposure_s": 0.1,
+    "collection_efficiency": 0.022210312803666584,
+    "rows": [
+      {
+        "f_lab": 0.005,
+        "dye_uM": 5.985783763561542,
+        "signal_e": 175.40208802058658,
+        "bg_cheap_e": 22.71360301172711,
+        "bg_good_e": 0.002271360301172711,
+        "snr_cheap": 12.3121569229399,
+        "snr_good": 13.064834651036055
+      },
+      {
+        "f_lab": 0.02,
+        "dye_uM": 23.943135054246167,
+        "signal_e": 701.6083520823463,
+        "bg_cheap_e": 22.71360301172711,
+        "bg_good_e": 0.002271360301172711,
+        "snr_cheap": 25.982608525601204,
+        "snr_good": 26.39695572265429
+      },
+      {
+        "f_lab": 0.05,
+        "dye_uM": 59.85783763561542,
+        "signal_e": 1754.0208802058658,
+        "bg_cheap_e": 22.71360301172711,
+        "bg_good_e": 0.002271360301172711,
+        "snr_cheap": 41.555907133558506,
+        "snr_good": 41.8233420466613
+      }
+    ]
+  }
+}

@@ -1,0 +1,383 @@
+{
+  "parts": {
+    "objective_A": {
+      "name": "Motic PL 40X/0.65 plan achromat, 160 mm, DIN 45 mm parfocal, RMS",
+      "M": 40.0,
+      "NA": 0.65,
+      "wd_um": 400.0,
+      "track": "A (4x gels) + pre-expansion images"
+    },
+    "objective_B": {
+      "name": "Motic PL 20X/0.40 plan achromat, 160 mm, DIN 45 mm parfocal, RMS",
+      "M": 20.0,
+      "NA": 0.4,
+      "wd_um": 550.0,
+      "track": "B (10x gels)"
+    },
+    "tube_lens": {
+      "name": "f = 100 mm achromatic doublet, 12.7 mm (Thorlabs AC127-100-A class)",
+      "f_mm": 100.0,
+      "d_mm": [
+        20.0,
+        25.0,
+        30.0
+      ]
+    },
+    "camera": {
+      "name": "IMX296 mono global shutter (Waveshare IMX296-130-BW, M12 lens removed)",
+      "w": 1456,
+      "h": 1088,
+      "px_um": 3.45,
+      "qe_520": 0.6,
+      "read_e": 2.2,
+      "full_well_e": 10000.0,
+      "adc_bits": 10
+    }
+  },
+  "sampling": {
+    "A": {
+      "nyquist_px_um": 0.2,
+      "rows": [
+        {
+          "d_mm": 20.0,
+          "M": 17.391304347826086,
+          "sensor_dist_mm": 56.521739130434774,
+          "px_um": 0.19837500000000002,
+          "nyquist_ratio": 1.0081915563957151,
+          "fov_um": [
+            288.83400000000006,
+            215.83200000000002
+          ]
+        },
+        {
+          "d_mm": 25.0,
+          "M": 17.77777777777778,
+          "sensor_dist_mm": 55.55555555555555,
+          "px_um": 0.1940625,
+          "nyquist_ratio": 1.030595813204509,
+          "fov_um": [
+            282.555,
+            211.14
+          ]
+        },
+        {
+          "d_mm": 30.0,
+          "M": 18.181818181818183,
+          "sensor_dist_mm": 54.54545454545455,
+          "px_um": 0.18975,
+          "nyquist_ratio": 1.0540184453227932,
+          "fov_um": [
+            276.276,
+            206.448
+          ]
+        }
+      ]
+    },
+    "B": {
+      "nyquist_px_um": 0.325,
+      "rows": [
+        {
+          "d_mm": 20.0,
+          "M": 8.695652173913043,
+          "sensor_dist_mm": 56.521739130434774,
+          "px_um": 0.39675000000000005,
+          "nyquist_ratio": 0.8191556395715185,
+          "fov_um": [
+            577.6680000000001,
+            431.66400000000004
+          ]
+        },
+        {
+          "d_mm": 25.0,
+          "M": 8.88888888888889,
+          "sensor_dist_mm": 55.55555555555555,
+          "px_um": 0.388125,
+          "nyquist_ratio": 0.8373590982286635,
+          "fov_um": [
+            565.11,
+            422.28
+          ]
+        },
+        {
+          "d_mm": 30.0,
+          "M": 9.090909090909092,
+          "sensor_dist_mm": 54.54545454545455,
+          "px_um": 0.3795,
+          "nyquist_ratio": 0.8563899868247694,
+          "fov_um": [
+            552.552,
+            412.896
+          ]
+        }
+      ]
+    }
+  },
+  "scan": {
+    "A_E4.0": {
+      "punch_mm": 1.5,
+      "E": 4.0,
+      "expanded_diam_mm": 6.0,
+      "tiles_per_plane": 642,
+      "z_planes": 9,
+      "raw_GB": 18.306183168,
+      "hours_fast_slow": [
+        1.7130165000000002,
+        0.97955825
+      ],
+      "travel_needed_mm": 6.717445,
+      "travel_ok": true
+    },
+    "A_E4.5": {
+      "punch_mm": 1.5,
+      "E": 4.5,
+      "expanded_diam_mm": 6.75,
+      "tiles_per_plane": 804,
+      "z_planes": 10,
+      "raw_GB": 25.47277824,
+      "hours_fast_slow": [
+        2.189939666666666,
+        1.2624698333333333
+      ],
+      "travel_needed_mm": 7.467445,
+      "travel_ok": true
+    },
+    "A_E4.8": {
+      "punch_mm": 1.5,
+      "E": 4.8,
+      "expanded_diam_mm": 7.2,
+      "tiles_per_plane": 908,
+      "z_planes": 10,
+      "raw_GB": 28.76776448,
+      "hours_fast_slow": [
+        2.485322111111111,
+        1.431827722222222
+      ],
+      "travel_needed_mm": 7.917444999999999,
+      "travel_ok": true
+    },
+    "B_E10": {
+      "punch_mm": 0.75,
+      "E": 10.0,
+      "expanded_diam_mm": 7.5,
+      "tiles_per_plane": 261,
+      "z_planes": 7,
+      "raw_GB": 5.788403712,
+      "hours_fast_slow": [
+        1.2753765000000001,
+        0.67901325
+      ],
+      "travel_needed_mm": 7.93489,
+      "travel_ok": true
+    }
+  },
+  "strehl": {
+    "A": [
+      {
+        "depth_um": 0.0,
+        "strehl": 1.0,
+        "fwhm_lat_um": 0.41165549828565157,
+        "fwhm_axial_stage_um": 1.8666666666666671,
+        "best_focus_stage_um": 0.0
+      },
+      {
+        "depth_um": 2.0,
+        "strehl": 0.9995555062018371,
+        "fwhm_lat_um": 0.4116654676692922,
+        "fwhm_axial_stage_um": 1.9066666666666663,
+        "best_focus_stage_um": -1.416666666666667
+      },
+      {
+        "depth_um": 4.0,
+        "strehl": 0.9982629220259727,
+        "fwhm_lat_um": 0.41166923165147706,
+        "fwhm_axial_stage_um": 1.92,
+        "best_focus_stage_um": -2.826666666666667
+      },
+      {
+        "depth_um": 6.0,
+        "strehl": 0.9960777090966624,
+        "fwhm_lat_um": 0.41164836780442593,
+        "fwhm_axial_stage_um": 1.8999999999999995,
+        "best_focus_stage_um": -4.233333333333333
+      },
+      {
+        "depth_um": 9.0,
+        "strehl": 0.991015941005644,
+        "fwhm_lat_um": 0.4115559272579906,
+        "fwhm_axial_stage_um": 1.879999999999999,
+        "best_focus_stage_um": -6.34
+      },
+      {
+        "depth_um": 12.0,
+        "strehl": 0.9838747166978438,
+        "fwhm_lat_um": 0.412095509173975,
+        "fwhm_axial_stage_um": 1.8666666666666671,
+        "best_focus_stage_um": -8.506666666666666
+      }
+    ],
+    "B": [
+      {
+        "depth_um": 0.0,
+        "strehl": 1.0,
+        "fwhm_lat_um": 0.6689811362796704,
+        "fwhm_axial_stage_um": 5.466666666666667,
+        "best_focus_stage_um": 0.0
+      },
+      {
+        "depth_um": 5.0,
+        "strehl": 0.9999353029840978,
+        "fwhm_lat_um": 0.6689877100532602,
+        "fwhm_axial_stage_um": 5.424999999999999,
+        "best_focus_stage_um": -3.7
+      },
+      {
+        "depth_um": 10.0,
+        "strehl": 0.9998184938435626,
+        "fwhm_lat_um": 0.6689671884030545,
+        "fwhm_axial_stage_um": 5.416666666666666,
+        "best_focus_stage_um": -7.333333333333334
+      },
+      {
+        "depth_um": 15.0,
+        "strehl": 0.9996961717350284,
+        "fwhm_lat_um": 0.6689982399886857,
+        "fwhm_axial_stage_um": 5.416666666666666,
+        "best_focus_stage_um": -11.058333333333334
+      },
+      {
+        "depth_um": 20.0,
+        "strehl": 0.9992741755741502,
+        "fwhm_lat_um": 0.6689253382115823,
+        "fwhm_axial_stage_um": 5.466666666666669,
+        "best_focus_stage_um": -14.666666666666666
+      }
+    ]
+  },
+  "focal_shift": {
+    "A": [
+      1.333,
+      1.5314249369989825
+    ],
+    "B": [
+      1.333,
+      1.3873960707537187
+    ]
+  },
+  "strehl_min": {
+    "A_0_to_9um": 0.991015941005644,
+    "B_0_to_20um": 0.9992741755741502
+  },
+  "camera_noise": [
+    {
+      "gain": 1.0,
+      "e_per_DN": 9.775171065493646,
+      "effective_read_e": 3.578104355657059,
+      "max_signal_e": 10000.0
+    },
+    {
+      "gain": 4.0,
+      "e_per_DN": 2.4437927663734116,
+      "effective_read_e": 2.3103413002732416,
+      "max_signal_e": 2500.0
+    },
+    {
+      "gain": 8.0,
+      "e_per_DN": 1.2218963831867058,
+      "effective_read_e": 2.228097670870167,
+      "max_signal_e": 1250.0
+    }
+  ],
+  "snr_pedestal": [
+    {
+      "f_lab": 0.005,
+      "myofibril_um": 1.0,
+      "signal_e": 175.40208802058658,
+      "pedestal_e": 305.7036016457823,
+      "snr_no_pedestal": 12.352655182761804,
+      "snr_with_pedestal": 7.783524203563404,
+      "dose_factor_for_snr10": 1.6506212790713544
+    },
+    {
+      "f_lab": 0.005,
+      "myofibril_um": 2.0,
+      "signal_e": 175.40208802058658,
+      "pedestal_e": 786.8092913121512,
+      "snr_no_pedestal": 12.352655182761804,
+      "snr_with_pedestal": 5.577647861823421,
+      "dose_factor_for_snr10": 3.214384429931139
+    },
+    {
+      "f_lab": 0.02,
+      "myofibril_um": 1.0,
+      "signal_e": 701.6083520823463,
+      "pedestal_e": 1222.8144065831293,
+      "snr_no_pedestal": 26.006312300500692,
+      "snr_with_pedestal": 15.883636112956221,
+      "dose_factor_for_snr10": 1.0
+    },
+    {
+      "f_lab": 0.02,
+      "myofibril_um": 2.0,
+      "signal_e": 701.6083520823463,
+      "pedestal_e": 3147.237165248605,
+      "snr_no_pedestal": 26.006312300500692,
+      "snr_with_pedestal": 11.27008155207228,
+      "dose_factor_for_snr10": 1.0
+    },
+    {
+      "f_lab": 0.05,
+      "myofibril_um": 1.0,
+      "signal_e": 1754.0208802058658,
+      "pedestal_e": 3057.0360164578233,
+      "snr_no_pedestal": 41.57141087603812,
+      "snr_with_pedestal": 25.21806272913575,
+      "dose_factor_for_snr10": 1.0
+    },
+    {
+      "f_lab": 0.05,
+      "myofibril_um": 2.0,
+      "signal_e": 1754.0208802058658,
+      "pedestal_e": 7868.0929131215125,
+      "snr_no_pedestal": 41.57141087603812,
+      "snr_with_pedestal": 17.856538972015677,
+      "dose_factor_for_snr10": 1.0
+    }
+  ],
+  "checks": [
+    {
+      "check": "Track A sampling within 0.8\u20131.25\u00d7 Nyquist (d = 25 mm)",
+      "pass": true,
+      "value": "1.03\u00d7"
+    },
+    {
+      "check": "Track B sampling within 0.8\u20131.25\u00d7 Nyquist (same lens)",
+      "pass": true,
+      "value": "0.84\u00d7"
+    },
+    {
+      "check": "Strehl \u2265 0.8 over 0\u20139 \u00b5m (Track A)",
+      "pass": true,
+      "value": "0.99"
+    },
+    {
+      "check": "Strehl \u2265 0.8 over 0\u201320 \u00b5m (Track B)",
+      "pass": true,
+      "value": "1.00"
+    },
+    {
+      "check": "XY travel fits every case",
+      "pass": true,
+      "value": "see \u00a72"
+    },
+    {
+      "check": "Track A scan \u2264 3 h per gel (E 4.5, slow motors)",
+      "pass": true,
+      "value": "2.2 h"
+    },
+    {
+      "check": "SNR \u2265 10 at 0.5% labelling, 100 ms, 1 W/cm\u00b2, incl. pedestal",
+      "pass": false,
+      "value": "needs 3.2\u00d7 dose (exposure \u00d7 irradiance) at the worst case"
+    }
+  ]
+}

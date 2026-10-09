@@ -1,0 +1,80 @@
+<section class="block" id="bom">
+  <style>
+    #bom .stats { display: grid; gap: 14px; grid-template-columns: 1fr; margin: 1.2rem 0; }
+    @media (min-width: 720px) { #bom .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    #bom .vs { font: .9rem/1.4 var(--mono); color: var(--gold); margin: .3rem 0 0; }
+    #bom td.money { font-family: var(--mono); white-space: nowrap; }
+    #bom .stat b .num { font-size: inherit; color: inherit; }
+    #bom .stat .vs span { color: inherit; font-size: inherit; }
+  </style>
+  <p class="kicker"><span class="en">Parts and money</span><span class="zh">零件和钱</span></p>
+  <h2><span class="en">Cheap, but not yet as cheap as the target</span><span class="zh">便宜，但还没便宜到目标</span></h2>
+  <p class="lead en">Prices are in pounds including VAT, read on {{n:swell.price_date}}. <strong>Listed</strong> means read on a supplier page that day; <strong>estimate</strong> means not yet priced. Most lines are still estimates, so treat the totals as ranges, not quotes.</p>
+  <p class="lead zh">价格单位为英镑、含增值税，读取于 {{n:swell.price_date}}。<strong>标价</strong>指当天在供应商页面上读到的价格；<strong>估价</strong>指还没正式询价。大部分条目仍是估价，所以总数只能当区间看，不能当报价。</p>
+
+  <div class="stats">
+    <div class="panel stat">
+      <b>{{n:swell.core_range}}</b>
+      <span class="en">Imager core: optics, camera, stage, electronics, interlocks</span><span class="zh">成像核心：光学、相机、载物台、电子、联锁</span>
+      <p class="vs"><span class="en">target {{n:swell.core_target}} · {{n:swell.core_n_est}} of {{n:swell.core_n}} lines are estimates</span><span class="zh">目标 {{n:swell.core_target}} · {{n:swell.core_n}} 条中 {{n:swell.core_n_est}} 条是估价</span></p>
+    </div>
+    <div class="panel stat">
+      <b>{{n:swell.build_range}}</b>
+      <span class="en">Full reference build, adding fluidics and the {{n:swell.track_b}}-track objective</span><span class="zh">完整参考机，再加流体系统和 {{n:swell.track_b}} 路线用的物镜</span>
+      <p class="vs"><span class="en">target {{n:swell.build_target}}, ceiling {{n:swell.ceiling}} · {{n:swell.build_n_est}} of {{n:swell.build_n}} lines are estimates</span><span class="zh">目标 {{n:swell.build_target}}，上限 {{n:swell.ceiling}} · {{n:swell.build_n}} 条中 {{n:swell.build_n_est}} 条是估价</span></p>
+    </div>
+  </div>
+  <p class="en">Honest reading: the box is over its targets, and the top of the build range breaks the {{n:swell.ceiling}} ceiling. Supplier-listed prices cover only {{n:swell.core_listed}} of the core and {{n:swell.build_listed}} of the build. The levers named but never pulled: a coloured-glass emission filter with one cheap dichroic (filters are the largest line), a generic tube lens, and a generic 20X objective for the {{n:swell.track_b}} track.</p>
+  <p class="zh">老实说：整机超出了目标，整机区间的上端还突破了 {{n:swell.ceiling}} 的上限。有供应商标价的部分，核心只占 {{n:swell.core_listed}}，整机只占 {{n:swell.build_listed}}。点过名、但没来得及用的省钱办法：用有色玻璃发射滤光片配一片便宜的二向色镜（滤光片是最贵的一项）、通用筒镜、{{n:swell.track_b}} 路线改用通用 20X 物镜。</p>
+
+  <div class="table-wrap">
+    <table class="data">
+      <thead><tr>
+        <th><span class="en">Line</span><span class="zh">编号</span></th>
+        <th><span class="en">Part</span><span class="zh">零件</span></th>
+        <th><span class="en">Scope</span><span class="zh">范围</span></th>
+        <th><span class="en">GBP</span><span class="zh">英镑</span></th>
+        <th><span class="en">Basis</span><span class="zh">依据</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><td>H-15</td><td><span class="en">Filter set, GFP class (excitation, dichroic, emission)</span><span class="zh">GFP 类滤光片组（激发、二向色、发射）</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h15}}</td><td><span class="tag predicted"><span class="en">estimate</span><span class="zh">估价</span></span></td></tr>
+        <tr><td>H-10</td><td><span class="en">Objective A: Motic PL 40X/0.65 plan achromat ({{n:swell.obj_a_eur}} ex VAT)</span><span class="zh">物镜 A：Motic PL 40X/0.65 平场消色差（不含增值税 {{n:swell.obj_a_eur}}）</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h10}}</td><td><span class="tag"><span class="en">listed</span><span class="zh">标价</span></span></td></tr>
+        <tr><td>H-21</td><td><span class="en">Objective B: Motic PL 20X/0.40 plan achromat</span><span class="zh">物镜 B：Motic PL 20X/0.40 平场消色差</span></td><td><span class="en">build</span><span class="zh">整机</span></td><td class="money">{{n:swell.line_h21}}</td><td><span class="tag"><span class="en">listed</span><span class="zh">标价</span></span></td></tr>
+        <tr><td>H-05</td><td><span class="en">Raspberry Pi 5, 4 GB</span><span class="zh">树莓派 5（4 GB）</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h05}}</td><td><span class="tag"><span class="en">listed</span><span class="zh">标价</span></span></td></tr>
+        <tr><td>H-09</td><td><span class="en">Main camera: IMX296 mono global shutter (Waveshare)</span><span class="zh">主相机：IMX296 黑白全局快门（Waveshare）</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h09}}</td><td><span class="tag"><span class="en">listed</span><span class="zh">标价</span></span></td></tr>
+        <tr><td>H-11</td><td><span class="en">Tube lens: achromatic doublet, f = {{n:swell.tube_f}}</span><span class="zh">筒镜：消色差双合透镜，焦距 {{n:swell.tube_f}}</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h11}}</td><td><span class="tag predicted"><span class="en">estimate</span><span class="zh">估价</span></span></td></tr>
+        <tr><td>H-23</td><td><span class="en">Peristaltic pumps (reagent lines and waste)</span><span class="zh">蠕动泵（试剂管路和废液）</span></td><td><span class="en">build</span><span class="zh">整机</span></td><td class="money">{{n:swell.line_h23}}</td><td><span class="tag predicted"><span class="en">estimate</span><span class="zh">估价</span></span></td></tr>
+        <tr><td>H-19</td><td><span class="en">Certified low-voltage PSU, buck converter, fuses, relay latch, wiring</span><span class="zh">认证低压电源、降压模块、保险丝、继电器锁存、线材</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h19}}</td><td><span class="tag predicted"><span class="en">estimate</span><span class="zh">估价</span></span></td></tr>
+        <tr><td>H-12</td><td><span class="en">Overview camera: Raspberry Pi Camera Module 3 + close-up lens</span><span class="zh">全景相机：树莓派 Camera Module 3 + 近摄镜</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h12}}</td><td><span class="tag predicted"><span class="en">estimate</span><span class="zh">估价</span></span></td></tr>
+        <tr><td>H-13</td><td><span class="en">Excitation LED (blue) + constant-current driver</span><span class="zh">激发 LED（蓝光）+ 恒流驱动</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h13}}</td><td><span class="tag predicted"><span class="en">estimate</span><span class="zh">估价</span></span></td></tr>
+        <tr><td>H-18</td><td><span class="en">Black box + lid microswitch (LED interlock)</span><span class="zh">黑盒 + 盖子微动开关（LED 联锁）</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h18}}</td><td><span class="tag predicted"><span class="en">estimate</span><span class="zh">估价</span></span></td></tr>
+        <tr><td>H-03</td><td><span class="en">28BYJ-48 steppers with ULN2003 boards</span><span class="zh">28BYJ-48 步进电机 + ULN2003 驱动板</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h03}}</td><td><span class="tag predicted"><span class="en">estimate</span><span class="zh">估价</span></span></td></tr>
+        <tr><td>H-01</td><td><span class="en">OpenFlexure v7 printed parts (PLA)</span><span class="zh">OpenFlexure v7 打印件（PLA）</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h01}}</td><td><span class="tag predicted"><span class="en">estimate</span><span class="zh">估价</span></span></td></tr>
+        <tr><td>H-20</td><td><span class="en">Drip ring + objective sleeve + leak sensor</span><span class="zh">接水环 + 物镜护套 + 漏液传感器</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h20}}</td><td><span class="tag predicted"><span class="en">estimate</span><span class="zh">估价</span></span></td></tr>
+        <tr><td>H-04</td><td><span class="en">Raspberry Pi Pico 2 (motor, LED and safety controller)</span><span class="zh">树莓派 Pico 2（电机、LED 和安全控制）</span></td><td><span class="en">core</span><span class="zh">核心</span></td><td class="money">{{n:swell.line_h04}}</td><td><span class="tag predicted"><span class="en">estimate</span><span class="zh">估价</span></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="en muted">The main parts only; the full list has more small lines. Euro and dollar prices were converted at assumed rates ({{n:swell.fx}}).</p>
+  <p class="zh muted">这里只列主要零件，完整清单还有不少小件。欧元和美元价格按假设汇率换算（{{n:swell.fx}}）。</p>
+
+  <details class="more">
+    <summary><span class="en">Everything else a first build would need</span><span class="zh">第一次造还需要的其他开销</span></summary>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr>
+          <th><span class="en">Basket</span><span class="zh">类别</span></th>
+          <th><span class="en">GBP</span><span class="zh">英镑</span></th>
+          <th><span class="en">Estimated / all lines</span><span class="zh">估价条目 / 全部条目</span></th>
+        </tr></thead>
+        <tbody>
+          <tr><td><span class="en">Calibration: stage micrometer, resolution target, fluorescent beads, flat-field reference, water beads</span><span class="zh">标定：台微尺、分辨率靶、荧光微球、平场参考片、水晶珠</span></td><td class="money">{{n:swell.basket_c}}</td><td>{{n:swell.basket_c_n_est}} / {{n:swell.basket_c_n}}</td></tr>
+          <tr><td><span class="en">Tools, only if the lab has none: 3D printer, soldering iron, multimeter, hand tools</span><span class="zh">工具（实验室没有才买）：3D 打印机、烙铁、万用表、手工工具</span></td><td class="money">{{n:swell.basket_t}}</td><td>{{n:swell.basket_t_n_est}} / {{n:swell.basket_t_n}}</td></tr>
+          <tr><td><span class="en">Operations: data drive, host-lab access for six months (community-lab case), waste route</span><span class="zh">运行：数据硬盘、六个月实验室使用费（按社区实验室算）、废液处理</span></td><td class="money">{{n:swell.basket_o}}</td><td>{{n:swell.basket_o_n_est}} / {{n:swell.basket_o_n}}</td></tr>
+          <tr><td><span class="en">Wet lab, bought through a host lab: reagents and consumables</span><span class="zh">湿实验（经由实验室购买）：试剂和耗材</span></td><td class="money">{{n:swell.basket_w}}</td><td>{{n:swell.basket_w_n_est}} / {{n:swell.basket_w_n}}</td></tr>
+          <tr><td><strong><span class="en">Whole project, excluding tools</span><span class="zh">整个项目（不含工具）</span></strong></td><td class="money"><strong>{{n:swell.project_range}}</strong></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>

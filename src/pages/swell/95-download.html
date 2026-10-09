@@ -1,0 +1,42 @@
+<section class="block" id="download">
+<style>
+#download .hash{font-family:var(--mono);color:var(--gold);word-break:break-all;overflow-wrap:anywhere;font-size:.9rem}
+#download .dl-row{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin:1.2rem 0}
+#download pre{white-space:pre-wrap;word-break:break-all;font-family:var(--mono);font-size:.85rem;color:var(--text);background:rgba(5,8,13,.6);padding:.6rem .8rem;border-left:2px solid var(--cyan-dim)}
+</style>
+<p class="kicker"><span class="en">Download</span><span class="zh">下载</span></p>
+<h2><span class="en">Take the whole thing</span><span class="zh">整个拿走</span></h2>
+<p class="lead en">Everything SWELL produced at the desk stage, in one zip: the brief, the audit, every decision, the fact checks, the simulations and their outputs. Free, no sign-up.</p>
+<p class="lead zh">SWELL 在桌面阶段产出的全部东西，打成一个压缩包：任务书、审计、每一条决策、事实核查、仿真代码和结果。免费，不用注册。</p>
+
+<div class="grid-3">
+  <div class="stat"><b>{{n:download.size_kb}}</b><span class="en">zip size</span><span class="zh">压缩包大小</span></div>
+  <div class="stat"><b>{{n:download.files}}</b><span class="en">files</span><span class="zh">个文件</span></div>
+  <div class="stat"><b>{{n:download.date}}</b><span class="en">first published</span><span class="zh">首次发布</span></div>
+</div>
+
+<div class="dl-row">
+  <a class="btn gold" href="{{root}}downloads/swell-g0-2026-10-09.zip" download><span class="en">Download swell-g0-2026-10-09.zip</span><span class="zh">下载 swell-g0-2026-10-09.zip</span></a>
+  <span class="tag sim"><span class="en">simulation only, never built</span><span class="zh">仅有仿真，从未造出</span></span>
+</div>
+
+<p class="en"><b>Inside:</b> the original brief (<code>kit/</code>); audit, decisions, errata, invariants, risks, verified facts, orders, ideas and the priced BOM (<code>pm/</code>); design reports and figures (<code>docs/</code>); simulation code and tests (<code>software/</code>); simulated data (<code>data/sim/</code>); toolchain scripts (<code>tools/</code>); a README with the licence map, and the licence texts.</p>
+<p class="zh"><b>里面有：</b>原始任务书（<code>kit/</code>）；审计、决策、勘误、不变量、风险、已核实事实、工作单、点子和带价格的物料清单（<code>pm/</code>）；设计报告和图（<code>docs/</code>）；仿真代码和测试（<code>software/</code>）；仿真数据（<code>data/sim/</code>）；工具链脚本（<code>tools/</code>）；一份附许可对照表的 README，以及许可原文。</p>
+
+<p class="en">SHA-256:</p>
+<p class="zh">SHA-256 校验值：</p>
+<p class="hash">{{n:download.sha256}}</p>
+
+<details class="more">
+  <summary><span class="en">Check the file, rebuild the sims</span><span class="zh">校验文件、重跑仿真</span></summary>
+  <p class="en">Compare the output of one of these with the hash above:</p>
+  <p class="zh">运行下面任意一条，把结果和上面的哈希值对照：</p>
+<pre>sha256sum swell-g0-2026-10-09.zip                 # Linux
+shasum -a 256 swell-g0-2026-10-09.zip             # macOS
+Get-FileHash swell-g0-2026-10-09.zip              # Windows PowerShell</pre>
+  <p class="en">The simulations need Python 3.12 with numpy, scipy, matplotlib and pytest. Each script rewrites its own report in <code>docs/design/</code>, so you can diff your run against ours. The README lists the commands.</p>
+  <p class="zh">仿真需要 Python 3.12，以及 numpy、scipy、matplotlib 和 pytest。每个脚本都会重新生成 <code>docs/design/</code> 里对应的报告，你可以把自己的结果和我们的逐行对比。具体命令见 README。</p>
+  <p class="en">Personal details of the owner were removed from the private project files before release. Each removal is marked <code>[personal detail removed]</code>; the removed lines are about the owner's own equipment, circumstances and schedule, not the SWELL design.</p>
+  <p class="zh">发布前，私人项目文件里涉及负责人个人的信息已被删除。每一处删除都标为 <code>[personal detail removed]</code>；删掉的是关于负责人自己的设备、个人情况和时间安排的内容，不涉及 SWELL 的设计。</p>
+</details>
+</section>

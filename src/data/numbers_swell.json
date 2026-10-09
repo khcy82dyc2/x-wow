@@ -1,0 +1,877 @@
+{
+ "swell.a_band": {
+  "value": "1.6 µm",
+  "source": "src/data/swell/calc_v0.json: params.a_band",
+  "how": "A-band length assumed for chicken (fact F-17: not verified)"
+ },
+ "swell.aa_stock": {
+  "value": "40%",
+  "source": "kit/10_SAFETY_LEGAL.md:21 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.aband_discard": {
+  "value": "~87%",
+  "source": "pm/DECISIONS.md:155 (SWELL project notes, D-4)",
+  "how": "quoted"
+ },
+ "swell.aband_usable_a": {
+  "value": "13%",
+  "source": "src/data/swell/calc_v0.json: rulers.4x.fraction_usable_normal_breast",
+  "how": "sarcomeres long enough for the A-band ruler at 4×"
+ },
+ "swell.aniso_est": {
+  "value": "−2.12% [−2.37%, −1.87%]",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S2.metrics.anisotropy",
+  "how": "estimate [95% CI], development gel S2"
+ },
+ "swell.aniso_planted": {
+  "value": "2%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S2.scenario.ax_aniso",
+  "how": "planted intrinsic axial anisotropy (axial shorter than transverse)"
+ },
+ "swell.aniso_truth": {
+  "value": "−2.03%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S2.metrics.anisotropy.truth",
+  "how": "true value in S2"
+ },
+ "swell.aps_batch": {
+  "value": "1 g",
+  "source": "pm/DECISIONS.md:134 (SWELL project notes, D-24)",
+  "how": "quoted"
+ },
+ "swell.aps_conc": {
+  "value": "10% w/v",
+  "source": "pm/DECISIONS.md:134 (SWELL project notes, D-24)",
+  "how": "quoted"
+ },
+ "swell.basket_c": {
+  "value": "£203–£495",
+  "source": "src/data/swell/budget_v1.json: baskets.C",
+  "how": "sum of line ranges"
+ },
+ "swell.basket_c_n": {
+  "value": "5",
+  "source": "src/data/swell/budget_v1.json: baskets.C.n",
+  "how": "lines in the basket"
+ },
+ "swell.basket_c_n_est": {
+  "value": "5",
+  "source": "src/data/swell/budget_v1.json: baskets.C.n_estimate",
+  "how": "lines still estimated"
+ },
+ "swell.basket_o": {
+  "value": "£320–£500",
+  "source": "src/data/swell/budget_v1.json: baskets.O",
+  "how": "sum of line ranges"
+ },
+ "swell.basket_o_n": {
+  "value": "3",
+  "source": "src/data/swell/budget_v1.json: baskets.O.n",
+  "how": "lines in the basket"
+ },
+ "swell.basket_o_n_est": {
+  "value": "2",
+  "source": "src/data/swell/budget_v1.json: baskets.O.n_estimate",
+  "how": "lines still estimated"
+ },
+ "swell.basket_t": {
+  "value": "£304–£334",
+  "source": "src/data/swell/budget_v1.json: baskets.T",
+  "how": "sum of line ranges"
+ },
+ "swell.basket_t_n": {
+  "value": "4",
+  "source": "src/data/swell/budget_v1.json: baskets.T.n",
+  "how": "lines in the basket"
+ },
+ "swell.basket_t_n_est": {
+  "value": "2",
+  "source": "src/data/swell/budget_v1.json: baskets.T.n_estimate",
+  "how": "lines still estimated"
+ },
+ "swell.basket_w": {
+  "value": "£750–£1,250",
+  "source": "src/data/swell/budget_v1.json: baskets.W",
+  "how": "sum of line ranges"
+ },
+ "swell.basket_w_n": {
+  "value": "3",
+  "source": "src/data/swell/budget_v1.json: baskets.W.n",
+  "how": "lines in the basket"
+ },
+ "swell.basket_w_n_est": {
+  "value": "3",
+  "source": "src/data/swell/budget_v1.json: baskets.W.n_estimate",
+  "how": "lines still estimated"
+ },
+ "swell.blind_dist_dev": {
+  "value": "0.003%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.distortion_curve_max_dev",
+  "how": "worst deviation of the distortion curve from truth"
+ },
+ "swell.blind_false": {
+  "value": "0.00%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.false_flag_rate",
+  "how": "share of defect-free gel area flagged"
+ },
+ "swell.blind_hotspot": {
+  "value": "−4%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.scenario.hotspot",
+  "how": "planted under-expanded hotspot"
+ },
+ "swell.blind_hotspot_any": {
+  "value": "100%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.detection_any_flag.hotspot",
+  "how": "area flagged by any detector"
+ },
+ "swell.blind_hotspot_own": {
+  "value": "100%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.detection.hotspot",
+  "how": "area flagged by its own detector"
+ },
+ "swell.blind_map_rms": {
+  "value": "0.13%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.map_rms_vs_truth",
+  "how": "local E map RMS error vs truth, same kernel"
+ },
+ "swell.blind_mean_err": {
+  "value": "−0.11%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.gel_mean_E_err",
+  "how": "gel-mean expansion error vs truth"
+ },
+ "swell.blind_stretch": {
+  "value": "+2.5%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.scenario.band",
+  "how": "planted stretched patch"
+ },
+ "swell.blind_stretch_any": {
+  "value": "100%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.detection_any_flag['stretched patch']",
+  "how": "area flagged by any detector"
+ },
+ "swell.blind_stretch_own": {
+  "value": "51%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.detection['stretched patch']",
+  "how": "area flagged by its own (stretch) detector"
+ },
+ "swell.blind_tear": {
+  "value": "1.5 µm",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.scenario.tear_open",
+  "how": "planted tear opening"
+ },
+ "swell.blind_undig": {
+  "value": "−3%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.scenario.undig",
+  "how": "planted under-digested patch"
+ },
+ "swell.blind_undig_any": {
+  "value": "100%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.detection_any_flag['under-digested patch']",
+  "how": "area flagged by any detector"
+ },
+ "swell.blind_undig_own": {
+  "value": "100%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.detection['under-digested patch']",
+  "how": "area flagged by its own detector"
+ },
+ "swell.build_listed": {
+  "value": "£328",
+  "source": "src/data/swell/budget_v1.json: build.listed",
+  "how": "part of the build priced from supplier pages"
+ },
+ "swell.build_n": {
+  "value": "26",
+  "source": "src/data/swell/budget_v1.json: build.n",
+  "how": "lines in the full build"
+ },
+ "swell.build_n_est": {
+  "value": "22",
+  "source": "src/data/swell/budget_v1.json: build.n_estimate",
+  "how": "lines still estimated"
+ },
+ "swell.build_range": {
+  "value": "£727–£1,072",
+  "source": "src/data/swell/budget_v1.json: build.lo, build.hi",
+  "how": "sum of line ranges, GBP incl. VAT"
+ },
+ "swell.build_target": {
+  "value": "≤ £650",
+  "source": "src/data/swell/budget_v1.json: targets_D15.build",
+  "how": "cost target D-15"
+ },
+ "swell.cam_format": {
+  "value": "1456 × 1088 px, 3.45 µm",
+  "source": "src/data/swell/optics_v1.json: parts.camera",
+  "how": "sensor format of the mono IMX296"
+ },
+ "swell.cam_price": {
+  "value": "£49.87",
+  "source": "pm/BOM.csv:10 (SWELL project notes, line H-09)",
+  "how": "quoted"
+ },
+ "swell.ceiling": {
+  "value": "£1,000",
+  "source": "src/data/swell/budget_v1.json: targets_D15.ceiling",
+  "how": "hard ceiling D-15"
+ },
+ "swell.checks_below": {
+  "value": "1",
+  "source": "docs/design/strain_map_v1.md:5 (SWELL project notes)",
+  "how": "quoted; recounted from strain_map_v1.json metrics with the thresholds in the check labels: agrees"
+ },
+ "swell.checks_fail": {
+  "value": "1",
+  "source": "docs/design/strain_map_v1.md:5 (SWELL project notes)",
+  "how": "quoted; recounted from strain_map_v1.json metrics with the thresholds in the check labels: agrees"
+ },
+ "swell.checks_pass": {
+  "value": "31",
+  "source": "docs/design/strain_map_v1.md:5 (SWELL project notes)",
+  "how": "quoted; recounted from strain_map_v1.json metrics with the thresholds in the check labels: agrees"
+ },
+ "swell.checks_total": {
+  "value": "33",
+  "source": "docs/design/strain_map_v1.md:5 (SWELL project notes)",
+  "how": "quoted; recounted from strain_map_v1.json metrics with the thresholds in the check labels: agrees"
+ },
+ "swell.contrast_range": {
+  "value": "5–50%",
+  "source": "pm/DECISIONS.md:155 (SWELL project notes, D-4)",
+  "how": "quoted"
+ },
+ "swell.core_listed": {
+  "value": "£216",
+  "source": "src/data/swell/budget_v1.json: core.listed",
+  "how": "part of the core priced from supplier pages"
+ },
+ "swell.core_n": {
+  "value": "20",
+  "source": "src/data/swell/budget_v1.json: core.n",
+  "how": "lines in the imager core"
+ },
+ "swell.core_n_est": {
+  "value": "17",
+  "source": "src/data/swell/budget_v1.json: core.n_estimate",
+  "how": "lines still estimated"
+ },
+ "swell.core_range": {
+  "value": "£524–£784",
+  "source": "src/data/swell/budget_v1.json: core.lo, core.hi",
+  "how": "sum of line ranges, GBP incl. VAT"
+ },
+ "swell.core_target": {
+  "value": "≤ £500",
+  "source": "src/data/swell/budget_v1.json: targets_D15.core",
+  "how": "cost target D-15"
+ },
+ "swell.coverage_blind_n": {
+  "value": "665",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.n_period",
+  "how": "myofibrils long enough for the axial ruler, blind gel"
+ },
+ "swell.coverage_blind_pct": {
+  "value": "55%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.n_period / n_fibrils",
+  "how": "share of myofibrils long enough for the axial ruler, blind gel"
+ },
+ "swell.coverage_dev_n": {
+  "value": "626",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S0.metrics.n_period",
+  "how": "same, development gels (seed 7)"
+ },
+ "swell.coverage_dev_pct": {
+  "value": "52%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S0.metrics.n_period / n_fibrils",
+  "how": "same share, development gels (seed 7)"
+ },
+ "swell.detect_threshold": {
+  "value": "80%",
+  "source": "docs/design/strain_map_v1.md:35 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.dev_tear": {
+  "value": "2 µm",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1.scenario.tear_open",
+  "how": "planted tear opening on development gel S1"
+ },
+ "swell.dev_tear_own": {
+  "value": "89%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1.metrics.detection.tear",
+  "how": "area of the S1 tear flagged"
+ },
+ "swell.dose_worst": {
+  "value": "3.2×",
+  "source": "src/data/swell/optics_v1.json: snr_pedestal[f_lab=0.005, myofibril_um=2]",
+  "how": "dose (exposure × irradiance) needed for SNR 10"
+ },
+ "swell.e_a": {
+  "value": "4–4.8×",
+  "source": "src/data/swell/calc_v0.json: params.e_4x",
+  "how": "min–max of the Track A expansion factors the design is computed for"
+ },
+ "swell.e_b": {
+  "value": "10×",
+  "source": "src/data/swell/calc_v0.json: params.e_10x",
+  "how": "Track B expansion factor"
+ },
+ "swell.e_sim": {
+  "value": "4.5×",
+  "source": "src/data/swell/strain_map_v1.json: constants.E0",
+  "how": "expansion factor of the synthetic gels"
+ },
+ "swell.etr_blind": {
+  "value": "0.00% ± 0.50%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.per_fibril_Etr_bias, per_fibril_Etr_sd",
+  "how": "transverse factor per myofibril: bias ± SD, blind gel"
+ },
+ "swell.expanded_a": {
+  "value": "6.75 mm",
+  "source": "src/data/swell/optics_v1.json: scan.A_E4.5.expanded_diam_mm",
+  "how": "punch × E 4.5"
+ },
+ "swell.fib_worst": {
+  "value": "2 µm",
+  "source": "src/data/swell/optics_v1.json: snr_pedestal[*].myofibril_um",
+  "how": "thickest myofibril simulated"
+ },
+ "swell.first_est": {
+  "value": "0.21–0.35%",
+  "source": "src/data/swell/calc_v0.json: period_ratio_rel_error[*]['10']",
+  "how": "min–max over the three assumed pre-image contrast cases, 10 sarcomeres, perfectly periodic sarcomeres"
+ },
+ "swell.first_est_n": {
+  "value": "10",
+  "source": "src/data/swell/calc_v0.json: period_ratio_rel_error[*]['10']",
+  "how": "segment length in sarcomeres"
+ },
+ "swell.first_run_fail": {
+  "value": "15",
+  "source": "docs/design/strain_map_v1.md:11 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.fwhm_a": {
+  "value": "0.412 µm",
+  "source": "src/data/swell/optics_v1.json: strehl.A[0].fwhm_lat_um",
+  "how": "lateral PSF FWHM, Track A"
+ },
+ "swell.fx": {
+  "value": "EUR 0.86, USD 0.75",
+  "source": "src/data/swell/budget_v1.json: fx",
+  "how": "assumed exchange rates to GBP"
+ },
+ "swell.gb_a": {
+  "value": "25.5 GB",
+  "source": "src/data/swell/optics_v1.json: scan.A_E4.5.raw_GB",
+  "how": "raw data per gel"
+ },
+ "swell.host_start": {
+  "value": "3",
+  "source": "pm/OUTREACH.md:21 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.hours_a": {
+  "value": "1.3–2.2 h",
+  "source": "src/data/swell/optics_v1.json: scan.A_E4.5.hours_fast_slow",
+  "how": "scan time, fast–slow motors"
+ },
+ "swell.jitter": {
+  "value": "3%",
+  "source": "docs/design/strain_map_v1.md:7 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.lab1_6mo": {
+  "value": "£240",
+  "source": "pm/OUTREACH.md:10 (SWELL project notes)",
+  "how": "monthly price × 6"
+ },
+ "swell.lab1_month": {
+  "value": "£40",
+  "source": "pm/OUTREACH.md:10 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.lab2_6mo": {
+  "value": "£3,600",
+  "source": "pm/OUTREACH.md:11 (SWELL project notes)",
+  "how": "monthly price × 6"
+ },
+ "swell.lab2_month": {
+  "value": "£600",
+  "source": "pm/OUTREACH.md:11 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.lab2_notice": {
+  "value": "3",
+  "source": "pm/OUTREACH.md:11 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.lab2_year": {
+  "value": "£7,200",
+  "source": "pm/OUTREACH.md:11 (SWELL project notes)",
+  "how": "monthly price × 12"
+ },
+ "swell.lab3_6mo": {
+  "value": "£8,400",
+  "source": "pm/OUTREACH.md:12 (SWELL project notes)",
+  "how": "monthly price × 6"
+ },
+ "swell.lab3_insurance": {
+  "value": "£10M",
+  "source": "pm/OUTREACH.md:12 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.lab3_month": {
+  "value": "£1,400",
+  "source": "pm/OUTREACH.md:12 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.lab3_term": {
+  "value": "1",
+  "source": "pm/OUTREACH.md:12 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.lab4_min": {
+  "value": "3",
+  "source": "pm/OUTREACH.md:13 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.lab5_min": {
+  "value": "6",
+  "source": "pm/OUTREACH.md:14 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.lab_worst": {
+  "value": "0.5%",
+  "source": "src/data/swell/optics_v1.json: snr_pedestal[*].f_lab",
+  "how": "lowest labelled-amine fraction simulated"
+ },
+ "swell.ladder_blind": {
+  "value": "0.35%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.per_fibril_Eax_rms",
+  "how": "per-myofibril RMS error of the axial factor, blind gel"
+ },
+ "swell.ladder_d33": {
+  "value": "0.3–0.6%",
+  "source": "pm/DECISIONS.md:62 (SWELL project notes, D-33)",
+  "how": "quoted"
+ },
+ "swell.ladder_final": {
+  "value": "0.32–0.48%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios[*].metrics.per_fibril_Eax_rms",
+  "how": "min–max over the four gels of the final run"
+ },
+ "swell.ladder_outliers_d33": {
+  "value": "≤ 0.8%",
+  "source": "pm/DECISIONS.md:62 (SWELL project notes, D-33)",
+  "how": "quoted"
+ },
+ "swell.ladder_outliers_final": {
+  "value": "0.48%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios[*].metrics.per_fibril_Eax_outliers_2pct",
+  "how": "worst share of myofibrils beyond ±2% over the four gels of the final run"
+ },
+ "swell.lam_em": {
+  "value": "520 nm",
+  "source": "src/data/swell/calc_v0.json: params.lam_em",
+  "how": "emission wavelength used"
+ },
+ "swell.line_h01": {
+  "value": "£8–£12",
+  "source": "pm/BOM.csv:2 (SWELL project notes, line H-01)",
+  "how": "quoted"
+ },
+ "swell.line_h03": {
+  "value": "£10–£14",
+  "source": "pm/BOM.csv:4 (SWELL project notes, line H-03)",
+  "how": "quoted"
+ },
+ "swell.line_h04": {
+  "value": "£5–£7",
+  "source": "pm/BOM.csv:5 (SWELL project notes, line H-04)",
+  "how": "quoted"
+ },
+ "swell.line_h05": {
+  "value": "£54–£60",
+  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-05]",
+  "how": "listed"
+ },
+ "swell.line_h09": {
+  "value": "£49.87",
+  "source": "pm/BOM.csv:10 (SWELL project notes, line H-09)",
+  "how": "quoted"
+ },
+ "swell.line_h10": {
+  "value": "£112",
+  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-10]",
+  "how": "listed"
+ },
+ "swell.line_h11": {
+  "value": "£45–£70",
+  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-11]",
+  "how": "estimate"
+ },
+ "swell.line_h12": {
+  "value": "£25–£32",
+  "source": "pm/BOM.csv:13 (SWELL project notes, line H-12)",
+  "how": "quoted"
+ },
+ "swell.line_h13": {
+  "value": "£12–£20",
+  "source": "pm/BOM.csv:14 (SWELL project notes, line H-13)",
+  "how": "quoted"
+ },
+ "swell.line_h15": {
+  "value": "£100–£250",
+  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-15]",
+  "how": "estimate"
+ },
+ "swell.line_h18": {
+  "value": "£10–£15",
+  "source": "pm/BOM.csv:19 (SWELL project notes, line H-18)",
+  "how": "quoted"
+ },
+ "swell.line_h19": {
+  "value": "£30–£45",
+  "source": "pm/BOM.csv:20 (SWELL project notes, line H-19)",
+  "how": "quoted"
+ },
+ "swell.line_h20": {
+  "value": "£6–£10",
+  "source": "pm/BOM.csv:21 (SWELL project notes, line H-20)",
+  "how": "quoted"
+ },
+ "swell.line_h21": {
+  "value": "£112",
+  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-21]",
+  "how": "listed"
+ },
+ "swell.line_h23": {
+  "value": "£40–£75",
+  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-23]",
+  "how": "estimate"
+ },
+ "swell.mag_a": {
+  "value": "17.8×",
+  "source": "src/data/swell/optics_v1.json: sampling.A.rows[d_mm=25].M",
+  "how": "total magnification, Track A"
+ },
+ "swell.mag_b": {
+  "value": "8.9×",
+  "source": "src/data/swell/optics_v1.json: sampling.B.rows[d_mm=25].M",
+  "how": "total magnification, Track B"
+ },
+ "swell.min_sarc": {
+  "value": "8",
+  "source": "docs/design/strain_map_v1.md:5 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.myofibril_d": {
+  "value": "1–2 µm",
+  "source": "src/data/swell/calc_v0.json: params.myofibril_thickness",
+  "how": "myofibril thickness range used in the design"
+ },
+ "swell.n_fibrils": {
+  "value": "1,200",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.n_fibrils",
+  "how": "myofibrils in each synthetic gel"
+ },
+ "swell.na_a": {
+  "value": "0.65",
+  "source": "src/data/swell/calc_v0.json: params.na_4x",
+  "how": "objective numerical aperture"
+ },
+ "swell.na_b": {
+  "value": "0.40",
+  "source": "src/data/swell/calc_v0.json: params.na_10x",
+  "how": "objective numerical aperture"
+ },
+ "swell.nyq_a": {
+  "value": "1.03×",
+  "source": "src/data/swell/optics_v1.json: sampling.A.rows[d_mm=25].nyquist_ratio",
+  "how": "sampling ÷ Nyquist (pass band 0.8–1.25)"
+ },
+ "swell.nyq_b": {
+  "value": "0.84×",
+  "source": "src/data/swell/optics_v1.json: sampling.B.rows[d_mm=25].nyquist_ratio",
+  "how": "sampling ÷ Nyquist (pass band 0.8–1.25)"
+ },
+ "swell.nyq_px_a": {
+  "value": "0.200 µm",
+  "source": "src/data/swell/optics_v1.json: sampling.A.nyquist_px_um",
+  "how": "Nyquist pixel for NA 0.65"
+ },
+ "swell.obj_a_eur": {
+  "value": "€109",
+  "source": "pm/DECISIONS.md:100 (SWELL project notes, D-29)",
+  "how": "quoted"
+ },
+ "swell.ofm_stock_nyq": {
+  "value": "0.66×",
+  "source": "docs/design/optics_v1.md:23 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.orient_amp": {
+  "value": "2.03%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S2.metrics.orientation.amplitude",
+  "how": "gel-stretch amplitude found by the orientation test"
+ },
+ "swell.orient_axis": {
+  "value": "23°",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S2.metrics.orientation.axis_deg",
+  "how": "gel-stretch axis found by the orientation test"
+ },
+ "swell.orient_truth_amp": {
+  "value": "2.00%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S2.scenario.gel_stretch",
+  "how": "planted gel stretch"
+ },
+ "swell.orient_truth_axis": {
+  "value": "23°",
+  "source": "src/data/swell/strain_map_v1.json: scenarios.S2.scenario.gel_psi",
+  "how": "planted stretch axis (radians → degrees)"
+ },
+ "swell.outlier_band": {
+  "value": "±2%",
+  "source": "pm/DECISIONS.md:62 (SWELL project notes, D-33)",
+  "how": "quoted"
+ },
+ "swell.price_date": {
+  "value": "2026-10-09",
+  "source": "pm/BOM.csv:6 (SWELL project notes, column date_checked)",
+  "how": "quoted"
+ },
+ "swell.prices_date": {
+  "value": "2026-10-09",
+  "source": "pm/OUTREACH.md:6 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.project_range": {
+  "value": "£2,000–£3,317",
+  "source": "src/data/swell/budget_v1.json: project_excl_tools",
+  "how": "all baskets except tools"
+ },
+ "swell.psf5_case": {
+  "value": "5%",
+  "source": "src/data/swell/strain_map_v1.json: width_mc key '… PSF calibrated 5% wide'",
+  "how": "simulated pre-image blur calibration error"
+ },
+ "swell.psf_cal": {
+  "value": "±2%",
+  "source": "pm/DECISIONS.md:75 (SWELL project notes, D-32)",
+  "how": "quoted"
+ },
+ "swell.punch_a": {
+  "value": "1.5 mm",
+  "source": "src/data/swell/optics_v1.json: scan.A_E4.5.punch_mm",
+  "how": "punch diameter, Track A"
+ },
+ "swell.px_a": {
+  "value": "0.194 µm",
+  "source": "src/data/swell/optics_v1.json: sampling.A.rows[d_mm=25].px_um",
+  "how": "pixel size at the sample"
+ },
+ "swell.res_e_a": {
+  "value": "4.5×",
+  "source": "src/data/swell/calc_v0.json: resolution.4x",
+  "how": "lens-alone Rayleigh ÷ expanded Rayleigh = the E used in the calculation"
+ },
+ "swell.res_e_b": {
+  "value": "10×",
+  "source": "src/data/swell/calc_v0.json: resolution.10x",
+  "how": "lens-alone Rayleigh ÷ expanded Rayleigh = the E used in the calculation"
+ },
+ "swell.res_exp_a": {
+  "value": "108 nm",
+  "source": "src/data/swell/calc_v0.json: resolution.4x.rayleigh_nm",
+  "how": "Rayleigh ÷ E, in original-specimen units"
+ },
+ "swell.res_exp_b": {
+  "value": "79 nm",
+  "source": "src/data/swell/calc_v0.json: resolution.10x.rayleigh_nm",
+  "how": "Rayleigh ÷ E, in original-specimen units"
+ },
+ "swell.res_lens_a": {
+  "value": "488 nm",
+  "source": "src/data/swell/calc_v0.json: params.lam_em, params.na_4x",
+  "how": "Rayleigh 0.61·λ/NA of the lens alone, λ = emission wavelength"
+ },
+ "swell.res_lens_b": {
+  "value": "793 nm",
+  "source": "src/data/swell/calc_v0.json: params.lam_em, params.na_10x",
+  "how": "Rayleigh 0.61·λ/NA of the lens alone, λ = emission wavelength"
+ },
+ "swell.scan_e": {
+  "value": "4.5×",
+  "source": "src/data/swell/optics_v1.json: scan.A_E4.5.E",
+  "how": "expansion factor of the scan case"
+ },
+ "swell.seg_range": {
+  "value": "8–20",
+  "source": "docs/design/strain_map_v1.md:16 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.sidelobe_err": {
+  "value": "7–19%",
+  "source": "pm/DECISIONS.md:62 (SWELL project notes, D-33)",
+  "how": "quoted"
+ },
+ "swell.sidelobe_frac": {
+  "value": "10–17%",
+  "source": "pm/DECISIONS.md:62 (SWELL project notes, D-33)",
+  "how": "quoted"
+ },
+ "swell.sl_breast": {
+  "value": "1.69 µm",
+  "source": "src/data/swell/calc_v0.json: params.sl_breast_mean",
+  "how": "mean sarcomere length assumed for supermarket breast (fact F-10, verified from an abstract)"
+ },
+ "swell.sl_wooden": {
+  "value": "1.91 µm",
+  "source": "pm/VERIFIED_FACTS.md:16 (SWELL project notes, F-10)",
+  "how": "quoted"
+ },
+ "swell.snr_first": {
+  "value": "12–42",
+  "source": "src/data/swell/calc_v0.json: snr_first_pass.rows[*].snr_cheap",
+  "how": "first-pass SNR range at 4× before the pedestal was modelled"
+ },
+ "swell.snr_target": {
+  "value": "10",
+  "source": "src/data/swell/optics_v1.json: checks[6].check",
+  "how": "SNR threshold named in the check"
+ },
+ "swell.snr_worst": {
+  "value": "12.4 → 5.6",
+  "source": "src/data/swell/optics_v1.json: snr_pedestal[f_lab=0.005, myofibril_um=2]",
+  "how": "SNR without → with the out-of-focus pedestal"
+ },
+ "swell.strehl_a": {
+  "value": "0.99",
+  "source": "src/data/swell/optics_v1.json: strehl_min.A_0_to_9um",
+  "how": "worst Strehl over the specimen depth, Track A"
+ },
+ "swell.strehl_a_all": {
+  "value": "0.98",
+  "source": "src/data/swell/optics_v1.json: strehl.A[*].strehl",
+  "how": "minimum over all depths"
+ },
+ "swell.strehl_b": {
+  "value": "1.00",
+  "source": "src/data/swell/optics_v1.json: strehl_min.B_0_to_20um",
+  "how": "worst Strehl over the specimen depth, Track B"
+ },
+ "swell.strehl_depth_a": {
+  "value": "0–12 µm",
+  "source": "src/data/swell/optics_v1.json: strehl.A[*].depth_um",
+  "how": "depth range simulated into water, Track A"
+ },
+ "swell.t_cutoff": {
+  "value": "50 °C",
+  "source": "pm/INVARIANTS.md:10 (SWELL project notes, INV-2)",
+  "how": "quoted"
+ },
+ "swell.t_denature": {
+  "value": "95 °C",
+  "source": "pm/INVARIANTS.md:23 (SWELL project notes, INV-6)",
+  "how": "quoted"
+ },
+ "swell.t_freezer": {
+  "value": "−20 °C",
+  "source": "pm/OUTREACH.md:47 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.t_fridge": {
+  "value": "4 °C",
+  "source": "pm/OUTREACH.md:47 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.t_incubator": {
+  "value": "37 °C",
+  "source": "pm/OUTREACH.md:48 (SWELL project notes)",
+  "how": "quoted"
+ },
+ "swell.tear_limit": {
+  "value": "~2 µm",
+  "source": "pm/DECISIONS.md:53 (SWELL project notes, D-34)",
+  "how": "quoted"
+ },
+ "swell.tiles_a": {
+  "value": "804",
+  "source": "src/data/swell/optics_v1.json: scan.A_E4.5.tiles_per_plane",
+  "how": "tiles per plane, E 4.5 gel"
+ },
+ "swell.tr_base": {
+  "value": "1%",
+  "source": "pm/DECISIONS.md:74 (SWELL project notes, D-32)",
+  "how": "quoted"
+ },
+ "swell.tr_boxy_dpc": {
+  "value": "−9.0%",
+  "source": "src/data/swell/strain_map_v1.json: width_mc['dpc | boxy section (n = 4) assumed elliptical']",
+  "how": "bias, oblique/DPC before-image"
+ },
+ "swell.tr_boxy_pol": {
+  "value": "−15.2%",
+  "source": "src/data/swell/strain_map_v1.json: width_mc['pol | boxy section (n = 4) assumed elliptical']",
+  "how": "bias, crossed-polariser before-image"
+ },
+ "swell.tr_gate": {
+  "value": "±3%",
+  "source": "pm/DECISIONS.md:71 (SWELL project notes, D-32)",
+  "how": "quoted"
+ },
+ "swell.tr_gate_used": {
+  "value": "2.09%",
+  "source": "src/data/swell/strain_map_v1.json: width_mc + D-32",
+  "how": "1% + worst bias at the G1 target (D-32)"
+ },
+ "swell.tr_n": {
+  "value": "200",
+  "source": "pm/DECISIONS.md:71 (SWELL project notes, D-32)",
+  "how": "quoted"
+ },
+ "swell.tr_psf5": {
+  "value": "1.05–3.23%",
+  "source": "src/data/swell/strain_map_v1.json: width_mc['* | PSF calibrated 5% wide']",
+  "how": "bias when the pre-image blur is calibrated 5% wide"
+ },
+ "swell.tr_shape_post": {
+  "value": "≤ 0.04%",
+  "source": "src/data/swell/strain_map_v1.json: width_mc['* | … shape from post …']",
+  "how": "worst |bias| when each cross-section's shape is measured from the post z-projection"
+ },
+ "swell.tr_worst_g1": {
+  "value": "1.09%",
+  "source": "src/data/swell/strain_map_v1.json: width_mc['* | PSF calibrated 2% wide (G1 target)']",
+  "how": "worst transverse bias at the G1 calibration target"
+ },
+ "swell.track_a": {
+  "value": "4×",
+  "source": "src/data/swell/calc_v0.json: resolution['4x']",
+  "how": "name of the ~4× expansion track (Track A)"
+ },
+ "swell.track_b": {
+  "value": "10×",
+  "source": "src/data/swell/calc_v0.json: resolution['10x']",
+  "how": "name of the ~10× expansion track (Track B)"
+ },
+ "swell.tube_d": {
+  "value": "25 mm",
+  "source": "src/data/swell/optics_v1.json: sampling.A.rows[d_mm=25]",
+  "how": "lens distance behind the objective shoulder chosen in D-29"
+ },
+ "swell.tube_f": {
+  "value": "100 mm",
+  "source": "src/data/swell/optics_v1.json: parts.tube_lens.f_mm",
+  "how": "tube-lens focal length"
+ },
+ "swell.v_max": {
+  "value": "24 V DC",
+  "source": "pm/INVARIANTS.md:20 (SWELL project notes, INV-5)",
+  "how": "quoted"
+ },
+ "swell.zplanes_a": {
+  "value": "10",
+  "source": "src/data/swell/optics_v1.json: scan.A_E4.5.z_planes",
+  "how": "z-planes per tile"
+ }
+}

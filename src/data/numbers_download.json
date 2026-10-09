@@ -1,0 +1,22 @@
+{
+  "download.sha256": {
+    "value": "ad8fc99a7b592aa75f6925537ede6d7c417e6eeb8f871a4d204ad103a9678795",
+    "source": "src/downloads/swell-g0-2026-10-09.zip",
+    "how": "SHA-256 of the zip bytes (tools/make_swell_zip.py; deterministic build)"
+  },
+  "download.size_kb": {
+    "value": "2,146 KB",
+    "source": "src/downloads/swell-g0-2026-10-09.zip",
+    "how": "zip size in bytes / 1024, rounded"
+  },
+  "download.files": {
+    "value": "55",
+    "source": "src/downloads/swell-g0-2026-10-09.zip",
+    "how": "number of files in the zip"
+  },
+  "download.date": {
+    "value": "2026-10-09",
+    "source": "tools/make_swell_zip.py: DATE",
+    "how": "first-publication date of the G0 package (also in the zip name)"
+  }
+}

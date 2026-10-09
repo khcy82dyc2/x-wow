@@ -34,7 +34,7 @@ PRIVATE_PATTERNS = ROOT.parent / "pm" / "site" / "forbidden.txt"
 if PRIVATE_PATTERNS.exists():
     for line in PRIVATE_PATTERNS.read_text(encoding="utf-8").splitlines():
         line = line.strip()
-        if line and not line.startswith("#") and not line.startswith("REPLACE"):
+        if line and not line.startswith("#") and "\t" not in line:  # tab lines are the zip script's edit rules
             FORBIDDEN.append((line, "private pattern"))
 
 
@@ -74,7 +74,13 @@ def render(text, root, numbers, where):
         e = numbers[key]
         tip = e["source"] + ((" · " + e["how"]) if e.get("how") else "")
         return f'<span class="num" title="{html.escape(tip, quote=True)}">{html.escape(str(e["value"]))}</span>'
+    def raw(m):  # bare value, for use inside attributes (value="", data-*)
+        key = m.group(1).strip()
+        if key not in numbers:
+            fail(f"{where}: unknown number {{{{v:{key}}}}}")
+        return html.escape(str(numbers[key]["value"]), quote=True)
     text = re.sub(r"\{\{n:([^}]+)\}\}", num, text)
+    text = re.sub(r"\{\{v:([^}]+)\}\}", raw, text)
     text = text.replace("{{root}}", root).replace("{{gh}}", GH)
     left = re.findall(r"\{\{[^}]*\}\}", text)
     if left:
@@ -184,6 +190,8 @@ def copy_static():
         if (SRC / name).exists():
             shutil.copytree(SRC / name, OUT / name)
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
+    if (SRC / "CNAME").exists():  # custom domain (added at launch, when x-wow.com points here)
+        shutil.copy(SRC / "CNAME", OUT / "CNAME")
 
 
 def write_seo(pages):
@@ -221,7 +229,7 @@ def check_site():
         rel = f.relative_to(OUT.resolve()).as_posix()
         text = f.read_text(encoding="utf-8")
         for pat, why in FORBIDDEN:
-            m = re.search(pat, text, re.I)
+            m = re.search(pat, text, 0 if "[A-Z]" in pat else re.I)  # upper-case classes (postcodes) stay case-sensitive
             if m:
                 problems.append(f"{rel}: forbidden ({why}): '{m.group(0)}'")
         if rel == "404.html":

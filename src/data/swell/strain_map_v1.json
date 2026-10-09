@@ -1,0 +1,535 @@
+{
+  "constants": {
+    "PX_um": 0.194,
+    "FWHM_post_um": 0.412,
+    "FWHM_pre_um": 0.55,
+    "E0": 4.5,
+    "kernel_um": 45.0,
+    "grid_um": 20.0
+  },
+  "estimator_equivalence_max_rel_diff": 6.217248937900877e-15,
+  "scenarios": {
+    "S0": {
+      "scenario": {
+        "name": "S0",
+        "label": "good gel: 1% radial edge gradient only",
+        "radial": 0.01,
+        "hotspot": 0.0,
+        "hotspot_c": [
+          -320.0,
+          180.0
+        ],
+        "hotspot_sigma": 70.0,
+        "band": 0.0,
+        "band_angle": 0.6,
+        "band_offset": -260.0,
+        "band_width": 140.0,
+        "band_half_length": 220.0,
+        "tear_open": 0.0,
+        "tear_a": [
+          60.0,
+          330.0
+        ],
+        "tear_b": [
+          420.0,
+          120.0
+        ],
+        "tear_decay": 60.0,
+        "undig": 0.0,
+        "undig_c": [
+          260.0,
+          -360.0
+        ],
+        "undig_r": 130.0,
+        "ax_aniso": 0.0,
+        "gel_stretch": 0.0,
+        "gel_psi": 0.4,
+        "seed": 7
+      },
+      "metrics": {
+        "n_fibrils": 1200,
+        "n_period": 626,
+        "gel_mean_E_err": -0.0009659410115867573,
+        "global_scale_err": 1.041820709701824e-07,
+        "per_fibril_Eax_rms": 0.0031982787915781213,
+        "per_fibril_Eax_outliers_2pct": 0.0,
+        "per_fibril_Etr_bias": 0.00015511287228560516,
+        "per_fibril_Etr_sd": 0.004945068198528939,
+        "per_fibril_Eland_ax_rms": 0.0006063060685004196,
+        "map_rms_vs_truth": 0.0010452490096760948,
+        "detection": {},
+        "detection_any_flag": {},
+        "false_flag_rate": 0.0,
+        "anisotropy": {
+          "n": 626,
+          "est": -0.001172641098318279,
+          "ci": [
+            -0.0016555105809953935,
+            -0.0006380383027272997
+          ],
+          "truth": 4.229442957193186e-05
+        },
+        "orientation": {
+          "n": 626,
+          "amplitude": 0.0010104653910006176,
+          "axis_deg": 16.966339335144927,
+          "p": 0.10511584976134498
+        },
+        "distortion_curve": [
+          {
+            "l_mid": 35.35533905932738,
+            "rms": 0.20014057615108674,
+            "rms_corrected": 0.10067983400252754,
+            "rms_truth": 0.07226679806713181
+          },
+          {
+            "l_mid": 70.71067811865476,
+            "rms": 0.2287487908473857,
+            "rms_corrected": 0.14968696692373906,
+            "rms_truth": 0.1456402698152336
+          },
+          {
+            "l_mid": 141.4213562373095,
+            "rms": 0.3028590482852119,
+            "rms_corrected": 0.24860366425479702,
+            "rms_truth": 0.24909411462552922
+          },
+          {
+            "l_mid": 282.842712474619,
+            "rms": 0.41014896321573774,
+            "rms_corrected": 0.3718902402317546,
+            "rms_truth": 0.3715253382981418
+          },
+          {
+            "l_mid": 565.685424949238,
+            "rms": 0.44715895256924576,
+            "rms_corrected": 0.41234852687443,
+            "rms_truth": 0.41370742221794166
+          },
+          {
+            "l_mid": 1058.3005244258363,
+            "rms": 0.41856721675895625,
+            "rms_corrected": 0.3811544223776324,
+            "rms_truth": 0.3790261372346035
+          }
+        ],
+        "distortion_curve_max_dev": 0.0008036420153606154
+      }
+    },
+    "S1": {
+      "scenario": {
+        "name": "S1",
+        "label": "planted defects: \u22125% hotspot, +3% stretched patch, 2 \u00b5m tear, \u22124% under-digested patch, 2% radial",
+        "radial": 0.02,
+        "hotspot": 0.05,
+        "hotspot_c": [
+          -320.0,
+          180.0
+        ],
+        "hotspot_sigma": 70.0,
+        "band": 0.03,
+        "band_angle": 0.6,
+        "band_offset": -260.0,
+        "band_width": 140.0,
+        "band_half_length": 220.0,
+        "tear_open": 2.0,
+        "tear_a": [
+          60.0,
+          330.0
+        ],
+        "tear_b": [
+          420.0,
+          120.0
+        ],
+        "tear_decay": 60.0,
+        "undig": 0.04,
+        "undig_c": [
+          260.0,
+          -360.0
+        ],
+        "undig_r": 130.0,
+        "ax_aniso": 0.0,
+        "gel_stretch": 0.0,
+        "gel_psi": 0.4,
+        "seed": 7
+      },
+      "metrics": {
+        "n_fibrils": 1200,
+        "n_period": 626,
+        "gel_mean_E_err": -0.0008876237878101545,
+        "global_scale_err": -1.3328794447264869e-05,
+        "per_fibril_Eax_rms": 0.0034808857782207677,
+        "per_fibril_Eax_outliers_2pct": 0.0,
+        "per_fibril_Etr_bias": -0.0002035973093762461,
+        "per_fibril_Etr_sd": 0.004934028659542921,
+        "per_fibril_Eland_ax_rms": 0.0064199829398672095,
+        "map_rms_vs_truth": 0.002543784225073743,
+        "detection": {
+          "hotspot": 1.0,
+          "stretched patch": 0.9805825242718447,
+          "tear": 0.8939393939393939,
+          "under-digested patch": 0.956140350877193
+        },
+        "detection_any_flag": {
+          "hotspot": 1.0,
+          "stretched patch": 1.0,
+          "tear": 0.8939393939393939,
+          "under-digested patch": 1.0
+        },
+        "false_flag_rate": 0.0,
+        "anisotropy": {
+          "n": 626,
+          "est": -0.001516077106812254,
+          "ci": [
+            -0.0024762323889233606,
+            -0.0006435041710113604
+          ],
+          "truth": -0.0003760037402864569
+        },
+        "orientation": {
+          "n": 626,
+          "amplitude": 0.001665462556827575,
+          "axis_deg": 153.3002603537768,
+          "p": 0.5359068988836627
+        },
+        "distortion_curve": [
+          {
+            "l_mid": 35.35533905932738,
+            "rms": 0.34903751008984024,
+            "rms_corrected": 0.30319371787005933,
+            "rms_truth": 0.3104267641647867
+          },
+          {
+            "l_mid": 70.71067811865476,
+            "rms": 0.6737120167803932,
+            "rms_corrected": 0.6511429402676947,
+            "rms_truth": 0.645801126037201
+          },
+          {
+            "l_mid": 141.4213562373095,
+            "rms": 0.9929648770805436,
+            "rms_corrected": 0.9777926642298627,
+            "rms_truth": 0.977977646443326
+          },
+          {
+            "l_mid": 282.842712474619,
+            "rms": 1.1290295079294446,
+            "rms_corrected": 1.1157091363261114,
+            "rms_truth": 1.115313341468205
+          },
+          {
+            "l_mid": 565.685424949238,
+            "rms": 1.0657688880426661,
+            "rms_corrected": 1.051647550192485,
+            "rms_truth": 1.050976369340761
+          },
+          {
+            "l_mid": 1058.3005244258363,
+            "rms": 0.8928090823068836,
+            "rms_corrected": 0.8759037073536186,
+            "rms_truth": 0.8662695627193073
+          }
+        ],
+        "distortion_curve_max_dev": 0.0002045814433455183
+      }
+    },
+    "S1b": {
+      "scenario": {
+        "name": "S1b",
+        "label": "blind rerun: new gel (seed 99); \u22124% hotspot, +2.5% patch, 1.5 \u00b5m tear, \u22123% under-digested patch, all moved and resized; detectors untouched",
+        "radial": 0.015,
+        "hotspot": 0.04,
+        "hotspot_c": [
+          330.0,
+          260.0
+        ],
+        "hotspot_sigma": 60.0,
+        "band": 0.025,
+        "band_angle": -0.9,
+        "band_offset": 180.0,
+        "band_width": 140.0,
+        "band_half_length": 180.0,
+        "tear_open": 1.5,
+        "tear_a": [
+          -480.0,
+          -150.0
+        ],
+        "tear_b": [
+          -200.0,
+          -420.0
+        ],
+        "tear_decay": 60.0,
+        "undig": 0.03,
+        "undig_c": [
+          -250.0,
+          330.0
+        ],
+        "undig_r": 110.0,
+        "ax_aniso": 0.0,
+        "gel_stretch": 0.0,
+        "gel_psi": 0.4,
+        "seed": 99
+      },
+      "metrics": {
+        "n_fibrils": 1200,
+        "n_period": 665,
+        "gel_mean_E_err": -0.0010775355266072761,
+        "global_scale_err": 1.5927363435030983e-05,
+        "per_fibril_Eax_rms": 0.003496414574714271,
+        "per_fibril_Eax_outliers_2pct": 0.0,
+        "per_fibril_Etr_bias": -4.964228379666212e-05,
+        "per_fibril_Etr_sd": 0.004977813331814702,
+        "per_fibril_Eland_ax_rms": 0.003362101121901525,
+        "map_rms_vs_truth": 0.0013471968694804249,
+        "detection": {
+          "hotspot": 1.0,
+          "stretched patch": 0.5103448275862069,
+          "tear": null,
+          "under-digested patch": 1.0
+        },
+        "detection_any_flag": {
+          "hotspot": 1.0,
+          "stretched patch": 1.0,
+          "tear": null,
+          "under-digested patch": 1.0
+        },
+        "false_flag_rate": 0.0,
+        "anisotropy": {
+          "n": 665,
+          "est": -0.001230519525680096,
+          "ci": [
+            -0.001973338812784704,
+            -0.0005032373049015382
+          ],
+          "truth": -0.00015606325764672135
+        },
+        "orientation": {
+          "n": 665,
+          "amplitude": 0.000783812671899678,
+          "axis_deg": 115.24435496038542,
+          "p": 0.6927219724992228
+        },
+        "distortion_curve": [
+          {
+            "l_mid": 35.35533905932738,
+            "rms": 0.2692220443214143,
+            "rms_corrected": 0.20632622762938838,
+            "rms_truth": 0.2058601020308515
+          },
+          {
+            "l_mid": 70.71067811865476,
+            "rms": 0.4136067292027751,
+            "rms_corrected": 0.37571336082310186,
+            "rms_truth": 0.3734880246332118
+          },
+          {
+            "l_mid": 141.4213562373095,
+            "rms": 0.6275599401195898,
+            "rms_corrected": 0.6032590500788826,
+            "rms_truth": 0.6052658160511504
+          },
+          {
+            "l_mid": 282.842712474619,
+            "rms": 0.699302945703506,
+            "rms_corrected": 0.677579967921701,
+            "rms_truth": 0.676903570921072
+          },
+          {
+            "l_mid": 565.685424949238,
+            "rms": 0.7458302940251709,
+            "rms_corrected": 0.7255017784573966,
+            "rms_truth": 0.7231601400555758
+          },
+          {
+            "l_mid": 1058.3005244258363,
+            "rms": 0.6548768712818982,
+            "rms_corrected": 0.6316278331415902,
+            "rms_truth": 0.6366639649010781
+          }
+        ],
+        "distortion_curve_max_dev": 3.147100620582207e-05
+      }
+    },
+    "S2": {
+      "scenario": {
+        "name": "S2",
+        "label": "anisotropy: every myofibril 2% shorter axially than transversely; gel stretched 2% along 23\u00b0",
+        "radial": 0.01,
+        "hotspot": 0.0,
+        "hotspot_c": [
+          -320.0,
+          180.0
+        ],
+        "hotspot_sigma": 70.0,
+        "band": 0.0,
+        "band_angle": 0.6,
+        "band_offset": -260.0,
+        "band_width": 140.0,
+        "band_half_length": 220.0,
+        "tear_open": 0.0,
+        "tear_a": [
+          60.0,
+          330.0
+        ],
+        "tear_b": [
+          420.0,
+          120.0
+        ],
+        "tear_decay": 60.0,
+        "undig": 0.0,
+        "undig_c": [
+          260.0,
+          -360.0
+        ],
+        "undig_r": 130.0,
+        "ax_aniso": -0.02,
+        "gel_stretch": 0.02,
+        "gel_psi": 0.4,
+        "seed": 7
+      },
+      "metrics": {
+        "n_fibrils": 1200,
+        "n_period": 626,
+        "gel_mean_E_err": -0.0011217602388809977,
+        "global_scale_err": -1.5913279216572818e-06,
+        "per_fibril_Eax_rms": 0.004799392728289704,
+        "per_fibril_Eax_outliers_2pct": 0.004792332268370607,
+        "per_fibril_Etr_bias": 0.00017529387315659274,
+        "per_fibril_Etr_sd": 0.005293091483004612,
+        "per_fibril_Eland_ax_rms": 0.0006665319706686447,
+        "map_rms_vs_truth": 0.000959913377279472,
+        "detection": {},
+        "detection_any_flag": {},
+        "false_flag_rate": 0.0,
+        "anisotropy": {
+          "n": 626,
+          "est": -0.02123157591938028,
+          "ci": [
+            -0.023713723800187086,
+            -0.018717320013707083
+          ],
+          "truth": -0.02025688439458162
+        },
+        "orientation": {
+          "n": 626,
+          "amplitude": 0.02028853456251199,
+          "axis_deg": 22.531973994135377,
+          "p": 1.1129825205737046e-130
+        },
+        "distortion_curve": [
+          {
+            "l_mid": 35.35533905932738,
+            "rms": 0.3302614318640332,
+            "rms_corrected": 0.28149923357141554,
+            "rms_truth": 0.28155493985015884
+          },
+          {
+            "l_mid": 70.71067811865476,
+            "rms": 0.5942429364359014,
+            "rms_corrected": 0.5685893708366133,
+            "rms_truth": 0.5669484631941166
+          },
+          {
+            "l_mid": 141.4213562373095,
+            "rms": 1.1326516338981278,
+            "rms_corrected": 1.1194056141080013,
+            "rms_truth": 1.1211119773077107
+          },
+          {
+            "l_mid": 282.842712474619,
+            "rms": 2.2260283545144586,
+            "rms_corrected": 2.219317787119898,
+            "rms_truth": 2.220283481870568
+          },
+          {
+            "l_mid": 565.685424949238,
+            "rms": 4.325357912412025,
+            "rms_corrected": 4.321908175284354,
+            "rms_truth": 4.3197271259536025
+          },
+          {
+            "l_mid": 1058.3005244258363,
+            "rms": 6.810662845604834,
+            "rms_corrected": 6.808472486661494,
+            "rms_truth": 6.808765377342407
+          }
+        ],
+        "distortion_curve_max_dev": 2.3205938426204836e-05
+      }
+    }
+  },
+  "width_mc": {
+    "dpc | nominal (fit model = generator)": {
+      "bias": -0.0004143098654558375,
+      "sd": 0.0060082261973996975
+    },
+    "dpc | PSF calibrated 2% wide (G1 target)": {
+      "bias": 0.003974523262259178,
+      "sd": 0.0071883701763436674
+    },
+    "dpc | PSF calibrated 5% wide": {
+      "bias": 0.010491771181383013,
+      "sd": 0.009635145463517262
+    },
+    "dpc | aspect 10% high": {
+      "bias": 0.0002486825887049634,
+      "sd": 0.006458263371439412
+    },
+    "dpc | aspect 10% low": {
+      "bias": 0.00010728220423072309,
+      "sd": 0.00683994007590514
+    },
+    "dpc | boxy section (n = 4) assumed elliptical": {
+      "bias": -0.09014569269939535,
+      "sd": 0.007056708546460175
+    },
+    "dpc | boxy section (n = 4), shape from post z-projection": {
+      "bias": -0.0003988077902986394,
+      "sd": 0.004508489999183369
+    },
+    "dpc | rounded-polygon section (n = 3), shape from post": {
+      "bias": -5.3740565713231716e-05,
+      "sd": 0.005098692672630047
+    },
+    "dpc | ellipse, shape from post (no-harm check)": {
+      "bias": 0.00035030780428866465,
+      "sd": 0.006275280294057333
+    },
+    "pol | nominal (fit model = generator)": {
+      "bias": 6.607373309485354e-05,
+      "sd": 0.0025764328665268833
+    },
+    "pol | PSF calibrated 2% wide (G1 target)": {
+      "bias": 0.010945757853106579,
+      "sd": 0.0061827880013851375
+    },
+    "pol | PSF calibrated 5% wide": {
+      "bias": 0.032307873142316916,
+      "sd": 0.016644336904244526
+    },
+    "pol | aspect 10% high": {
+      "bias": 0.00019972033954974785,
+      "sd": 0.002950798775841674
+    },
+    "pol | aspect 10% low": {
+      "bias": -0.00024344008189393232,
+      "sd": 0.0028618439176728372
+    },
+    "pol | boxy section (n = 4) assumed elliptical": {
+      "bias": -0.15179122778960497,
+      "sd": 0.0030563107482819
+    },
+    "pol | boxy section (n = 4), shape from post z-projection": {
+      "bias": 0.00027640965046781414,
+      "sd": 0.001946699831698683
+    },
+    "pol | rounded-polygon section (n = 3), shape from post": {
+      "bias": 1.0127172729967882e-05,
+      "sd": 0.0021386534125112603
+    },
+    "pol | ellipse, shape from post (no-harm check)": {
+      "bias": -2.0152033485250817e-06,
+      "sd": 0.002478847913555799
+    }
+  }
+}
