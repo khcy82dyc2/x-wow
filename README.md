@@ -2,7 +2,7 @@
 
 The source of [x-wow.com](https://x-wow.com/). Test address: https://khcy82dyc2.github.io/x-wow/
 
-X-WOW gives away complete, free inventions for lab-grade seeing and making. Invention #1 is **SWELL**, a cheap, automated expansion microscope. It is fully specified and simulated, but nobody has built one yet. Whoever builds it is welcome to claim the success.
+X-WOW gives away free, open inventions for lab-grade seeing and making. Invention #1 is **SWELL**, a cheap, automated expansion microscope. It is designed on paper and simulated. The wet-lab protocol, the mechanical and fluidic designs and the instrument software are not written yet, and nobody has built one. Whoever builds it is welcome to claim the success.
 
 ## Build
 ```

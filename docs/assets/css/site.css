@@ -207,6 +207,7 @@ html.boot-pending .top, html.boot-pending main, html.boot-pending .foot { visibi
 /* LOUPE voice button */
 .voice { position: fixed; right: 14px; bottom: 14px; z-index: 25; display: none; align-items: center; gap: .45rem; padding: .55rem .75rem; font: 700 .7rem/1 var(--mono); letter-spacing: .16em; color: var(--gold); background: rgba(5, 8, 13, .9); border: 1px solid rgba(255, 181, 71, .45); border-radius: 99px; cursor: pointer; }
 .voice.ready { display: inline-flex; }
+@media (max-width: 720px) { .voice { position: static; margin: 0 16px 24px; } }
 .voice[aria-pressed="true"] { background: var(--gold); color: #000; }
 
 @media (prefers-reduced-motion: reduce) {

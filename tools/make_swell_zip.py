@@ -290,9 +290,11 @@ every gel can check its own expansion. This zip is the whole desk-stage project,
   is marked `{REDACTED}` (postcodes as `[postcode removed]`). The removed lines concern the owner's own
   equipment, circumstances and schedule, not the SWELL design.
 - `kit/` is the original brief, kept as written apart from those removals. Where it disagrees with
-  `pm/ERRATA.md`, `pm/DECISIONS.md` or this README, the later files win.
+  `pm/ERRATA.md`, `pm/DECISIONS.md` or this README, the later files win. In particular, any line saying
+  results or IP stay with the owner is superseded by this free release (D-35, D-37; licence map below).
 - Designed, simulated and documented with AI assistance (Claude by Anthropic, via Claude Code); the owner set
-  the direction and approved every gate. Check the code yourself.
+  the direction and made the calls. The project stopped before its first gate (G0) was passed, and the
+  checks were run by fresh AI sessions, not by an independent person. Check the code yourself.
 
 ## What is inside
 | folder | files |
