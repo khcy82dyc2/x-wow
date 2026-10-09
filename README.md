@@ -30,7 +30,7 @@ Open an issue with the **I'm building this** form. A maintainer adds the `on-the
 - **Text, data and code:** [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 - **Hardware design files:** [CERN-OHL-P v2](https://ohwr.org/cern_ohl_p_v2.txt).
 - **Exceptions:** three.js in `src/assets/vendor/three/` keeps its MIT licence. Names and works credited on the site belong to their owners.
-- **Name and logo:** the X-WOW name and logo are trademarks. The logo artwork is not covered by CC0 or CERN-OHL-P wherever it appears: `src/assets/img/brand/`, `src/favicon.ico`, `src/assets/img/og-xwow.png` and their built copies in `docs/`. CC0 never affects trademarks anyway (section 4a).
+- **Name and logo:** X-WOW is a trade mark, and the X-WOW logo (which includes the name) is a registered UK trade mark, UK00003425680. The logo artwork is not covered by CC0 or CERN-OHL-P wherever it appears: `src/assets/img/brand/`, `src/favicon.ico`, `src/assets/img/og-xwow.png` and their built copies in `docs/`. CC0 never affects trademarks anyway (section 4a).
 - **Patents:** see the legal notes on each invention page before any commercial use.
 
 ## AI transparency
