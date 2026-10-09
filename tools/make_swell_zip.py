@@ -104,7 +104,9 @@ def load_rules(path: Path) -> Rules:
             elif kind == "REDACT" and len(parts) in (3, 4):
                 repl = _unescape(parts[3]) if len(parts) == 4 else REDACTED
                 r.redact.setdefault(parts[1], []).append((_unescape(parts[2]), repl))
-            elif kind in ("REPLACE", "PATH", "REDACT"):
+            elif kind == "ZIPONLY" and len(parts) == 2:   # forbidden in the zip only; site/build.py skips tab lines
+                r.forbidden.append(re.compile(parts[1].strip(), re.IGNORECASE))
+            elif kind in ("REPLACE", "PATH", "REDACT", "ZIPONLY"):
                 die(f"rules line {n}: wrong number of tab-separated fields")
             else:
                 r.forbidden.append(re.compile(line.strip(), re.IGNORECASE))

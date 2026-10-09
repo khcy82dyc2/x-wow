@@ -39,6 +39,11 @@
     "source": "tools/numbers_laser.py",
     "how": "nominal pointer wavelength (input)"
   },
+  "laser.cost": {
+    "value": "£5",
+    "source": "SWELL pm/IDEAS.md W-13 (private; cited, not copied)",
+    "how": "estimate for the class-2 pointer cross-check, as written in W-13"
+  },
   "laser.theta.red.L10.normal": {
     "value": "22.6°",
     "source": "tools/numbers_laser.py + src/data/swell/laser_F-10.md",

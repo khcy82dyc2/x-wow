@@ -26,6 +26,7 @@ SCRIPT = "tools/numbers_laser.py"
 
 LAMBDA_NM = {"red": 650.0, "green": 532.0}   # nominal wavelengths printed on class-2 pointers
 L_CM = (10, 20)                              # worked-example screen distances
+COST_GBP = 5                                 # SWELL pm/IDEAS.md W-13: "~£5 for the cross-check"
 
 
 def refresh_copy() -> None:
@@ -77,6 +78,10 @@ def main() -> None:
     put("laser.sl.diff_pct", f"{round(100 * (sl['wb'] / sl['normal'] - 1))}%", src_f10, "wooden breast / normal - 1")
     for c, lam in LAMBDA_NM.items():
         put(f"laser.lambda.{c}", f"{lam:.0f} nm", SCRIPT, "nominal pointer wavelength (input)")
+    # The cost estimate lives in the private repo's pm/IDEAS.md (row W-13: "~£5 for the cross-check: a class-2
+    # laser pointer ..."). That row names the owner, so it is cited here instead of copied.
+    put("laser.cost", f"£{COST_GBP}", "SWELL pm/IDEAS.md W-13 (private; cited, not copied)",
+        "estimate for the class-2 pointer cross-check, as written in W-13")
     for c, lam_nm in LAMBDA_NM.items():
         lam = lam_nm / 1000.0
         for l_cm in L_CM:
