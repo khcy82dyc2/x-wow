@@ -1,0 +1,29 @@
+name: "Did we miss you? / 我们漏掉了你吗？"
+description: "Your work inspired or underpins something here and you're not credited (or credited wrongly). / 这里有东西受你的工作启发或以它为基础，却没有署名或署错了。"
+title: "[Credit] "
+labels: ["credit"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sorry if we missed you. Credit matters, and we'll fix it. This post is **public**.
+        如果漏掉了你，非常抱歉。署名很重要，我们会改正。这个帖子是**公开**的。
+  - type: input
+    id: page
+    attributes:
+      label: "Which page or invention? / 哪个页面或发明？"
+      placeholder: "e.g. SWELL, inspiration ledger"
+    validations:
+      required: true
+  - type: textarea
+    id: work
+    attributes:
+      label: "Your work (title, authors, link or DOI) / 你的工作（标题、作者、链接或 DOI）"
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: "How it relates, and how you'd like to be credited / 它和这里的关系，以及你希望怎样署名"
+    validations:
+      required: true

@@ -1,0 +1,5 @@
+# internal working notes stay off the public repo
+CONTRACT.md
+__pycache__/
+*.pyc
+.private/
