@@ -1,4 +1,4 @@
-/* X-WOW site script: language toggle, boot sequence, reveal-on-scroll, builders' wall, LOUPE read-aloud.
+/* X-WOW site script: language toggle, boot sequence, reveal-on-scroll, LOUPE read-aloud.
    No cookies, no tracking. localStorage/sessionStorage are only conveniences and may be unavailable. */
 (function () {
   "use strict";
@@ -81,30 +81,6 @@
     });
   }
 
-  /* ---------- builders' wall: approved GitHub issues (label "on-the-wall") ---------- */
-  function wall() {
-    var box = document.getElementById("wall");
-    if (!box) return;
-    var repo = box.getAttribute("data-repo");
-    var empty = box.querySelector(".empty");
-    fetch("https://api.github.com/repos/" + repo + "/issues?labels=on-the-wall&state=all&per_page=60", { headers: { Accept: "application/vnd.github+json" } })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (items) {
-        if (!items.length) return;
-        if (empty) empty.parentNode.removeChild(empty);
-        items.forEach(function (it) {
-          var a = document.createElement("a");
-          a.className = "panel entry"; a.href = it.html_url; a.target = "_blank"; a.rel = "noopener";
-          a.style.textDecoration = "none"; a.style.color = "inherit";
-          var h = document.createElement("h3"); h.textContent = it.title;
-          var p = document.createElement("p");
-          p.textContent = "@" + (it.user && it.user.login || "?") + " · " + (it.created_at || "").slice(0, 10);
-          a.appendChild(h); a.appendChild(p); box.appendChild(a);
-        });
-      })
-      .catch(function () { /* the empty-state text and the GitHub link stay */ });
-  }
-
   /* ---------- LOUPE read-aloud (opt-in, the device's own voice) ---------- */
   var speaking = false, vbtn = null;
   function stopVoice() {
@@ -136,6 +112,6 @@
     document.body.appendChild(vbtn);
   }
 
-  function ready() { boot(); reveal(); wall(); voice(); }
+  function ready() { boot(); reveal(); voice(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", ready); else ready();
 })();

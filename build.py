@@ -93,7 +93,6 @@ NAV = [
     ("swell", "swell/", "SWELL", "SWELL"),
     ("back-to-shine", "back-to-shine/", "Back to Shine", "旧仪器再发光"),
     ("archive", "#archive", "Archive", "旧档案"),
-    ("builders", "#builders", "Builders", "建造者"),
 ]
 
 

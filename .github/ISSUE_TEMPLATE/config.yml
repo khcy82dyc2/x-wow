@@ -1,5 +1,1 @@
 blank_issues_enabled: true
-contact_links:
-  - name: "Safety concern about a design / 设计安全问题"
-    url: https://github.com/khcy82dyc2/x-wow/issues/new?labels=safety&title=%5BSafety%5D+
-    about: "Found something unsafe in a design or instruction? Tell us first. / 发现设计或说明里有不安全的地方？请先告诉我们。"

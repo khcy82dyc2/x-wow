@@ -23,9 +23,6 @@ This needs Python 3.9+ and the standard library only. It turns `src/` into `docs
 - **Old links:** `src/redirects.json` maps old x-wow.com URLs to the new pages.
 - **Logo:** `python tools/make_brand.py` (needs Pillow and NumPy) makes every logo size, the icons and the social preview from the two original files of the old site in `src/assets/img/brand/original/`. Nothing is redrawn: it only removes the white around the logo, keeps the white inside the ring (and fills the old favicon's see-through centre with white to match), and shows the ® mark light on dark backgrounds.
 
-## Builders' wall
-Open an issue with the **I'm building this** form. A maintainer adds the `on-the-wall` label, and the post appears on the home page.
-
 ## Licences
 - **Text, data and code:** [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 - **Hardware design files:** [CERN-OHL-P v2](https://ohwr.org/cern_ohl_p_v2.txt).
@@ -34,4 +31,4 @@ Open an issue with the **I'm building this** form. A maintainer adds the `on-the
 - **Patents:** see the legal notes on each invention page before any commercial use.
 
 ## AI transparency
-This site's text and code, and the SWELL design, simulations and documents, were produced with AI assistance (Claude by Anthropic, used through Claude Code). The X-WOW owner directed the work and approved it. Nothing here has been built or tested in a lab yet.
+This site's text and code, and the SWELL design, simulations and documents, were produced with AI assistance (Claude by Anthropic, used through Claude Code). The X-WOW owner directed the work. Nothing here has been built or tested in a lab yet.
