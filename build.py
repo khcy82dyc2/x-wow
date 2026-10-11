@@ -213,6 +213,7 @@ NAV = [
     ("swell", "swell/", "SWELL", "SWELL"),
     ("shrink", "shrink/", "SHRINK", "变小探险"),
     ("back-to-shine", "back-to-shine/", "Back to Shine", "旧仪器再发光"),
+    ("videos", "videos/", "Videos", "视频"),
     ("archive", "#archive", "Archive", "旧档案"),
 ]
 
