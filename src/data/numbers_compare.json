@@ -1,0 +1,27 @@
+{
+ "compare.like_n": {
+  "value": "4",
+  "source": "src/data/swell/comparators.json (UK public contract awards, read 2026-10-10) and src/data/swell/budget_v1.json: build",
+  "how": "awards for motorised or automated widefield fluorescence microscopes"
+ },
+ "compare.like_years": {
+  "value": "2019–2024",
+  "source": "src/data/swell/comparators.json (UK public contract awards, read 2026-10-10) and src/data/swell/budget_v1.json: build",
+  "how": "years of those awards"
+ },
+ "compare.like_min": {
+  "value": "£48,242",
+  "source": "src/data/swell/comparators.json (UK public contract awards, read 2026-10-10) and src/data/swell/budget_v1.json: build",
+  "how": "lowest price per instrument"
+ },
+ "compare.like_max": {
+  "value": "£160,497",
+  "source": "src/data/swell/comparators.json (UK public contract awards, read 2026-10-10) and src/data/swell/budget_v1.json: build",
+  "how": "highest price per instrument (a two-system award divided by two)"
+ },
+ "compare.read": {
+  "value": "2026-10-10",
+  "source": "src/data/swell/comparators.json (UK public contract awards, read 2026-10-10) and src/data/swell/budget_v1.json: build",
+  "how": "date the award notices were read"
+ }
+}

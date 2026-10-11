@@ -1,0 +1,14 @@
+{
+ "fetched": "2026-10-10",
+ "rungs_passed": {
+  "1": 0,
+  "2": 0,
+  "3": 0,
+  "4": 0
+ },
+ "built": 0,
+ "rebuilt": 0,
+ "source": "checked reports of real builds that the owner forwards from info@x-wow.com",
+ "recorded": [],
+ "note": "Counted labelled GitHub issues until 2026-10-11 (all 0); email only since then."
+}

@@ -1,0 +1,497 @@
+{
+ "about": "Safety rating of every SWELL BOM line (pm/BOM.csv at the zip's pinned commit): from the maker's own datasheet where the BOM names a part (kind maker-rating, with the document read and an exact quote), or the rating the part must carry where it names none (required), or none. Sourced 2026-10-10 by an AI worker (runner life 6, audit A-10); each document's SHA-256 is recorded. Feeds the zip's pm/BOM.csv column and docs/BOM.md section; the SWELL page's ratings table must say the same. Updated 2026-10-10 (runner life 8, audit A-11): C-05 (water beads) left the design; H-27 and H-28 added; H-03, H-18, H-19 and H-23 now say how the gears and rollers are guarded and powered. Updated 2026-10-11 (runner life 12, N-20, D-75): T-01 (3D printer) and T-02 (soldering iron) left the build; H-28 is now an enclosed DIN-rail converter (MEAN WELL DDR-60G-12, its datasheet read that day); H-13 names the driver version with leads fitted; H-19 and the new H-29, H-30 and H-31 say how the build avoids hot tools. Reworded the same day after round 1 of the AI review: H-19, H-29 and H-30.",
+ "read": "2026-10-10",
+ "lines": [
+  {
+   "line": "H-01",
+   "kind": "none",
+   "rating_en": "Printed PLA parts; no electrical, optical, thermal or magnetic hazard of their own.",
+   "rating_zh": "打印的 PLA 零件；本身没有电气、光学、热或磁方面的危害。"
+  },
+  {
+   "line": "H-02",
+   "kind": "required",
+   "rating_en": "Small loose parts (screws, nuts, washers, inserts, bands): a choking hazard, so adult assembly, away from under-threes.",
+   "rating_zh": "零碎小件（螺丝、螺母、垫圈、铜螺母、橡皮圈）有窒息风险：由成年人组装，远离三岁以下儿童。",
+   "part_en": "OpenFlexure fixings: screws, nuts, washers, bands, inserts",
+   "part_zh": "OpenFlexure 紧固件：螺丝、螺母、垫圈、橡皮圈、铜螺母"
+  },
+  {
+   "line": "H-03",
+   "kind": "required",
+   "rating_en": "Run from the instrument's fused 5 V rail; the gears they drive sit under fixed printed covers (H-27), and opening the lid cuts their supply.",
+   "rating_zh": "由仪器带保险丝的 5 V 电源轨供电；它们带动的齿轮装在固定的打印护罩（H-27）里，一开盖就切断它们的电源。",
+   "part_en": "28BYJ-48 steppers with ULN2003 boards",
+   "part_zh": "28BYJ-48 步进电机 + ULN2003 驱动板"
+  },
+  {
+   "line": "H-04",
+   "kind": "maker-rating",
+   "rating_en": "Raspberry Pi: 1.8–5.5 V DC input; any external supply must be a limited power source or PS2 under IEC 62368-1.",
+   "rating_zh": "树莓派：输入 1.8–5.5 V 直流；任何外接电源都必须是 IEC 62368-1 规定的限功率电源或 PS2。",
+   "part_en": "Raspberry Pi Pico 2",
+   "part_zh": "树莓派 Pico 2",
+   "source": {
+    "publisher": "Raspberry Pi Ltd",
+    "title": "Raspberry Pi Pico 2 series product brief [maker datasheet, PDF]",
+    "doc_revision": "Published March 2026 (file RP-008302-DS-2)",
+    "url": "https://pip-assets.raspberrypi.com/categories/1005-raspberry-pi-pico-2/documents/RP-008302-DS-2-pico-2-product-brief.pdf",
+    "read": "2026-10-10",
+    "sha256": "b2a1e54ebaaec90d68d966da4d9eeaf436ee687fe3ecf429f6d06c8662e83aa2",
+    "quote": "Input power: 1.8–5.5V DC … Any external power supply used with Raspberry Pi Pico devices shall comply with relevant regulations and standards applicable in the country of intended use and be a limited power source or PS2 power source per IEC 62368-1."
+   }
+  },
+  {
+   "line": "H-05",
+   "kind": "maker-rating",
+   "rating_en": "Raspberry Pi: 5 V/5 A DC via USB-C; CB test certificate DK-147036-UL: a tested sample conforms to IEC 62368-1:2018.",
+   "rating_zh": "树莓派：经 USB-C 输入 5 V/5 A 直流；CB 测试证书 DK-147036-UL：送测样品符合 IEC 62368-1:2018。",
+   "part_en": "Raspberry Pi 5, 4 GB",
+   "part_zh": "树莓派 5（4 GB）",
+   "source": {
+    "publisher": "Raspberry Pi Ltd",
+    "title": "Raspberry Pi 5 product brief [maker datasheet, PDF]",
+    "doc_revision": "Published October 2026 (file RP-008348-DS-8)",
+    "url": "https://pip-assets.raspberrypi.com/categories/892-raspberry-pi-5/documents/RP-008348-DS-8-raspberry-pi-5-product-brief.pdf",
+    "read": "2026-10-10",
+    "sha256": "944fc1d70da50f0b8d5947dd4263078f698c79586f29c07f35fcd4b87077dd3f",
+    "quote": "5V/5A DC power via USB-C, with Power Delivery support"
+   },
+   "source2": {
+    "publisher": "Raspberry Pi Ltd (Product Information Portal); certificate issued by a UL National Certification Body",
+    "title": "rpi-5 Electrical Safety Certification Body (CB) Certificate",
+    "doc_revision": "dated 2023-11-07",
+    "url": "https://pip-assets.raspberrypi.com/categories/894-approvals/documents/RP-005124-CF-1-rpi-5%20Electrical%20Safety%20Certification%20Body%20(CB)%20Certificate.pdf",
+    "read": "2026-10-10",
+    "sha256": "d16fe5bfdba173b8cc213a63af6178356d249c1f9acdb1f9a4fe3c353bbe5f8c",
+    "quote": "A sample of the product was tested and found to be in conformity with IEC 62368-1:2018"
+   }
+  },
+  {
+   "line": "H-06",
+   "kind": "maker-rating",
+   "rating_en": "Plug-in mains adapter, 100–240 V AC in; USB-C PD out 5.1 V 5 A, up to 15 V 1.8 A; CB-certified to IEC 62368-1:2018.",
+   "rating_zh": "插墙式市电适配器，输入 100–240 V 交流；USB-C PD 输出 5.1 V 5 A，最高 15 V 1.8 A；按 IEC 62368-1:2018 取得 CB 认证。",
+   "part_en": "Raspberry Pi 27 W USB-C power supply",
+   "part_zh": "树莓派 27 W USB-C 电源",
+   "source": {
+    "publisher": "Raspberry Pi Ltd (Product Information Portal); certificate issued by UL Solutions",
+    "title": "rpi-27W-PSU IEC CB Scheme Grant (CB test certificate) [certificate, PDF]",
+    "doc_revision": "CB test certificate DK-145484-UL, dated 2023-09-20",
+    "url": "https://pip-assets.raspberrypi.com/categories/900-approvals/documents/RP-005066-CF-1-rpi-27W-PSU%20IEC%20CB%20Scheme%20Grant.pdf",
+    "read": "2026-10-10",
+    "sha256": "9046c91359c26079526dbec65252814295f16f1d79841c1023962412d2e369eb",
+    "quote": "Input: 100-240V~, 50/60 Hz, 0.8A … Output: 5.1VDC, 5.0A or 9.0VDC, 3.0A or 12.0VDC, 2.25A or 15.0VDC, 1.8A … A sample of the product was tested and found to be in conformity with IEC 62368-1:2018"
+   },
+   "source2": {
+    "publisher": "Raspberry Pi Ltd",
+    "title": "Raspberry Pi 27W USB-C Power Supply product brief",
+    "doc_revision": "Published October 2023",
+    "url": "https://datasheets.raspberrypi.com/power-supply/27w-usb-c-power-supply-product-brief.pdf",
+    "read": "2026-10-10",
+    "sha256": "d5b4cc0d9724b7e917f29a76155d1f049802ed86e4d806990aee099ab91f66a9",
+    "quote": "Output: 5.1V, 5A; 9V, 3A; 12V, 2.25A; 15V, 1.8A"
+   }
+  },
+  {
+   "line": "H-07",
+   "kind": "none",
+   "rating_en": "Memory card; no electrical, optical, thermal or magnetic hazard.",
+   "rating_zh": "存储卡；没有电气、光学、热或磁方面的危害。"
+  },
+  {
+   "line": "H-08",
+   "kind": "maker-rating",
+   "rating_en": "Raspberry Pi: 5 V DC from the Pi 5's fan header; its metal parts can get hot, and the fan isn't to be touched while powered.",
+   "rating_zh": "树莓派：由 Pi 5 的风扇接口供 5 V 直流；金属部件会发烫，通电时不要碰风扇。",
+   "part_en": "Raspberry Pi 5 active cooler",
+   "part_zh": "树莓派 5 主动散热器",
+   "source": {
+    "publisher": "Raspberry Pi Ltd",
+    "title": "Raspberry Pi Active Cooler for Raspberry Pi 5 product brief [maker datasheet, PDF]",
+    "doc_revision": "Published January 2026 (file RP-008188-DS-2)",
+    "url": "https://pip-assets.raspberrypi.com/categories/993-raspberry-pi-active-cooler/documents/RP-008188-DS-2-raspberry-pi-active-cooler-product-brief.pdf",
+    "read": "2026-10-10",
+    "sha256": "8cfa494afdfba991a338ae2710a1438405a0752d61c5d0930b02a8f88dd2eed3",
+    "quote": "Input voltage: 5V DC supplied via four-pin fan header on Raspberry Pi 5 … Take care when using the Active Cooler, as the metal parts of the product may become hot during operation. … Avoid touching or handling the fan while it is powered."
+   }
+  },
+  {
+   "line": "H-09",
+   "kind": "none",
+   "rating_en": "Camera board on the Pi's camera ribbon cable; Waveshare states no voltage, current or safety rating, and none applies.",
+   "rating_zh": "接在树莓派相机排线上的相机板；Waveshare 没有标出电压、电流或安全等级，也没有适用的等级。",
+   "source": {
+    "publisher": "Waveshare",
+    "title": "IMX296 1.6MP M12 Mono Camera, Global Shutter (product page) [maker web page]",
+    "doc_revision": null,
+    "url": "https://www.waveshare.com/IMX296-130-BW-Camera.htm",
+    "read": "2026-10-10",
+    "sha256": "c3990cdbf5ea73f63c491e8247db192baf5998e1e1a00325e497ebd4e9a0b531",
+    "quote": "comes with dual FFC cables, compatible with all Raspberry Pi series boards"
+   }
+  },
+  {
+   "line": "H-10",
+   "kind": "none",
+   "rating_en": "Glass optic sealed in a metal barrel; no electrical, thermal or magnetic hazard and no maker safety rating to record.",
+   "rating_zh": "封在金属镜筒里的玻璃光学件；没有电气、热或磁方面的危害，也没有可记录的厂商安全等级。"
+  },
+  {
+   "line": "H-11",
+   "kind": "required",
+   "rating_en": "Loose glass lens that can focus sunlight: keep it mounted in the tube and never aim it at the sun.",
+   "rating_zh": "单独的玻璃透镜能聚焦阳光：一直装在镜筒里，绝不对着太阳。",
+   "part_en": "Tube lens: achromatic doublet",
+   "part_zh": "筒镜：消色差双合透镜"
+  },
+  {
+   "line": "H-12",
+   "kind": "required",
+   "rating_en": "Camera Module 3 has no safety rating; connect it only with the Pi shut down and unplugged. Close-up lens not chosen: never aim it at the sun.",
+   "rating_zh": "Camera Module 3 没有安全等级；只在树莓派关机并拔掉电源后再接线。近摄镜尚未选定：绝不对着太阳。",
+   "part_en": "Overview camera: Camera Module 3 + close-up lens",
+   "part_zh": "全景相机：Camera Module 3 + 近摄镜",
+   "source": {
+    "publisher": "Raspberry Pi Ltd",
+    "title": "Raspberry Pi Camera Module 3 product brief [maker datasheet, PDF]",
+    "doc_revision": "Published June 2024 (file RP-008151-DS-1)",
+    "url": "https://pip-assets.raspberrypi.com/categories/786-raspberry-pi-camera-module-3/documents/RP-008151-DS-1-camera-module-3-product-brief.pdf",
+    "read": "2026-10-10",
+    "sha256": "578efcad6337696a29b9c068815a01d63ddcf7beacf584051d61cf1cddeeaf0a",
+    "quote": "Important: Before connecting this device, shut down your Raspberry Pi computer and disconnect it from external power."
+   }
+  },
+  {
+   "line": "H-13",
+   "kind": "maker-rating",
+   "rating_en": "Driver (Mean Well LDD-350HW, the version with 22 AWG leads fitted): 9–56 V DC in, 350 mA constant current, short-circuit and over-temperature protected. LED not chosen: needs its maker's IEC 62471 risk group.",
+   "rating_zh": "驱动（Mean Well LDD-350HW，自带 22 AWG 引线的型号）：输入 9–56 V 直流，恒流 350 mA，带短路和过温保护。LED 尚未选定：需要其厂商给出 IEC 62471 风险组别。",
+   "part_en": "Excitation LED (blue) + constant-current driver",
+   "part_zh": "激发 LED（蓝光）+ 恒流驱动",
+   "source": {
+    "publisher": "MEAN WELL",
+    "title": "LDD-H series DC-DC Constant Current Step-Down LED driver specification [maker datasheet, PDF]",
+    "doc_revision": "File Name: LDD-H-SPEC 2022-05-24",
+    "url": "https://www.meanwell.com/Upload/PDF/LDD-H/LDD-H-SPEC.PDF",
+    "read": "2026-10-11",
+    "sha256": "77495650276ab9b720d78a4a5ca54c9c72ff8e13f33a0f612eb4799554531933",
+    "quote": "Wide input voltage: 9 ~ 56VDC … Protections: Short circuit / Over temperature … LDD-350H … 350mA … W type(LDD-300~1500HW) … All wires UL3385 22AWG"
+   },
+   "source2": {
+    "publisher": "International Electrotechnical Commission (IEC webstore)",
+    "title": "IEC 62471:2006 Photobiological safety of lamps and lamp systems (catalogue entry) [standards-body web page]",
+    "doc_revision": "IEC 62471:2006, edition 1.0, publication date 2006-07-26",
+    "url": "https://webstore.iec.ch/en/publication/7076",
+    "read": "2026-10-10",
+    "sha256": "6b69394e1ceb7acf4f38e180e30874dad351f8b0c2795b2de89a9bd17a751de5",
+    "quote": "Photobiological safety of lamps and lamp systems … including LEDs but excluding lasers"
+   }
+  },
+  {
+   "line": "H-14",
+   "kind": "required",
+   "rating_en": "Not chosen: each LED's maker must state its IEC 62471 risk group, and only LEDs it rates safe to look into qualify, because the lid interlock covers only the excitation LED; constant-current drivers on the fused 24 V-or-less supply.",
+   "rating_zh": "尚未选定：每颗 LED 的厂商都必须给出 IEC 62471 风险组别，而且只有厂商认定可以直视的 LED 才能用，因为盖子联锁只管激发 LED；恒流驱动接在带保险丝、不超过 24 V 的电源上。",
+   "part_en": "White and oblique LEDs + drivers",
+   "part_zh": "白光 LED 和斜照 LED + 驱动",
+   "source": {
+    "publisher": "International Electrotechnical Commission (IEC webstore)",
+    "title": "IEC 62471:2006 Photobiological safety of lamps and lamp systems (catalogue entry) [standards-body web page]",
+    "doc_revision": "IEC 62471:2006, edition 1.0, publication date 2006-07-26",
+    "url": "https://webstore.iec.ch/en/publication/7076",
+    "read": "2026-10-10",
+    "sha256": "6b69394e1ceb7acf4f38e180e30874dad351f8b0c2795b2de89a9bd17a751de5",
+    "quote": "Photobiological safety of lamps and lamp systems … including LEDs but excluding lasers"
+   }
+  },
+  {
+   "line": "H-15",
+   "kind": "required",
+   "rating_en": "Not chosen: glass filters and dichroic are fitted by an adult and held in their mounts inside the closed box.",
+   "rating_zh": "尚未选定：玻璃滤光片和二向色镜由成年人装进支架，固定在密闭的盒子里。",
+   "part_en": "Filter set (excitation, dichroic, emission)",
+   "part_zh": "滤光片组（激发、二向色、发射）"
+  },
+  {
+   "line": "H-16",
+   "kind": "none",
+   "rating_en": "Plastic film; no electrical, optical, thermal or magnetic hazard.",
+   "rating_zh": "塑料薄膜；没有电气、光学、热或磁方面的危害。"
+  },
+  {
+   "line": "H-17",
+   "kind": "required",
+   "rating_en": "Not chosen: magnets within EN 71's flux limit, held captive or enclosed so they can't come loose; balls are small parts; adult assembly; coverslip adult-only.",
+   "rating_zh": "尚未选定：磁铁要在 EN 71 的磁通限值以内，并被卡住或封闭，不会脱落；钢珠属于小零件；由成年人组装；盖玻片只由成年人处理。",
+   "part_en": "C12 chamber + kinematic dish holder (magnets, balls)",
+   "part_zh": "C12 样品室 + 运动学定位托（磁铁、钢珠）",
+   "source": {
+    "publisher": "Office for Product Safety and Standards (GOV.UK)",
+    "title": "Product Safety Alert: Small, High-Powered Magnetic Products (PSA1) [government web page]",
+    "doc_revision": "Published 5 April 2022; date of issue 19 May 2021",
+    "url": "https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-alert-small-high-powered-magnetic-products-psa1",
+    "read": "2026-10-10",
+    "sha256": "62af061ab272ab3fbd4beaa528111a06cb26722ace363ec5887cf0d684ba7d90",
+    "quote": "presenting a risk of serious injury or fatality if two or more magnets are ingested (swallowed) … OPSS recommends that the acceptable maximum level of magnetic flux index set in that Standard should be applied to any products where there is a risk the magnets may be ingested by a child"
+   }
+  },
+  {
+   "line": "H-18",
+   "kind": "required",
+   "rating_en": "Not chosen: a two-pole switch, its contacts rated above the LED supply and the relay coil it drives; one pole cuts the LED, the other opens a relay that stops every motor, and an open lid or a broken wire does both.",
+   "rating_zh": "尚未选定：双刀开关，触点的额定值要高于 LED 电源和它驱动的继电器线圈；一刀切断 LED，另一刀让继电器断开、所有电机停下；开盖或断线都会同时做到这两件事。",
+   "part_en": "Black box + lid microswitch (interlock: LED and motors)",
+   "part_zh": "黑盒 + 盖子微动开关（联锁：LED 和电机）"
+  },
+  {
+   "line": "H-19",
+   "kind": "required",
+   "rating_en": "Not chosen: a certified plug-in adapter (IEC 62368-1), 24 V DC or less out; a fuse on every rail; every part rated for its rail's voltage and current; the 5 V converter an enclosed DIN-rail module like H-28, and it, the fuses and the relay board sit in the closed electronics compartment (H-30); every join the builder makes a screw or lever terminal (H-31) or a ready-made plug-in lead; the 24 V fuse a time-delay type that rides through the converters' inrush. The 12 V pumps (H-23) get their rail from H-28.",
+   "rating_zh": "尚未选定：认证的插墙式适配器（IEC 62368-1），输出不超过 24 V 直流；每一路都有保险丝；每个零件的额定值都要匹配所在电源轨的电压和电流；5 V 降压用像 H-28 那样带外壳的导轨式模块，它和保险丝、继电器板都装在封闭的电子仓（H-30）里；造的人接的每个接头，都用螺丝端子、杠杆式接线端子（H-31）或现成的插头线；24 V 保险丝用慢断型，能扛住变换器开机时的冲击电流。12 V 的水泵（H-23）由 H-28 供电。",
+   "part_en": "Low-voltage supply, buck converter, fuses, relay latch, wiring",
+   "part_zh": "低压电源、降压模块、保险丝、继电器锁存、线材",
+   "source": {
+    "publisher": "Raspberry Pi Ltd",
+    "title": "Raspberry Pi Pico 2 series product brief [maker datasheet, PDF]",
+    "doc_revision": "Published March 2026 (file RP-008302-DS-2)",
+    "url": "https://pip-assets.raspberrypi.com/categories/1005-raspberry-pi-pico-2/documents/RP-008302-DS-2-pico-2-product-brief.pdf",
+    "read": "2026-10-10",
+    "sha256": "b2a1e54ebaaec90d68d966da4d9eeaf436ee687fe3ecf429f6d06c8662e83aa2",
+    "quote": "be a limited power source or PS2 power source per IEC 62368-1."
+   }
+  },
+  {
+   "line": "H-20",
+   "kind": "required",
+   "rating_en": "Leak sensor not chosen: runs on the low-voltage logic rail, and its trip opens the hardware latch directly (INV-1, INV-3).",
+   "rating_zh": "漏液传感器尚未选定：接在低压逻辑电源上，一旦触发就直接断开硬件锁存（INV-1、INV-3）。",
+   "part_en": "Drip ring + objective sleeve + leak sensor",
+   "part_zh": "接水环 + 物镜护套 + 漏液传感器"
+  },
+  {
+   "line": "H-21",
+   "kind": "none",
+   "rating_en": "Glass optic sealed in a metal barrel; no electrical, thermal or magnetic hazard and no maker safety rating to record.",
+   "rating_zh": "封在金属镜筒里的玻璃光学件；没有电气、热或磁方面的危害，也没有可记录的厂商安全等级。"
+  },
+  {
+   "line": "H-22",
+   "kind": "required",
+   "rating_en": "Not chosen: body and seals rated compatible with every liquid it holds, so it can't leak over the optics; glass floor is adult-only.",
+   "rating_zh": "尚未选定：盒体和密封件要经确认能耐所装的每一种液体，免得漏到光学部件上；玻璃底只由成年人处理。",
+   "part_en": "Cartridge: body, glass floor, seals, mesh guard, weir",
+   "part_zh": "试剂盒：盒体、玻璃底、密封件、网罩、溢流堰"
+  },
+  {
+   "line": "H-23",
+   "kind": "required",
+   "rating_en": "Not chosen: 12 V DC motors on the fused 12 V rail (H-28), each roller head enclosed by its maker's cover, stopped by the lid interlock and by the hardware leak latch (INV-3).",
+   "rating_zh": "尚未选定：12 V 直流电机，接在带保险丝的 12 V 电源轨（H-28）上，每个滚轮头都由厂商自带的外壳罩住，开盖联锁和硬件漏液锁存都能让它停机（INV-3）。",
+   "part_en": "Peristaltic pumps",
+   "part_zh": "蠕动泵"
+  },
+  {
+   "line": "H-24",
+   "kind": "required",
+   "rating_en": "Not chosen: tubing and fittings rated by their maker as compatible with every liquid they carry, so they don't soften, crack or leak.",
+   "rating_zh": "尚未选定：管路和接头要由厂商确认能耐所输送的每一种液体，不会变软、开裂或漏液。",
+   "part_en": "Tubing and connectors",
+   "part_zh": "管路和接头"
+  },
+  {
+   "line": "H-25",
+   "kind": "required",
+   "rating_en": "Not chosen: low-voltage sensors on the logic rail; each trip opens the hardware latch that cuts pumps, heaters and the LED (INV-3).",
+   "rating_zh": "尚未选定：低压传感器接在逻辑电源上；每次触发都会断开切断水泵、加热器和 LED 的硬件锁存（INV-3）。",
+   "part_en": "Leak sensors + waste overfill sensor",
+   "part_zh": "漏液传感器 + 废液满溢传感器"
+  },
+  {
+   "line": "H-26",
+   "kind": "required",
+   "rating_en": "Not chosen: each switch rated well above 24 V and its load current, flyback diodes on the pumps; the LED stays behind the interlock and latch.",
+   "rating_zh": "尚未选定：每个开关的额定值都要远高于 24 V 和所带负载的电流，水泵加续流二极管；LED 始终在联锁和锁存之后。",
+   "part_en": "Pump and LED driver board (MOSFET)",
+   "part_zh": "水泵和 LED 驱动板（MOSFET）"
+  },
+  {
+   "line": "H-27",
+   "kind": "required",
+   "rating_en": "Not drawn yet: printed PLA covers fixed over the steppers' gears, removable only with a tool, so fingers and hair can't reach the gears; fitted by an adult.",
+   "rating_zh": "尚未画出：固定在步进电机齿轮外的 PLA 打印护罩，只有用工具才能拆下，手指和头发碰不到齿轮；由成年人安装。",
+   "part_en": "Printed gear guards (PLA)",
+   "part_zh": "打印的齿轮护罩（PLA）"
+  },
+  {
+   "line": "H-28",
+   "kind": "maker-rating",
+   "rating_en": "MEAN WELL DDR-60G-12: 9–36 V DC in, 12 V DC out at up to 5 A (60 W); short-circuit, overload, over-voltage, input reverse-polarity and under-voltage protection; approved to IEC 62368-1 and UL 62368-1; an enclosed converter with screw terminals, cooled by free air (full load up to 60 °C ambient above 18 V input). It sits on a DIN rail inside the closed electronics compartment (H-30), out of reach, and its output to the pumps passes through the lid relay and the leak latch.",
+   "rating_zh": "MEAN WELL DDR-60G-12：输入 9–36 V 直流，输出 12 V 直流、最大 5 A（60 W）；带短路、过载、过压、输入反接和欠压保护；通过 IEC 62368-1 和 UL 62368-1 认证；带外壳、用螺丝端子接线的变换器，靠自然对流散热（输入高于 18 V 时，环境温度 60 °C 以下可以满载）。它装在封闭电子仓（H-30）里的导轨上，手够不到；给水泵的输出经过开盖继电器和漏液锁存。",
+   "part_en": "12 V rail for the pumps: MEAN WELL DDR-60G-12 enclosed DC-DC converter",
+   "part_zh": "水泵的 12 V 电源：MEAN WELL DDR-60G-12 带外壳的 DC-DC 变换器",
+   "source": {
+    "publisher": "MEAN WELL",
+    "title": "DDR-60 series 60W DIN Rail Type DC-DC Converter specification [maker datasheet, PDF]",
+    "doc_revision": "File Name: DDR-60-SPEC 2026-03-31",
+    "url": "https://www.meanwell.com/Upload/PDF/DDR-60/DDR-60-SPEC.PDF",
+    "read": "2026-10-11",
+    "sha256": "43a4971b4985df29cc2a55a310a604b2b6edb9c91d762ff7f0d76be66b1d617c",
+    "quote": "DDR-60G-12 … 12V … RATED CURRENT … 5A … VOLTAGE RANGE … 9 ~ 36Vdc … SAFETY STANDARDS IEC 62368-1, UL 62368-1 … Cooling by free air convection … Can be installed on DIN rail TS-35/7.5 or 15 … Terminal torque 4.4 Lb-in"
+   }
+  },
+  {
+   "line": "H-29",
+   "kind": "required",
+   "rating_en": "The builder doesn't run a printer: a print service prints the parts, and they arrive cold, to be fitted by an adult.",
+   "rating_zh": "造的人不用自己开打印机：零件由打印服务商打印，送到时是凉的，由成年人安装。",
+   "part_en": "Print service for the printed parts",
+   "part_zh": "打印件的打印服务"
+  },
+  {
+   "line": "H-30",
+   "kind": "required",
+   "rating_en": "Not chosen: a closed compartment that opens only with a screwdriver and is opened only with the supply unplugged (a rule, not an interlock), with no opening wider than 2.5 mm and vents for free-air cooling; metal, or plastic rated UL94 V-0. It keeps H-28 and the 5 V converter out of reach.",
+   "rating_zh": "尚未选定：封闭的电子仓，只能用螺丝刀打开，而且必须先拔掉电源再打开（这是规定，不是联锁装置）；所有开口都不宽于 2.5 mm，留有自然散热的通风口；金属外壳，或阻燃等级 UL94 V-0 的塑料。H-28 和 5 V 降压模块都装在里面，手够不到。",
+   "part_en": "Closed electronics compartment",
+   "part_zh": "封闭的电子仓"
+  },
+  {
+   "line": "H-31",
+   "kind": "required",
+   "rating_en": "Not chosen: lever connectors and screw terminal blocks, each rated above its rail's voltage and current and for its wire's size: no soldering and no crimping anywhere in the build.",
+   "rating_zh": "尚未选定：杠杆式接线端子和螺丝接线端子，每个的额定值都要高于所在电源轨的电压和电流，并匹配所接导线的粗细：整个制作过程不用焊接，也不用压接。",
+   "part_en": "Solderless joins: lever connectors and screw terminals",
+   "part_zh": "免焊接头：杠杆式接线端子和螺丝端子"
+  },
+  {
+   "line": "C-01",
+   "kind": "required",
+   "rating_en": "Not chosen: a glass slide, so adult handling only; no electrical, optical or chemical hazard.",
+   "rating_zh": "尚未选定：玻璃载片，只由成年人处理；没有电气、光学或化学危害。",
+   "part_en": "Stage micrometer",
+   "part_zh": "台微尺"
+  },
+  {
+   "line": "C-02",
+   "kind": "required",
+   "rating_en": "Not chosen: a glass target, so adult handling only; no electrical, optical or chemical hazard.",
+   "rating_zh": "尚未选定：玻璃靶，只由成年人处理；没有电气、光学或化学危害。",
+   "part_en": "USAF 1951 resolution target (glass)",
+   "part_zh": "USAF 1951 分辨率靶（玻璃）"
+  },
+  {
+   "line": "C-03",
+   "kind": "maker-rating",
+   "rating_en": "Thermo Fisher SDS: not classified as hazardous, no H-statements. Its user guide: most FluoSpheres carry 2 mM azide or 0.02% thimerosal as preservative.",
+   "rating_zh": "Thermo Fisher 的 SDS：未列为危险品，没有 H 说明。其用户指南：大多数 FluoSpheres 含 2 mM 叠氮化物或 0.02% 硫柳汞作防腐剂。",
+   "part_en": "Fluorescent beads, 100–200 nm",
+   "part_zh": "荧光微球（100–200 nm）",
+   "source": {
+    "publisher": "Life Technologies Corporation (Thermo Fisher Scientific)",
+    "title": "Safety Data Sheet, F8803 FluoSpheres carboxylate-modified microspheres, 0.1 µm, yellow-green (North American SDS) [SDS, PDF]",
+    "doc_revision": "Revision number 3, revision date 16-Aug-2024",
+    "url": "https://assets.thermofisher.com/TFS-Assets/LSG/SDS/F8803_MTR-NALT_EN.pdf",
+    "read": "2026-10-10",
+    "sha256": "ed9f0456c4922760073da63f39f7b7c0d5c74c500f065dfc4d1b6b30e6f3be63",
+    "quote": "Signal Word None … Hazard Statements Not Applicable … The product contains no substances which at their given concentration, are considered to be hazardous to health."
+   },
+   "source2": {
+    "publisher": "Thermo Fisher Scientific",
+    "title": "FluoSpheres user guide, Pub. No. MAN0001849",
+    "doc_revision": "Rev. B.0",
+    "url": "https://assets.thermofisher.com/TFS-Assets/LSG/manuals/mp05000.pdf",
+    "read": "2026-10-10",
+    "sha256": "6b164f91cf5e91d41cbd31db96fc78a76b138f568fd95faff93cb31e0ebf780d",
+    "quote": "in most cases containing 2mM azide or 0.02% thimerosal as a preservative"
+   }
+  },
+  {
+   "line": "C-04",
+   "kind": "required",
+   "rating_en": "Not chosen: prefer a solid fluorescent slide; any liquid or dye reference needs its maker's SDS cited and stays in the lab.",
+   "rating_zh": "尚未选定：优先用固体荧光片；任何液体或染料参考都要引用其厂商的 SDS，并且只留在实验室。",
+   "part_en": "Uniform fluorescent reference (flat-field)",
+   "part_zh": "均匀荧光参考片（平场）"
+  },
+  {
+   "line": "T-03",
+   "kind": "maker-rating",
+   "rating_en": "UNI-T: built to IEC 61010-1, CAT III 1000 V / CAT IV 600 V. In SWELL it measures only the 24 V-or-less DC circuits.",
+   "rating_zh": "UNI-T：按 IEC 61010-1 制造，CAT III 1000 V / CAT IV 600 V。在 SWELL 里它只测不超过 24 V 的直流电路。",
+   "part_en": "Multimeter: UNI-T UT61E+",
+   "part_zh": "万用表：UNI-T UT61E+",
+   "source": {
+    "publisher": "UNI-T (Uni-Trend)",
+    "title": "UT61+ Series 1000V True RMS Digital Multimeter user manual (UT61B+/UT61D+/UT61E+) [maker manual, PDF]",
+    "doc_revision": "P/N:110401109614X (no date printed)",
+    "url": "https://meters.uni-trend.com/download/ut61b-d-e-user-manual/?wpdmdl=7138",
+    "read": "2026-10-10",
+    "sha256": "eb94ddb1f5bc714453afb903492c992a5f90bbb6a81285daba5cb5d429e36d05",
+    "quote": "The meter is designed and manufactured according to IEC61010-1 safety standard, and conforms to CAT III 1000V, CAT IV 600V, and pollution degree 2."
+   }
+  },
+  {
+   "line": "T-04",
+   "kind": "required",
+   "rating_en": "Cutters and wire strippers have blades and fine tweezers are pointed: adult use only.",
+   "rating_zh": "剪线钳和剥线钳带刀刃，细镊子带尖：只由成年人使用。",
+   "part_en": "Hand tools",
+   "part_zh": "手工工具"
+  },
+  {
+   "line": "O-01",
+   "kind": "none",
+   "rating_en": "Ordinary computer storage used as its maker intends, outside the instrument's circuits; no hazard rating applies.",
+   "rating_zh": "普通电脑存储设备，按厂商用途使用，在仪器电路之外；不适用任何危害等级。"
+  },
+  {
+   "line": "O-02",
+   "kind": "none",
+   "rating_en": "A lab membership, not a part; the host lab's own safety rules and induction apply.",
+   "rating_zh": "实验室会员资格，不是零件；适用所在实验室自己的安全规定和入门培训。"
+  },
+  {
+   "line": "O-03",
+   "kind": "none",
+   "rating_en": "A waste service, not a part; the host lab's licensed route and records apply (INV-10).",
+   "rating_zh": "废物处理服务，不是零件；适用所在实验室有资质的处理渠道和记录（INV-10）。"
+  },
+  {
+   "line": "W-01",
+   "kind": "required",
+   "rating_en": "Lab only: the supplier SDS of each hazardous reagent is cited on the SWELL page's safety table and in SAFETY.md (read 2026-10-10); none yet for the dye (not chosen), poly-L-lysine or PBS; several are CMR.",
+   "rating_zh": "仅限实验室：各危险试剂的供应商 SDS 都已在 SWELL 页面的安全表和 SAFETY.md 里引用（2026-10-10 读取）；染料（尚未选定）、聚赖氨酸和 PBS 还没有；其中几种是 CMR 物质。",
+   "part_en": "Reagents, first fill",
+   "part_zh": "试剂（首批）"
+  },
+  {
+   "line": "W-02",
+   "kind": "required",
+   "rating_en": "Lab only: coverslips, glass-bottom dishes and punches are sharp (adults); gloves are the chemical-resistant kind each reagent's SDS names.",
+   "rating_zh": "仅限实验室：盖玻片、玻璃底培养皿和打孔器都锋利（只由成年人处理）；手套要用各试剂 SDS 指定的耐化学品类型。",
+   "part_en": "Coverslips, glass-bottom dishes, punches, gloves",
+   "part_zh": "盖玻片、玻璃底培养皿、打孔器、手套"
+  },
+  {
+   "line": "W-03",
+   "kind": "required",
+   "rating_en": "The host lab's own equipment, used as its makers intend: the 95 °C block can scald and burn; centrifuges stay lidded while spinning.",
+   "rating_zh": "实验室自己的设备，按厂商的用途使用：95 °C 加热块会烫伤；离心机运转时盖子不打开。",
+   "part_en": "Host-lab equipment: pipettes, centrifuge, 95 °C block, incubator",
+   "part_zh": "实验室设备：移液器、离心机、95 °C 加热块、培养箱"
+  },
+  {
+   "line": "S-01",
+   "kind": "none",
+   "rating_en": "Optional spare glass objectives, never design inputs; no electrical, thermal or magnetic hazard.",
+   "rating_zh": "可选的备用玻璃物镜，从不作为设计输入；没有电气、热或磁方面的危害。"
+  },
+  {
+   "line": "S-02",
+   "kind": "none",
+   "rating_en": "Optional benchmark camera used as its maker intends; never a design input or part of the build.",
+   "rating_zh": "可选的对照相机，按厂商用途使用；从不作为设计输入，也不是制作的一部分。"
+  }
+ ]
+}

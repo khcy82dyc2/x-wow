@@ -1,0 +1,83 @@
+{
+ "swell": {
+  "slug": "swell",
+  "stage": 4,
+  "stages_total": 7,
+  "desk_stages": 4,
+  "next": "bench_tested",
+  "next_en": "rung 2 of the evidence ladder: see the stripes under any 40× microscope",
+  "next_zh": "证据阶梯第 2 级：用任何 40 倍显微镜看见条纹",
+  "stages": {
+   "idea": {
+    "status": "done",
+    "made_of_en": "a public page with the problem, the idea and its sources",
+    "made_of_zh": "一个公开页面：问题、想法和出处"
+   },
+   "designed": {
+    "status": "partial",
+    "made_of_en": "5 of 9 design pieces written: ✓ concept and calculations; ✓ optics on paper; ✓ bill of materials (most lines not yet priced); ✓ QC pipeline and strain map; ✓ pre-image design; ✗ wet-lab protocol; ✗ safety pack; ✗ mechanical CAD; ✗ instrument software",
+    "made_of_zh": "9 份设计文件写好了 5 份：✓ 设计计算；✓ 光学设计；✓ 物料清单（大部分条目还没查价）；✓ 质控流水线与应变图；✓ 膨胀前成像设计；✗ 湿实验流程；✗ 安全资料包；✗ 机械 CAD；✗ 仪器软件"
+   },
+   "simulated": {
+    "status": "partial",
+    "made_of_en": "47 simulated checks pass, 1 fail, 1 below the detection limit (synthetic gels)",
+    "made_of_zh": "模拟检查 47 项通过、1 项未通过、1 项低于检测下限（合成凝胶）"
+   },
+   "red_teamed": {
+    "status": "partial",
+    "made_of_en": "a red-team gel built by a separate AI agent, scored by the red team's own script and published as scored: 4 of 7 headline checks pass (✓ pairing; ✓ debris rejected; ✓ gel-mean axial factor; ✗ per-myofibril axial precision ≤ 1%; ✗ transverse ruler and anisotropy call; ✗ planted defects flagged; ✓ false flags ≤ 5%)",
+    "made_of_zh": "一块由另一个 AI 智能体造的红队凝胶，由红队自己的脚本评分并原样公布：7 项主要检查通过 4 项（✓ 配对；✓ 排除碎屑；✓ 整体轴向倍数；✗ 单根轴向精度 ≤ 1%；✗ 横向标尺与各向异性判断；✗ 人为缺陷被标出；✓ 误报 ≤ 5%）"
+   },
+   "bench_tested": {
+    "status": "none",
+    "made_of_en": "0 of 2 ruler rungs (2: see the stripes, 3: fragment lengths) passed by a checked report; rung 1 (a laser on chicken) is a warm-up and does not count (0 of 3 home rungs passed in all)",
+    "made_of_zh": "标尺的 2 级阶梯（第 2 级看见条纹、第 3 级碎片长度）中，有 0 级有经核对的及格报告；第 1 级（用激光量鸡肉）只是热身，不算（3 级在家阶梯共通过 0 级）"
+   },
+   "built_by_others": {
+    "status": "none",
+    "made_of_en": "0 checked report(s) of a working build by someone else",
+    "made_of_zh": "0 份经核对的他人成功制造报告"
+   },
+   "rebuilt": {
+    "status": "none",
+    "made_of_en": "0 independent rebuild(s) passing the same QC thresholds",
+    "made_of_zh": "0 次独立复现并通过同样的质控门限"
+   }
+  },
+  "claims": {
+   "verified": 0,
+   "cited": 10,
+   "sim": 19,
+   "predicted": 20,
+   "untested": 12
+  },
+  "risks": {
+   "open": 23,
+   "retired_or_mitigated": 10
+  },
+  "counts": {
+   "design_written": 5,
+   "design_total": 9,
+   "design_missing_en": [
+    "wet-lab protocol",
+    "safety pack",
+    "mechanical CAD",
+    "instrument software"
+   ],
+   "design_missing_zh": [
+    "湿实验流程",
+    "安全资料包",
+    "机械 CAD",
+    "仪器软件"
+   ],
+   "s3_pass": 4,
+   "s3_total": 7
+  },
+  "sources": {
+   "package": "swell-g0-2026-10-11.zip",
+   "simulation": "src/data/swell/strain_map_v2.json",
+   "ladder": "src/data/ladder_results.json",
+   "ladder_fetched": "2026-10-10"
+  }
+ }
+}

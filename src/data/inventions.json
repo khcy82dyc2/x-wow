@@ -1,0 +1,36 @@
+{
+ "about": "The Inventions board's one data file. Bars are never typed: tools/board.py counts a stage only when its artifact file exists and passes a form check, and each counted stage's date comes from the card's own stage_dates record. Add an invention only after it passes the charter's gate and the expert reviewer (an AI review). SWELL predates the gate and is shown labelled with the principles it fails.",
+ "ladder": [
+  {"id": "concept", "en": "Concept", "zh": "构想", "weight": 10, "proof": "card.md: hook, three sentences, the twelve-principle triage, the prior-art search, the AI reviewer's verdict"},
+  {"id": "theory", "en": "Theory checked", "zh": "理论核对", "weight": 15, "proof": "the physics or science written out, with at least three computed or cited numbers"},
+  {"id": "design", "en": "Design drafted", "zh": "设计成稿", "weight": 15, "proof": "a design document with drawings, a schematic or CAD"},
+  {"id": "parts", "en": "Parts priced", "zh": "零件定价", "weight": 10, "proof": "a parts list of at least five rows, each with a price, a link and the date checked"},
+  {"id": "guide", "en": "Build guide", "zh": "制作指南", "weight": 15, "proof": "numbered steps, a safety section and the built-in check"},
+  {"id": "prototype", "en": "Prototype built", "zh": "原型造出", "weight": 20, "proof": "hardware: a checked build report from someone outside X-WOW; software: a public working version"},
+  {"id": "validated", "en": "Validated", "zh": "验证通过", "weight": 15, "proof": "measured results against the claims, checked independently"}
+ ],
+ "fields": [
+  {"id": "microscopy", "en": "Microscopy", "zh": "显微"},
+  {"id": "learning", "en": "Learning", "zh": "学习"}
+ ],
+ "inventions": [
+  {"id": "swell", "name_en": "SWELL", "name_zh": "SWELL", "field": "microscopy", "page": "swell/",
+   "hook_en": "An expansion microscope designed to check every gel against chicken muscle.",
+   "hook_zh": "设计上用鸡肉肌纤维来检验每块凝胶的膨胀显微镜。",
+   "what_en": "A hydrogel swells the specimen 4 to 10 times so a microscope with a 3D-printed stage, designed to be cheap, could resolve detail below the light's limit, in the specimen's own units. Chicken myofibrils expanded alongside carry sarcomeres, built-in rulers that would report how much each fibril grew; whether that matches the gel around them is untested. It is a partial desk design ({{n:evidence.swell_design_written}} of its {{n:evidence.swell_design_total}} design documents are written; {{n:evidence.swell_design_missing_en}} are not), with simulations and a red-team test, given away free; it has never been built.",
+   "what_zh": "水凝胶把样品胀大 4 到 10 倍，这样一台载物台用 3D 打印、以低成本为目标的显微镜就有可能按样品原本的尺度分辨出小于光的极限的细节。鸡肉肌原纤维和样品一起膨胀，它们的肌节是内置的尺子，有望报告每根纤维胀了多少；这是否和周围凝胶的膨胀一致，还没有测试过。这是一份尚未完成的纸面设计（{{n:evidence.swell_design_total}} 份设计文件写好了 {{n:evidence.swell_design_written}} 份；{{n:evidence.swell_design_missing_zh}}都还没有），附模拟和红队检验，免费送出；从来没有造过。",
+   "gate_en": "Has not passed X-WOW's gate: it predates it; an AI review (10 October 2026; an AI told to read as a sceptical specialist) scored principle 12, \"feels like 2030\", a fail, and principles 2 (scientifically wow) and 4 (it checks itself) are untested or weak. Shown as the first invention, with its card.",
+   "gate_zh": "没有通过 X-WOW 的关卡：它比关卡早；一次 AI 审查（2026 年 10 月 10 日，让 AI 扮演挑剔的专业读者）判定第 12 条原则“像 2030 年的东西”不合格，第 2 条（科学上惊艳）和第 4 条（能自我检验）也还未测试或偏弱。作为第一项发明连同它的卡片一起展示。",
+   "theory_checked_by_en": "AI checks only (fresh Claude sessions that didn't write it); no person has checked it",
+   "theory_checked_by_zh": "只有 AI 检查过（没参与编写的全新 Claude 会话）；没有人核对过",
+   "cost_key": "swell.build_floor", "cost_en": "{} for the parts priced so far; most aren't priced yet, so there is no full cost", "cost_zh": "已查到价格的零件合计 {}；大多数零件还没查价，所以还没有完整造价",
+   "artifacts": {
+    "concept": ["inventions/swell/card.md"],
+    "theory": ["zip:downloads/swell-g0-2026-10-11.zip!docs/design/calc_v0.md", "zip:downloads/swell-g0-2026-10-11.zip!docs/design/optics_v1.md"],
+    "design": [],
+    "parts": ["zip:downloads/swell-g0-2026-10-11.zip!pm/BOM.csv"],
+    "guide": [], "prototype": [], "validated": []},
+   "stage_dates": {"concept": "2026-10-10", "theory": "2026-10-09", "parts": "2026-10-09"},
+   "stage_dates_note": "The day each stage's proof file first existed in X-WOW's records: theory (calc_v0.md, optics_v1.md) and the priced parts list (BOM.csv) in the private SWELL repo on 2026-10-09; the gate card (card.md) on 2026-10-10. Recorded 2026-10-11 from those repos' git history."}
+ ]
+}

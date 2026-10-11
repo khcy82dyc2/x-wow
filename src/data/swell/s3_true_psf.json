@@ -1,0 +1,17 @@
+{
+ "what": "S3 rerun with the true blur widths (development; S3 has been seen)",
+ "psf_told_um": {
+  "pre": 0.4,
+  "post": 0.42
+ },
+ "psf_true_core_um": {
+  "pre": 0.44,
+  "post": 0.43
+ },
+ "transverse_bias_median": -0.174436144557225,
+ "n_correct_with_E_tr": 1015,
+ "anisotropy_call": "blocked",
+ "anisotropy_est": 0.22962008115680246,
+ "tr_vs_landmark": -0.1854517320106257,
+ "conclusion": "the bias stays with the true widths, so it comes from the blur shape, not the calibration"
+}

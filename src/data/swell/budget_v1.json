@@ -1,59 +1,52 @@
 {
+  "about": "D-78: totals sum listed lines only (a floor); estimate lines are not yet priced and stay out of every total; no target comparison until n_estimate is 0.",
   "core": {
-    "lo": 524.358,
-    "hi": 784.358,
-    "listed": 216.35799999999998,
-    "n": 20,
-    "n_estimate": 17
+    "listed": 103.87,
+    "n": 24,
+    "n_listed": 2,
+    "n_estimate": 22
   },
   "build": {
-    "lo": 727.108,
-    "hi": 1071.858,
-    "listed": 328.108,
-    "n": 26,
-    "n_estimate": 22
+    "listed": 214.87,
+    "n": 31,
+    "n_listed": 3,
+    "n_estimate": 28
   },
   "baskets": {
     "H": {
-      "lo": 727.108,
-      "hi": 1071.858,
-      "listed": 328.108,
-      "n": 26,
-      "n_estimate": 22
+      "listed": 214.87,
+      "n": 31,
+      "n_listed": 3,
+      "n_estimate": 28
     },
     "C": {
-      "lo": 203.0,
-      "hi": 495.0,
       "listed": 0,
-      "n": 5,
-      "n_estimate": 5
+      "n": 4,
+      "n_listed": 0,
+      "n_estimate": 4
     },
     "T": {
-      "lo": 303.99,
-      "hi": 333.99,
-      "listed": 238.99,
-      "n": 4,
-      "n_estimate": 2
+      "listed": 69.99,
+      "n": 2,
+      "n_listed": 1,
+      "n_estimate": 1
     },
     "O": {
-      "lo": 320.0,
-      "hi": 500.0,
       "listed": 240.0,
       "n": 3,
+      "n_listed": 1,
       "n_estimate": 2
     },
     "W": {
-      "lo": 750.0,
-      "hi": 1250.0,
       "listed": 0,
       "n": 3,
+      "n_listed": 0,
       "n_estimate": 3
     },
     "S": {
-      "lo": 0.0,
-      "hi": 0.0,
       "listed": 0.0,
       "n": 2,
+      "n_listed": 2,
       "n_estimate": 0
     }
   },
@@ -67,52 +60,10 @@
     "build": 650.0,
     "ceiling": 1000.0
   },
-  "largest_box_lines": [
-    {
-      "id": "H-15",
-      "item": "Filter set, GFP class: excitation ~470/40, dichroic ~495 LP, emission ~525/50",
-      "lo": 100.0,
-      "hi": 250.0,
-      "basis": "estimate"
-    },
-    {
-      "id": "H-21",
-      "item": "Objective B: 20x/0.40 plan achromat",
-      "lo": 111.75,
-      "hi": 112.5,
-      "basis": "listed"
-    },
-    {
-      "id": "H-10",
-      "item": "Objective A: 40x/0.65 plan achromat",
-      "lo": 112.48799999999999,
-      "hi": 112.48799999999999,
-      "basis": "listed"
-    },
-    {
-      "id": "H-23",
-      "item": "12 V peristaltic pumps",
-      "lo": 40.0,
-      "hi": 75.0,
-      "basis": "estimate"
-    },
-    {
-      "id": "H-11",
-      "item": "Tube lens: f = 100 mm achromatic doublet",
-      "lo": 45.0,
-      "hi": 70.0,
-      "basis": "estimate"
-    },
-    {
-      "id": "H-05",
-      "item": "Raspberry Pi 5 4 GB",
-      "lo": 54.0,
-      "hi": 60.0,
-      "basis": "listed"
-    }
-  ],
   "project_excl_tools": {
-    "lo": 2000.108,
-    "hi": 3316.858
+    "listed": 454.87,
+    "n": 41,
+    "n_listed": 4,
+    "n_estimate": 37
   }
 }

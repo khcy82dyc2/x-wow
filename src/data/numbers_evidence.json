@@ -1,0 +1,37 @@
+{
+ "evidence.swell_design_written": {
+  "value": "5",
+  "source": "src/data/evidence.json: swell.counts",
+  "how": "computed by tools/evidence_bar.py from the latest SWELL package and the red team's score"
+ },
+ "evidence.swell_design_total": {
+  "value": "9",
+  "source": "src/data/evidence.json: swell.counts",
+  "how": "computed by tools/evidence_bar.py from the latest SWELL package and the red team's score"
+ },
+ "evidence.swell_design_missing_en": {
+  "value": "the wet-lab protocol, the safety pack, the mechanical CAD and the instrument software",
+  "source": "src/data/evidence.json: swell.counts",
+  "how": "computed by tools/evidence_bar.py from the latest SWELL package and the red team's score"
+ },
+ "evidence.swell_design_missing_zh": {
+  "value": "湿实验流程、安全资料包、机械 CAD 和仪器软件",
+  "source": "src/data/evidence.json: swell.counts",
+  "how": "computed by tools/evidence_bar.py from the latest SWELL package and the red team's score"
+ },
+ "evidence.swell_s3_pass": {
+  "value": "4",
+  "source": "src/data/evidence.json: swell.counts",
+  "how": "computed by tools/evidence_bar.py from the latest SWELL package and the red team's score"
+ },
+ "evidence.swell_s3_fail": {
+  "value": "3",
+  "source": "src/data/evidence.json: swell.counts",
+  "how": "computed by tools/evidence_bar.py from the latest SWELL package and the red team's score"
+ },
+ "evidence.swell_s3_total": {
+  "value": "7",
+  "source": "src/data/evidence.json: swell.counts",
+  "how": "computed by tools/evidence_bar.py from the latest SWELL package and the red team's score"
+ }
+}

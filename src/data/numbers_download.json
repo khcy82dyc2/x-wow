@@ -1,22 +1,82 @@
 {
   "download.sha256": {
-    "value": "6003edff0165b19fc3cba11b94afa50ba5c025a49f5443130b167d0c3936d2a6",
-    "source": "src/downloads/swell-g0-2026-10-09.zip",
+    "value": "9996b636b5b0bfd7c5e6f6e3674afd0dd40aec179b7b804f01266406a71dfb49",
+    "source": "src/downloads/swell-g0-2026-10-11.zip",
     "how": "SHA-256 of the zip bytes (tools/make_swell_zip.py; deterministic build)"
   },
-  "download.size_kb": {
-    "value": "2,150 KB",
-    "source": "src/downloads/swell-g0-2026-10-09.zip",
-    "how": "zip size in bytes / 1024, rounded"
+  "download.size_mb": {
+    "value": "3.9 MB",
+    "source": "src/downloads/swell-g0-2026-10-11.zip",
+    "how": "zip size, 3,939,216 bytes, in decimal megabytes (1 MB = 1,000,000 bytes)"
   },
   "download.files": {
-    "value": "55",
-    "source": "src/downloads/swell-g0-2026-10-09.zip",
+    "value": "84",
+    "source": "src/downloads/swell-g0-2026-10-11.zip",
     "how": "number of files in the zip"
   },
   "download.date": {
     "value": "2026-10-09",
+    "source": "tools/make_swell_zip.py: ORIGINAL_DATE",
+    "how": "first-publication date of the G0 package"
+  },
+  "download.version_date": {
+    "value": "2026-10-11",
     "source": "tools/make_swell_zip.py: DATE",
-    "how": "first-publication date of the G0 package (also in the zip name)"
+    "how": "date of this version (also in the zip name)"
+  },
+  "download.version": {
+    "value": "v0.2.0",
+    "source": "tools/make_swell_zip.py: VERSION",
+    "how": "release name of this version"
+  },
+  "download.zip_name": {
+    "value": "swell-g0-2026-10-11.zip",
+    "source": "tools/make_swell_zip.py: ZIP_NAME",
+    "how": "file name of this version"
+  },
+  "download.orig_sha256": {
+    "value": "6003edff0165b19fc3cba11b94afa50ba5c025a49f5443130b167d0c3936d2a6",
+    "source": "src/downloads/swell-g0-2026-10-09.zip",
+    "how": "SHA-256 of the original zip, unchanged since first publication (recorded while it was on disk; the file is no longer offered)"
+  },
+  "download.orig_files": {
+    "value": "55",
+    "source": "src/downloads/swell-g0-2026-10-09.zip",
+    "how": "number of files in the zip (recorded while it was on disk; the file is no longer offered)"
+  },
+  "download.orig_name": {
+    "value": "swell-g0-2026-10-09.zip",
+    "source": "src/downloads/swell-g0-2026-10-09.zip",
+    "how": "file name of the original (recorded while it was on disk; the file is no longer offered)"
+  },
+  "download.orig_size_mb": {
+    "value": "2.2 MB",
+    "source": "src/downloads/swell-g0-2026-10-09.zip",
+    "how": "zip size, 2,201,489 bytes, in decimal megabytes; read from git history (commit 9710eba) and checked against the recorded SHA-256; the file is no longer offered"
+  },
+  "download.bom_csv": {
+    "value": "swell-bom-2026-10-11.csv",
+    "source": "src/downloads/swell-bom-2026-10-11.csv",
+    "how": "pm/BOM.csv from this zip, after a UTF-8 byte-order mark and three '#' lines (what it is, AI authorship, licence)"
+  },
+  "download.bom_lines": {
+    "value": "45",
+    "source": "src/downloads/swell-bom-2026-10-11.csv",
+    "how": "lines in the BOM, header excluded"
+  },
+  "download.wheel_name": {
+    "value": "swell_ruler-0.1.2-py3-none-any.whl",
+    "source": "src/downloads/swell_ruler-0.1.2-py3-none-any.whl",
+    "how": "file name of the swell-ruler wheel"
+  },
+  "download.wheel_version": {
+    "value": "0.1.2",
+    "source": "software/swell_ruler/pyproject.toml in the zip",
+    "how": "version of the wheel and of the source in the zip (checked equal)"
+  },
+  "download.wheel_sha256": {
+    "value": "f3709576545a05b6dc9dd0ef05ae89bf58f7cc9c9b12fa46f3a9f8eb928e126d",
+    "source": "src/downloads/swell_ruler-0.1.2-py3-none-any.whl",
+    "how": "SHA-256 of the wheel; its modules match the zip's source byte for byte"
   }
 }

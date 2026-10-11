@@ -1,0 +1,22 @@
+{
+  "gel.obs_sha256": {
+    "value": "b233f0e5c5ea205ef078b14be5b2c6e3f74b16bc8d66a0cf5a410fe0bf186801",
+    "source": "data/sim/S3/obs.json.gz (SWELL repo; rerun in data/sim/S3_regen_dry)",
+    "how": "SHA-256 of the decompressed JSON; the rerun gave the same bytes (tools/numbers_gel.py)"
+  },
+  "gel.obs_bytes": {
+    "value": "6,775,475",
+    "source": "data/sim/S3/obs.json.gz (SWELL repo; rerun in data/sim/S3_regen_dry)",
+    "how": "size of the decompressed JSON in bytes"
+  },
+  "gel.truth_sha256": {
+    "value": "c909bd970a1261edc80488320fd3761fe66cab822ec40a9cf0d18590dd963d08",
+    "source": "data/sim/S3/truth.json.gz (SWELL repo; rerun in data/sim/S3_regen_dry)",
+    "how": "SHA-256 of the decompressed JSON; the rerun gave the same bytes (tools/numbers_gel.py)"
+  },
+  "gel.truth_bytes": {
+    "value": "420,585",
+    "source": "data/sim/S3/truth.json.gz (SWELL repo; rerun in data/sim/S3_regen_dry)",
+    "how": "size of the decompressed JSON in bytes"
+  }
+}

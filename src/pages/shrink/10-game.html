@@ -1,0 +1,77 @@
+<section class="sk" id="shrink" aria-label="SHRINK game">
+  <div class="sk-viewer" id="sk-viewer" role="application" aria-label="Zoomable microscope slides: drag to move, pinch, scroll or use the plus and minus keys to shrink and grow"></div>
+  <div class="sk-top">
+    <button type="button" class="sk-ico" id="sk-home" aria-label="Back to the slide table" title="Back to the slide table"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z"/></svg></button>
+    <div class="sk-where"><b id="sk-place"><span class="en">The slide table: pick a slide</span><span class="zh">玻片桌：挑一张玻片</span></b><span class="sk-size"><span id="sk-width">–</span> <span class="sk-like" id="sk-like"></span></span></div>
+    <button type="button" class="sk-ico" id="sk-menu" aria-label="Expeditions" title="Expeditions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18 9 5l4 9 3-5 4 9z"/></svg></button>
+    <button type="button" class="sk-ico" id="sk-guide-btn" aria-label="Field guide" title="Field guide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3zm2 13a1 1 0 0 0 1 1h9v-2H8a1 1 0 0 0-1 1z"/></svg><i id="sk-guide-n"></i></button>
+    <button type="button" class="sk-ico" id="sk-sound" aria-label="Sound on or off" title="Sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="w" d="M16 8a5 5 0 0 1 0 8M18.5 5.5a8.5 8.5 0 0 1 0 13" fill="none" stroke-width="2"/></svg></button>
+    <button type="button" class="sk-ico sk-wide" id="sk-fs" aria-label="Full screen" title="Full screen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v2H6v4H4zm10 0h6v6h-2V6h-4zM4 14h2v4h4v2H4zm14 0h2v6h-6v-2h4z"/></svg></button>
+  </div>
+  <p class="sk-intro" id="sk-intro" hidden></p>
+  <div class="sk-ladder sk-wide" aria-hidden="true">
+    <span style="top:0%">30 cm</span><span style="top:36.9%">1 cm</span><span style="top:61.9%">1 mm</span><span style="top:86.9%">100 µm</span><span style="top:100%">30 µm</span>
+    <i id="sk-ladder-dot"></i>
+  </div>
+  <div class="sk-arrow" id="sk-arrow" hidden aria-hidden="true"></div>
+
+  <aside class="sk-card" id="sk-card" hidden aria-live="polite">
+    <canvas id="sk-card-img" width="320" height="320" aria-label="Postcard: the place to find"></canvas>
+    <div class="sk-card-txt">
+      <p class="sk-card-title" id="sk-card-title"></p>
+      <p class="sk-card-sub" id="sk-card-sub"></p>
+      <div class="sk-meter" id="sk-meter" role="img" aria-label="Signal: more bars means closer"><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="sk-hint-text" id="sk-hint-text"></p>
+      <div class="sk-card-btns">
+        <button type="button" class="sk-btn" id="sk-hint"><span class="en">Hint</span><span class="zh">提示</span></button>
+        <button type="button" class="sk-btn" id="sk-skip"><span class="en">Another</span><span class="zh">换一张</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="sk-tools">
+    <button type="button" class="sk-ico" id="sk-snap" aria-label="Save a picture of what you see" title="Save a picture"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v12H4z"/><circle cx="12" cy="13" r="3.5" fill="#05080d"/></svg></button>
+    <button type="button" class="sk-ico" id="sk-share" aria-label="Make a postcard for a friend" title="Make a postcard for a friend"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zm2 2v.5l7 4.5 7-4.5V8l-7 4.5z"/></svg></button>
+  </div>
+  <div class="sk-zoom">
+    <button type="button" class="sk-big" id="sk-in" aria-label="Shrink (zoom in)"><b>+</b><span class="en">Shrink</span><span class="zh">变小</span></button>
+    <button type="button" class="sk-big" id="sk-out" aria-label="Grow (zoom out)"><b>−</b><span class="en">Grow</span><span class="zh">变大</span></button>
+  </div>
+
+  <dialog class="sk-dlg" id="sk-start" aria-labelledby="sk-start-h">
+    <p class="sk-kicker"><span class="en">X-WOW · free · no account</span><span class="zh">X-WOW · 免费 · 不用注册</span></p>
+    <h2 id="sk-start-h"><span class="en">SHRINK</span><span class="zh">变小探险</span></h2>
+    <p class="sk-lead"><span class="en">Every picture here is a real microscope slide, scanned so sharp you can shrink until you see single cells. Pinch, scroll or press <b>+</b> to shrink.</span><span class="zh">这里的每一张图都是真正的显微镜玻片，扫描得非常清楚，你可以一直缩小，直到看清一个一个的细胞。双指捏合、滚动鼠标，或者按 <b>+</b> 变小。</span></p>
+    <p class="sk-muted"><span class="en">A postcard shows a real spot. Find it: right place, right size. The bars light up as you get close.</span><span class="zh">明信片上是一个真实的地方。找到它：地方要对，大小也要对。越接近，信号格亮得越多。</span></p>
+    <div class="sk-exlist" id="sk-expeditions"></div>
+    <div class="sk-row">
+      <button type="button" class="sk-btn" id="sk-mystery"><span class="en">Surprise me</span><span class="zh">随便来一张</span></button>
+      <button type="button" class="sk-btn" id="sk-free"><span class="en">Just explore</span><span class="zh">随便逛逛</span></button>
+    </div>
+    <p class="sk-muted"><a href="#grown-ups" id="sk-grownups"><span class="en">For grown-ups: how it works, privacy and safety</span><span class="zh">写给大人：玩法、隐私和安全</span></a></p>
+  </dialog>
+
+  <dialog class="sk-dlg" id="sk-reveal" aria-label="Postcard found"><div id="sk-reveal-body"></div></dialog>
+
+  <dialog class="sk-dlg sk-wide-dlg" id="sk-guide" aria-label="Field guide">
+    <button type="button" class="sk-x" data-close-dlg aria-label="Close">×</button>
+    <div id="sk-guide-body"></div>
+  </dialog>
+
+  <dialog class="sk-dlg" id="sk-share-dlg" aria-labelledby="sk-share-h">
+    <button type="button" class="sk-x" data-close-dlg aria-label="Close">×</button>
+    <p class="sk-kicker"><span class="en">Make a postcard</span><span class="zh">做一张明信片</span></p>
+    <h3 id="sk-share-h"><span class="en">Can your friend find your spot?</span><span class="zh">你的朋友能找到你的地方吗？</span></h3>
+    <p class="sk-muted"><span class="en">Put the spot in the middle of the screen, at the size you want them to find it.</span><span class="zh">把那个地方放在屏幕正中，缩到你想让朋友找的大小。</span></p>
+    <p><button type="button" class="sk-btn sk-go" id="sk-share-go"><span class="en">Make the link</span><span class="zh">生成链接</span></button></p>
+    <p class="sk-share-out" id="sk-share-out"></p>
+  </dialog>
+
+  <noscript><p class="sk-noscript">SHRINK needs JavaScript to zoom into the slides. 这个游戏需要 JavaScript 才能缩放玻片。</p></noscript>
+</section>
+<script type="application/json" id="shrink-config">{{json:shrink/config.json}}</script>
+<script type="application/json" id="shrink-game">{{json:shrink/game.json}}</script>
+<link rel="stylesheet" href="{{root}}assets/css/shrink.css">
+<script defer src="{{root}}assets/vendor/openseadragon/openseadragon.min.js"></script>
+<script defer src="{{root}}assets/vendor/pmtiles/pmtiles.js"></script>
+<script defer src="{{root}}assets/js/shrink.js"></script>

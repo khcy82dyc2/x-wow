@@ -26,7 +26,12 @@ SCRIPT = "tools/numbers_laser.py"
 
 LAMBDA_NM = {"red": 650.0, "green": 532.0}   # nominal wavelengths printed on class-2 pointers
 L_CM = (10, 20)                              # worked-example screen distances
-COST_GBP = 5                                 # SWELL pm/IDEAS.md W-13: "~£5 for the cross-check"
+# A7-11 (2026-10-10): a price read from a UK distributor's page that itself states the class and wavelength.
+# Rapid Electronics 35-6024, Whadda MP1000: "Output: <1 mW (class II)", "Wavelength: 650 nm", 2x AAA cells;
+# "Unit Price (Ex VAT)" £14.86, read 2026-10-10. Named as a price source only.
+COST_EX_VAT = 14.86
+COST_SRC = ("Rapid Electronics product page, order code 35-6024 (Whadda MP1000: Class 2, <1 mW, 650 nm, AAA cells), "
+            "https://www.rapidonline.com/whadda-mp1000-laser-pointer-abs-housing-35-6024, £14.86 ex VAT, read 2026-10-10")
 
 
 def refresh_copy() -> None:
@@ -78,10 +83,8 @@ def main() -> None:
     put("laser.sl.diff_pct", f"{round(100 * (sl['wb'] / sl['normal'] - 1))}%", src_f10, "wooden breast / normal - 1")
     for c, lam in LAMBDA_NM.items():
         put(f"laser.lambda.{c}", f"{lam:.0f} nm", SCRIPT, "nominal pointer wavelength (input)")
-    # The cost estimate lives in the private repo's pm/IDEAS.md (row W-13: "~£5 for the cross-check: a class-2
-    # laser pointer ..."). That row names the owner, so it is cited here instead of copied.
-    put("laser.cost", f"£{COST_GBP}", "SWELL pm/IDEAS.md W-13 (private; cited, not copied)",
-        "estimate for the class-2 pointer cross-check, as written in W-13")
+    put("laser.cost", f"£{COST_EX_VAT * 1.2:.2f}", COST_SRC,
+        "one price source, with UK VAT (20%) added; named as a price source only, not as a place to buy")
     for c, lam_nm in LAMBDA_NM.items():
         lam = lam_nm / 1000.0
         for l_cm in L_CM:

@@ -1,0 +1,90 @@
+<section class="block" id="board">
+<style>
+#board .bd-count{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:1rem 0}
+#board .bd-count div{padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+#board .bd-count b{display:block;font:700 clamp(2rem,6vw,3.2rem)/1 var(--mono);color:var(--cyan)}
+#board .bd-count span{font-size:.9rem;color:var(--muted)}
+#board .bd-moved ul{list-style:none;display:flex;gap:8px;overflow-x:auto;padding:0;margin:.4rem 0 1rem;scrollbar-width:thin}
+#board .bd-moved li{flex:none;padding:6px 10px;border:1px solid var(--line);border-radius:16px;font-size:.85rem;white-space:nowrap}
+#board .bd-moved time{font-family:var(--mono);color:var(--gold);margin-right:4px}
+#board .bd-filter{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:.6rem 0 1rem;font-size:.9rem}
+#board .bd-fields{display:flex;flex-wrap:wrap;gap:6px}
+#board .bd-fields button{padding:4px 12px;border-radius:14px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer}
+#board .bd-fields button[aria-pressed="true"]{background:var(--cyan);color:#001018;border-color:var(--cyan)}
+#board select{background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:3px 6px;font:inherit}
+#board .bd-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+#board .bd-card{display:flex;flex-direction:column;gap:6px}
+#board .bd-card h3{margin:0;font-family:var(--mono);letter-spacing:.08em}
+#board .bd-field{margin:0;font:600 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+#board .bd-hook{margin:0;font-weight:600}
+#board .bd-what{margin:0;font-size:.92rem;color:var(--text)}
+#board .bd-cost{margin:0;font-size:.88rem;color:var(--muted)}
+#board .bd-bar{display:flex;gap:2px;height:12px;margin-top:4px}
+#board .bd-bar i{background:rgba(134,167,181,.22);border-radius:2px}
+#board .bd-bar i.on{background:linear-gradient(90deg,var(--cyan),var(--ok))}
+#board .bd-stage{margin:0;font-size:.85rem}
+#board .bd-stage b{font-family:var(--mono);color:var(--cyan)}
+#board .bd-stage time{font-family:var(--mono)}
+#board .bd-files,#board .bd-steal,#board .bd-checked{margin:0;font-size:.8rem;color:var(--muted)}
+#board .bd-more{margin-top:auto;font-weight:600}
+#board .bd-ladder{font-size:.85rem;color:var(--muted)}
+#board .bd-gate{font-size:.85rem;color:var(--gold)}
+#board .bd-ladder ol{padding-left:1.2rem}
+#board .bd-count-link{display:block;color:inherit;text-decoration:none}#board .bd-count-link:hover b{text-decoration:underline}
+#board .bd-asof{font-size:.8rem;color:var(--muted);margin:-.4rem 0 1rem}
+#board .bd-mark{display:inline-block;margin-left:8px;padding:0 7px;border-radius:9px;font:700 .68rem/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;vertical-align:1px}
+#board .bd-mark-new{background:var(--gold);color:#1a1200}
+#board .bd-mark-moved{border:1px solid var(--cyan);color:var(--cyan)}
+#board .bd-sparks{margin-top:2.2rem}
+#board .bd-sparks h2.kicker{font-size:inherit;margin:0 0 .4rem}
+#board .bd-lane-note{color:var(--muted);font-size:.92rem;max-width:72ch}
+#board .bd-spark-list{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+#board .bd-spark{display:flex;flex-direction:column;gap:6px;border-style:dashed}
+#board .bd-spark h3{margin:0;font-size:1.02rem}
+#board .bd-spark p{margin:0;font-size:.9rem}
+#board .bd-why{color:var(--text)}
+#board .bd-killed{margin:1.4rem 0;font-size:.9rem}
+#board .bd-killed summary{cursor:pointer;font-weight:600}
+#board .bd-killed ul{padding-left:1.1rem}
+#board .bd-killed time{font-family:var(--mono);color:var(--muted);margin-right:4px}
+@media (max-width:560px){#board .bd-count{grid-template-columns:1fr 1fr}}
+</style>
+<p class="kicker"><span class="en">Inventions board</span><span class="zh">发明看板</span></p>
+<h2><span class="en">Every X-WOW invention, and how far it has really got</span><span class="zh">X-WOW 的每一项发明，以及它真正走到了哪一步</span></h2>
+<p class="lead en">Each card says what the invention does, what it would cost and where it stands. A bar moves only when the proof file for that stage exists (a theory note with its numbers, a priced parts list, a build guide), and its date is the day that file first existed in X-WOW&#x27;s own records, not the day it went online. The board grows when an idea passes X-WOW's gate: cheap, wow, unique, a seeing core. It is never padded. SWELL, the first invention, predates the gate and has not passed it; its card says why. Every card is free to build, change and claim. We claim nothing on any of them, but we can't promise that nobody else holds a patent: each invention's page says what we found. Just above the cards are the <a href="#sparks">Sparks</a>: new ideas shown the day they pass the first test, before the deeper checks, and the ideas we <a href="#killed">killed</a>, with the reason.</p>
+<p class="lead zh">每张卡片写明这项发明做什么、要花多少钱、现在到了哪一步。只有当那一阶段的证据文件真的存在（带数字的理论说明、定价的零件清单、制作指南），进度条才会前进；日期是那个文件最早出现在 X-WOW 自己记录里的那一天，不是它上线的日子。只有通过 X-WOW 关卡的想法才会上板：便宜、惊艳、独一无二、核心是"看见"。绝不凑数。第一项发明 SWELL 比关卡早，也没有通过关卡；它的卡片写明了原因。每张卡片都可以免费去造、去改、去署自己的名字。我们对它们什么都不主张，但不能保证别人没有相关专利：每项发明的页面都写明了我们查到的情况。卡片上方是<a href="#sparks">火花</a>：新点子通过第一关的当天就放上来，还没经过更深入的检验；还有我们<a href="#killed">否决的点子</a>，附上理由。</p>
+{{board}}
+<details class="bd-ladder">
+  <summary><span class="en">How the bar is counted</span><span class="zh">进度条怎么算</span></summary>
+  <ol class="en">
+    <li>Concept (10): a card with the hook, three sentences, the twelve-principle triage, the prior-art search and the AI reviewer's verdict.</li>
+    <li>Theory checked (15): the science written out with at least three computed or cited numbers; the card names who checked it (so far, only AIs).</li>
+    <li>Design drafted (15): drawings, a schematic or CAD files (a text document, a plot or a render never counts).</li>
+    <li>Parts priced (10): at least five parts, each with a price, a link and the date checked.</li>
+    <li>Build guide (15): numbered steps, a safety section and the built-in check.</li>
+    <li>Prototype built (20): hardware, a build report from someone outside X-WOW, with who checked it (X-WOW itself stops at simulated prototypes); software, a public working version at its address.</li>
+    <li>Validated (15): measured results against the claims, with who checked them, checked independently.</li>
+  </ol>
+  <ol class="zh">
+    <li>构想（10）：一张卡片，含一句话亮点、三句话说明、十二条原则的筛选、在先技术检索和AI 评审结论。</li>
+    <li>理论核对（15）：把科学原理写清楚，至少有三个计算得出或有出处的数字；卡片写明是谁核对的（目前只有 AI）。</li>
+    <li>设计成稿（15）：图纸、原理图或 CAD 文件（文字文档、数据图或渲染图都不算）。</li>
+    <li>零件定价（10）：至少五个零件，每个都有价格、链接和核对日期。</li>
+    <li>制作指南（15）：编号步骤、安全说明和内置自检。</li>
+    <li>原型造出（20）：硬件要有 X-WOW 以外的人写的制作报告，并写明谁核对过（X-WOW 自己只做到模拟原型）；软件要有公开可用的版本及其网址。</li>
+    <li>验证通过（15）：实测结果与宣称对照，写明谁核对，并经独立核对。</li>
+  </ol>
+  <p class="en">The bar adds every stage whose proof exists. The stage named on a card is the furthest one with every stage before it done, so a card never claims a step it skipped.</p>
+  <p class="zh">进度条把证据已经存在的阶段都加起来。卡片上写的阶段，是前面每一步都完成了的最远一步，所以卡片不会冒认跳过的步骤。</p>
+</details>
+<script>
+(function(){var root=document.getElementById("board");if(!root)return;var grid=root.querySelector(".bd-grid");if(!grid)return;
+var field="",stage=-1,sort="pct";
+function apply(){var cards=[].slice.call(grid.children);cards.forEach(function(c){var ok=(!field||c.getAttribute("data-field")===field)&&(+c.getAttribute("data-top")>=stage);c.hidden=!ok;});
+cards.sort(function(a,b){return sort==="last"?(b.getAttribute("data-last")||"").localeCompare(a.getAttribute("data-last")||""):(+b.getAttribute("data-pct"))-(+a.getAttribute("data-pct"));}).forEach(function(c){grid.appendChild(c);});}
+[].forEach.call(root.querySelectorAll(".bd-fields button"),function(b){b.addEventListener("click",function(){field=b.getAttribute("data-field");[].forEach.call(root.querySelectorAll(".bd-fields button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});apply();});});
+var s=root.querySelector("[data-stage]");if(s)s.addEventListener("change",function(){stage=+s.value;apply();});
+var o=root.querySelector("[data-sort]");if(o)o.addEventListener("change",function(){sort=o.value;apply();});
+var k=document.getElementById("killed");function oh(){if(k&&location.hash==="#killed")k.open=true;}window.addEventListener("hashchange",oh);oh();})();
+</script>
+</section>

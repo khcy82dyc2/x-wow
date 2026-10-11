@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en" data-title-en="Retired Microscope &amp; Scanner Back to Shine · X-WOW" data-title-zh="退役显微镜与扫描仪再发光 · X-WOW">
+<html lang="en" data-title-en="Retired Microscope &amp; Scanner Back to Shine · X-WOW" data-title-zh="退役显微镜与扫描仪再发光 · X-WOW" data-desc-en="Retired microscopes and slide scanners, re-homed with labs and schools that need them: what X-WOW did from 2018, why to ship the optics and not the stand, and five organisations doing this today." data-desc-zh="让退役的显微镜和切片扫描仪去到需要它们的实验室和学校：X-WOW 从 2018 年起做过什么、为什么只寄光学件不寄镜架，以及今天在做这件事的五家机构。">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Retired Microscope &amp; Scanner Back to Shine · X-WOW</title>
-<meta name="description" content="Retired microscopes and slide scanners, re-homed with labs and schools that need them: what X-WOW did from 2018, why to ship the optics and not the stand, a self-serve noticeboard opening soon, and five organisations doing this today.">
+<meta name="description" content="Retired microscopes and slide scanners, re-homed with labs and schools that need them: what X-WOW did from 2018, why to ship the optics and not the stand, and five organisations doing this today.">
 <meta name="theme-color" content="#05080d">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="Retired Microscope &amp; Scanner Back to Shine · X-WOW">
-<meta property="og:description" content="Retired microscopes and slide scanners, re-homed with labs and schools that need them: what X-WOW did from 2018, why to ship the optics and not the stand, a self-serve noticeboard opening soon, and five organisations doing this today.">
+<meta property="og:description" content="Retired microscopes and slide scanners, re-homed with labs and schools that need them: what X-WOW did from 2018, why to ship the optics and not the stand, and five organisations doing this today.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://x-wow.com/assets/img/og-xwow.png">
 <meta property="og:image:width" content="1200">
@@ -19,8 +19,9 @@
 <link rel="apple-touch-icon" href="../assets/img/brand/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
 <link rel="stylesheet" href="../assets/css/site.css">
-<script>(function(){var d=document.documentElement,l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('xwow-lang');}catch(e){}if(!l){l=/^zh/i.test(navigator.language||'')?'zh':'en';}if(l==='zh'){d.setAttribute('data-lang','zh');d.lang='zh-Hans';document.title=d.getAttribute('data-title-zh');}d.className+=' js';try{if(!/noboot/.test(location.search)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
+<script>(function(){var d=document.documentElement,l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('xwow-lang');}catch(e){}if(!l){l=/^zh/i.test(navigator.language||'')?'zh':'en';}if(l==='zh'){d.setAttribute('data-lang','zh');d.lang='zh-Hans';document.title=d.getAttribute('data-title-zh');}d.className+=' js';try{if(!/noboot/.test(location.search)&&!/\/shrink\//.test(location.pathname)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
 <script defer src="../assets/js/site.js"></script>
+<script defer src="../assets/js/duck.js"></script>
 </head>
 <body data-page="back-to-shine">
 <a class="skip" href="#main"><span class="en">Skip to content</span><span class="zh">跳到正文</span></a>
@@ -32,15 +33,17 @@
     <details class="menu">
       <summary><span class="en">Menu</span><span class="zh">菜单</span></summary>
       <div class="menu-links">
-<a href="../"><span class="en">Inventions</span><span class="zh">发明</span></a>
+<a href="../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a>
 <a href="../swell/"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
+<a href="../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
 <a href="../back-to-shine/" aria-current="page"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
 <a href="../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
       </div>
     </details>
     <div class="nav-links">
-<a href="../"><span class="en">Inventions</span><span class="zh">发明</span></a>
+<a href="../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a>
 <a href="../swell/"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
+<a href="../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
 <a href="../back-to-shine/" aria-current="page"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
 <a href="../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
     </div>
@@ -106,18 +109,18 @@
     #bts-optics svg .t-grey{fill:var(--muted)}
     #bts-optics svg .t-cyan{fill:var(--cyan)}
   </style>
-  <p class="kicker"><span class="en">The new idea · proposal</span><span class="zh" lang="zh-Hans">新做法 · 提案</span> <span class="tag untested"><span class="en">untested</span><span class="zh" lang="zh-Hans">未验证</span></span></p>
+  <p class="kicker"><span class="en">The new idea · proposal</span><span class="zh" lang="zh-Hans">新做法 · 提案</span> <span class="tag untested"><span class="en">untested</span><span class="zh" lang="zh-Hans">未测试</span></span></p>
   <h2><span class="en">Ship the optics, not the stand</span><span class="zh" lang="zh-Hans">只寄光学件，不寄镜架</span></h2>
   <div class="grid-2">
     <div>
       <p class="lead en">Most of a microscope's weight is the stand: the cast base, the pillar, the stage and the lamp. Most of what makes it see is small and light: the objectives, the eyepieces and the camera.</p>
       <p class="lead zh" lang="zh-Hans">一台显微镜的重量大多在镜架上：铸铁底座、立柱、载物台和灯。真正让它“看得见”的部分却又小又轻：物镜、目镜和相机。</p>
-      <p class="en">So post the light part. A padded parcel of objectives costs far less to send than a crated stand, clears customs more easily and is easier to re-home. The receiver builds or 3D-prints a stand locally. One ready-made answer is the open-source <a href="https://openflexure.org/" rel="noopener" target="_blank">OpenFlexure Microscope</a>: a 3D-printed stage that can take laboratory-grade RMS-threaded objectives or low-cost webcam optics, with a Raspberry Pi camera.</p>
-      <p class="zh" lang="zh-Hans">所以只寄轻的那部分。一包垫好的物镜，邮费远低于一个装箱的镜架，过海关也更容易，更好找到新家。收件人在当地自己做或 3D 打印一个镜架。现成的方案之一是开源的 <a href="https://openflexure.org/" rel="noopener" target="_blank">OpenFlexure 显微镜</a>：3D 打印的载物台，可以装实验室级的 RMS 螺纹物镜，也可以用便宜的网络摄像头镜头，配树莓派相机。</p>
+      <p class="en">So post the light part. A padded parcel of objectives costs far less to send than a crated stand, clears customs more easily and is easier to re-home. The receiver builds or 3D-prints a stand locally. One ready-made answer is the open-source <a href="https://openflexure.org/" rel="noopener" target="_blank">OpenFlexure Microscope</a>: a 3D-printed stage that can take standard RMS-threaded microscope objectives or low-cost webcam optics, with a Raspberry Pi camera.</p>
+      <p class="zh" lang="zh-Hans">所以只寄轻的那部分。一包垫好的物镜，邮费远低于一个装箱的镜架，过海关也更容易，更好找到新家。收件人在当地自己做或 3D 打印一个镜架。现成的方案之一是开源的 <a href="https://openflexure.org/" rel="noopener" target="_blank">OpenFlexure 显微镜</a>：3D 打印的载物台，可以装标准的 RMS 螺纹显微镜物镜，也可以用便宜的网络摄像头镜头，配树莓派相机。</p>
     </div>
     <figure class="fig" style="margin:0">
       <svg viewBox="0 0 320 220" role="img" aria-labelledby="bts-svg-t" style="width:100%;height:auto;display:block">
-        <title id="bts-svg-t">A microscope split in two: the heavy stand stays, the light optics travel in a small parcel</title>
+        <title id="bts-svg-t">A microscope split in two: the heavy stand stays, the light optics travel in a small parcel. 显微镜一分为二：重的镜架留下，轻的光学件装进小包裹寄走。</title>
         <g class="st grey">
           <path d="M30 196 H130"/><path d="M40 196 V184 H120 V196"/>
           <path d="M100 184 V70 Q100 52 82 52 H70"/>
@@ -140,8 +143,10 @@
           <path d="M300 112 V160 L246 174"/>
         </g>
         <g class="st gold"><circle cx="232" cy="146" r="7"/><circle cx="262" cy="146" r="7"/><circle cx="282" cy="138" r="5"/></g>
-        <text class="t-grey" x="80" y="214" text-anchor="middle">stand: stays</text>
-        <text class="t-cyan" x="248" y="196" text-anchor="middle">optics: travel</text>
+        <text class="t-grey en" x="80" y="214" text-anchor="middle">stand: stays</text>
+        <text class="t-grey zh" x="80" y="214" text-anchor="middle" lang="zh-Hans">镜架：留下</text>
+        <text class="t-cyan en" x="248" y="196" text-anchor="middle">optics: travel</text>
+        <text class="t-cyan zh" x="248" y="196" text-anchor="middle" lang="zh-Hans">光学件：寄走</text>
       </svg>
       <figcaption><span class="en">Gold travels, grey stays.</span><span class="zh" lang="zh-Hans">金色的寄走，灰色的留下：镜架留在原地，物镜、目镜和相机装进小包裹。</span></figcaption>
     </figure>
@@ -162,38 +167,11 @@
   </aside>
 </section>
 
-<section class="block" id="bts-board">
-  <p class="kicker"><span class="en">Self-serve · opening soon</span><span class="zh" lang="zh-Hans">自助 · 即将开放</span></p>
-  <h2><span class="en">A noticeboard: donors and seekers, face to face</span><span class="zh" lang="zh-Hans">留言板：捐的人和要的人，直接对接</span></h2>
-  <p class="lead en">The old scheme needed a middleman to read every email. The new one won't. Donors and seekers will find each other directly.</p>
-  <p class="lead zh" lang="zh-Hans">旧办法需要一个中间人看每一封邮件。新办法不需要：捐的人和要的人直接找到彼此。</p>
-  <div class="grid-3">
-    <div class="panel">
-      <h3><span class="en">Donors post</span><span class="zh" lang="zh-Hans">捐赠人发帖</span></h3>
-      <p class="en">What you have, photos of the barrel markings, its condition and roughly where it is.</p>
-      <p class="zh" lang="zh-Hans">你有什么、镜筒标记的照片、成色，以及大概在哪里。</p>
-    </div>
-    <div class="panel">
-      <h3><span class="en">Seekers post</span><span class="zh" lang="zh-Hans">需要的人发帖</span></h3>
-      <p class="en">What you need, and what you will see or teach with it.</p>
-      <p class="zh" lang="zh-Hans">你需要什么，打算用它看什么、教什么。</p>
-    </div>
-    <div class="panel">
-      <h3><span class="en">You agree directly</span><span class="zh" lang="zh-Hans">双方直接商量</span></h3>
-      <p class="en">You arrange the parcel between you. X-WOW holds no equipment and no money.</p>
-      <p class="zh" lang="zh-Hans">包裹怎么寄由你们商量。X-WOW 不经手设备，也不经手钱。</p>
-    </div>
-  </div>
-  <p>
-    <button class="btn gold" type="button" disabled aria-disabled="true"><span class="en">Noticeboard: opening soon</span><span class="zh" lang="zh-Hans">留言板：即将开放</span></button>
-  </p>
-</section>
-
 <section class="block" id="bts-elsewhere">
   <p class="kicker"><span class="en">Doing this today</span><span class="zh" lang="zh-Hans">今天在做这件事的人</span></p>
   <h2><span class="en">Have equipment, or need it? These organisations re-home it now</span><span class="zh" lang="zh-Hans">有设备要送，或者需要设备？这些机构现在就在做</span></h2>
-  <p class="en">Each one was checked on its own website on 9 October 2026 <span class="tag verified">verified</span>. X-WOW has no partnership with any of them; they are here because they do the work.</p>
-  <p class="zh" lang="zh-Hans">每一家都在 2026 年 10 月 9 日核对过官网 <span class="tag verified">已核实</span>。X-WOW 和它们都没有合作关系；列在这里，只因为它们真的在做事。</p>
+  <p class="en">Each one was checked by an AI against its own website on 9 October 2026 <span class="tag cited">cited</span>. X-WOW has no partnership with any of them; they are here because they do the work.</p>
+  <p class="zh" lang="zh-Hans">每一家都在 2026 年 10 月 9 日由 AI 对照其官网核对过 <span class="tag cited">引用</span>。X-WOW 和它们都没有合作关系；列在这里，只因为它们真的在做事。</p>
   <div class="table-wrap">
     <table class="data">
       <thead>
@@ -205,27 +183,27 @@
       </thead>
       <tbody>
         <tr>
-          <td><a href="https://www.labaid.org/" rel="noopener" target="_blank">LabAid</a> <span class="muted">(UK)</span></td>
+          <td><a href="https://www.labaid.org/" rel="noopener" target="_blank">LabAid</a> <span class="muted"><span class="en">(UK)</span><span class="zh" lang="zh-Hans">（英国）</span></span></td>
           <td><span class="en">Schools in developing countries; in 2024/25, schools and colleges in Cameroon, Ghana, Liberia, Nigeria, Sierra Leone, The Gambia, Uganda and Zimbabwe</span><span class="zh" lang="zh-Hans">发展中国家的学校；2024/25 年度供给了喀麦隆、加纳、利比里亚、尼日利亚、塞拉利昂、冈比亚、乌干达和津巴布韦的中小学与学院</span></td>
           <td><span class="en">Volunteers check and refurbish surplus science equipment from UK schools, microscopes included, and give it free to schools that request it.</span><span class="zh" lang="zh-Hans">志愿者检查、翻新英国学校淘汰的科学器材（包括显微镜），免费送给提出申请的学校。</span></td>
         </tr>
         <tr>
-          <td><a href="https://seedinglabs.org/" rel="noopener" target="_blank">Seeding Labs</a> <span class="muted">(USA)</span></td>
+          <td><a href="https://seedinglabs.org/" rel="noopener" target="_blank">Seeding Labs</a> <span class="muted"><span class="en">(USA)</span><span class="zh" lang="zh-Hans">（美国）</span></span></td>
           <td><span class="en">University scientists in under-resourced settings worldwide</span><span class="zh" lang="zh-Hans">全球资源匮乏地区的大学科研人员</span></td>
           <td><span class="en">Its Instrumental Access programme ships donated research equipment and supplies to labs abroad.</span><span class="zh" lang="zh-Hans">通过“Instrumental Access”项目，把捐赠的科研仪器和耗材运到海外实验室。</span></td>
         </tr>
         <tr>
-          <td><a href="https://www.equipsent.org/" rel="noopener" target="_blank">EquipSent</a> <span class="muted">(Zurich)</span></td>
+          <td><a href="https://www.equipsent.org/" rel="noopener" target="_blank">EquipSent</a> <span class="muted"><span class="en">(Zurich)</span><span class="zh" lang="zh-Hans">（苏黎世）</span></span></td>
           <td><span class="en">Schools and labs that can't afford equipment; projects listed in Nigeria, South Africa, Cameroon, Malawi, Kenya, Chile, Mexico, Pakistan and elsewhere</span><span class="zh" lang="zh-Hans">买不起设备的学校和实验室；项目列表包括尼日利亚、南非、喀麦隆、马拉维、肯尼亚、智利、墨西哥、巴基斯坦等地</span></td>
           <td><span class="en">A non-profit association that collects unused lab equipment and transfers it to the schools and labs that apply.</span><span class="zh" lang="zh-Hans">一家非营利协会，收集闲置的实验设备，转给提出申请的学校和实验室。</span></td>
         </tr>
         <tr>
-          <td><a href="https://projectcure.org/" rel="noopener" target="_blank">Project C.U.R.E.</a> <span class="muted">(USA)</span></td>
+          <td><a href="https://projectcure.org/" rel="noopener" target="_blank">Project C.U.R.E.</a> <span class="muted"><span class="en">(USA)</span><span class="zh" lang="zh-Hans">（美国）</span></span></td>
           <td><span class="en">Hospitals and clinics in resource-limited countries</span><span class="zh" lang="zh-Hans">资源有限国家的医院和诊所</span></td>
           <td><span class="en">Volunteers pack and deliver ocean containers of donated medical equipment and supplies.</span><span class="zh" lang="zh-Hans">志愿者把捐赠的医疗设备和物资装进海运集装箱，送到当地。</span></td>
         </tr>
         <tr>
-          <td><a href="https://www.medshare.org/" rel="noopener" target="_blank">MedShare</a> <span class="muted">(USA)</span></td>
+          <td><a href="https://www.medshare.org/" rel="noopener" target="_blank">MedShare</a> <span class="muted"><span class="en">(USA)</span><span class="zh" lang="zh-Hans">（美国）</span></span></td>
           <td><span class="en">Underserved facilities worldwide and in the USA</span><span class="zh" lang="zh-Hans">全球和美国国内缺医少药的医疗机构</span></td>
           <td><span class="en">Collects surplus medical products from hospitals, distributors and manufacturers and redistributes them; also repairs biomedical equipment.</span><span class="zh" lang="zh-Hans">从医院、经销商和厂家回收富余的医疗物资再分发出去，也做生物医学设备维修。</span></td>
         </tr>
@@ -236,28 +214,55 @@
   <p class="muted zh" lang="zh-Hans">没有一家要求上榜。</p>
 </section>
 
+<section class="block" id="corrections">
+  <details class="more">
+    <summary><span class="en">Corrections · 11 October 2026</span><span class="zh" lang="zh-Hans">更正 · 2026 年 10 月 11 日</span></summary>
+    <ul class="en">
+      <li>A section promised "A noticeboard: donors and seekers, face to face", with a button saying "Noticeboard: opening soon". It isn&#x27;t coming: a noticeboard would let visitors reach each other, which X-WOW doesn&#x27;t offer. The section is gone. Questions go to info@x-wow.com.</li>
+    </ul>
+    <ul class="zh" lang="zh-Hans">
+      <li>这一页原来有一节承诺“留言板：捐的人和要的人，直接对接”，还有一个写着“留言板：即将开放”的按钮。不会开放：留言板会让访客彼此联系，而 X-WOW 不提供这种功能。这一节已撤下。有问题请写信到 info@x-wow.com。</li>
+    </ul>
+  </details>
+  <details class="more">
+    <summary><span class="en">Corrections · 10 October 2026</span><span class="zh" lang="zh-Hans">更正 · 2026 年 10 月 10 日</span></summary>
+    <ul class="en">
+      <li>"Laboratory-grade RMS-threaded objectives" now says "standard RMS-threaded microscope objectives": nothing here has been measured.</li>
+      <li>The organisations listed on this page were tagged "verified". An AI checked each one against its own website on 9 October 2026, and the page now says so, with a "cited" tag.</li>
+      <li>The requests to tell us about missing or changed organisations are gone; questions and corrections go to info@x-wow.com.</li>
+    </ul>
+    <ul class="zh" lang="zh-Hans">
+      <li>“实验室级的 RMS 螺纹物镜”现在改为“标准的 RMS 螺纹显微镜物镜”：这里的东西都没有测过。</li>
+      <li>这一页列出的机构原来标的是“已核实”。其实是 AI 在 2026 年 10 月 9 日对照各自官网核对的，页面现在这样写明，并标为“引用”。</li>
+      <li>请大家告诉我们漏掉或有变化的机构的那几句已经撤下；问题和更正请发到 info@x-wow.com。</li>
+    </ul>
+  </details>
+</section>
+
 </main>
 <footer class="foot">
   <div class="foot-grid">
     <div>
       <img class="foot-logo" src="../assets/img/brand/xwow-logo-dark-128.png" srcset="../assets/img/brand/xwow-logo-dark-64.png 75w, ../assets/img/brand/xwow-logo-dark-128.png 149w, ../assets/img/brand/xwow-logo-dark-192.png 224w, ../assets/img/brand/xwow-logo-dark-288.png 335w" sizes="112px" width="112" height="96" alt="X-WOW" loading="lazy">
-      <p class="en">Inventions to steal, happily. Everything here is free to build, change and claim.</p>
-      <p class="zh">好发明，开心偷。这里的一切都可以免费造、随便改，成功算你的。</p>
+      <p class="en">Inventions to steal, happily. Everything here is free to build, change and claim. We claim nothing, but can't promise that nobody else holds a patent.</p>
+      <p class="zh">好发明，开心偷。这里的一切都可以免费造、随便改，成功算你的。我们什么都不主张，但不能保证别人没有相关专利。</p>
     </div>
     <div>
       <p class="kicker"><span class="en">Licences</span><span class="zh">许可</span></p>
-      <p class="en">Text, data and code: CC0 1.0. Hardware designs: CERN-OHL-P v2. The X-WOW name and logo are trade marks, not covered by either licence; the logo is a registered UK trade mark (UK00003425680). <a href="../swell/#legal">Details and patent notes</a>.</p>
-      <p class="zh">文字、数据、代码：CC0 1.0；硬件设计：CERN-OHL-P v2。X-WOW 的名称和标志是商标，不在这两个许可之内；标志是英国注册商标（UK00003425680）。<a href="../swell/#legal">详情与专利提示</a>。</p>
+      <p class="en">Text, data and code: CC0 1.0, except quotations, which stay their authors'. Hardware designs: CERN-OHL-P v2. The X-WOW name and logo are trade marks, not covered by either licence; the logo is a registered UK trade mark (UK00003425680). Third-party code (three.js, OpenSeadragon, PMTiles, fflate) keeps its own MIT or BSD licence. <a href="../swell/#legal">Details and patent notes</a>.</p>
+      <p class="zh">文字、数据、代码：CC0 1.0（引文除外，仍归原作者）；硬件设计：CERN-OHL-P v2。X-WOW 的名称和标志是商标，不在这两个许可之内；标志是英国注册商标（UK00003425680）。第三方代码（three.js、OpenSeadragon、PMTiles、fflate）保留各自的 MIT 或 BSD 许可。<a href="../swell/#legal">详情与专利提示</a>。</p>
     </div>
     <div>
-      <p class="kicker"><span class="en">Made with AI help</span><span class="zh">AI 协助</span></p>
-      <p class="en">This site and SWELL were made with AI assistance; SWELL has not been built yet. <a href="../swell/#ai">How</a>.</p>
-      <p class="zh">本站和 SWELL 都有 AI 协助；SWELL 还没有人造出来。<a href="../swell/#ai">怎么做的</a>。</p>
+      <p class="kicker"><span class="en">Made by an AI</span><span class="zh">AI 制作</span></p>
+      <p class="en">This site&#x27;s text and code, and SWELL, were made by an AI (Claude, made by Anthropic) working from the owner&#x27;s brief and orders; the archives are X-WOW&#x27;s earlier projects. SWELL has not been built yet. <a href="../swell/#ai">How</a>.</p>
+      <p class="zh">本站的文字和代码，以及 SWELL，都是 AI（Anthropic 的 Claude）按网站主人的要求和指令做的；各个存档是 X-WOW 以前的项目。SWELL 还没有人造出来。<a href="../swell/#ai">怎么做的</a>。</p>
     </div>
     <div>
       <p class="kicker"><span class="en">Open</span><span class="zh">公开</span></p>
-      <p class="en"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">Site source on GitHub</a> · no cookies, no tracking.</p>
-      <p class="zh"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">网站源码在 GitHub</a> · 无 cookie、无追踪。</p>
+      <p class="en"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">Site source on GitHub</a> · no cookies, no tracking. <a href="../privacy/">Privacy</a>.</p>
+      <p class="zh"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">网站源码在 GitHub</a> · 无 cookie、无追踪。<a href="../privacy/">隐私说明</a>。</p>
+      <p class="en">Questions or corrections: <a href="mailto:info@x-wow.com">info@x-wow.com</a>.</p>
+      <p class="zh">问题或更正：<a href="mailto:info@x-wow.com">info@x-wow.com</a>。</p>
     </div>
   </div>
 </footer>

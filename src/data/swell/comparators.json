@@ -1,0 +1,15 @@
+{
+ "about": "What a lab would otherwise buy for SWELL's job (tiling an expanded gel in widefield fluorescence on a motorised stage), from UK public contract award notices read 2026-10-10 by the X-WOW AI agent (cited, not verified: no person has checked them). Government records under the Open Government Licence v3.0. tools/numbers_compare.py computes the ratios against SWELL's estimated build.",
+ "read": "2026-10-10",
+ "like_for_like": [
+  {"id": "C1", "buyer": "University of Warwick", "what": "an automated epi-fluorescence microscope", "supplier": "Fisher Scientific UK Ltd", "awarded": "2022-10-04", "price_gbp": 64943.59, "per": 1, "vat": "not stated", "url": "https://www.contractsfinder.service.gov.uk/notice/e114a4d8-3d4f-49f8-9fa2-084bd171175a"},
+  {"id": "C2", "buyer": "University of Warwick", "what": "automatable epifluorescence microscopy in multiple wavelengths", "supplier": "Cairn Research Limited", "awarded": "2024-04-11", "price_gbp": 69863.70, "per": 1, "vat": "not stated", "url": "https://www.contractsfinder.service.gov.uk/notice/57b1d977-d368-452d-9d19-26d7c34855f6"},
+  {"id": "C3", "buyer": "University of Warwick", "what": "two widefield microscope systems for live cell imaging", "supplier": "Nikon Europe B.V", "awarded": "2024-12-19", "price_gbp": 320994.73, "per": 2, "vat": "excluding VAT", "url": "https://www.find-tender.service.gov.uk/Notice/051687-2025", "note": "the same notice also gives £308,000 (II.1.7), and the Contracts Finder copy gives £0; V.2.4's figure is used"},
+  {"id": "C4", "buyer": "Durham University", "what": "Motorised Widefield Fluorescent Microscope System with Computer Control", "supplier": "Carl Zeiss Ltd", "awarded": "2019-09-18", "price_gbp": 48242.00, "per": 1, "vat": "not stated", "url": "https://www.contractsfinder.service.gov.uk/notice/d011bd87-2d08-416c-9176-33e61f084aba"}
+ ],
+ "manual_floor": [
+  {"id": "C5", "buyer": "APHA (Defra)", "what": "an inverted fluorescence microscope with a mechanical stage and camera (no motorised stage)", "supplier": "Nikon UK", "awarded": "2022-12-01", "price_gbp": 21470.75, "per": 1, "vat": "excluding VAT", "url": "https://www.contractsfinder.service.gov.uk/notice/e6fd3fe2-5e59-4e96-86c8-b0779ffb8db4"},
+  {"id": "C6", "buyer": "APHA (Defra)", "what": "an inverted fluorescence microscope with an integrated digital camera", "supplier": "Microscope Services & Sales Limited", "awarded": "2022-02-14", "price_gbp": 15569.00, "per": 1, "vat": "excluding VAT", "url": "https://www.contractsfinder.service.gov.uk/notice/73c8fd94-6d74-423c-8a3d-df48b3277f7f"}
+ ],
+ "not_like_for_like": "The commercial systems do more (several channels, commercial stages, cameras and software, installation and warranty); their prices are from 2019 to 2024 and not adjusted for inflation; SWELL's range includes VAT while most award values exclude it; SWELL's range leaves out tools, labour, shipping and the wet lab, most of its lines are estimates, and it has never been built."
+}

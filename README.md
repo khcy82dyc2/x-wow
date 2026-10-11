@@ -9,13 +9,13 @@
 
 The source of [x-wow.com](https://x-wow.com/). Test address: https://khcy82dyc2.github.io/x-wow/
 
-X-WOW gives away free, open inventions for lab-grade seeing and making. Invention #1 is **SWELL**, a cheap, automated expansion microscope. It is designed on paper and simulated. The wet-lab protocol, the mechanical and fluidic designs and the instrument software are not written yet, and nobody has built one. Whoever builds it is welcome to claim the success.
+X-WOW gives away free, open inventions for seeing more closely. Invention #1 is **SWELL**, an automated expansion microscope designed to be cheap (most of its parts are not yet priced). It is designed on paper and simulated. The wet-lab protocol, the mechanical and fluidic designs and the instrument software are not written yet, and nobody has built one. Whoever builds it is welcome to claim the success.
 
 ## Build
 ```
 python build.py
 ```
-This needs Python 3.9+ and the standard library only. It turns `src/` into `docs/`, which GitHub Pages serves. The build fails on broken links or anchors, missing numbers, leftover placeholders and anything that looks personal.
+This needs Python 3.9+ with its standard library, and git (the Inventions board dates each file from the repo's history). It turns `src/` into `docs/`, which GitHub Pages serves. The build fails on broken links or anchors, missing numbers, leftover placeholders and anything that looks personal.
 
 - **Pages:** each page is `src/pages/<slug>/`, holding `_meta.json` and `NN-*.html` fragments, wrapped in `src/layout.html`.
 - **Two languages:** elements with `class="en"` or `class="zh"`, switched by the 中文/EN button.
@@ -26,9 +26,10 @@ This needs Python 3.9+ and the standard library only. It turns `src/` into `docs
 ## Licences
 - **Text, data and code:** [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 - **Hardware design files:** [CERN-OHL-P v2](https://ohwr.org/cern_ohl_p_v2.txt).
-- **Exceptions:** three.js in `src/assets/vendor/three/` keeps its MIT licence. Names and works credited on the site belong to their owners.
+- **Slide images:** `src/assets/slides/` (and its built copy in `docs/`) holds SHRINK's 32 slide files (PMTiles, about 270 MB), CC0 1.0 by the owner's decision of 11 October 2026; its README says how they were made, and SHA256SUMS lists their checksums.
+- **Exceptions:** the third-party code in `src/assets/vendor/` keeps its own licence: three.js (MIT), OpenSeadragon (BSD-3-Clause), PMTiles (BSD-3-Clause) and fflate inside it (MIT); see `src/assets/vendor/README.md`. The official licence texts (`LICENSE`, `tools/licenses/` and `LICENSES/` inside the SWELL zip) keep their publishers' own terms. Names and works credited on the site belong to their owners.
 - **Name and logo:** X-WOW is a trade mark, and the X-WOW logo (which includes the name) is a registered UK trade mark, UK00003425680. The logo artwork is not covered by CC0 or CERN-OHL-P wherever it appears: `src/assets/img/brand/`, `src/favicon.ico`, `src/assets/img/og-xwow.png` and their built copies in `docs/`. CC0 never affects trade marks anyway (section 4a).
 - **Patents:** see the legal notes on each invention page before any commercial use.
 
 ## AI transparency
-This site's text and code, and the SWELL design, simulations and documents, were produced with AI assistance (Claude by Anthropic, used through Claude Code). The X-WOW owner directed the work. Nothing here has been built or tested in a lab yet.
+This site's text and code, and the SWELL design, simulations and documents, were produced by an AI (Claude by Anthropic, used through Claude Code), working from the X-WOW owner's brief and orders. The archived projects are X-WOW's earlier work. Nothing here has been built or tested in a lab yet.

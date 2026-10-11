@@ -1,0 +1,97 @@
+{
+ "slides.72f25122.size": {
+  "value": "28,672 × 22,528 px · 646 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.da5c8140.size": {
+  "value": "9,216 × 11,328 px · 104 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.e326b80b.size": {
+  "value": "28,672 × 13,312 px · 382 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.a527daee.size": {
+  "value": "6,720 × 7,872 px · 53 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.09764fa7.size": {
+  "value": "9,024 × 14,208 px · 128 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.00bb6d23.size": {
+  "value": "10,368 × 22,464 px · 233 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.77c3c52e.size": {
+  "value": "16,384 × 29,696 px · 487 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.1461557c.size": {
+  "value": "24,192 × 20,160 px · 488 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.b3f48c84.size": {
+  "value": "14,784 × 7,104 px · 105 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.ab8f4e48.size": {
+  "value": "15,936 × 14,016 px · 223 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.a41e873a.size": {
+  "value": "8,640 × 7,488 px · 65 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.97aca0be.size": {
+  "value": "5,184 × 12,480 px · 65 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.32d6f684.size": {
+  "value": "6,144 × 6,720 px · 41 MP",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "width × height in pixels, and their product in megapixels (10⁶ pixels)"
+ },
+ "slides.max_mp": {
+  "value": "646",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "the biggest slide (the ant) in megapixels"
+ },
+ "slides.n": {
+  "value": "13",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "slides linked on the page"
+ },
+ "slides.total_bn": {
+  "value": "3.0",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "sum of width × height, in billions of pixels"
+ },
+ "slides.total_yi": {
+  "value": "30",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "the same, in 亿 (10⁸ pixels)"
+ },
+ "slides.first_upload": {
+  "value": "2018-12-17",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "earliest upload date (DateAdded)"
+ },
+ "slides.last_upload": {
+  "value": "2019-07-24",
+  "source": "src/data/slides/easyzoom-2026-10-10.json (the image host's public metadata, read 2026-10-10)",
+  "how": "latest upload date (DateAdded)"
+ }
+}

@@ -1,0 +1,337 @@
+{
+  "tested.v2_mean_err": {
+    "value": "−0.08% to 0.00%",
+    "source": "src/data/swell/strain_map_v2.json: dev[S0,S1,S1b,S2,S4].metrics.gel_mean_E_err",
+    "how": "range over the five gels: gel-mean axial E minus truth"
+  },
+  "tested.v2_rms": {
+    "value": "0.15%–0.18%",
+    "source": "src/data/swell/strain_map_v2.json: dev[S0,S1,S1b,S2].metrics.per_fibril_Eax_rms",
+    "how": "per-myofibril axial error, gels without drift"
+  },
+  "tested.v2_match": {
+    "value": "99.3%–100.0%",
+    "source": "src/data/swell/strain_map_v2.json: dev[*].metrics.match_recall",
+    "how": "pre↔post pairs found with no pairing given"
+  },
+  "tested.v2_blind_stretch_own": {
+    "value": "40%",
+    "source": "src/data/swell/strain_map_v2.json: dev.S1b.metrics.detection['stretched patch']",
+    "how": "area of the blind gel's stretched patch flagged by its own detector"
+  },
+  "tested.v2_blind_stretch_any": {
+    "value": "92%",
+    "source": "src/data/swell/strain_map_v2.json: dev.S1b.metrics.detection_any_flag['stretched patch']",
+    "how": "same, by any detector"
+  },
+  "tested.v2_s0_aniso": {
+    "value": "−0.10% [−0.18%, −0.03%]",
+    "source": "src/data/swell/strain_map_v2.json: dev.S0.metrics.anisotropy",
+    "how": "estimate and 95% CI on the perfect gel"
+  },
+  "tested.v2_s0_call": {
+    "value": "isotropic",
+    "source": "src/data/swell/strain_map_v2.json: dev.S0.metrics.anisotropy.call",
+    "how": "the effect-size call"
+  },
+  "tested.v2_s0_call_zh": {
+    "value": "各向同性",
+    "source": "src/data/swell/strain_map_v2.json: dev.S0.metrics.anisotropy.call",
+    "how": "the effect-size call, in Chinese"
+  },
+  "tested.v2_s2_aniso": {
+    "value": "−2.16% [−2.44%, −1.81%]",
+    "source": "src/data/swell/strain_map_v2.json: dev.S2.metrics.anisotropy",
+    "how": "estimate and 95% CI on the gel with a planted anisotropy"
+  },
+  "tested.v2_s2_truth": {
+    "value": "−1.98%",
+    "source": "src/data/swell/strain_map_v2.json: dev.S2.metrics.anisotropy.truth",
+    "how": "true value"
+  },
+  "tested.drift_slope_clock": {
+    "value": "−0.036%/h",
+    "source": "src/data/swell/strain_map_v2.json: dev.S4.metrics.drift_slope_pct_per_h",
+    "how": "slope of the axial error against acquisition time, clock correction on"
+  },
+  "tested.drift_slope_none": {
+    "value": "0.22%/h",
+    "source": "src/data/swell/strain_map_v2.json: dev.S4_no_clock.metrics.drift_slope_pct_per_h",
+    "how": "same, with the clock removed"
+  },
+  "tested.drift_mean_clock": {
+    "value": "−0.08%",
+    "source": "src/data/swell/strain_map_v2.json: dev.S4.metrics.gel_mean_E_err",
+    "how": "gel-mean error, clock on"
+  },
+  "tested.drift_mean_none": {
+    "value": "+0.20%",
+    "source": "src/data/swell/strain_map_v2.json: dev.S4_no_clock.metrics.gel_mean_E_err",
+    "how": "gel-mean error, clock removed"
+  },
+  "tested.s3_ran": {
+    "value": "yes",
+    "source": "src/data/swell/strain_map_v2.json: S3.score",
+    "how": "whether the red-team gel was scored in this build"
+  },
+  "tested.s3_recall": {
+    "value": "96.3%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.matching.recall",
+    "how": "pre/post pairs found (red team's scorer)"
+  },
+  "tested.s3_precision": {
+    "value": "100.0%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.matching.precision",
+    "how": "pairs that were right (red team's scorer)"
+  },
+  "tested.s3_wrong": {
+    "value": "0",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.matching.wrong_partner",
+    "how": "fibrils paired with the wrong partner (red team's scorer)"
+  },
+  "tested.s3_debris": {
+    "value": "100%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.debris.rejection",
+    "how": "debris objects rejected (red team's scorer)"
+  },
+  "tested.s3_mean_err": {
+    "value": "−0.14%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.gel_mean_E_ax.rel_error_pct",
+    "how": "gel-mean axial error, correct matches (red team's scorer)"
+  },
+  "tested.s3_median_err": {
+    "value": "−0.01%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.gel_mean_E_ax.median_rel_error_pct",
+    "how": "gel-median axial error (red team's scorer)"
+  },
+  "tested.s3_ax_rms": {
+    "value": "1.8%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.rms",
+    "how": "per-myofibril axial RMS error (red team's scorer)"
+  },
+  "tested.s3_ax_robust": {
+    "value": "0.31%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.robust_sd",
+    "how": "per-myofibril axial robust spread (red team's scorer)"
+  },
+  "tested.s3_ax_beyond": {
+    "value": "7.5%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.frac_beyond_2pct",
+    "how": "myofibrils beyond ±2% (red team's scorer)"
+  },
+  "tested.s3_ax_n": {
+    "value": "320",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.n",
+    "how": "myofibrils with an axial ratio (red team's scorer)"
+  },
+  "tested.s3_coverage": {
+    "value": "28%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.E_ax_coverage",
+    "how": "true pairs that got an axial ratio (red team's scorer)"
+  },
+  "tested.s3_tr_bias": {
+    "value": "−17.8%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.E_tr_correct_matches.bias",
+    "how": "transverse ruler bias (red team's scorer)"
+  },
+  "tested.s3_false": {
+    "value": "0.4%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.false_flags.false_flag_frac",
+    "how": "false flags on clean gel (red team's scorer)"
+  },
+  "tested.s3_aniso_est": {
+    "value": "+24.7%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.anisotropy.estimate",
+    "how": "anisotropy estimate (E_ax/E_tr − 1) (red team's scorer)"
+  },
+  "tested.s3_aniso_truth": {
+    "value": "−1.2%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.anisotropy.truth",
+    "how": "true anisotropy (E_tr/E_ax − 1) (red team's scorer)"
+  },
+  "tested.s3_drift": {
+    "value": "−0.015%/h",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.residual_drift.slope_pct_per_h",
+    "how": "residual drift after the clock (red team's scorer)"
+  },
+  "tested.s3_aniso_truth_axtr": {
+    "value": "+1.2%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.anisotropy.truth",
+    "how": "true anisotropy converted to the pipeline's convention: 1/(1 + truth) − 1"
+  },
+  "tested.s3_true_psf_bias": {
+    "value": "−17.4%",
+    "source": "src/data/swell/s3_true_psf.json: transverse_bias_median",
+    "how": "transverse bias on S3 rerun with the red team's true core blur widths (development)"
+  },
+  "tested.s3r_aniso_call": {
+    "value": "blocked",
+    "source": "src/data/swell/strain_map_v2.json: S3_rerun.gel.anisotropy.call",
+    "how": "anisotropy call on S3 by the current pipeline (development rerun)"
+  },
+  "tested.s3r_aniso_call_zh": {
+    "value": "不予判定",
+    "source": "src/data/swell/strain_map_v2.json: S3_rerun.gel.anisotropy.call",
+    "how": "the same call, in Chinese"
+  },
+  "tested.s3r_tr_vs_land": {
+    "value": "−19.7%",
+    "source": "src/data/swell/strain_map_v2.json: S3_rerun.gel.anisotropy.tr_vs_landmark",
+    "how": "median E_tr/E_land_tr − 1 over fibrils (development rerun)"
+  },
+  "tested.s3_flag_fold": {
+    "value": "75%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[fold]",
+    "how": "area of the planted fold region flagged by any flag (red team's scorer)"
+  },
+  "tested.s3_flag_fold_overlap": {
+    "value": "38%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[fold_overlap]",
+    "how": "area of the planted fold_overlap region flagged by any flag (red team's scorer)"
+  },
+  "tested.s3_flag_bubble": {
+    "value": "100%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[bubble]",
+    "how": "area of the planted bubble region flagged by any flag (red team's scorer)"
+  },
+  "tested.s3_flag_curved": {
+    "value": "0%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[curved]",
+    "how": "area of the planted curved region flagged by any flag (red team's scorer)"
+  },
+  "tested.s3_flag_bundled": {
+    "value": "55%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[bundled]",
+    "how": "area of the planted bundled region flagged by any flag (red team's scorer)"
+  },
+  "tested.s3_flag_z_tilt": {
+    "value": "3%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[z_tilt]",
+    "how": "area of the planted z_tilt region flagged by any flag (red team's scorer)"
+  },
+  "tested.s3_flag_under_expansion": {
+    "value": "0%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[under_expansion]",
+    "how": "area of the planted under_expansion region flagged by any flag (red team's scorer)"
+  },
+  "tested.s3_flag_over_expansion": {
+    "value": "0%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[over_expansion]",
+    "how": "area of the planted over_expansion region flagged by any flag (red team's scorer)"
+  },
+  "tested.q_go": {
+    "value": "1.2",
+    "source": "src/data/swell/preimage_v1.json: q_go['10'].rms_1pct",
+    "how": "q = m·√N for 1% per-fibril error at 10 sarcomeres"
+  },
+  "tested.q_half": {
+    "value": "2.1",
+    "source": "src/data/swell/preimage_v1.json: q_go['10']['rms_0.5pct']",
+    "how": "q for 0.5%"
+  },
+  "tested.slope_v1": {
+    "value": "0.95%",
+    "source": "src/data/swell/preimage_v1.json: slope_demo['slope 20% | v1']",
+    "how": "20% illumination slope, mean removed only"
+  },
+  "tested.slope_v2": {
+    "value": "0.28%",
+    "source": "src/data/swell/preimage_v1.json: slope_demo['slope 20% | v2']",
+    "how": "same, flat-fielded (v2)"
+  },
+  "tested.dpc_m": {
+    "value": "2.3%",
+    "source": "src/data/swell/preimage_v1.json: modes['DPC, 4 …'].m_best",
+    "how": "predicted striation modulation, DPC"
+  },
+  "tested.dpc_q": {
+    "value": "10",
+    "source": "src/data/swell/preimage_v1.json: modes['DPC, 4 …'].q_best",
+    "how": "predicted q with 4 frame pairs"
+  },
+  "tested.pol_cover": {
+    "value": "42%–78%",
+    "source": "src/data/swell/preimage_v1.json: modes['crossed linear …'].covered",
+    "how": "fibril orientations reaching the go q, cheap to good film"
+  },
+  "tested.ret_nm": {
+    "value": "1.9 nm",
+    "source": "src/data/swell/preimage_v1.json: physics['SL 1.69']['0.94 µm path'].pol_A_band_retardance_nm",
+    "how": "A-band retardance of a typical myofibril"
+  },
+  "tested.phase_mrad": {
+    "value": "23 mrad",
+    "source": "src/data/swell/preimage_v1.json: physics[…].phase_fundamental_rad",
+    "how": "fundamental of the striation phase profile"
+  },
+  "tested.lab_min_100": {
+    "value": "0.81%–1.58%",
+    "source": "src/data/swell/labelling_v1.json: min_fraction_snr10['100 ms | *']",
+    "how": "labelled amines needed for SNR 10 at 100 ms, 1–2 µm myofibrils"
+  },
+  "tested.lab_min_200": {
+    "value": "0.41%–0.79%",
+    "source": "src/data/swell/labelling_v1.json: min_fraction_snr10['200 ms | *']",
+    "how": "same at 200 ms"
+  },
+  "tested.lab_pan": {
+    "value": "1.4%",
+    "source": "src/data/swell/labelling_v1.json: panexm_20ug_ml_fraction[1]",
+    "how": "central estimate at 20 µg/mL NHS ester"
+  },
+  "tested.lab_pan_range": {
+    "value": "0.30%–9.6%",
+    "source": "src/data/swell/labelling_v1.json: panexm_20ug_ml_fraction[0,2]",
+    "how": "over every input range"
+  },
+  "tested.lab_kit": {
+    "value": "0.14%",
+    "source": "src/data/swell/labelling_v1.json: panexm_20ug_ml_fraction[1] / 10",
+    "how": "the kit's 2 µg/mL: ten times less dye"
+  },
+  "tested.rung1_sl": {
+    "value": "1.5–2.0 µm",
+    "source": "pm/DECISIONS.md D-50 (evidence-ladder pass marks)",
+    "how": "rung 1: the sarcomere length must fall inside this range"
+  },
+  "tested.rung1_spread": {
+    "value": "±5%",
+    "source": "pm/DECISIONS.md D-50 (evidence-ladder pass marks)",
+    "how": "rung 1: three strips agree within this of their mean"
+  },
+  "tested.rung2_n": {
+    "value": "10",
+    "source": "pm/DECISIONS.md D-50 (evidence-ladder pass marks)",
+    "how": "rung 2: myofibrils with ≥ 10 sarcomeres needed"
+  },
+  "tested.rung3_pass": {
+    "value": "40%",
+    "source": "pm/DECISIONS.md D-50 (evidence-ladder pass marks)",
+    "how": "rung 3: fragments with ≥ 8 sarcomeres needed"
+  },
+  "tested.rung3_sim": {
+    "value": "44%",
+    "source": "src/data/swell/strain_map_v2.json: dev.S0.metrics.n_eligible / n_fibrils",
+    "how": "fraction of simulated fragments with ≥ 8 whole sarcomeres"
+  },
+  "tested.rung4_gels": {
+    "value": "3",
+    "source": "pm/DECISIONS.md D-50 (evidence-ladder pass marks)",
+    "how": "rung 4: gels that must pass"
+  },
+  "tested.rung4_prec": {
+    "value": "≤ 1%",
+    "source": "pm/DECISIONS.md D-50 (evidence-ladder pass marks)",
+    "how": "rung 4: per-myofibril axial precision"
+  },
+  "tested.rung4_mean": {
+    "value": "±0.5%",
+    "source": "pm/DECISIONS.md D-50 (evidence-ladder pass marks)",
+    "how": "rung 4: the gate D-50 set on the gel-mean axial factor against the overview camera's factor; dropped 2026-10-10 (D-68), quoted for the record"
+  },
+  "tested.rung4_iso": {
+    "value": "±3%",
+    "source": "pm/DECISIONS.md D-32 (the transverse gate D-50 points to)",
+    "how": "rung 4: isotropy gate"
+  }
+}

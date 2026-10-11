@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en" data-title-en="X-WOW Slide Scanner · X-WOW" data-title-zh="X-WOW 切片扫描仪 · X-WOW">
+<html lang="en" data-title-en="X-WOW Slide Scanner · X-WOW" data-title-zh="X-WOW 切片扫描仪 · X-WOW" data-desc-en="A past collaboration: Microvisioneer&#x27;s manual whole-slide imaging, once offered under the X-WOW name, turned an ordinary microscope into a slide scanner. X-WOW no longer offers it; here is how it worked and who makes it now." data-desc-zh="一段过去的合作：Microvisioneer 的手动全切片成像方案，曾以 X-WOW 的名义提供，能把普通显微镜变成切片扫描仪。X-WOW 现在已不再提供；这里讲它怎么工作，以及现在谁在做。">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>X-WOW Slide Scanner · X-WOW</title>
-<meta name="description" content="A past collaboration: Microvisioneer&#x27;s manual whole-slide imaging, once offered under the X-WOW name, turned an ordinary microscope into a slide scanner. X-WOW no longer offers it; here is how it worked and where to get one today.">
+<meta name="description" content="A past collaboration: Microvisioneer&#x27;s manual whole-slide imaging, once offered under the X-WOW name, turned an ordinary microscope into a slide scanner. X-WOW no longer offers it; here is how it worked and who makes it now.">
 <meta name="theme-color" content="#05080d">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="X-WOW Slide Scanner · X-WOW">
-<meta property="og:description" content="A past collaboration: Microvisioneer&#x27;s manual whole-slide imaging, once offered under the X-WOW name, turned an ordinary microscope into a slide scanner. X-WOW no longer offers it; here is how it worked and where to get one today.">
+<meta property="og:description" content="A past collaboration: Microvisioneer&#x27;s manual whole-slide imaging, once offered under the X-WOW name, turned an ordinary microscope into a slide scanner. X-WOW no longer offers it; here is how it worked and who makes it now.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://x-wow.com/assets/img/og-xwow.png">
 <meta property="og:image:width" content="1200">
@@ -19,8 +19,9 @@
 <link rel="apple-touch-icon" href="../assets/img/brand/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
 <link rel="stylesheet" href="../assets/css/site.css">
-<script>(function(){var d=document.documentElement,l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('xwow-lang');}catch(e){}if(!l){l=/^zh/i.test(navigator.language||'')?'zh':'en';}if(l==='zh'){d.setAttribute('data-lang','zh');d.lang='zh-Hans';document.title=d.getAttribute('data-title-zh');}d.className+=' js';try{if(!/noboot/.test(location.search)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
+<script>(function(){var d=document.documentElement,l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('xwow-lang');}catch(e){}if(!l){l=/^zh/i.test(navigator.language||'')?'zh':'en';}if(l==='zh'){d.setAttribute('data-lang','zh');d.lang='zh-Hans';document.title=d.getAttribute('data-title-zh');}d.className+=' js';try{if(!/noboot/.test(location.search)&&!/\/shrink\//.test(location.pathname)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
 <script defer src="../assets/js/site.js"></script>
+<script defer src="../assets/js/duck.js"></script>
 </head>
 <body data-page="slide-scanner">
 <a class="skip" href="#main"><span class="en">Skip to content</span><span class="zh">跳到正文</span></a>
@@ -32,15 +33,17 @@
     <details class="menu">
       <summary><span class="en">Menu</span><span class="zh">菜单</span></summary>
       <div class="menu-links">
-<a href="../"><span class="en">Inventions</span><span class="zh">发明</span></a>
+<a href="../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a>
 <a href="../swell/"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
+<a href="../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
 <a href="../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
 <a href="../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
       </div>
     </details>
     <div class="nav-links">
-<a href="../"><span class="en">Inventions</span><span class="zh">发明</span></a>
+<a href="../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a>
 <a href="../swell/"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
+<a href="../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
 <a href="../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
 <a href="../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
     </div>
@@ -53,7 +56,7 @@
   <h2><span class="en">X-WOW Slide Scanner</span><span class="zh" lang="zh-Hans">X-WOW 切片扫描仪</span></h2>
   <p class="lead en">For a while, X-WOW offered a small kit that turned an ordinary lab microscope into a whole-slide scanner: a microscope camera plus scanning software. The software came from <strong>Microvisioneer</strong>, a German company. It was offered under the X-WOW name as part of a past collaboration, and X-WOW no longer offers it.</p>
   <p class="lead zh" lang="zh-Hans">有一段时间，X-WOW 提供过一套小小的组合，能把普通实验室显微镜变成全切片扫描仪：一台显微镜相机加一套扫描软件。软件来自德国公司 <strong>Microvisioneer</strong>。它当时以 X-WOW 的名义提供，是一段过去的合作；现在 X-WOW 已不再提供。</p>
-  <p class="muted en">X-WOW has no current partnership with Microvisioneer</p>
+  <p class="muted en">X-WOW has no current partnership with Microvisioneer.</p>
   <p class="muted zh" lang="zh-Hans">X-WOW 目前和 Microvisioneer 没有任何合作。</p>
   <aside class="loupe">
     <p class="en">Scanner status: retired here, alive at the source.</p>
@@ -91,12 +94,37 @@
 </section>
 
 <section class="block" id="ss-today">
-  <p class="kicker"><span class="en">Today · checked 9 October 2026</span><span class="zh" lang="zh-Hans">现在 · 2026 年 10 月 9 日核对</span> <span class="tag verified"><span class="en">verified</span><span class="zh" lang="zh-Hans">已核实</span></span></p>
-  <h2><span class="en">Where to get one now</span><span class="zh" lang="zh-Hans">现在去哪里买</span></h2>
+  <p class="kicker"><span class="en">Today · checked by an AI on 11 October 2026</span><span class="zh" lang="zh-Hans">现在 · 2026 年 10 月 11 日由 AI 核对</span> <span class="tag cited"><span class="en">cited</span><span class="zh" lang="zh-Hans">引用</span></span></p>
+  <h2><span class="en">Who makes it now</span><span class="zh" lang="zh-Hans">现在谁在做</span></h2>
   <p class="en">Microvisioneer still makes this kind of software. On its website, its manual scanning product is called <strong>mvSlide</strong>: it upgrades an existing microscope that has a suitable camera into a manual slide scanner, stitching the image in real time. It also offers <strong>InstaSlide</strong> for sharing zoomable virtual slides and <strong>mvLive</strong> for sharing live camera images.</p>
   <p class="zh" lang="zh-Hans">Microvisioneer 现在仍在做这类软件。按它官网的介绍，手动扫描的产品叫 <strong>mvSlide</strong>：给已有的、配了合适相机的显微镜升级，变成手动切片扫描仪，图像实时拼接。它还有用来分享可缩放虚拟切片的 <strong>InstaSlide</strong>，以及分享实时相机画面的 <strong>mvLive</strong>。</p>
-  <p class="en">Product names and details are theirs and may change; their site is the authority. Would you rather build an instrument yourself? Start with <a href="../swell/">SWELL</a>, the first invention on this site.</p>
-  <p class="zh" lang="zh-Hans">产品名称和细节以他们官网为准，随时可能更新。更想自己动手造仪器？从本站的第一个发明 <a href="../swell/">SWELL</a> 开始。</p>
+  <p class="en">Product names and details are theirs and may change; their own website, <a href="https://www.microvisioneer.com/" target="_blank" rel="noopener">microvisioneer.com</a>, is the authority. Would you rather build an instrument yourself? Start with <a href="../swell/">SWELL</a>, the first invention on this site.</p>
+  <p class="zh" lang="zh-Hans">产品名称和细节以他们自己的官网 <a href="https://www.microvisioneer.com/" target="_blank" rel="noopener">microvisioneer.com</a> 为准，随时可能更新。更想自己动手造仪器？从本站的第一个发明 <a href="../swell/">SWELL</a> 开始。</p>
+</section>
+
+<section class="block" id="corrections">
+  <details class="more">
+    <summary><span class="en">Corrections · 11 October 2026</span><span class="zh" lang="zh-Hans">更正 · 2026 年 10 月 11 日</span></summary>
+    <ul class="en">
+      <li>The owner decided the two "Get a scanner from Microvisioneer" buttons stay down. In their place, the text links plainly to Microvisioneer's own website, and the heading "Where to get one now" became "Who makes it now".</li>
+      <li>An AI re-checked the product names on that website on 11 October 2026; the date above says so.</li>
+    </ul>
+    <ul class="zh" lang="zh-Hans">
+      <li>网站主人决定，两个“从 Microvisioneer 获取扫描仪”的按钮不再恢复。取而代之的是正文里一个指向 Microvisioneer 官网的普通链接；标题“现在去哪里买”改成了“现在谁在做”。</li>
+      <li>2026 年 10 月 11 日由 AI 在该官网上重新核对了产品名称，上面的日期已经改过来。</li>
+    </ul>
+  </details>
+  <details class="more">
+    <summary><span class="en">Corrections · 10 October 2026</span><span class="zh" lang="zh-Hans">更正 · 2026 年 10 月 10 日</span></summary>
+    <ul class="en">
+      <li>The two "Get a scanner from Microvisioneer" buttons are down while we check them against our rule of never pointing visitors to places to buy things. The maker and its products are still named in the text.</li>
+      <li>"Checked 9 October 2026" was tagged "verified". An AI checked the maker's website that day, and the page now says so, with a "cited" tag.</li>
+    </ul>
+    <ul class="zh" lang="zh-Hans">
+      <li>两个“从 Microvisioneer 获取扫描仪”的按钮先撤下了：我们的规矩是绝不把访客引去买东西，正在核对它们是否合规。文中仍写明了厂家和它的产品。</li>
+      <li>“2026 年 10 月 9 日核对”原来标的是“已核实”。其实是那天由 AI 核对了厂家官网，页面现在这样写明，并标为“引用”。</li>
+    </ul>
+  </details>
 </section>
 
 </main>
@@ -104,23 +132,25 @@
   <div class="foot-grid">
     <div>
       <img class="foot-logo" src="../assets/img/brand/xwow-logo-dark-128.png" srcset="../assets/img/brand/xwow-logo-dark-64.png 75w, ../assets/img/brand/xwow-logo-dark-128.png 149w, ../assets/img/brand/xwow-logo-dark-192.png 224w, ../assets/img/brand/xwow-logo-dark-288.png 335w" sizes="112px" width="112" height="96" alt="X-WOW" loading="lazy">
-      <p class="en">Inventions to steal, happily. Everything here is free to build, change and claim.</p>
-      <p class="zh">好发明，开心偷。这里的一切都可以免费造、随便改，成功算你的。</p>
+      <p class="en">Inventions to steal, happily. Everything here is free to build, change and claim. We claim nothing, but can't promise that nobody else holds a patent.</p>
+      <p class="zh">好发明，开心偷。这里的一切都可以免费造、随便改，成功算你的。我们什么都不主张，但不能保证别人没有相关专利。</p>
     </div>
     <div>
       <p class="kicker"><span class="en">Licences</span><span class="zh">许可</span></p>
-      <p class="en">Text, data and code: CC0 1.0. Hardware designs: CERN-OHL-P v2. The X-WOW name and logo are trade marks, not covered by either licence; the logo is a registered UK trade mark (UK00003425680). <a href="../swell/#legal">Details and patent notes</a>.</p>
-      <p class="zh">文字、数据、代码：CC0 1.0；硬件设计：CERN-OHL-P v2。X-WOW 的名称和标志是商标，不在这两个许可之内；标志是英国注册商标（UK00003425680）。<a href="../swell/#legal">详情与专利提示</a>。</p>
+      <p class="en">Text, data and code: CC0 1.0, except quotations, which stay their authors'. Hardware designs: CERN-OHL-P v2. The X-WOW name and logo are trade marks, not covered by either licence; the logo is a registered UK trade mark (UK00003425680). Third-party code (three.js, OpenSeadragon, PMTiles, fflate) keeps its own MIT or BSD licence. <a href="../swell/#legal">Details and patent notes</a>.</p>
+      <p class="zh">文字、数据、代码：CC0 1.0（引文除外，仍归原作者）；硬件设计：CERN-OHL-P v2。X-WOW 的名称和标志是商标，不在这两个许可之内；标志是英国注册商标（UK00003425680）。第三方代码（three.js、OpenSeadragon、PMTiles、fflate）保留各自的 MIT 或 BSD 许可。<a href="../swell/#legal">详情与专利提示</a>。</p>
     </div>
     <div>
-      <p class="kicker"><span class="en">Made with AI help</span><span class="zh">AI 协助</span></p>
-      <p class="en">This site and SWELL were made with AI assistance; SWELL has not been built yet. <a href="../swell/#ai">How</a>.</p>
-      <p class="zh">本站和 SWELL 都有 AI 协助；SWELL 还没有人造出来。<a href="../swell/#ai">怎么做的</a>。</p>
+      <p class="kicker"><span class="en">Made by an AI</span><span class="zh">AI 制作</span></p>
+      <p class="en">This site&#x27;s text and code, and SWELL, were made by an AI (Claude, made by Anthropic) working from the owner&#x27;s brief and orders; the archives are X-WOW&#x27;s earlier projects. SWELL has not been built yet. <a href="../swell/#ai">How</a>.</p>
+      <p class="zh">本站的文字和代码，以及 SWELL，都是 AI（Anthropic 的 Claude）按网站主人的要求和指令做的；各个存档是 X-WOW 以前的项目。SWELL 还没有人造出来。<a href="../swell/#ai">怎么做的</a>。</p>
     </div>
     <div>
       <p class="kicker"><span class="en">Open</span><span class="zh">公开</span></p>
-      <p class="en"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">Site source on GitHub</a> · no cookies, no tracking.</p>
-      <p class="zh"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">网站源码在 GitHub</a> · 无 cookie、无追踪。</p>
+      <p class="en"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">Site source on GitHub</a> · no cookies, no tracking. <a href="../privacy/">Privacy</a>.</p>
+      <p class="zh"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">网站源码在 GitHub</a> · 无 cookie、无追踪。<a href="../privacy/">隐私说明</a>。</p>
+      <p class="en">Questions or corrections: <a href="mailto:info@x-wow.com">info@x-wow.com</a>.</p>
+      <p class="zh">问题或更正：<a href="mailto:info@x-wow.com">info@x-wow.com</a>。</p>
     </div>
   </div>
 </footer>

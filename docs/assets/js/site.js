@@ -15,6 +15,8 @@
     else { doc.removeAttribute("data-lang"); doc.lang = "en"; }
     var t = doc.getAttribute(l === "zh" ? "data-title-zh" : "data-title-en");
     if (t) document.title = t;
+    var dsc = doc.getAttribute(l === "zh" ? "data-desc-zh" : "data-desc-en"), md = document.querySelector('meta[name="description"]');
+    if (dsc && md) md.setAttribute("content", dsc);   /* the page description follows the language too */
     if (save) store("local", "xwow-lang", l);
     document.dispatchEvent(new CustomEvent("langchange", { detail: { lang: l } }));
   }
@@ -35,7 +37,7 @@
          "就绪。看中什么，拿走就是。"]
   };
   function boot() {
-    if (reduced || /noboot/.test(location.search) || store("session", "xwow-booted") || !document.body) { doc.classList.remove("boot-pending"); return; }
+    if (reduced || /noboot/.test(location.search) || document.body && document.body.getAttribute("data-page") === "shrink" || store("session", "xwow-booted") || !document.body) { doc.classList.remove("boot-pending"); return; }
     store("session", "xwow-booted", "1");
     var el = document.createElement("div");
     el.className = "boot"; el.setAttribute("role", "status"); el.setAttribute("aria-label", "Loading");
@@ -83,20 +85,43 @@
 
   /* ---------- LOUPE read-aloud (opt-in, the device's own voice) ---------- */
   var speaking = false, vbtn = null;
+  var LABEL = { en: "LOUPE · read notes aloud", zh: "LOUPE · 朗读旁白" };
+  function vsay(en, zh) {   /* a short message on the button, then its own label again */
+    vbtn.querySelector(".en").textContent = en; vbtn.querySelector(".zh").textContent = zh;
+    setTimeout(function () { vbtn.querySelector(".en").textContent = LABEL.en; vbtn.querySelector(".zh").textContent = LABEL.zh; }, 4000);
+  }
   function stopVoice() {
     if (!speaking) return;
     speaking = false;
     try { window.speechSynthesis.cancel(); } catch (e) {}
     if (vbtn) vbtn.setAttribute("aria-pressed", "false");
   }
+  function localVoice(l) {   /* never an online voice: those send the text to another company's servers */
+    var want = l === "zh" ? "zh" : "en", best = null;
+    var vs = window.speechSynthesis.getVoices() || [];
+    for (var i = 0; i < vs.length; i++) {
+      var v = vs[i];
+      if (!v.localService || !v.lang || v.lang.toLowerCase().indexOf(want) !== 0) continue;
+      if (!best || /^(en-gb|zh-cn)$/i.test(v.lang)) best = v;
+    }
+    return best;
+  }
   function voice() {
     if (!("speechSynthesis" in window) || !document.querySelector(".loupe")) return;
     vbtn = document.createElement("button");
     vbtn.type = "button"; vbtn.className = "voice ready"; vbtn.setAttribute("aria-pressed", "false");
-    vbtn.innerHTML = '<span aria-hidden="true">◉</span><span class="en">LOUPE · read notes aloud</span><span class="zh">LOUPE · 朗读旁白</span>';
+    vbtn.innerHTML = '<span aria-hidden="true">◉</span><span class="en">' + LABEL.en + '</span><span class="zh">' + LABEL.zh + '</span>';
     vbtn.addEventListener("click", function () {
       if (speaking) { stopVoice(); return; }
-      var l = lang(), texts = [];
+      var l = lang(), texts = [], dv = localVoice(l);
+      if (!dv && !window.speechSynthesis.getVoices().length) {   /* Chrome fills the voice list a moment later */
+        vsay("LOUPE · loading voices: tap again", "LOUPE · 正在载入语音：请再点一次");
+        return;
+      }
+      if (!dv) {   /* no on-device voice for this language: stay silent rather than use an online one */
+        vsay("LOUPE · no on-device voice found", "LOUPE · 这台设备上没有本地语音");
+        return;
+      }
       Array.prototype.forEach.call(document.querySelectorAll(".loupe ." + l), function (p) { texts.push(p.textContent.trim()); });
       if (!texts.length) return;
       speaking = true; vbtn.setAttribute("aria-pressed", "true");
@@ -104,7 +129,7 @@
       synth.cancel();
       texts.forEach(function (t, i) {
         var u = new SpeechSynthesisUtterance(t);
-        u.lang = l === "zh" ? "zh-CN" : "en-GB"; u.rate = 1.02; u.pitch = 0.92;
+        u.voice = dv; u.lang = dv.lang; u.rate = 1.02; u.pitch = 0.92;
         if (i === texts.length - 1) u.onend = function () { stopVoice(); };
         synth.speak(u);
       });

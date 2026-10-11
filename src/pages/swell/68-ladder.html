@@ -1,0 +1,70 @@
+<section class="block" id="ladder">
+<style>
+#ladder .rungs{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:1.2rem}
+#ladder .rung h3{margin-top:.2rem}
+#ladder .rung .n{font-family:var(--mono);color:var(--gold);font-size:.85rem;letter-spacing:.08em}
+#ladder .rung dl{margin:.6rem 0;display:grid;grid-template-columns:auto 1fr;gap:.25rem .6rem;font-size:.92rem}
+#ladder .rung dt{color:var(--muted)}
+#ladder .rung dd{margin:0}
+#ladder .rung .wall{margin-top:.7rem;font-size:.88rem}
+#ladder .rung .wall .entry{display:block;margin:.4rem 0;padding:.5rem .7rem}
+#ladder .rung .wall .entry h3{font-size:.95rem;margin:0}
+#ladder .lab{border-color:var(--red)}
+#ladder .arrow{color:var(--cyan);font-family:var(--mono)}
+</style>
+<p class="kicker"><span class="en">Evidence ladder</span><span class="zh">证据阶梯</span></p>
+<h2><span class="en">Climb it cheapest first</span><span class="zh">从最便宜的一级开始爬</span></h2>
+<p class="lead en">Before anyone spends money on a lab, three home rungs, each done with an adult, test the parts of SWELL that chemistry can't fix: can the stripes be measured, are they bright enough to be a ruler, and are the fragments long enough? Each rung has a pass mark and a safety note.</p>
+<p class="lead zh">在谁花钱进实验室之前，先用三级在家、每一级都由大人陪同做的小实验，检验 SWELL 里化学帮不上忙的部分：条纹量得出来吗？够不够清楚，能不能当尺子？碎片够不够长？每一级都有及格线和安全提示。</p>
+
+<div class="rungs">
+  <div class="panel rung">
+    <p class="n"><span class="en">RUNG 1</span><span class="zh">第 1 级</span></p>
+    <h3><span class="en">Measure a chicken with a laser</span><span class="zh">用激光量一量鸡肉</span></h3>
+    <p class="en">Shine a laser pointer through a thin strip of chicken breast and measure the diffraction spots: the sarcomere length falls out of one line of maths. <a href="#start-here">How to do it</a>.</p>
+    <p class="zh">用激光笔照穿一薄条鸡胸肉，量衍射亮点的位置，一行算式就能算出肌节长度。<a href="#start-here">具体做法</a>。</p>
+    <dl class="en"><dt>Pass</dt><dd>first-order spots on both sides; three strips within {{n:tested.rung1_spread}} of their mean, inside {{n:tested.rung1_sl}}</dd>
+      <dt>Safety</dt><dd>a family experiment, age guide 8 and up: the adult handles the laser, the knife, the glass and the raw chicken. Use a red (650 nm) Class 2 pointer, 1 mW or less: cheap green ones can leak invisible infrared. Never at eyes or shiny surfaces; lay the strip so the fibres run level, which keeps the side spots at table height; hold the slides in a peg or clip, not fingers; raw-meat hygiene</dd></dl>
+    <dl class="zh"><dt>及格</dt><dd>中央两侧都有一级亮点；三条肉的结果都在平均值 {{n:tested.rung1_spread}} 以内，并落在 {{n:tested.rung1_sl}} 之间</dd>
+      <dt>安全</dt><dd>家庭实验，适合 8 岁及以上：激光笔、刀、玻片和生鸡肉都由大人来拿。用红色（650 nm）、2 类、1 mW 及以下的激光笔：便宜的绿色激光笔可能漏出看不见的红外光。绝不对着眼睛或反光面；肉条要让纤维水平放，这样两侧的亮点都留在桌面高度；用夹子夹住玻片，不要用手拿；按生肉卫生处理</dd></dl>
+  </div>
+
+  <div class="panel rung">
+    <p class="n"><span class="en">RUNG 2</span><span class="zh">第 2 级</span></p>
+    <h3><span class="en">See the stripes</span><span class="zh">看见条纹</span></h3>
+    <p class="en">Blend a pea-sized piece of chicken breast for a few seconds in ice-cold, weak salt water (6 g of salt per litre; much stronger brine dissolves the stripes), put a drop under a coverslip on any microscope with a 40× objective, and let <a href="#tool">swell-ruler</a> measure the stripes. Plain bright-field with the condenser wide open shows almost nothing: close the condenser iris or tilt the light. Measure your pixel size with a stage micrometer (or from your rung-1 sarcomere length). No stain and no lab chemicals.</p>
+    <p class="zh">把豌豆大小的一块鸡胸肉放进冰冷的淡盐水里（每升 6 克盐；盐水太浓会把条纹溶掉），打碎几秒钟，取一滴盖上盖玻片，放到任何带 40 倍物镜的显微镜下，再让 <a href="#tool">swell-ruler</a> 量条纹。普通明场、聚光镜光圈全开时几乎看不见：把光圈收小，或者让光斜着照。用台微尺（或用第 1 级测出的肌节长度）定出像素大小。不染色，不用实验室化学品。</p>
+    <dl class="en"><dt>Pass</dt><dd>median q of {{n:tested.q_go}} or more (rescaled to 0.194 µm pixels; raw or PNG frames, not JPEG) over {{n:tested.rung2_n}}+ myofibrils with 10+ sarcomeres: SWELL's go/no-go for the label-free ruler. Bright-field in salt water is not the design's DPC in a gel, so a pass is encouraging, not proof</dd>
+      <dt>Safety</dt><dd>age guide 10 and up, with an adult. Kitchen salt only. The adult handles the raw chicken, runs the blender, and handles the coverslip, the glass slides and the stage micrometer; children look and run the software. Raw-meat hygiene</dd></dl>
+    <dl class="zh"><dt>及格</dt><dd>{{n:tested.rung2_n}} 根以上、每根 10 个以上肌节的肌原纤维，q 中位数达到 {{n:tested.q_go}} 或以上（按 0.194 µm 像素换算；用原始或 PNG 图，不用 JPEG）：这就是 SWELL 免标记标尺的继续/放弃标准。盐水里的明场不等于设计里凝胶中的差分相衬，所以及格是好兆头，不是证明</dd>
+      <dt>安全</dt><dd>适合 10 岁及以上，必须有大人一起。只用厨房食盐。生鸡肉、搅拌机、盖玻片、载玻片和台微尺都由大人来拿；孩子负责看显微镜和运行软件。按生肉卫生处理</dd></dl>
+  </div>
+
+  <div class="panel rung">
+    <p class="n"><span class="en">RUNG 3</span><span class="zh">第 3 级</span></p>
+    <h3><span class="en">Long enough fragments</span><span class="zh">碎片够不够长</span></h3>
+    <p class="en">The ruler needs fragments with at least 8 sarcomeres. The same images give a length histogram; gentler blending keeps fragments longer.</p>
+    <p class="zh">标尺需要至少 8 个肌节长的碎片。同一批图片就能画出长度分布；搅得轻一点，碎片就更长。</p>
+    <dl class="en"><dt>Pass</dt><dd>{{n:tested.rung3_pass}} or more of fragments with 8+ sarcomeres (the simulation assumed {{n:tested.rung3_sim}})</dd>
+      <dt>Safety</dt><dd>as rung 2</dd></dl>
+    <dl class="zh"><dt>及格</dt><dd>8 个肌节以上的碎片占 {{n:tested.rung3_pass}} 或以上（仿真假设的是 {{n:tested.rung3_sim}}）</dd>
+      <dt>安全</dt><dd>同第 2 级</dd></dl>
+  </div>
+
+  <div class="panel rung lab">
+    <p class="n"><span class="en">RUNG 4 · LAB ONLY</span><span class="zh">第 4 级 · 只在实验室</span></p>
+    <h3><span class="en">First gels in a proper lab</span><span class="zh">在正规实验室做第一批凝胶</span></h3>
+    <p class="en">Only once rungs 1–3 pass, and only in a lab with a fume hood, under its own safety rules. The gel chemistry uses restricted carcinogenic reagents. Never at home.</p>
+    <p class="zh">只有前三级都及格后才做，而且只能在有通风橱的实验室里、按实验室自己的安全规定做。凝胶化学要用受管制的致癌试剂，绝不在家里做。</p>
+    <dl class="en"><dt>Pass</dt><dd>{{n:tested.rung4_gels}} gels: pre-image q ≥ {{n:tested.q_go}}; per-myofibril axial precision {{n:tested.rung4_prec}} (<code>per_fibril_spread</code> in result.json); isotropy inside the {{n:tested.rung4_iso}} gate. Reported, not a pass mark: the gel-mean axial factor next to the overview camera's whole-gel factor (the gel's diameter after ÷ before), and their ratio. A gate of {{n:tested.rung4_mean}} on that ratio was dropped on 10 October 2026, before anyone climbed: a whole gel's factor is itself uncertain (observers' estimates of one gel ranged from 8.6 to 9.4 in GelMap, Damstra et al. 2023), and a myofibril may expand less than its gel.</dd>
+      <dt>Safety</dt><dd><a href="#safety">the safety section</a>, the lab's own risk assessment, and nothing chemical outside it</dd></dl>
+    <dl class="zh"><dt>及格</dt><dd>{{n:tested.rung4_gels}} 块凝胶：膨胀前图像 q ≥ {{n:tested.q_go}}；每根肌原纤维轴向精度 {{n:tested.rung4_prec}}（result.json 里的 <code>per_fibril_spread</code>）；各向同性在 {{n:tested.rung4_iso}} 门限内。只报告、不设及格线：整块凝胶的平均轴向倍数、全景相机测得的整体倍数（胶片直径，膨胀后 ÷ 膨胀前），以及两者之比。原来对这个比值设的 {{n:tested.rung4_mean}} 门限，已在 2026 年 10 月 10 日、还没有人开始爬之前取消：整块凝胶的倍数本身就不确定（GelMap 里，不同人对同一块凝胶的估计在 8.6 到 9.4 之间；Damstra 等 2023），而且肌原纤维可能比它所在的凝胶胀得少。</dd>
+      <dt>安全</dt><dd><a href="#safety">安全一节</a>、实验室自己的风险评估，任何化学品都不出实验室</dd></dl>
+  </div>
+</div>
+
+<aside class="loupe">
+  <p class="en">Rung 2 is the cheapest place for SWELL to die. If the stripes are too faint there, no amount of chemistry saves the ruler.</p>
+  <p class="zh">第 2 级是 SWELL 最便宜的"死法"。如果在那里条纹就太淡，再多化学也救不了这把尺子。</p>
+</aside>
+</section>

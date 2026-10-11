@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-title-en="{{title_en}} · X-WOW" data-title-zh="{{title_zh}} · X-WOW">
+<html lang="en" data-title-en="{{title_en}} · X-WOW" data-title-zh="{{title_zh}} · X-WOW" data-desc-en="{{description_en}}" data-desc-zh="{{description_zh}}">
 <head>
 {{base}}<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,8 +19,9 @@
 <link rel="apple-touch-icon" href="{{root}}assets/img/brand/apple-touch-icon.png">
 <link rel="manifest" href="{{root}}site.webmanifest">
 <link rel="stylesheet" href="{{root}}assets/css/site.css">
-<script>(function(){var d=document.documentElement,l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('xwow-lang');}catch(e){}if(!l){l=/^zh/i.test(navigator.language||'')?'zh':'en';}if(l==='zh'){d.setAttribute('data-lang','zh');d.lang='zh-Hans';document.title=d.getAttribute('data-title-zh');}d.className+=' js';try{if(!/noboot/.test(location.search)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
+<script>(function(){var d=document.documentElement,l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('xwow-lang');}catch(e){}if(!l){l=/^zh/i.test(navigator.language||'')?'zh':'en';}if(l==='zh'){d.setAttribute('data-lang','zh');d.lang='zh-Hans';document.title=d.getAttribute('data-title-zh');}d.className+=' js';try{if(!/noboot/.test(location.search)&&!/\/shrink\//.test(location.pathname)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
 <script defer src="{{root}}assets/js/site.js"></script>
+<script defer src="{{root}}assets/js/duck.js"></script>
 </head>
 <body data-page="{{slug}}">
 <a class="skip" href="#main"><span class="en">Skip to content</span><span class="zh">跳到正文</span></a>
@@ -48,23 +49,25 @@
   <div class="foot-grid">
     <div>
       <img class="foot-logo" src="{{root}}assets/img/brand/xwow-logo-dark-128.png" srcset="{{root}}assets/img/brand/xwow-logo-dark-64.png 75w, {{root}}assets/img/brand/xwow-logo-dark-128.png 149w, {{root}}assets/img/brand/xwow-logo-dark-192.png 224w, {{root}}assets/img/brand/xwow-logo-dark-288.png 335w" sizes="112px" width="112" height="96" alt="X-WOW" loading="lazy">
-      <p class="en">Inventions to steal, happily. Everything here is free to build, change and claim.</p>
-      <p class="zh">好发明，开心偷。这里的一切都可以免费造、随便改，成功算你的。</p>
+      <p class="en">Inventions to steal, happily. Everything here is free to build, change and claim. We claim nothing, but can't promise that nobody else holds a patent.</p>
+      <p class="zh">好发明，开心偷。这里的一切都可以免费造、随便改，成功算你的。我们什么都不主张，但不能保证别人没有相关专利。</p>
     </div>
     <div>
       <p class="kicker"><span class="en">Licences</span><span class="zh">许可</span></p>
-      <p class="en">Text, data and code: CC0 1.0. Hardware designs: CERN-OHL-P v2. The X-WOW name and logo are trade marks, not covered by either licence; the logo is a registered UK trade mark (UK00003425680). <a href="{{root}}swell/#legal">Details and patent notes</a>.</p>
-      <p class="zh">文字、数据、代码：CC0 1.0；硬件设计：CERN-OHL-P v2。X-WOW 的名称和标志是商标，不在这两个许可之内；标志是英国注册商标（UK00003425680）。<a href="{{root}}swell/#legal">详情与专利提示</a>。</p>
+      <p class="en">Text, data and code: CC0 1.0, except quotations, which stay their authors'. Hardware designs: CERN-OHL-P v2. The X-WOW name and logo are trade marks, not covered by either licence; the logo is a registered UK trade mark (UK00003425680). Third-party code (three.js, OpenSeadragon, PMTiles, fflate) keeps its own MIT or BSD licence. <a href="{{root}}swell/#legal">Details and patent notes</a>.</p>
+      <p class="zh">文字、数据、代码：CC0 1.0（引文除外，仍归原作者）；硬件设计：CERN-OHL-P v2。X-WOW 的名称和标志是商标，不在这两个许可之内；标志是英国注册商标（UK00003425680）。第三方代码（three.js、OpenSeadragon、PMTiles、fflate）保留各自的 MIT 或 BSD 许可。<a href="{{root}}swell/#legal">详情与专利提示</a>。</p>
     </div>
     <div>
-      <p class="kicker"><span class="en">Made with AI help</span><span class="zh">AI 协助</span></p>
-      <p class="en">This site and SWELL were made with AI assistance; SWELL has not been built yet. <a href="{{root}}swell/#ai">How</a>.</p>
-      <p class="zh">本站和 SWELL 都有 AI 协助；SWELL 还没有人造出来。<a href="{{root}}swell/#ai">怎么做的</a>。</p>
+      <p class="kicker"><span class="en">Made by an AI</span><span class="zh">AI 制作</span></p>
+      <p class="en">This site&#x27;s text and code, and SWELL, were made by an AI (Claude, made by Anthropic) working from the owner&#x27;s brief and orders; the archives are X-WOW&#x27;s earlier projects. SWELL has not been built yet. <a href="{{root}}swell/#ai">How</a>.</p>
+      <p class="zh">本站的文字和代码，以及 SWELL，都是 AI（Anthropic 的 Claude）按网站主人的要求和指令做的；各个存档是 X-WOW 以前的项目。SWELL 还没有人造出来。<a href="{{root}}swell/#ai">怎么做的</a>。</p>
     </div>
     <div>
       <p class="kicker"><span class="en">Open</span><span class="zh">公开</span></p>
-      <p class="en"><a href="{{gh}}" target="_blank" rel="noopener">Site source on GitHub</a> · no cookies, no tracking.</p>
-      <p class="zh"><a href="{{gh}}" target="_blank" rel="noopener">网站源码在 GitHub</a> · 无 cookie、无追踪。</p>
+      <p class="en">{{source_en}}no cookies, no tracking. <a href="{{root}}privacy/">Privacy</a>.</p>
+      <p class="zh">{{source_zh}}无 cookie、无追踪。<a href="{{root}}privacy/">隐私说明</a>。</p>
+      <p class="en">{{contact_en}}</p>
+      <p class="zh">{{contact_zh}}</p>
     </div>
   </div>
 </footer>

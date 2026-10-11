@@ -1,0 +1,51 @@
+<section class="block" id="download">
+<style>
+#download .hash{font-family:var(--mono);color:var(--gold);word-break:break-all;overflow-wrap:anywhere;font-size:.9rem}
+#download .dl-row{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin:1.2rem 0}
+#download pre{white-space:pre-wrap;word-break:break-all;font-family:var(--mono);font-size:.85rem;color:var(--text);background:rgba(5,8,13,.6);padding:.6rem .8rem;border-left:2px solid var(--cyan-dim)}
+</style>
+<p class="kicker"><span class="en">Download</span><span class="zh">下载</span></p>
+<h2><span class="en">Take it with you</span><span class="zh">打包带走</span></h2>
+<p class="lead en">SWELL's desk-stage work in one zip: the audit, the decisions, the fact checks, the simulations and their outputs. Free, no sign-up.</p>
+<p class="lead zh">SWELL 桌面阶段的工作，打成一个压缩包：审计、决策、事实核查、仿真代码和结果。免费，不用注册。</p>
+
+<div class="grid-3">
+  <div class="stat"><b>{{n:download.version}}</b><span class="en">this version, {{n:download.version_date}}</span><span class="zh">当前版本，{{n:download.version_date}}</span></div>
+  <div class="stat"><b>{{n:download.files}}</b><span class="en">files, {{n:download.size_mb}}</span><span class="zh">个文件，{{n:download.size_mb}}</span></div>
+  <div class="stat"><b>{{n:download.date}}</b><span class="en">first published</span><span class="zh">首次发布</span></div>
+</div>
+
+<div class="dl-row">
+  <a class="btn gold" href="{{root}}downloads/swell-g0-2026-10-11.zip" download><span class="en">Download {{n:download.zip_name}}</span><span class="zh">下载 {{n:download.zip_name}}</span></a>
+  <span class="tag sim"><span class="en">simulation only, never built</span><span class="zh">仅模拟，从未造出</span></span>
+</div>
+
+<p class="en"><b>Inside:</b> audit, decisions, errata, invariants, risks, the fact checks (<code>pm/VERIFIED_FACTS.md</code>), orders, ideas and the BOM (most lines not yet priced) with each part's safety rating (<code>pm/</code>); design reports and figures, including the red-team results and the prior-art search (<code>docs/</code>); simulation code, the red-team gel and the <a href="#tool">swell-ruler</a> tool with its tests (<code>software/</code>); simulated data (<code>data/sim/</code>); toolchain scripts (<code>tools/</code>); a README with what changed, the licence map and the licence texts; <code>SAFETY.md</code> with the hazards of each hazardous reagent in its table, cited to the supplier's safety data sheet, and their handling (lab only).</p>
+<p class="zh"><b>里面有：</b>审计、决策、勘误、不变量、风险、事实核查（<code>pm/VERIFIED_FACTS.md</code>）、工作单、点子和注明每个零件安全等级的物料清单（大部分条目还没查价）（<code>pm/</code>）；设计报告和图，包括红队结果和现有技术检索（<code>docs/</code>）；仿真代码、红队凝胶，以及 <a href="#tool">swell-ruler</a> 工具和它的测试（<code>software/</code>）；仿真数据（<code>data/sim/</code>）；工具链脚本（<code>tools/</code>）；一份写明改动、附许可对照表和许可原文的 README；还有列出表中各危险试剂危害（注明出自哪份供应商安全数据表）和处理方式的 <code>SAFETY.md</code>（仅限实验室）。</p>
+<p class="en"><b>Not inside:</b> the original brief. It planned the gel chemistry in a home wet lab, a plan withdrawn on 9 October 2026; the chemistry belongs only in a laboratory with a fume hood (see <a href="#safety">Safety</a>). A few decisions and rows are also left out of this copy; the README lists each one and says why.</p>
+<p class="zh"><b>不在里面：</b>原始任务书。它把凝胶化学安排在家里的湿实验室做，这个方案已于 2026 年 10 月 9 日撤回；化学部分只能在带通风橱的实验室里做（见<a href="#safety">安全</a>）。另有几条决策和几行记录也没放进这份副本，README 逐条写明是哪些、为什么。</p>
+
+<p class="en">SHA-256 of {{n:download.zip_name}}:</p>
+<p class="zh">{{n:download.zip_name}} 的 SHA‑256 校验值：</p>
+<p class="hash">{{n:download.sha256}}</p>
+
+
+<details class="more">
+  <summary><span class="en">Check the file, rebuild the sims</span><span class="zh">校验文件、重跑仿真</span></summary>
+  <p class="en">Compare the output of one of these with the hash above:</p>
+  <p class="zh">运行下面任意一条，把结果和上面的哈希值对照：</p>
+<pre>sha256sum swell-g0-2026-10-11.zip                 # Linux
+shasum -a 256 swell-g0-2026-10-11.zip             # macOS
+Get-FileHash swell-g0-2026-10-11.zip              # Windows PowerShell</pre>
+  <p class="en">The simulations need Python 3.12 with numpy, scipy, matplotlib and pytest, plus MicroscPSF-Py for <code>software/sim/optics_v1.py</code>. Each script rewrites its own report in <code>docs/design/</code>, so you can diff your run against ours. The README lists the commands.</p>
+  <p class="en">Rerun on our machine, with Python 3.12 and the numpy, scipy and matplotlib versions pinned in <code>software/requirements.lock</code>, red-team gel S3 (<code>software/redteam/s3_gen.py</code>) came out byte for byte the same as our original run once decompressed; the <code>.json.gz</code> files themselves differed only in the time stamped in their gzip header. Since 2026-10-10 the generator writes that header with no time stamp, and two more runs on our machine gave byte-identical <code>.json.gz</code> files. We have not tried another computer or other versions of Python, numpy or scipy; there the gel may come out different. To compare yours, print the SHA-256 of each decompressed file:</p>
+  <p class="zh">仿真需要 Python 3.12，以及 numpy、scipy、matplotlib 和 pytest；<code>software/sim/optics_v1.py</code> 还需要 MicroscPSF-Py。每个脚本都会重新生成 <code>docs/design/</code> 里对应的报告，你可以把自己的结果和我们的逐行对比。具体命令见 README。</p>
+  <p class="zh">在我们的电脑上，用 Python 3.12 和 <code>software/requirements.lock</code> 锁定的 numpy、scipy、matplotlib 版本重跑，红队凝胶 S3（<code>software/redteam/s3_gen.py</code>）解压后与原来那次逐字节相同；<code>.json.gz</code> 文件本身只在 gzip 文件头记录的时间上不同。自 2026-10-10 起，生成器写 gzip 文件头时不再记录时间；在我们的电脑上又跑了两次，得到的 <code>.json.gz</code> 文件逐字节相同。我们没有在别的电脑上、也没有用别的 Python、numpy 或 scipy 版本试过；换了环境，生成的凝胶可能不一样。要对照你的结果，算出每个解压后文件的 SHA‑256：</p>
+<pre>python -c "import gzip,hashlib,sys;print(hashlib.sha256(gzip.open(sys.argv[1]).read()).hexdigest())" data/sim/S3/obs.json.gz
+python -c "import gzip,hashlib,sys;print(hashlib.sha256(gzip.open(sys.argv[1]).read()).hexdigest())" data/sim/S3/truth.json.gz</pre>
+  <p class="en">Ours: <code>obs.json</code> ({{n:gel.obs_bytes}} bytes) <span class="hash">{{n:gel.obs_sha256}}</span>; <code>truth.json</code> ({{n:gel.truth_bytes}} bytes) <span class="hash">{{n:gel.truth_sha256}}</span></p>
+  <p class="zh">我们的：<code>obs.json</code>（{{n:gel.obs_bytes}} 字节）<span class="hash">{{n:gel.obs_sha256}}</span>；<code>truth.json</code>（{{n:gel.truth_bytes}} 字节）<span class="hash">{{n:gel.truth_sha256}}</span></p>
+  <p class="en">Personal details of the owner were removed from the private project files before release. Each removal is marked <code>[personal detail removed]</code>; the removed lines are about the owner's own equipment, circumstances and schedule, and where the owner planned to work, not the SWELL design.</p>
+  <p class="zh">发布前，私人项目文件里涉及负责人个人的信息已被删除。每一处删除都标为 <code>[personal detail removed]</code>；删掉的是关于负责人自己的设备、个人情况、时间安排以及原计划在哪里做实验的内容，不涉及 SWELL 的设计。</p>
+</details>
+</section>

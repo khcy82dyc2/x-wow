@@ -1,0 +1,4 @@
+{
+ "slides_base": "/assets/slides/v1/",
+ "note": "The one place the slide address lives. Since 2026-10-11 the slides are served by x-wow.com itself (GitHub Pages: byte-range reads, no other host contacted, no bill). They were briefly planned to come from a Cloudflare Worker, dropped because Cloudflare's dashboard can show per-request details to the account holder, and X-WOW reads nothing that points to a visitor."
+}

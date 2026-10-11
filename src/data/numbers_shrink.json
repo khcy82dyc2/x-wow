@@ -1,0 +1,67 @@
+{
+ "shrink.scans": {
+  "value": "91",
+  "source": "software/slides (SWELL project): inventory_notes.json",
+  "how": "scans in the box"
+ },
+ "shrink.used": {
+  "value": "32",
+  "source": "software/slides (SWELL project): make_web.py manifest less withdrawn.json",
+  "how": "slides in the game"
+ },
+ "shrink.postcards": {
+  "value": "25",
+  "source": "software/slides (SWELL project): game_content.json",
+  "how": "postcards placed one by one by the AI that wrote the game"
+ },
+ "shrink.expeditions": {
+  "value": "6",
+  "source": "software/slides (SWELL project): game_content.json",
+  "how": "expeditions"
+ },
+ "shrink.withdrawn": {
+  "value": "8",
+  "source": "software/slides (SWELL project): withdrawn.json",
+  "how": "taken out on 2026-10-11: no species on the label, in a box that held human slides"
+ },
+ "shrink.human_disease": {
+  "value": "14",
+  "source": "software/slides (SWELL project): inventory_notes.json",
+  "how": "left out: human or disease"
+ },
+ "shrink.repro": {
+  "value": "6",
+  "source": "software/slides (SWELL project): inventory_notes.json",
+  "how": "left out: mammalian reproductive organs"
+ },
+ "shrink.dups": {
+  "value": "17",
+  "source": "software/slides (SWELL project): inventory_notes.json",
+  "how": "left out: second scans of the same slide"
+ },
+ "shrink.blur_plain": {
+  "value": "14",
+  "source": "software/slides (SWELL project): inventory_notes.json",
+  "how": "left out: blurred or less striking"
+ },
+ "shrink.web_mb": {
+  "value": "276 MB",
+  "source": "software/slides (SWELL project): make_web.py manifest less withdrawn.json",
+  "how": "web copies of the slides in the game"
+ },
+ "shrink.orig_gb": {
+  "value": "0.82 GB",
+  "source": "software/slides (SWELL project): make_archive.py manifest less withdrawn.json",
+  "how": "original scans of the slides in the game"
+ },
+ "shrink.mpp": {
+  "value": "0.5037 µm",
+  "source": "scanner metadata (MPP)",
+  "how": "size of one pixel at the slide"
+ },
+ "shrink.doi": {
+  "value": "not published",
+  "source": "pm/slides/zenodo-draft.json",
+  "how": "DOI of the original scans, shown only once the owner has published the record"
+ }
+}

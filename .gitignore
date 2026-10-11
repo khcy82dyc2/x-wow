@@ -3,3 +3,9 @@ CONTRACT.md
 __pycache__/
 *.pyc
 .private/
+# credential files never enter the public repo
+.env
+*.env
+.env.*
+# the Realistic view's working files (exports, raw renders, Blender logs): rebuilt by tools/render/realistic_view.py
+.render-work/

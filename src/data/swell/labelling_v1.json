@@ -1,0 +1,55 @@
+{
+  "signal_e_at_0.5pct_100ms": 175.40208802058658,
+  "min_fraction_snr10": {
+    "100 ms | 1 \u00b5m myofibril": 0.00808704257942356,
+    "100 ms | 2 \u00b5m myofibril": 0.01577513660978229,
+    "200 ms | 1 \u00b5m myofibril": 0.0041451339376896235,
+    "200 ms | 2 \u00b5m myofibril": 0.007941849574615297
+  },
+  "k_aminolysis_M_s": [
+    0.05677506761407482,
+    0.28343618423772804,
+    2.936404957437485
+  ],
+  "panexm_20ug_ml_fraction": [
+    0.003042947427400855,
+    0.013752043801890546,
+    0.09566677149349467
+  ],
+  "kit_2ug_ml_fraction": [
+    0.0003042947427400855,
+    0.009566677149349468
+  ],
+  "inputs": {
+    "igg": {
+      "mg_ml": [
+        1.0,
+        2.0
+      ],
+      "kda": 150.0,
+      "amines": 84.0,
+      "molar_excess": [
+        10.0,
+        20.0
+      ],
+      "dol": [
+        3.0,
+        8.0
+      ],
+      "t_s": 3600.0
+    },
+    "panexm": {
+      "ug_ml": 20.0,
+      "t_s": 5400.0,
+      "dye_mw": [
+        643.4,
+        981.0
+      ]
+    },
+    "tau_half_min": [
+      10.0,
+      60.0
+    ]
+  },
+  "verdict": "open: the estimated pan-ExM labelling straddles the minimum, so it is settled by the E-17 dye titration on the first gels"
+}

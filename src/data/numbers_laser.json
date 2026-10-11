@@ -40,9 +40,9 @@
     "how": "nominal pointer wavelength (input)"
   },
   "laser.cost": {
-    "value": "£5",
-    "source": "SWELL pm/IDEAS.md W-13 (private; cited, not copied)",
-    "how": "estimate for the class-2 pointer cross-check, as written in W-13"
+    "value": "£17.83",
+    "source": "Rapid Electronics product page, order code 35-6024 (Whadda MP1000: Class 2, <1 mW, 650 nm, AAA cells), https://www.rapidonline.com/whadda-mp1000-laser-pointer-abs-housing-35-6024, £14.86 ex VAT, read 2026-10-10",
+    "how": "one price source, with UK VAT (20%) added; named as a price source only, not as a place to buy"
   },
   "laser.theta.red.L10.normal": {
     "value": "22.6°",

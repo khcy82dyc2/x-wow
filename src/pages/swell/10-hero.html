@@ -13,6 +13,7 @@
 #hero .cm-fallback{position:absolute;left:8px;top:46px;width:calc(100% - 16px);height:calc(100% - 78px)}
 #hero .cm.is-loading .cm-fallback{opacity:.55}
 #hero .cm.is-live .cm-fallback{display:none}
+#hero .cm-load{position:absolute;z-index:4;left:50%;bottom:44px;transform:translateX(-50%);white-space:nowrap}
 #hero .cm-fallback text{font-family:var(--sans);font-size:15px;fill:var(--text)}
 #hero .cm-fallback .s-c,#hero .cm-fallback .s-g,#hero .cm-fallback .s-r,#hero .cm-fallback .s-k,#hero .cm-fallback .s-d,#hero .cm-fallback .ld{fill:none;stroke-width:1.5}
 #hero .cm-fallback .s-c{stroke:var(--cyan)}
@@ -78,14 +79,16 @@
   <p class="hero-tags">
     <span class="tag"><span class="en">Invention #1</span><span class="zh">发明 #1</span></span>
     <span class="tag sim"><span class="en">Simulated, never built</span><span class="zh">仅模拟，尚未有人造出</span></span>
-    <span class="tag"><span class="en">Free to build</span><span class="zh">免费，随便造</span></span>
+    <span class="tag"><span class="en">Free to take</span><span class="zh">免费拿走</span></span>
   </p>
   <h1 id="hero-title">SWELL</h1>
-  <p class="lead en">A cheap, automated expansion microscope.<br>Swell a sample a few times bigger, image it with cheap optics, and let the muscle's own stripes check the result.</p>
-  <p class="lead zh">一台便宜的全自动膨胀显微镜：<br>把样本泡大几倍，用便宜的镜头拍，再用肌肉自带的条纹当尺子检查结果。</p>
+  <p class="lead en">An automated expansion microscope, designed to be cheap.<br>Swell a sample a few times bigger, image it with modest optics, and let the muscle's own stripes check the result.</p>
+  <p class="lead zh">一台以低成本为目标设计的全自动膨胀显微镜：<br>把样本泡大几倍，用普通的镜头拍，再用肌肉自带的条纹当尺子检查结果。</p>
+  <p class="en"><b>What you can do today:</b> <a href="#start-here">measure chicken with a laser pointer</a> (a family experiment, with an adult), run the simulations and the ruler software on a computer (<a href="#tool">the tool</a>, <a href="#download">the download</a>), and read every design file. <b>What you can't yet:</b> build the instrument. Its CAD, its wet-lab protocol and its instrument software aren't written.</p>
+  <p class="zh"><b>今天就能做的：</b><a href="#start-here">用激光笔量鸡肉</a>（家庭小实验，要有大人一起），在电脑上跑模拟和标尺软件（<a href="#tool">工具</a>、<a href="#download">下载包</a>），读每一份设计文件。<b>现在还做不到的：</b>造出这台仪器。它的 CAD、湿实验流程和仪器软件都还没写。</p>
 </div>
 
-<div class="cm" data-model>
+<div class="cm" data-model="swell">
   <div class="cm-stage">
     <svg class="cm-fallback" viewBox="0 132 640 408" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="cm-fb-title">
       <title id="cm-fb-title">Schematic of the SWELL concept, front view: an inverted microscope on a printed flexure stage, with light from a transmitted LED above, the sample chamber and gel on the stage, and below it the objective, filter cube with excitation LED, tube lens and camera. Pumps and bottles sit low on the left; the Raspberry Pi 5 and Pico 2 controller on the right. Red parts are the safety cutoffs. Concept only, never built.</title>
@@ -175,8 +178,16 @@
   <button type="button" class="cm-btn" data-act="labels" aria-pressed="true"><span class="en">Labels</span><span class="zh">标注</span></button>
   <button type="button" class="cm-btn" data-act="beam" aria-pressed="true"><span class="en">Light path</span><span class="zh">光路</span></button>
   <button type="button" class="cm-btn" data-act="reset"><span class="en">Reset</span><span class="zh">复位</span></button>
+  {{realistic:swell}}
 </div>
 
+{{evidence:swell}}
+
+<div class="hero-cta">
+  <a class="btn gold" href="#start-here"><span class="en">Measure a chicken with a laser</span><span class="zh">用激光量一量鸡肉</span></a>
+  <a class="btn" href="#download"><span class="en">Download everything</span><span class="zh">下载全部资料</span></a>
+</div>
 
 <script type="module" src="{{root}}assets/js/concept-model.js"></script>
+<script type="module" src="{{root}}assets/js/realistic-view.js"></script>
 </section>

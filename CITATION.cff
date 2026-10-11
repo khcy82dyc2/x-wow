@@ -1,23 +1,25 @@
 cff-version: 1.2.0
 message: "If you use SWELL, please cite it with the metadata below."
 type: software
-title: "SWELL: a cheap automated expansion microscope (X-WOW invention #1), desk-stage design package"
+title: "SWELL: an automated expansion microscope designed to be cheap (X-WOW invention #1), desk-stage design package"
 authors:
   - name: "X-WOW"
-version: "0.1.0-g0"
-date-released: "2026-10-10"
-license: CC0-1.0
+version: "0.2.0"
+date-released: "2026-10-11"
 url: "https://x-wow.com/swell/"
 repository-code: "https://github.com/khcy82dyc2/x-wow"
 abstract: >-
-  An open design for a cheap, automated expansion microscope that uses the
+  An open design for an automated expansion microscope, meant to be cheap, that uses the
   sarcomeres of chicken muscle as a built-in ruler for local expansion.
   Simulation only, never built: the project stopped at the desk stage, before
   its first gate (G0), and no gate was passed. Text, data and code are CC0 1.0
-  and hardware design files CERN-OHL-P v2. The X-WOW name and logo are
+  and hardware design files CERN-OHL-P v2; the third-party code in
+  src/assets/vendor/ keeps its own MIT or BSD-3-Clause licence, and the official licence
+  texts keep their publishers' own terms. The X-WOW name and logo are
   excluded: X-WOW is a trade mark, and the X-WOW logo (which includes the
-  name) is a registered UK trade mark, UK00003425680. Made with AI assistance
-  (Claude by Anthropic, used through Claude Code), directed by the X-WOW owner.
+  name) is a registered UK trade mark, UK00003425680. Made by an AI (Claude by
+  Anthropic, used through Claude Code), working from the X-WOW owner's brief
+  and orders.
 keywords:
   - expansion microscopy
   - open hardware

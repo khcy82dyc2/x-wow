@@ -1,0 +1,75 @@
+<section class="block" id="tested">
+<style>
+#tested .finding h3{margin-top:.2rem}
+#tested .finding .n{font-family:var(--mono);color:var(--gold);font-size:.85rem;letter-spacing:.08em}
+#tested .score{font-family:var(--mono)}
+</style>
+<p class="kicker"><span class="en">Tested harder</span><span class="zh">更严的考试</span></p>
+<h2><span class="en">A fresh AI review found the weak spots. Here is what changed.</span><span class="zh">一次全新的 AI 审查找出了薄弱处。下面是改了什么。</span></h2>
+<p class="lead en">On 9 October 2026 a fresh AI review session (another Claude instance that had not built anything here, not a person) reran the download: the fingerprint matched, all 11 tests passed and every number reproduced. Then it listed what the tests could not show. Each point below is fixed, or stated as an open problem with its numbers. The first version was withdrawn on 10 October 2026, because it carried the original brief's superseded home-lab plan.</p>
+<p class="lead zh">2026 年 10 月 9 日，一个全新的 AI 审查会话（另一个没参与过这里任何构建的 Claude 实例，不是人）把下载包重跑了一遍：指纹对得上，11 个测试全部通过，每个数字都能复现。然后它列出了这些测试证明不了的地方。下面每一条，要么已经修好，要么作为一个带数字的未解问题写明。第一版已于 2026 年 10 月 10 日撤回，因为里面还带着原始任务书里已作废的居家实验方案。</p>
+
+<div class="grid-2">
+  <div class="panel finding gold">
+    <p class="n"><span class="en">1 · BLIND ≠ INDEPENDENT</span><span class="zh">1 · 盲测 ≠ 独立</span></p>
+    <h3><span class="en">A red team built a gel we never saw</span><span class="zh">"红队"造了一块我们没见过的凝胶</span></h3>
+    <p class="en">The old blind gel came from the same generator, and the pipeline was handed the before/after pairing. Now a separate AI agent (another Claude instance, so it may share our blind spots), which read only the data format and never the detector code, built gel S3: lost fibrils, debris, a fold, a bubble, curved and bundled fibrils, tilted fibrils, expansion drifting during the scan, and its own blur and noise. The pipeline now matches the fibrils itself, and its result on S3 is published as the red team scored it.</p>
+    <p class="zh">旧的"盲测"凝胶出自同一个生成器，而且流水线事先就知道膨胀前后谁和谁配对。现在由另一个只读过数据格式、从没看过检测代码的 AI 智能体（也是 Claude 实例，所以可能和我们有同样的盲点），造了凝胶 S3：丢失的纤维、碎屑、一处折叠、一个气泡、弯曲和成束的纤维、倾斜的纤维、扫描过程中仍在漂移的膨胀，还有它自己的模糊和噪声模型。流水线现在自己给纤维找配对，它在 S3 上的成绩按红队的评分原样公布。</p>
+    <div class="table-wrap"><table class="data">
+      <thead><tr><th><span class="en">Red-team gel S3, as the red team scored it (anisotropy truth converted to the pipeline's convention)</span><span class="zh">红队凝胶 S3，按红队的评分（各向异性的真值已换算成流水线的写法）</span></th><th><span class="en">result</span><span class="zh">结果</span></th></tr></thead>
+      <tbody>
+        <tr><td><span class="en">fibrils paired before ↔ after (recall · precision · wrong)</span><span class="zh">膨胀前后配对（找回率 · 准确率 · 配错）</span></td><td>{{n:tested.s3_recall}} · {{n:tested.s3_precision}} · {{n:tested.s3_wrong}}</td></tr>
+        <tr><td><span class="en">debris rejected</span><span class="zh">碎屑被排除</span></td><td>{{n:tested.s3_debris}}</td></tr>
+        <tr><td><span class="en">gel-mean axial error (median)</span><span class="zh">整块凝胶平均轴向误差（中位数）</span></td><td>{{n:tested.s3_mean_err}} ({{n:tested.s3_median_err}})</td></tr>
+        <tr><td><span class="en">per-myofibril axial error: RMS · typical spread · beyond ±2%</span><span class="zh">每根肌原纤维的轴向误差：均方根 · 典型离散 · 超过 ±2% 的比例</span></td><td>{{n:tested.s3_ax_rms}} · {{n:tested.s3_ax_robust}} · {{n:tested.s3_ax_beyond}}</td></tr>
+        <tr><td><span class="en">pairs that got an axial ratio</span><span class="zh">得到轴向比值的配对</span></td><td>{{n:tested.s3_coverage}}</td></tr>
+        <tr><td><span class="en">transverse ruler bias (a blur shape it does not model)</span><span class="zh">横向标尺偏差（一种它没建模的模糊形状）</span></td><td><b>{{n:tested.s3_tr_bias}}</b></td></tr>
+        <tr><td><span class="en">anisotropy E<sub>ax</sub>/E<sub>tr</sub> − 1: estimate vs truth</span><span class="zh">各向异性 E<sub>ax</sub>/E<sub>tr</sub> − 1：估计值与真值</span></td><td><b>{{n:tested.s3_aniso_est}}</b> vs {{n:tested.s3_aniso_truth_axtr}}</td></tr>
+        <tr><td><span class="en">flagged: bubble · fold · bundles · z-tilt · curved</span><span class="zh">被标出：气泡 · 折叠 · 成束 · 倾斜 · 弯曲</span></td><td>{{n:tested.s3_flag_bubble}} · {{n:tested.s3_flag_fold}} · {{n:tested.s3_flag_bundled}} · {{n:tested.s3_flag_z_tilt}} · {{n:tested.s3_flag_curved}}</td></tr>
+        <tr><td><span class="en">flagged: under- and over-expanded patches</span><span class="zh">被标出：膨胀不足和过度的区域</span></td><td><b>{{n:tested.s3_flag_under_expansion}} · {{n:tested.s3_flag_over_expansion}}</b></td></tr>
+        <tr><td><span class="en">false flags on clean gel</span><span class="zh">干净区域的误报</span></td><td>{{n:tested.s3_false}}</td></tr>
+        <tr><td><span class="en">drift left after the clock tile</span><span class="zh">时钟视野校正后剩下的漂移</span></td><td>{{n:tested.s3_drift}}</td></tr>
+      </tbody>
+    </table></div>
+    <p class="en"><span class="tag sim">simulated</span> <b>What failed:</b> the transverse ruler read every width about a fifth too small, which made the anisotropy call wrong in size (the sign was right). The cause is not the blur calibration: rerun with the true blur widths, the bias is still {{n:tested.s3_true_psf_bias}}. It is a blur shape the ruler does not model, and the pipeline's own landmark ruler already disagreed with it by {{n:tested.s3r_tr_vs_land}} while the call was still made. Fixed after S3 (a development fix, since S3 has been seen): no anisotropy call while the two rulers disagree by more than 3%. On S3 the call is now <b>{{n:tested.s3r_aniso_call}}</b>. The ordinary under- and over-expanded patches, the curved fibrils and the tilted region went unflagged, and only about a quarter of the pairs got an axial ratio. The pairing, the debris rejection, the gel-level factor and the drift correction held. These are open problems; S3 has now been seen, so the next fix needs a new blind gel.</p>
+    <p class="zh"><span class="tag sim">模拟</span><b>没过的地方：</b>横向标尺把每根纤维的宽度都量小了约五分之一，于是各向异性的大小判断错了（方向是对的）。原因不在模糊校准：给它真实的模糊宽度再跑，偏差仍有 {{n:tested.s3_true_psf_bias}}。原因是一种它没建模的模糊形状；流水线自己的地标标尺当时已经和它相差 {{n:tested.s3r_tr_vs_land}}，可结论照样下了。S3 之后的修正（属于开发阶段的修正，因为 S3 已经"看过"）：两把标尺相差超过 3% 时，不下各向异性的结论。现在在 S3 上的结论是<b>{{n:tested.s3r_aniso_call_zh}}</b>。普通的膨胀不足和过度区域、弯曲的纤维和倾斜的区域都没被标出来，而且只有大约四分之一的配对得到了轴向比值。配对、排除碎屑、整块凝胶的倍数和漂移校正都扛住了。这些都列为未解问题；S3 现在已经"看过"了，下一次修正需要一块新的盲测凝胶。</p>
+  </div>
+  <div class="panel finding">
+    <p class="n"><span class="en">2 · THE BEFORE-IMAGE IS LOAD-BEARING</span><span class="zh">2 · 膨胀前的图是承重的</span></p>
+    <h3><span class="en">A go/no-go for the stripes</span><span class="zh">给条纹定一条继续/放弃线</span></h3>
+    <p class="en"><span class="tag sim">simulated</span> The axial ruler is only as good as the label-free stripes before expansion. Its error follows one number, q = striation contrast × √photons: <b>go if q ≥ {{n:tested.q_go}}</b> (1% per myofibril at 10 sarcomeres). An uneven light that the old code ignored no longer matters: a 20% slope cost {{n:tested.slope_v1}}, now {{n:tested.slope_v2}}. <span class="tag predicted">predicted</span> From the physics of each mode, the choice is <b>differential phase contrast with four oblique LEDs</b> (predicted contrast {{n:tested.dpc_m}}, q ≈ {{n:tested.dpc_q}}). Crossed polarisers lose fibrils near 0° and 90°: only {{n:tested.pol_cover}} of orientations reach the go line.</p>
+    <p class="zh"><span class="tag sim">模拟</span>轴向标尺好不好，取决于膨胀前那张免标记图上的条纹。它的误差由一个数决定：q = 条纹反差 × √光子数。<b>q ≥ {{n:tested.q_go}} 就继续</b>（10 个肌节时每根肌原纤维误差 1%）。旧代码没处理的光照不均现在不碍事了：20% 的斜坡原来造成 {{n:tested.slope_v1}} 误差，现在是 {{n:tested.slope_v2}}。<span class="tag predicted">预测</span>按每种成像方式的物理推算，选定<b>四个斜射 LED 的差分相衬</b>（预计反差 {{n:tested.dpc_m}}，q 约 {{n:tested.dpc_q}}）。正交偏振会丢掉接近 0° 和 90° 方向的纤维：只有 {{n:tested.pol_cover}} 的方向能达到继续线。</p>
+  </div>
+  <div class="panel finding">
+    <p class="n"><span class="en">3 · A −0.1% BIAS</span><span class="zh">3 · −0.1% 的偏差</span></p>
+    <h3><span class="en">Broken ends, and effect sizes instead of "significant"</span><span class="zh">断头的问题，以及用效应大小代替"显著"</span></h3>
+    <p class="en"><span class="tag sim">simulated</span> The ladder used the Z-discs at the very ends of each fragment, which are cut in half, and that pulled the axial factor low. They are now ignored. The gel-mean error on our own five development gels is now {{n:tested.v2_mean_err}}, and the per-myofibril error {{n:tested.v2_rms}}. "The confidence interval excludes zero" had called a perfect gel anisotropic; now anisotropy counts only beyond ±1%. On the perfect gel the estimate is {{n:tested.v2_s0_aniso}}, called <b>{{n:tested.v2_s0_call}}</b>; a planted 2% anisotropy reads {{n:tested.v2_s2_aniso}} (truth {{n:tested.v2_s2_truth}}).</p>
+    <p class="zh"><span class="tag sim">模拟</span>"梯子"用了每段碎片最两端的 Z 盘，而那两个 Z 盘只剩半个，把轴向倍数拉低了。现在端头的 Z 盘不再使用。我们自己的五块开发用合成凝胶，整体平均误差现在是 {{n:tested.v2_mean_err}}，每根肌原纤维的误差是 {{n:tested.v2_rms}}。原来"置信区间不包含零"会把一块完美的凝胶判成各向异性；现在只有超过 ±1% 才算。在完美凝胶上，估计值是 {{n:tested.v2_s0_aniso}}，判为<b>{{n:tested.v2_s0_call_zh}}</b>；人为埋入的 2% 各向异性测得 {{n:tested.v2_s2_aniso}}（真值 {{n:tested.v2_s2_truth}}）。</p>
+  </div>
+  <div class="panel finding">
+    <p class="n"><span class="en">4 · WHEN THE BEFORE-IMAGE IS TAKEN</span><span class="zh">4 · 膨胀前的图什么时候拍</span></p>
+    <h3><span class="en">After the gel sets, and the gap measured</span><span class="zh">在凝胶凝固之后拍，并测量中间这段</span></h3>
+    <p class="en"><span class="tag untested">untested</span> A protocol decision, never run. The protocol took the before-image before anchoring and gelling, so any change in sarcomere length in between would read as an expansion error. The reference image is now taken after the gel sets, on the rinsed gel, and the first three gels are imaged before anchoring too, to measure what that step does.</p>
+    <p class="zh"><span class="tag untested">未测试</span>这是流程上的决定，从没实际做过。原来的流程在锚定和成胶之前拍膨胀前的图，中间肌节长度的任何变化都会被当成膨胀误差。现在参考图改在凝胶凝固、冲洗之后拍；前三块凝胶还会在锚定前再拍一次，测量这一步到底带来多少变化。</p>
+  </div>
+  <div class="panel finding">
+    <p class="n"><span class="en">5 · ENOUGH LIGHT</span><span class="zh">5 · 光够不够</span></p>
+    <h3><span class="en">How much dye the signal needs</span><span class="zh">信号需要多少染料</span></h3>
+    <p class="en">For a signal-to-noise ratio of 10 at today's exposure, {{n:tested.lab_min_100}} of the protein's amines must carry a dye ({{n:tested.lab_min_200}} at 200 ms). A pan-ExM-strength stain is estimated to label about {{n:tested.lab_pan}} (range {{n:tested.lab_pan_range}}); the original recipe's weaker stain, about {{n:tested.lab_kit}}, falls short. So the first gels titrate stronger stains. <span class="tag untested">untested</span> Still open until real gels measure it.</p>
+    <p class="zh">要在现在的曝光下达到信噪比 10，蛋白质上 {{n:tested.lab_min_100}} 的氨基需要带上染料（200 毫秒曝光时是 {{n:tested.lab_min_200}}）。按 pan-ExM 的染色浓度，估计能标记约 {{n:tested.lab_pan}}（范围 {{n:tested.lab_pan_range}}）；原配方较淡的染色约 {{n:tested.lab_kit}}，不够。所以第一批凝胶要试更浓的染色。<span class="tag untested">未测试</span>在真实凝胶测出来之前，这仍是未解问题。</p>
+  </div>
+  <div class="panel finding">
+    <p class="n"><span class="en">6 · THE GEL KEEPS MOVING</span><span class="zh">6 · 凝胶还在动</span></p>
+    <h3><span class="en">A clock tile for scan-time drift</span><span class="zh">用"时钟视野"纠正扫描时的漂移</span></h3>
+    <p class="en"><span class="tag sim">simulated</span> A gel can keep swelling during a two-hour scan, which would paint a fake gradient in the order the tiles were taken. One tile is now re-imaged every 50 tiles as a clock. On a synthetic gel drifting by 0.5%, the error trend falls from {{n:tested.drift_slope_none}} to {{n:tested.drift_slope_clock}}.</p>
+    <p class="zh"><span class="tag sim">模拟</span>两个小时的扫描里，凝胶可能还在继续膨胀，结果会按拍摄顺序画出一个假的梯度。现在每拍 50 个视野就回去重拍同一个"时钟视野"。在一块漂移 0.5% 的合成凝胶上，误差随时间的趋势从 {{n:tested.drift_slope_none}} 降到 {{n:tested.drift_slope_clock}}。</p>
+  </div>
+</div>
+
+<p class="en"><b>Still failing:</b> on the blind gel, the gently stretched patch is flagged mostly by the wrong detector ({{n:tested.v2_blind_stretch_own}} by its own, {{n:tested.v2_blind_stretch_any}} by any), and a 1.5 µm tear stays below the detection limit. Both are listed as open problems.</p>
+<p class="zh"><b>仍未通过：</b>在盲测凝胶上，那块被轻轻拉伸的区域主要被"错的"检测器标出来（自己的检测器只标出 {{n:tested.v2_blind_stretch_own}}，任何检测器合计 {{n:tested.v2_blind_stretch_any}}），1.5 µm 的裂缝仍低于检测下限。两条都列为未解问题。</p>
+<aside class="loupe">
+  <p class="en">A blind test written by the same hand is a rehearsal. S3 is the first exam set by an agent that never saw the answers, though it was another AI instance, not a stranger.</p>
+  <p class="zh">自己出题的盲测只是彩排。S3 是第一场由没看过答案的智能体出题的考试，不过出题的仍是另一个 AI 实例，不是陌生人。</p>
+</aside>
+</section>

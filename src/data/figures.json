@@ -1,0 +1,9 @@
+{
+ "about": "Every simulation figure on the site. tools/label_figures.py writes a 'SIMULATION · synthetic data' strip above each one and the same words into its metadata; build.py fails if a listed figure lacks them or if an image in assets/img/swell/ isn't listed here. The unlabelled originals are the simulation outputs in the SWELL download (docs/design/figs/).",
+ "figures": [
+  {"file": "assets/img/swell/strain-map-s1b.jpg", "kind": "simulation", "source": "SWELL download docs/design/figs/strain_map_S1b.png (software/sim/strain_map_v1.py, synthetic gel S1b), resized for the web"},
+  {"file": "assets/img/swell/strain-map-s1b-truth-vs-measured.jpg", "kind": "simulation", "source": "a crop of SWELL download docs/design/figs/strain_map_S1b.png (truth and measured panels, synthetic gel S1b)"},
+  {"file": "assets/img/swell/strain-map-s1b-flags.jpg", "kind": "simulation", "source": "a crop of SWELL download docs/design/figs/strain_map_S1b.png (distortion and flags panels, synthetic gel S1b)"},
+  {"file": "assets/img/swell/strain-map-s2.jpg", "kind": "simulation", "source": "SWELL download docs/design/figs/strain_map_S2.png (software/sim/strain_map_v1.py, synthetic gel S2), resized for the web"}
+ ]
+}

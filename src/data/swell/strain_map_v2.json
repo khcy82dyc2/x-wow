@@ -1,0 +1,1987 @@
+{
+  "ruler_version": "0.1.0",
+  "dev": {
+    "S0": {
+      "scenario": {
+        "name": "S0",
+        "label": "good gel: 1% radial edge gradient only",
+        "radial": 0.01,
+        "hotspot": 0.0,
+        "hotspot_c": [
+          -320.0,
+          180.0
+        ],
+        "hotspot_sigma": 70.0,
+        "band": 0.0,
+        "band_angle": 0.6,
+        "band_offset": -260.0,
+        "band_width": 140.0,
+        "band_half_length": 220.0,
+        "tear_open": 0.0,
+        "tear_a": [
+          60.0,
+          330.0
+        ],
+        "tear_b": [
+          420.0,
+          120.0
+        ],
+        "tear_decay": 60.0,
+        "undig": 0.0,
+        "undig_c": [
+          260.0,
+          -360.0
+        ],
+        "undig_r": 130.0,
+        "ax_aniso": 0.0,
+        "gel_stretch": 0.0,
+        "gel_psi": 0.4,
+        "seed": 7
+      },
+      "metrics": {
+        "n_fibrils": 1200,
+        "match_precision": 1.0,
+        "match_recall": 1.0,
+        "n_axial": 437,
+        "n_eligible": 523,
+        "gel_mean_E_err": -3.387116353237296e-05,
+        "per_fibril_Eax_rms": 0.0016843969757549951,
+        "per_fibril_Eax_bias": -3.38133731291946e-05,
+        "per_fibril_Eax_outliers_2pct": 0.0,
+        "per_fibril_Etr_bias": 0.0010705988686674779,
+        "per_fibril_Etr_sd": 0.005228100464822611,
+        "per_fibril_Eland_ax_rms": 0.0006601174203179001,
+        "map_rms_vs_truth": 0.0006342829277225516,
+        "detection": {},
+        "detection_any_flag": {},
+        "false_flag_rate": 0.0,
+        "distortion_curve_max_dev": 0.0008571413351784789,
+        "anisotropy": {
+          "n": 437,
+          "est": -0.001028823941945256,
+          "ci95": [
+            -0.0018318388715096168,
+            -0.00031525872669013744
+          ],
+          "ci90": [
+            -0.0016047646087882228,
+            -0.0003838481314424324
+          ],
+          "sesoi": 0.01,
+          "call": "isotropic",
+          "gate_D32_pass": true,
+          "truth": -3.805860656913573e-05
+        },
+        "orientation": {
+          "n": 437,
+          "amplitude": 0.00029549605630186374,
+          "ci95": [
+            0.00011419212904401988,
+            0.0013002560256558718
+          ],
+          "axis_deg": 179.63986167940288,
+          "p": 0.7962684096274988,
+          "sesoi": 0.005,
+          "call": "unstretched",
+          "gate_pass": true
+        },
+        "drift_slope_pct_per_h": -0.011922732400506123,
+        "transform": {
+          "scale": 4.5084480540730825,
+          "rotation": 0.349995158740684,
+          "mirror": false,
+          "translation": [
+            149.9618765641412,
+            -89.9910089733395
+          ]
+        },
+        "axial_rejected": 23,
+        "runtime_s": 42.7
+      }
+    },
+    "S1": {
+      "scenario": {
+        "name": "S1",
+        "label": "planted defects: \u22125% hotspot, +3% stretched patch, 2 \u00b5m tear, \u22124% under-digested patch, 2% radial",
+        "radial": 0.02,
+        "hotspot": 0.05,
+        "hotspot_c": [
+          -320.0,
+          180.0
+        ],
+        "hotspot_sigma": 70.0,
+        "band": 0.03,
+        "band_angle": 0.6,
+        "band_offset": -260.0,
+        "band_width": 140.0,
+        "band_half_length": 220.0,
+        "tear_open": 2.0,
+        "tear_a": [
+          60.0,
+          330.0
+        ],
+        "tear_b": [
+          420.0,
+          120.0
+        ],
+        "tear_decay": 60.0,
+        "undig": 0.04,
+        "undig_c": [
+          260.0,
+          -360.0
+        ],
+        "undig_r": 130.0,
+        "ax_aniso": 0.0,
+        "gel_stretch": 0.0,
+        "gel_psi": 0.4,
+        "seed": 7
+      },
+      "metrics": {
+        "n_fibrils": 1200,
+        "match_precision": 1.0,
+        "match_recall": 0.9933333333333333,
+        "n_axial": 427,
+        "n_eligible": 528,
+        "gel_mean_E_err": -3.715117582103744e-05,
+        "per_fibril_Eax_rms": 0.00176478899029984,
+        "per_fibril_Eax_bias": -3.6524096840946576e-05,
+        "per_fibril_Eax_outliers_2pct": 0.0,
+        "per_fibril_Etr_bias": 0.001278818310479263,
+        "per_fibril_Etr_sd": 0.00508702055487083,
+        "per_fibril_Eland_ax_rms": 0.006467241773088382,
+        "map_rms_vs_truth": 0.002510507739368615,
+        "detection": {
+          "hotspot": 1.0,
+          "stretched patch": 0.9261744966442953,
+          "tear": 0.9,
+          "under-digested patch": 0.9120879120879121
+        },
+        "detection_any_flag": {
+          "hotspot": 1.0,
+          "stretched patch": 0.9932885906040269,
+          "tear": 0.9,
+          "under-digested patch": 0.978021978021978
+        },
+        "false_flag_rate": 0.0,
+        "distortion_curve_max_dev": 0.0007210360768646798,
+        "anisotropy": {
+          "n": 427,
+          "est": -0.0017521142720338112,
+          "ci95": [
+            -0.0025391983168989714,
+            -0.0007831129564579432
+          ],
+          "ci90": [
+            -0.002403965194091029,
+            -0.0009469575983875878
+          ],
+          "sesoi": 0.01,
+          "call": "isotropic",
+          "gate_D32_pass": true,
+          "truth": -0.0004399102613613648
+        },
+        "orientation": {
+          "n": 427,
+          "amplitude": 0.0011803092321161538,
+          "ci95": [
+            0.0004568262280388527,
+            0.0052536625626379745
+          ],
+          "axis_deg": 160.36075376493574,
+          "p": 0.7787380180993672,
+          "sesoi": 0.005,
+          "call": "inconclusive",
+          "gate_pass": true
+        },
+        "drift_slope_pct_per_h": -0.0423204370125002,
+        "transform": {
+          "scale": 4.5172309273321885,
+          "rotation": 0.34998984348016976,
+          "mirror": false,
+          "translation": [
+            149.87474462479423,
+            -90.07121063097355
+          ]
+        },
+        "axial_rejected": 26,
+        "runtime_s": 47.3
+      }
+    },
+    "S1b": {
+      "scenario": {
+        "name": "S1b",
+        "label": "blind rerun: new gel (seed 99); \u22124% hotspot, +2.5% patch, 1.5 \u00b5m tear, \u22123% under-digested patch, all moved and resized; detectors untouched",
+        "radial": 0.015,
+        "hotspot": 0.04,
+        "hotspot_c": [
+          330.0,
+          260.0
+        ],
+        "hotspot_sigma": 60.0,
+        "band": 0.025,
+        "band_angle": -0.9,
+        "band_offset": 180.0,
+        "band_width": 140.0,
+        "band_half_length": 180.0,
+        "tear_open": 1.5,
+        "tear_a": [
+          -480.0,
+          -150.0
+        ],
+        "tear_b": [
+          -200.0,
+          -420.0
+        ],
+        "tear_decay": 60.0,
+        "undig": 0.03,
+        "undig_c": [
+          -250.0,
+          330.0
+        ],
+        "undig_r": 110.0,
+        "ax_aniso": 0.0,
+        "gel_stretch": 0.0,
+        "gel_psi": 0.4,
+        "seed": 99
+      },
+      "metrics": {
+        "n_fibrils": 1200,
+        "match_precision": 1.0,
+        "match_recall": 0.9958333333333333,
+        "n_axial": 446,
+        "n_eligible": 554,
+        "gel_mean_E_err": -1.0239399295119966e-07,
+        "per_fibril_Eax_rms": 0.0015518267537218556,
+        "per_fibril_Eax_bias": -3.962385539806712e-07,
+        "per_fibril_Eax_outliers_2pct": 0.0,
+        "per_fibril_Etr_bias": 0.0013764668929912092,
+        "per_fibril_Etr_sd": 0.004873558293076216,
+        "per_fibril_Eland_ax_rms": 0.0034312097067793865,
+        "map_rms_vs_truth": 0.001070079898012205,
+        "detection": {
+          "hotspot": 1.0,
+          "stretched patch": 0.40229885057471265,
+          "tear": null,
+          "under-digested patch": 1.0
+        },
+        "detection_any_flag": {
+          "hotspot": 1.0,
+          "stretched patch": 0.9195402298850575,
+          "tear": null,
+          "under-digested patch": 1.0
+        },
+        "false_flag_rate": 0.0,
+        "distortion_curve_max_dev": 0.0010475427667852968,
+        "anisotropy": {
+          "n": 446,
+          "est": -0.0013265002060642134,
+          "ci95": [
+            -0.002187633073788268,
+            -0.000631357035324003
+          ],
+          "ci90": [
+            -0.0021090949679118637,
+            -0.000786474405312756
+          ],
+          "sesoi": 0.01,
+          "call": "isotropic",
+          "gate_D32_pass": true,
+          "truth": -0.0001932840019220894
+        },
+        "orientation": {
+          "n": 446,
+          "amplitude": 0.00208173820047565,
+          "ci95": [
+            0.0004140398179118303,
+            0.00475477595147917
+          ],
+          "axis_deg": 81.0294399974336,
+          "p": 0.20250416816365238,
+          "sesoi": 0.005,
+          "call": "unstretched",
+          "gate_pass": true
+        },
+        "drift_slope_pct_per_h": -0.007152359058418393,
+        "transform": {
+          "scale": 4.512865201535749,
+          "rotation": 0.34999314410000176,
+          "mirror": false,
+          "translation": [
+            150.04622543209845,
+            -89.96864643210472
+          ]
+        },
+        "axial_rejected": 34,
+        "runtime_s": 55.5
+      }
+    },
+    "S2": {
+      "scenario": {
+        "name": "S2",
+        "label": "anisotropy: every myofibril 2% shorter axially than transversely; gel stretched 2% along 23\u00b0",
+        "radial": 0.01,
+        "hotspot": 0.0,
+        "hotspot_c": [
+          -320.0,
+          180.0
+        ],
+        "hotspot_sigma": 70.0,
+        "band": 0.0,
+        "band_angle": 0.6,
+        "band_offset": -260.0,
+        "band_width": 140.0,
+        "band_half_length": 220.0,
+        "tear_open": 0.0,
+        "tear_a": [
+          60.0,
+          330.0
+        ],
+        "tear_b": [
+          420.0,
+          120.0
+        ],
+        "tear_decay": 60.0,
+        "undig": 0.0,
+        "undig_c": [
+          260.0,
+          -360.0
+        ],
+        "undig_r": 130.0,
+        "ax_aniso": -0.02,
+        "gel_stretch": 0.02,
+        "gel_psi": 0.4,
+        "seed": 7
+      },
+      "metrics": {
+        "n_fibrils": 1200,
+        "match_precision": 1.0,
+        "match_recall": 1.0,
+        "n_axial": 435,
+        "n_eligible": 529,
+        "gel_mean_E_err": 1.0557122652077311e-05,
+        "per_fibril_Eax_rms": 0.0015054998376262379,
+        "per_fibril_Eax_bias": 9.895398856206805e-06,
+        "per_fibril_Eax_outliers_2pct": 0.0,
+        "per_fibril_Etr_bias": 0.0010699021833227137,
+        "per_fibril_Etr_sd": 0.005088436682708559,
+        "per_fibril_Eland_ax_rms": 0.0006658623213366688,
+        "map_rms_vs_truth": 0.0005873547162015716,
+        "detection": {},
+        "detection_any_flag": {},
+        "false_flag_rate": 0.0,
+        "distortion_curve_max_dev": 0.0016836151301757394,
+        "anisotropy": {
+          "n": 435,
+          "est": -0.021611748368851155,
+          "ci95": [
+            -0.024355363462602586,
+            -0.018146046930904526
+          ],
+          "ci90": [
+            -0.024132486849886448,
+            -0.018931407816924373
+          ],
+          "sesoi": 0.01,
+          "call": "anisotropic",
+          "gate_D32_pass": true,
+          "truth": -0.019799687527012666
+        },
+        "orientation": {
+          "n": 435,
+          "amplitude": 0.020206193546366578,
+          "ci95": [
+            0.019340977363014898,
+            0.0210941575141043
+          ],
+          "axis_deg": 23.056479604781433,
+          "p": 8.45814273591001e-161,
+          "sesoi": 0.005,
+          "call": "stretched",
+          "gate_pass": false
+        },
+        "drift_slope_pct_per_h": -0.01058633312049571,
+        "transform": {
+          "scale": 4.543582506646113,
+          "rotation": 0.3495105353444644,
+          "mirror": false,
+          "translation": [
+            150.0621358360708,
+            -89.87030800490976
+          ]
+        },
+        "axial_rejected": 23,
+        "runtime_s": 57.8
+      }
+    },
+    "S4": {
+      "scenario": {
+        "name": "S4",
+        "label": "drift: a good gel (new seed) that keeps swelling by 0.5% during the 2.2 h post scan, in raster order, with a clock tile re-imaged every 50 tiles",
+        "radial": 0.01,
+        "hotspot": 0.0,
+        "hotspot_c": [
+          -320.0,
+          180.0
+        ],
+        "hotspot_sigma": 70.0,
+        "band": 0.0,
+        "band_angle": 0.6,
+        "band_offset": -260.0,
+        "band_width": 140.0,
+        "band_half_length": 220.0,
+        "tear_open": 0.0,
+        "tear_a": [
+          60.0,
+          330.0
+        ],
+        "tear_b": [
+          420.0,
+          120.0
+        ],
+        "tear_decay": 60.0,
+        "undig": 0.0,
+        "undig_c": [
+          260.0,
+          -360.0
+        ],
+        "undig_r": 130.0,
+        "ax_aniso": 0.0,
+        "gel_stretch": 0.0,
+        "gel_psi": 0.4,
+        "seed": 41
+      },
+      "metrics": {
+        "n_fibrils": 1200,
+        "match_precision": 1.0,
+        "match_recall": 1.0,
+        "n_axial": 422,
+        "n_eligible": 518,
+        "gel_mean_E_err": -0.0007522429561771515,
+        "per_fibril_Eax_rms": 0.0018194750551652357,
+        "per_fibril_Eax_bias": -0.000752160887922872,
+        "per_fibril_Eax_outliers_2pct": 0.0,
+        "per_fibril_Etr_bias": 0.0005051801446523172,
+        "per_fibril_Etr_sd": 0.0050424543117068175,
+        "per_fibril_Eland_ax_rms": 0.0009969254943628496,
+        "map_rms_vs_truth": 0.0005557867374288595,
+        "detection": {},
+        "detection_any_flag": {},
+        "false_flag_rate": 0.0,
+        "distortion_curve_max_dev": 0.00044729509357234877,
+        "anisotropy": {
+          "n": 422,
+          "est": -0.0012380180384707984,
+          "ci95": [
+            -0.002019375268981071,
+            -0.0007426134439060261
+          ],
+          "ci90": [
+            -0.0019112856456140468,
+            -0.0008099571219887101
+          ],
+          "sesoi": 0.01,
+          "call": "isotropic",
+          "gate_D32_pass": true,
+          "truth": -6.816301410528247e-05
+        },
+        "orientation": {
+          "n": 422,
+          "amplitude": 0.0006674068137826601,
+          "ci95": [
+            0.00015320851503320567,
+            0.0016414512008314163
+          ],
+          "axis_deg": 58.32340221446312,
+          "p": 0.33706139277559166,
+          "sesoi": 0.005,
+          "call": "unstretched",
+          "gate_pass": true
+        },
+        "drift_slope_pct_per_h": -0.03634401465271693,
+        "transform": {
+          "scale": 4.505871479559081,
+          "rotation": 0.3499922471856664,
+          "mirror": false,
+          "translation": [
+            150.03474293678906,
+            -90.0641247047234
+          ]
+        },
+        "axial_rejected": 25,
+        "runtime_s": 64.2
+      }
+    },
+    "S4_no_clock": {
+      "scenario": {
+        "name": "S4",
+        "label": "drift: a good gel (new seed) that keeps swelling by 0.5% during the 2.2 h post scan, in raster order, with a clock tile re-imaged every 50 tiles",
+        "radial": 0.01,
+        "hotspot": 0.0,
+        "hotspot_c": [
+          -320.0,
+          180.0
+        ],
+        "hotspot_sigma": 70.0,
+        "band": 0.0,
+        "band_angle": 0.6,
+        "band_offset": -260.0,
+        "band_width": 140.0,
+        "band_half_length": 220.0,
+        "tear_open": 0.0,
+        "tear_a": [
+          60.0,
+          330.0
+        ],
+        "tear_b": [
+          420.0,
+          120.0
+        ],
+        "tear_decay": 60.0,
+        "undig": 0.0,
+        "undig_c": [
+          260.0,
+          -360.0
+        ],
+        "undig_r": 130.0,
+        "ax_aniso": 0.0,
+        "gel_stretch": 0.0,
+        "gel_psi": 0.4,
+        "seed": 41
+      },
+      "metrics": {
+        "n_fibrils": 1200,
+        "match_precision": 1.0,
+        "match_recall": 1.0,
+        "n_axial": 422,
+        "n_eligible": 518,
+        "gel_mean_E_err": 0.001987169312129611,
+        "per_fibril_Eax_rms": 0.0028127712250112977,
+        "per_fibril_Eax_bias": 0.001987207117861864,
+        "per_fibril_Eax_outliers_2pct": 0.0,
+        "per_fibril_Etr_bias": 0.0033920493704903028,
+        "per_fibril_Etr_sd": 0.005229677768972869,
+        "per_fibril_Eland_ax_rms": 0.00311002360676351,
+        "map_rms_vs_truth": 0.001189624992668507,
+        "detection": {},
+        "detection_any_flag": {},
+        "false_flag_rate": 0.0,
+        "distortion_curve_max_dev": 0.0012128601035103826,
+        "anisotropy": {
+          "n": 422,
+          "est": -0.0013436923757293472,
+          "ci95": [
+            -0.002006874092528952,
+            -0.0007673054394755756
+          ],
+          "ci90": [
+            -0.0019318176575916649,
+            -0.0008220699430254105
+          ],
+          "sesoi": 0.01,
+          "call": "isotropic",
+          "gate_D32_pass": true,
+          "truth": -6.816301410528247e-05
+        },
+        "orientation": {
+          "n": 422,
+          "amplitude": 0.0007444443364523385,
+          "ci95": [
+            0.00021825186866487775,
+            0.0018039504555739916
+          ],
+          "axis_deg": 50.932455627085965,
+          "p": 0.2999051278970907,
+          "sesoi": 0.005,
+          "call": "unstretched",
+          "gate_pass": true
+        },
+        "drift_slope_pct_per_h": 0.22496842152018945,
+        "transform": {
+          "scale": 4.518509655975573,
+          "rotation": 0.3499947494272641,
+          "mirror": false,
+          "translation": [
+            150.10371444278587,
+            -88.29995631564724
+          ]
+        },
+        "axial_rejected": 25
+      }
+    }
+  },
+  "S3": {
+    "problems": [],
+    "runtime_s": 80.1,
+    "gel": {
+      "n_pre": 1210,
+      "n_post": 1198,
+      "n_matched": 1082,
+      "n_axial": 320,
+      "anisotropy": {
+        "n": 320,
+        "est": 0.24694007475844276,
+        "ci95": [
+          0.23740105379241774,
+          0.2540879393698212
+        ],
+        "ci90": [
+          0.23927648825104053,
+          0.2533718789553554
+        ],
+        "sesoi": 0.01,
+        "call": "anisotropic",
+        "gate_D32_pass": false
+      },
+      "orientation": {
+        "n": 320,
+        "amplitude": 0.007534359553183456,
+        "ci95": [
+          0.002523561421632117,
+          0.015266776393568646
+        ],
+        "axis_deg": 44.283163187799616,
+        "p": 0.05034850678228567,
+        "sesoi": 0.005,
+        "call": "inconclusive",
+        "gate_pass": true
+      },
+      "drift": {
+        "clock_visits": 8,
+        "t": [
+          12.83,
+          1167.28,
+          2322.11,
+          3483.96,
+          4619.3,
+          5767.29,
+          6951.47,
+          7257.97
+        ],
+        "scale": [
+          1.0,
+          1.000329413278376,
+          1.0033773984080192,
+          1.003677111235433,
+          1.0034166793844037,
+          1.003573732718236,
+          1.001326785229575,
+          1.0012087010327457
+        ],
+        "span_pct": 0.3677111235433017,
+        "residual_slope_pct_per_h": -0.10291374864088004
+      },
+      "flagged_fraction": {
+        "local_E": 0.0,
+        "fibril_vs_gel": 0.0,
+        "gel_stretch": 0.0009363295880149813,
+        "non_affine": 0.05196629213483146,
+        "coverage_hole": 0.07888576779026217
+      }
+    },
+    "transform": {
+      "scale": 4.388989132683831,
+      "rotation": -0.6898661650696308,
+      "mirror": true,
+      "translation": [
+        11865.861747087096,
+        7425.912136537698
+      ]
+    },
+    "scorer_stdout": "| metric | value |\n|---|---|\n| matching precision / recall | 1.000 / 0.963 (1082 of 1124 true pairs; 0 wrong, 0 matched-but-unpaired) |\n| debris rejection | 1.000 (63 of 63) |\n| gel-mean E_ax error (correct matches) | -0.137 % (n=320) |\n| per-fibril E_ax RMS rel. error, correct matches | 1.80 % (beyond +-2 %: 7.5 %, n=320) |\n| per-fibril E_ax RMS rel. error, all returned | 1.80 % (beyond +-2 %: 7.5 %, n=320) |\n| E_tr bias / SD (correct matches) | -17.84 % / 9.60 % (n=1082) |\n| flagged: fold | 0.754 of 224 cells |\n| flagged: fold_overlap | 0.382 of 374 cells |\n| flagged: bubble | 1.000 of 82 cells |\n| flagged: curved | 0.000 of 101 cells |\n| flagged: bundled | 0.548 of 93 cells |\n| flagged: z_tilt | 0.031 of 130 cells |\n| flagged: under_expansion | 0.000 of 48 cells |\n| flagged: over_expansion | 0.000 of 56 cells |\n| false-flag fraction (clean cells) | 0.004 of 2070 cells |\n| anisotropy: estimate (truth) | 0.24694 (-0.01187); CI [0.237401, 0.254088]; covers truth: no; call right: no |\n| residual drift slope (correct matches, abs err < 5 %, n=310) | -0.0155 +- 0.0998 %/h (all 320: -0.1482 %/h; uncorrected drift would give 0.0658 %/h, see binned residuals in score.json) |\n\nfull score: data\\sim\\S3\\score.json\n",
+    "scorer_returncode": 0,
+    "score": {
+      "schema_result": "swell-result/1",
+      "gel_id_result": "S3",
+      "gel_id_truth": "S3",
+      "matching": {
+        "true_pairs": 1124,
+        "pre_ids_in_truth": 1210,
+        "pre_ids_in_result": 1210,
+        "matched_by_pipeline": 1082,
+        "correct": 1082,
+        "wrong_partner": 0,
+        "matched_but_truly_unpaired": 0,
+        "missed": 42,
+        "recall": 0.962633,
+        "precision": 1.0,
+        "post_ids_used_more_than_once": 0,
+        "unknown_pre_ids_in_result": 0
+      },
+      "matching_by_region": {
+        "fibril": {
+          "n": 870,
+          "true_pairs": 859,
+          "correct": 857,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 2
+        },
+        "fold_overlap": {
+          "n": 94,
+          "true_pairs": 53,
+          "correct": 51,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 2
+        },
+        "z_tilt": {
+          "n": 58,
+          "true_pairs": 48,
+          "correct": 45,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 3
+        },
+        "bubble": {
+          "n": 28,
+          "true_pairs": 25,
+          "correct": 25,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        },
+        "over_expansion": {
+          "n": 20,
+          "true_pairs": 20,
+          "correct": 20,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        },
+        "bundled": {
+          "n": 29,
+          "true_pairs": 29,
+          "correct": 29,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        },
+        "curved": {
+          "n": 44,
+          "true_pairs": 44,
+          "correct": 44,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        },
+        "fold": {
+          "n": 42,
+          "true_pairs": 34,
+          "correct": 0,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 34
+        },
+        "under_expansion": {
+          "n": 14,
+          "true_pairs": 12,
+          "correct": 11,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 1
+        },
+        "pre_crystal": {
+          "n": 5,
+          "true_pairs": 0,
+          "correct": 0,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        },
+        "pre_lint": {
+          "n": 6,
+          "true_pairs": 0,
+          "correct": 0,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        }
+      },
+      "debris": {
+        "n": 63,
+        "rejected": 63,
+        "rejection": 1.0,
+        "by_kind": {
+          "deb_collagen": {
+            "n": 12,
+            "rejected": 12
+          },
+          "deb_fragment": {
+            "n": 18,
+            "rejected": 18
+          },
+          "deb_beads": {
+            "n": 13,
+            "rejected": 13
+          },
+          "deb_lint": {
+            "n": 15,
+            "rejected": 15
+          },
+          "deb_crack": {
+            "n": 5,
+            "rejected": 5
+          }
+        }
+      },
+      "split_members_info": {
+        "n": 11,
+        "unmatched": 6,
+        "note": "post pieces of loose bundles; matching them to their bundle is accepted"
+      },
+      "gel_mean_E_ax": {
+        "n": 320,
+        "mean_est": 4.394611,
+        "mean_truth": 4.400652,
+        "rel_error_pct": -0.1373,
+        "median_rel_error_pct": -0.0079,
+        "result_gel_E_ax_median": 4.398847,
+        "gel_E_ax_median_rel_error_pct_vs_all_paired": -0.0097
+      },
+      "E_ax_correct_matches": {
+        "n": 320,
+        "mean": -0.001356,
+        "sd": 0.017969,
+        "rms": 0.017992,
+        "median": 0.000169,
+        "robust_sd": 0.003109,
+        "frac_beyond_2pct": 0.075,
+        "median_abs": 0.002108
+      },
+      "E_ax_all_returned": {
+        "n": 320,
+        "mean": -0.001356,
+        "sd": 0.017969,
+        "rms": 0.017992,
+        "median": 0.000169,
+        "robust_sd": 0.003109,
+        "frac_beyond_2pct": 0.075,
+        "median_abs": 0.002108,
+        "n_returned": 320,
+        "estimates_for_non_fibrils_or_unknown_ids": 0,
+        "frac_beyond_2pct_counting_non_fibrils": 0.075
+      },
+      "E_ax_coverage": 0.284698,
+      "E_ax_correct_by_region": {
+        "over_expansion": {
+          "n": 4,
+          "mean": -0.024911,
+          "sd": 0.049674,
+          "rms": 0.049711,
+          "median": -0.00053,
+          "robust_sd": 0.001935,
+          "frac_beyond_2pct": 0.25,
+          "median_abs": 0.001305
+        },
+        "fibril": {
+          "n": 289,
+          "mean": -0.000826,
+          "sd": 0.016406,
+          "rms": 0.016398,
+          "median": 0.000253,
+          "robust_sd": 0.002763,
+          "frac_beyond_2pct": 0.065744,
+          "median_abs": 0.001897
+        },
+        "under_expansion": {
+          "n": 2,
+          "mean": -0.026199,
+          "sd": 0.039738,
+          "rms": 0.038418,
+          "median": -0.026199,
+          "robust_sd": 0.04166,
+          "frac_beyond_2pct": 0.5,
+          "median_abs": 0.028099
+        },
+        "bundled": {
+          "n": 9,
+          "mean": 0.004288,
+          "sd": 0.032635,
+          "rms": 0.031066,
+          "median": -0.004138,
+          "robust_sd": 0.006257,
+          "frac_beyond_2pct": 0.222222,
+          "median_abs": 0.004671
+        },
+        "fold_overlap": {
+          "n": 9,
+          "mean": -0.005054,
+          "sd": 0.021366,
+          "rms": 0.020768,
+          "median": -0.000305,
+          "robust_sd": 0.004826,
+          "frac_beyond_2pct": 0.111111,
+          "median_abs": 0.002951
+        },
+        "z_tilt": {
+          "n": 6,
+          "mean": -0.00413,
+          "sd": 0.006928,
+          "rms": 0.007553,
+          "median": -0.003642,
+          "robust_sd": 0.002475,
+          "frac_beyond_2pct": 0.0,
+          "median_abs": 0.00397
+        },
+        "bubble": {
+          "n": 1,
+          "mean": -0.011466,
+          "sd": 0.0,
+          "rms": 0.011466,
+          "median": -0.011466,
+          "robust_sd": 0.0,
+          "frac_beyond_2pct": 0.0,
+          "median_abs": 0.011466
+        }
+      },
+      "E_tr_correct_matches": {
+        "n": 1082,
+        "bias": -0.178352,
+        "sd": 0.095988,
+        "median": -0.183833,
+        "robust_sd": 0.039662
+      },
+      "defects": {
+        "flags_used": [
+          "local_E",
+          "fibril_vs_gel",
+          "gel_stretch",
+          "non_affine",
+          "coverage_hole"
+        ],
+        "flags_unusable": [],
+        "grid": {
+          "x0": -760.0,
+          "y0": -780.0,
+          "step": 20.0,
+          "nx": 77,
+          "ny": 79
+        },
+        "per_defect": [
+          {
+            "kind": "fold",
+            "cells": 224,
+            "flagged_frac": 0.754464,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.0,
+              "coverage_hole": 0.754464
+            }
+          },
+          {
+            "kind": "fold_overlap",
+            "cells": 374,
+            "flagged_frac": 0.382353,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.026738,
+              "coverage_hole": 0.368984
+            }
+          },
+          {
+            "kind": "bubble",
+            "cells": 82,
+            "flagged_frac": 1.0,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 1.0,
+              "coverage_hole": 0.0
+            }
+          },
+          {
+            "kind": "curved",
+            "cells": 101,
+            "flagged_frac": 0.0,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.0,
+              "coverage_hole": 0.0
+            }
+          },
+          {
+            "kind": "bundled",
+            "cells": 93,
+            "flagged_frac": 0.548387,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.548387,
+              "coverage_hole": 0.0
+            }
+          },
+          {
+            "kind": "z_tilt",
+            "cells": 130,
+            "flagged_frac": 0.030769,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.030769,
+              "coverage_hole": 0.0
+            }
+          },
+          {
+            "kind": "under_expansion",
+            "cells": 48,
+            "flagged_frac": 0.0,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.0,
+              "coverage_hole": 0.0
+            }
+          },
+          {
+            "kind": "over_expansion",
+            "cells": 56,
+            "flagged_frac": 0.0,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.0,
+              "coverage_hole": 0.0
+            }
+          }
+        ]
+      },
+      "false_flags": {
+        "clean_cells": 2070,
+        "false_flag_frac": 0.004348,
+        "by_flag": {
+          "local_E": 0.0,
+          "fibril_vs_gel": 0.0,
+          "gel_stretch": 0.0,
+          "non_affine": 0.002899,
+          "coverage_hole": 0.001449
+        }
+      },
+      "anisotropy": {
+        "truth": -0.011866,
+        "truth_definition": "mean over paired single (non-bundle) fibrils whose centroid lies outside all defect polygons of (E_tr / E_ax - 1); negative = fibrils expand less across",
+        "keys_found": [
+          "call",
+          "ci90",
+          "ci95",
+          "est",
+          "gate_D32_pass",
+          "n",
+          "sesoi"
+        ],
+        "estimate_key": "est",
+        "estimate": 0.24694,
+        "ci_key": "ci95",
+        "ci": [
+          0.237401,
+          0.254088
+        ],
+        "se_key": null,
+        "se": null,
+        "convention": "E_tr/E_ax - 1 (schema example sign; assumed unless the result says otherwise)",
+        "call_raw": "call=anisotropic",
+        "estimate_in_truth_convention": 0.24694,
+        "error": 0.258806,
+        "sign_correct": false,
+        "ci_covers_truth": false,
+        "ci_excludes_zero": true,
+        "claim": "anisotropic",
+        "call_right": false,
+        "error_if_opposite_convention": -0.235074,
+        "status": "scored"
+      },
+      "residual_drift": {
+        "n": 320,
+        "slope_pct_per_h": -0.0155,
+        "slope_se_pct_per_h": 0.0998,
+        "n_used": 310,
+        "excluded_abs_err_over_5pct": 10,
+        "slope_all_pct_per_h": -0.1482,
+        "uncorrected_drift_slope_pct_per_h": 0.0658,
+        "binned_median_rel_err_pct": [
+          {
+            "t_h": [
+              0.086,
+              0.401
+            ],
+            "n": 37,
+            "median": 0.0347
+          },
+          {
+            "t_h": [
+              0.401,
+              0.717
+            ],
+            "n": 48,
+            "median": -0.0284
+          },
+          {
+            "t_h": [
+              0.717,
+              1.033
+            ],
+            "n": 65,
+            "median": -0.059
+          },
+          {
+            "t_h": [
+              1.033,
+              1.348
+            ],
+            "n": 72,
+            "median": 0.0423
+          },
+          {
+            "t_h": [
+              1.348,
+              1.664
+            ],
+            "n": 51,
+            "median": 0.0815
+          },
+          {
+            "t_h": [
+              1.664,
+              1.979
+            ],
+            "n": 47,
+            "median": -0.0758
+          }
+        ],
+        "result_gel_drift_keys": [
+          "clock_visits",
+          "residual_slope_pct_per_h",
+          "scale",
+          "span_pct",
+          "t"
+        ]
+      },
+      "transform_info": {
+        "mirror_result": true,
+        "mirror_truth": true,
+        "mirror_correct": true,
+        "scale_result": 4.388989,
+        "scale_truth_E0": 4.383,
+        "rotation_error_deg_best_convention": 0.0015
+      },
+      "result_path": "data\\sim\\S3\\result.json.gz",
+      "truth_path": "data\\sim\\S3\\truth.json.gz"
+    }
+  },
+  "S3_rerun": {
+    "problems": [],
+    "runtime_s": 107.8,
+    "gel": {
+      "n_pre": 1210,
+      "n_post": 1198,
+      "n_matched": 1082,
+      "n_axial": 320,
+      "anisotropy": {
+        "n": 320,
+        "est": 0.24694007475844276,
+        "call": "blocked",
+        "why": "transverse ruler disagrees with the landmark ruler by -19.7% (limit \u00b13%)",
+        "tr_vs_landmark": -0.19688932617875227,
+        "sesoi": 0.01,
+        "gate_D32_pass": false
+      },
+      "orientation": {
+        "n": 320,
+        "amplitude": 0.007534359553183456,
+        "ci95": [
+          0.002523561421632117,
+          0.015266776393568646
+        ],
+        "axis_deg": 44.283163187799616,
+        "p": 0.05034850678228567,
+        "sesoi": 0.005,
+        "call": "inconclusive",
+        "gate_pass": true
+      },
+      "drift": {
+        "clock_visits": 8,
+        "t": [
+          12.83,
+          1167.28,
+          2322.11,
+          3483.96,
+          4619.3,
+          5767.29,
+          6951.47,
+          7257.97
+        ],
+        "scale": [
+          1.0,
+          1.000329413278376,
+          1.0033773984080192,
+          1.003677111235433,
+          1.0034166793844037,
+          1.003573732718236,
+          1.001326785229575,
+          1.0012087010327457
+        ],
+        "span_pct": 0.3677111235433017,
+        "residual_slope_pct_per_h": -0.10291374864088004
+      },
+      "flagged_fraction": {
+        "local_E": 0.0,
+        "fibril_vs_gel": 0.0,
+        "gel_stretch": 0.0009363295880149813,
+        "non_affine": 0.05196629213483146,
+        "coverage_hole": 0.07888576779026217
+      }
+    },
+    "transform": {
+      "scale": 4.388989132683831,
+      "rotation": -0.6898661650696308,
+      "mirror": true,
+      "translation": [
+        11865.861747087096,
+        7425.912136537698
+      ]
+    },
+    "scorer_stdout": "| metric | value |\n|---|---|\n| matching precision / recall | 1.000 / 0.963 (1082 of 1124 true pairs; 0 wrong, 0 matched-but-unpaired) |\n| debris rejection | 1.000 (63 of 63) |\n| gel-mean E_ax error (correct matches) | -0.137 % (n=320) |\n| per-fibril E_ax RMS rel. error, correct matches | 1.80 % (beyond +-2 %: 7.5 %, n=320) |\n| per-fibril E_ax RMS rel. error, all returned | 1.80 % (beyond +-2 %: 7.5 %, n=320) |\n| E_tr bias / SD (correct matches) | -17.84 % / 9.60 % (n=1082) |\n| flagged: fold | 0.754 of 224 cells |\n| flagged: fold_overlap | 0.382 of 374 cells |\n| flagged: bubble | 1.000 of 82 cells |\n| flagged: curved | 0.000 of 101 cells |\n| flagged: bundled | 0.548 of 93 cells |\n| flagged: z_tilt | 0.031 of 130 cells |\n| flagged: under_expansion | 0.000 of 48 cells |\n| flagged: over_expansion | 0.000 of 56 cells |\n| false-flag fraction (clean cells) | 0.004 of 2070 cells |\n| anisotropy: estimate (truth) | 0.24694 (-0.01187); CI None; covers truth: not provided; call right: not provided |\n| residual drift slope (correct matches, abs err < 5 %, n=310) | -0.0155 +- 0.0998 %/h (all 320: -0.1482 %/h; uncorrected drift would give 0.0658 %/h, see binned residuals in score.json) |\n\nfull score: data\\sim\\S3\\score.json\n",
+    "scorer_returncode": 0,
+    "score": {
+      "schema_result": "swell-result/1",
+      "gel_id_result": "S3",
+      "gel_id_truth": "S3",
+      "matching": {
+        "true_pairs": 1124,
+        "pre_ids_in_truth": 1210,
+        "pre_ids_in_result": 1210,
+        "matched_by_pipeline": 1082,
+        "correct": 1082,
+        "wrong_partner": 0,
+        "matched_but_truly_unpaired": 0,
+        "missed": 42,
+        "recall": 0.962633,
+        "precision": 1.0,
+        "post_ids_used_more_than_once": 0,
+        "unknown_pre_ids_in_result": 0
+      },
+      "matching_by_region": {
+        "fibril": {
+          "n": 870,
+          "true_pairs": 859,
+          "correct": 857,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 2
+        },
+        "fold_overlap": {
+          "n": 94,
+          "true_pairs": 53,
+          "correct": 51,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 2
+        },
+        "z_tilt": {
+          "n": 58,
+          "true_pairs": 48,
+          "correct": 45,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 3
+        },
+        "bubble": {
+          "n": 28,
+          "true_pairs": 25,
+          "correct": 25,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        },
+        "over_expansion": {
+          "n": 20,
+          "true_pairs": 20,
+          "correct": 20,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        },
+        "bundled": {
+          "n": 29,
+          "true_pairs": 29,
+          "correct": 29,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        },
+        "curved": {
+          "n": 44,
+          "true_pairs": 44,
+          "correct": 44,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        },
+        "fold": {
+          "n": 42,
+          "true_pairs": 34,
+          "correct": 0,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 34
+        },
+        "under_expansion": {
+          "n": 14,
+          "true_pairs": 12,
+          "correct": 11,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 1
+        },
+        "pre_crystal": {
+          "n": 5,
+          "true_pairs": 0,
+          "correct": 0,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        },
+        "pre_lint": {
+          "n": 6,
+          "true_pairs": 0,
+          "correct": 0,
+          "wrong": 0,
+          "false_pos": 0,
+          "missed": 0
+        }
+      },
+      "debris": {
+        "n": 63,
+        "rejected": 63,
+        "rejection": 1.0,
+        "by_kind": {
+          "deb_collagen": {
+            "n": 12,
+            "rejected": 12
+          },
+          "deb_fragment": {
+            "n": 18,
+            "rejected": 18
+          },
+          "deb_beads": {
+            "n": 13,
+            "rejected": 13
+          },
+          "deb_lint": {
+            "n": 15,
+            "rejected": 15
+          },
+          "deb_crack": {
+            "n": 5,
+            "rejected": 5
+          }
+        }
+      },
+      "split_members_info": {
+        "n": 11,
+        "unmatched": 6,
+        "note": "post pieces of loose bundles; matching them to their bundle is accepted"
+      },
+      "gel_mean_E_ax": {
+        "n": 320,
+        "mean_est": 4.394611,
+        "mean_truth": 4.400652,
+        "rel_error_pct": -0.1373,
+        "median_rel_error_pct": -0.0079,
+        "result_gel_E_ax_median": 4.398847,
+        "gel_E_ax_median_rel_error_pct_vs_all_paired": -0.0097
+      },
+      "E_ax_correct_matches": {
+        "n": 320,
+        "mean": -0.001356,
+        "sd": 0.017969,
+        "rms": 0.017992,
+        "median": 0.000169,
+        "robust_sd": 0.003109,
+        "frac_beyond_2pct": 0.075,
+        "median_abs": 0.002108
+      },
+      "E_ax_all_returned": {
+        "n": 320,
+        "mean": -0.001356,
+        "sd": 0.017969,
+        "rms": 0.017992,
+        "median": 0.000169,
+        "robust_sd": 0.003109,
+        "frac_beyond_2pct": 0.075,
+        "median_abs": 0.002108,
+        "n_returned": 320,
+        "estimates_for_non_fibrils_or_unknown_ids": 0,
+        "frac_beyond_2pct_counting_non_fibrils": 0.075
+      },
+      "E_ax_coverage": 0.284698,
+      "E_ax_correct_by_region": {
+        "fibril": {
+          "n": 289,
+          "mean": -0.000826,
+          "sd": 0.016406,
+          "rms": 0.016398,
+          "median": 0.000253,
+          "robust_sd": 0.002763,
+          "frac_beyond_2pct": 0.065744,
+          "median_abs": 0.001897
+        },
+        "fold_overlap": {
+          "n": 9,
+          "mean": -0.005054,
+          "sd": 0.021366,
+          "rms": 0.020768,
+          "median": -0.000305,
+          "robust_sd": 0.004826,
+          "frac_beyond_2pct": 0.111111,
+          "median_abs": 0.002951
+        },
+        "over_expansion": {
+          "n": 4,
+          "mean": -0.024911,
+          "sd": 0.049674,
+          "rms": 0.049711,
+          "median": -0.00053,
+          "robust_sd": 0.001935,
+          "frac_beyond_2pct": 0.25,
+          "median_abs": 0.001305
+        },
+        "under_expansion": {
+          "n": 2,
+          "mean": -0.026199,
+          "sd": 0.039738,
+          "rms": 0.038418,
+          "median": -0.026199,
+          "robust_sd": 0.04166,
+          "frac_beyond_2pct": 0.5,
+          "median_abs": 0.028099
+        },
+        "bundled": {
+          "n": 9,
+          "mean": 0.004288,
+          "sd": 0.032635,
+          "rms": 0.031066,
+          "median": -0.004138,
+          "robust_sd": 0.006257,
+          "frac_beyond_2pct": 0.222222,
+          "median_abs": 0.004671
+        },
+        "z_tilt": {
+          "n": 6,
+          "mean": -0.00413,
+          "sd": 0.006928,
+          "rms": 0.007553,
+          "median": -0.003642,
+          "robust_sd": 0.002475,
+          "frac_beyond_2pct": 0.0,
+          "median_abs": 0.00397
+        },
+        "bubble": {
+          "n": 1,
+          "mean": -0.011466,
+          "sd": 0.0,
+          "rms": 0.011466,
+          "median": -0.011466,
+          "robust_sd": 0.0,
+          "frac_beyond_2pct": 0.0,
+          "median_abs": 0.011466
+        }
+      },
+      "E_tr_correct_matches": {
+        "n": 1082,
+        "bias": -0.178352,
+        "sd": 0.095988,
+        "median": -0.183833,
+        "robust_sd": 0.039662
+      },
+      "defects": {
+        "flags_used": [
+          "local_E",
+          "fibril_vs_gel",
+          "gel_stretch",
+          "non_affine",
+          "coverage_hole"
+        ],
+        "flags_unusable": [],
+        "grid": {
+          "x0": -760.0,
+          "y0": -780.0,
+          "step": 20.0,
+          "nx": 77,
+          "ny": 79
+        },
+        "per_defect": [
+          {
+            "kind": "fold",
+            "cells": 224,
+            "flagged_frac": 0.754464,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.0,
+              "coverage_hole": 0.754464
+            }
+          },
+          {
+            "kind": "fold_overlap",
+            "cells": 374,
+            "flagged_frac": 0.382353,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.026738,
+              "coverage_hole": 0.368984
+            }
+          },
+          {
+            "kind": "bubble",
+            "cells": 82,
+            "flagged_frac": 1.0,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 1.0,
+              "coverage_hole": 0.0
+            }
+          },
+          {
+            "kind": "curved",
+            "cells": 101,
+            "flagged_frac": 0.0,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.0,
+              "coverage_hole": 0.0
+            }
+          },
+          {
+            "kind": "bundled",
+            "cells": 93,
+            "flagged_frac": 0.548387,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.548387,
+              "coverage_hole": 0.0
+            }
+          },
+          {
+            "kind": "z_tilt",
+            "cells": 130,
+            "flagged_frac": 0.030769,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.030769,
+              "coverage_hole": 0.0
+            }
+          },
+          {
+            "kind": "under_expansion",
+            "cells": 48,
+            "flagged_frac": 0.0,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.0,
+              "coverage_hole": 0.0
+            }
+          },
+          {
+            "kind": "over_expansion",
+            "cells": 56,
+            "flagged_frac": 0.0,
+            "by_flag": {
+              "local_E": 0.0,
+              "fibril_vs_gel": 0.0,
+              "gel_stretch": 0.0,
+              "non_affine": 0.0,
+              "coverage_hole": 0.0
+            }
+          }
+        ]
+      },
+      "false_flags": {
+        "clean_cells": 2070,
+        "false_flag_frac": 0.004348,
+        "by_flag": {
+          "local_E": 0.0,
+          "fibril_vs_gel": 0.0,
+          "gel_stretch": 0.0,
+          "non_affine": 0.002899,
+          "coverage_hole": 0.001449
+        }
+      },
+      "anisotropy": {
+        "truth": -0.011866,
+        "truth_definition": "mean over paired single (non-bundle) fibrils whose centroid lies outside all defect polygons of (E_tr / E_ax - 1); negative = fibrils expand less across",
+        "keys_found": [
+          "call",
+          "est",
+          "gate_D32_pass",
+          "n",
+          "sesoi",
+          "tr_vs_landmark",
+          "why"
+        ],
+        "estimate_key": "est",
+        "estimate": 0.24694,
+        "ci_key": null,
+        "ci": null,
+        "se_key": null,
+        "se": null,
+        "convention": "E_tr/E_ax - 1 (schema example sign; assumed unless the result says otherwise)",
+        "call_raw": "call=blocked",
+        "estimate_in_truth_convention": 0.24694,
+        "error": 0.258806,
+        "sign_correct": false,
+        "ci_covers_truth": "not provided",
+        "claim": null,
+        "call_right": "not provided",
+        "error_if_opposite_convention": -0.235074,
+        "status": "scored"
+      },
+      "residual_drift": {
+        "n": 320,
+        "slope_pct_per_h": -0.0155,
+        "slope_se_pct_per_h": 0.0998,
+        "n_used": 310,
+        "excluded_abs_err_over_5pct": 10,
+        "slope_all_pct_per_h": -0.1482,
+        "uncorrected_drift_slope_pct_per_h": 0.0658,
+        "binned_median_rel_err_pct": [
+          {
+            "t_h": [
+              0.086,
+              0.401
+            ],
+            "n": 37,
+            "median": 0.0347
+          },
+          {
+            "t_h": [
+              0.401,
+              0.717
+            ],
+            "n": 48,
+            "median": -0.0284
+          },
+          {
+            "t_h": [
+              0.717,
+              1.033
+            ],
+            "n": 65,
+            "median": -0.059
+          },
+          {
+            "t_h": [
+              1.033,
+              1.348
+            ],
+            "n": 72,
+            "median": 0.0423
+          },
+          {
+            "t_h": [
+              1.348,
+              1.664
+            ],
+            "n": 51,
+            "median": 0.0815
+          },
+          {
+            "t_h": [
+              1.664,
+              1.979
+            ],
+            "n": 47,
+            "median": -0.0758
+          }
+        ],
+        "result_gel_drift_keys": [
+          "clock_visits",
+          "residual_slope_pct_per_h",
+          "scale",
+          "span_pct",
+          "t"
+        ]
+      },
+      "transform_info": {
+        "mirror_result": true,
+        "mirror_truth": true,
+        "mirror_correct": true,
+        "scale_result": 4.388989,
+        "scale_truth_E0": 4.383,
+        "rotation_error_deg_best_convention": 0.0015
+      },
+      "result_path": "data\\sim\\S3\\result.json.gz",
+      "truth_path": "data\\sim\\S3\\truth.json.gz"
+    }
+  },
+  "checks": [
+    {
+      "check": "S0: pre\u2194post matching recall \u2265 99% and precision \u2265 99% (pairing not given)",
+      "result": "pass",
+      "value": "recall 100.00%, precision 100.00%"
+    },
+    {
+      "check": "S0: gel-mean E within \u00b10.5%",
+      "result": "pass",
+      "value": "-0.00%"
+    },
+    {
+      "check": "S0: per-myofibril E_ax RMS error \u2264 1% (ladders spanning \u2265 8 sarcomeres)",
+      "result": "pass",
+      "value": "0.17% (bias -0.00%); 437 measured of 523 with \u2265 8 whole sarcomeres; 0.00% beyond \u00b12%"
+    },
+    {
+      "check": "S0: local E map RMS error \u2264 1% (vs truth, same kernel)",
+      "result": "pass",
+      "value": "0.06%"
+    },
+    {
+      "check": "S0: distortion curve within \u00b10.5% of truth (\u2265 25 \u00b5m, noise floor removed)",
+      "result": "pass",
+      "value": "0.09%"
+    },
+    {
+      "check": "S0: false flags \u2264 5% of defect-free gel area",
+      "result": "pass",
+      "value": "0.00%"
+    },
+    {
+      "check": "S0: anisotropy call right (effect size \u00b11%, not 'CI excludes 0')",
+      "result": "pass",
+      "value": "isotropic: -0.10% [-0.18%, -0.03%], truth -0.00%"
+    },
+    {
+      "check": "S1: pre\u2194post matching recall \u2265 99% and precision \u2265 99% (pairing not given)",
+      "result": "pass",
+      "value": "recall 99.33%, precision 100.00%"
+    },
+    {
+      "check": "S1: gel-mean E within \u00b10.5%",
+      "result": "pass",
+      "value": "-0.00%"
+    },
+    {
+      "check": "S1: per-myofibril E_ax RMS error \u2264 1% (ladders spanning \u2265 8 sarcomeres)",
+      "result": "pass",
+      "value": "0.18% (bias -0.00%); 427 measured of 528 with \u2265 8 whole sarcomeres; 0.00% beyond \u00b12%"
+    },
+    {
+      "check": "S1: local E map RMS error \u2264 1% (vs truth, same kernel)",
+      "result": "pass",
+      "value": "0.25%"
+    },
+    {
+      "check": "S1: distortion curve within \u00b10.5% of truth (\u2265 25 \u00b5m, noise floor removed)",
+      "result": "pass",
+      "value": "0.07%"
+    },
+    {
+      "check": "S1: false flags \u2264 5% of defect-free gel area",
+      "result": "pass",
+      "value": "0.00%"
+    },
+    {
+      "check": "S1: anisotropy call right (effect size \u00b11%, not 'CI excludes 0')",
+      "result": "pass",
+      "value": "isotropic: -0.18% [-0.25%, -0.08%], truth -0.04%"
+    },
+    {
+      "check": "S1b: pre\u2194post matching recall \u2265 99% and precision \u2265 99% (pairing not given)",
+      "result": "pass",
+      "value": "recall 99.58%, precision 100.00%"
+    },
+    {
+      "check": "S1b: gel-mean E within \u00b10.5%",
+      "result": "pass",
+      "value": "-0.00%"
+    },
+    {
+      "check": "S1b: per-myofibril E_ax RMS error \u2264 1% (ladders spanning \u2265 8 sarcomeres)",
+      "result": "pass",
+      "value": "0.16% (bias -0.00%); 446 measured of 554 with \u2265 8 whole sarcomeres; 0.00% beyond \u00b12%"
+    },
+    {
+      "check": "S1b: local E map RMS error \u2264 1% (vs truth, same kernel)",
+      "result": "pass",
+      "value": "0.11%"
+    },
+    {
+      "check": "S1b: distortion curve within \u00b10.5% of truth (\u2265 25 \u00b5m, noise floor removed)",
+      "result": "pass",
+      "value": "0.10%"
+    },
+    {
+      "check": "S1b: false flags \u2264 5% of defect-free gel area",
+      "result": "pass",
+      "value": "0.00%"
+    },
+    {
+      "check": "S1b: anisotropy call right (effect size \u00b11%, not 'CI excludes 0')",
+      "result": "pass",
+      "value": "isotropic: -0.13% [-0.22%, -0.06%], truth -0.02%"
+    },
+    {
+      "check": "S2: pre\u2194post matching recall \u2265 99% and precision \u2265 99% (pairing not given)",
+      "result": "pass",
+      "value": "recall 100.00%, precision 100.00%"
+    },
+    {
+      "check": "S2: gel-mean E within \u00b10.5%",
+      "result": "pass",
+      "value": "+0.00%"
+    },
+    {
+      "check": "S2: per-myofibril E_ax RMS error \u2264 1% (ladders spanning \u2265 8 sarcomeres)",
+      "result": "pass",
+      "value": "0.15% (bias +0.00%); 435 measured of 529 with \u2265 8 whole sarcomeres; 0.00% beyond \u00b12%"
+    },
+    {
+      "check": "S2: local E map RMS error \u2264 1% (vs truth, same kernel)",
+      "result": "pass",
+      "value": "0.06%"
+    },
+    {
+      "check": "S2: distortion curve within \u00b10.5% of truth (\u2265 25 \u00b5m, noise floor removed)",
+      "result": "pass",
+      "value": "0.17%"
+    },
+    {
+      "check": "S2: false flags \u2264 5% of defect-free gel area",
+      "result": "pass",
+      "value": "0.00%"
+    },
+    {
+      "check": "S2: anisotropy call right (effect size \u00b11%, not 'CI excludes 0')",
+      "result": "pass",
+      "value": "anisotropic: -2.16% [-2.44%, -1.81%], truth -1.98%"
+    },
+    {
+      "check": "S4: pre\u2194post matching recall \u2265 99% and precision \u2265 99% (pairing not given)",
+      "result": "pass",
+      "value": "recall 100.00%, precision 100.00%"
+    },
+    {
+      "check": "S4: gel-mean E within \u00b10.5%",
+      "result": "pass",
+      "value": "-0.08%"
+    },
+    {
+      "check": "S4: per-myofibril E_ax RMS error \u2264 1% (ladders spanning \u2265 8 sarcomeres)",
+      "result": "pass",
+      "value": "0.18% (bias -0.08%); 422 measured of 518 with \u2265 8 whole sarcomeres; 0.00% beyond \u00b12%"
+    },
+    {
+      "check": "S4: local E map RMS error \u2264 1% (vs truth, same kernel)",
+      "result": "pass",
+      "value": "0.06%"
+    },
+    {
+      "check": "S4: distortion curve within \u00b10.5% of truth (\u2265 25 \u00b5m, noise floor removed)",
+      "result": "pass",
+      "value": "0.04%"
+    },
+    {
+      "check": "S4: false flags \u2264 5% of defect-free gel area",
+      "result": "pass",
+      "value": "0.00%"
+    },
+    {
+      "check": "S4: anisotropy call right (effect size \u00b11%, not 'CI excludes 0')",
+      "result": "pass",
+      "value": "isotropic: -0.12% [-0.20%, -0.07%], truth -0.01%"
+    },
+    {
+      "check": "S1: planted hotspot flagged over \u2265 80% of its area (own detector)",
+      "result": "pass",
+      "value": "100% own, 100% any"
+    },
+    {
+      "check": "S1: planted stretched patch flagged over \u2265 80% of its area (own detector)",
+      "result": "pass",
+      "value": "93% own, 99% any"
+    },
+    {
+      "check": "S1: planted tear flagged over \u2265 80% of its area (own detector)",
+      "result": "pass",
+      "value": "90% own, 90% any"
+    },
+    {
+      "check": "S1: planted under-digested patch flagged over \u2265 80% of its area (own detector)",
+      "result": "pass",
+      "value": "91% own, 98% any"
+    },
+    {
+      "check": "S1b: planted hotspot flagged over \u2265 80% of its area (own detector)",
+      "result": "pass",
+      "value": "100% own, 100% any"
+    },
+    {
+      "check": "S1b: planted stretched patch flagged over \u2265 80% of its area (own detector)",
+      "result": "fail",
+      "value": "40% own, 92% any"
+    },
+    {
+      "check": "S1b: planted tear flagged over \u2265 80% of its area",
+      "result": "below limit",
+      "value": "below detection limit: its true signal never crosses the detector threshold"
+    },
+    {
+      "check": "S1b: planted under-digested patch flagged over \u2265 80% of its area (own detector)",
+      "result": "pass",
+      "value": "100% own, 100% any"
+    },
+    {
+      "check": "S2: anisotropy estimate within \u00b10.5% of truth",
+      "result": "pass",
+      "value": "-2.16% vs truth -1.98%"
+    },
+    {
+      "check": "S2: 2% gel stretch found by the orientation test (95% CI of the amplitude above 0.5%)",
+      "result": "pass",
+      "value": "amplitude 2.02% [1.93%, 2.11%] at 23\u00b0 (truth 2.00% at 23\u00b0)"
+    },
+    {
+      "check": "S0: no gel stretch reported on a gel without one",
+      "result": "pass",
+      "value": "unstretched: amplitude 0.03% [0.01%, 0.13%]"
+    },
+    {
+      "check": "S1b: no gel stretch reported on a gel without one",
+      "result": "pass",
+      "value": "unstretched: amplitude 0.21% [0.04%, 0.48%]"
+    },
+    {
+      "check": "S4: no gel stretch reported on a gel without one",
+      "result": "pass",
+      "value": "unstretched: amplitude 0.07% [0.02%, 0.16%]"
+    },
+    {
+      "check": "S4: clock tile removes the scan-time drift (|error slope| \u2264 0.05% per hour)",
+      "result": "pass",
+      "value": "-0.036%/h with the clock; +0.225%/h without; gel-mean E -0.08% with, +0.20% without"
+    }
+  ]
+}

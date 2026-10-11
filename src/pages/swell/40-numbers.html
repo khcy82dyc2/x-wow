@@ -15,8 +15,12 @@
   </style>
   <p class="kicker"><span class="en">The numbers, honestly</span><span class="zh">数字，老实说</span></p>
   <h2><span class="en">What the simulation says, including where it fails</span><span class="zh">模拟说了什么，包括没做好的地方</span></h2>
-  <p class="lead en">Every result here comes from synthetic gels with a known truth. Synthetic data proves the analysis pipeline, not the chemistry: a real build would have to repeat every check on real gels.</p>
-  <p class="lead zh">这里的每个结果都来自“已知标准答案”的合成凝胶。合成数据只能证明分析流程是对的，证明不了化学；真造出来以后，每一项检查都要在真凝胶上重做一遍。</p>
+  <p class="lead en">Every result here comes from synthetic gels with a known truth. Synthetic data tests the analysis pipeline against our own assumptions, not the chemistry: a real build would have to repeat every check on real gels.</p>
+  <p class="lead zh">这里的每个结果都来自“已知标准答案”的合成凝胶。合成数据只能拿我们自己的假设去检验分析流程，检验不了化学；真造出来以后，每一项检查都要在真凝胶上重做一遍。</p>
+  <div class="panel red">
+    <p class="en"><b>Read this first.</b> This section is version 1, measured on gels from our own generator. The only test built by a separate AI agent's generator, red-team gel S3 (see <a href="#tested">Tested harder</a>), went worse: per-myofibril axial error {{n:tested.s3_ax_rms}} RMS with {{n:tested.s3_ax_beyond}} beyond ±2%, a transverse bias of {{n:tested.s3_tr_bias}}, and {{n:tested.s3_flag_under_expansion}} of the under-expanded patch flagged. Treat everything below as development results.</p>
+    <p class="zh"><b>先看这里。</b>这一节是第一版，测的是我们自己的生成器造的凝胶。唯一一块由另一个 AI 智能体的生成器造的考试凝胶 S3（见<a href="#tested">更严的考试</a>）结果更差：每根肌原纤维轴向误差均方根 {{n:tested.s3_ax_rms}}，{{n:tested.s3_ax_beyond}} 超过 ±2%；横向偏差 {{n:tested.s3_tr_bias}}；膨胀不足的区域只标出了 {{n:tested.s3_flag_under_expansion}}。下面的一切都请当作开发阶段的结果来看。</p>
+  </div>
 
   <h3><span class="en">The first estimate was too optimistic, and the simulation said so</span><span class="zh">第一次估计太乐观了，是模拟自己揭穿的</span></h3>
   <div class="panel">
@@ -26,12 +30,12 @@
     <p class="en">The fix is the <strong>Z-disc ladder</strong>: the Z-discs in the expanded image define a sarcomere-by-sarcomere coordinate, and the before-image is fitted on that ladder, so the jitter is carried along instead of fought. Segments need at least {{n:swell.min_sarc}} sarcomeres. Result: {{n:swell.ladder_d33}} RMS per myofibril across simulation runs, {{n:swell.ladder_final}} across the four gels of the final run and {{n:swell.ladder_blind}} on the blind gel, with at most {{n:swell.ladder_outliers_final}} of myofibrils off by more than {{n:swell.outlier_band}}.</p>
     <p class="zh">修正办法叫 <strong>Z 盘梯子</strong>：用膨胀后图像里的 Z 盘标出一节一节的肌节坐标，再沿着这把“梯子”去拟合膨胀前的图像，抖动被顺着带走，而不是硬扛。每段至少要 {{n:swell.min_sarc}} 个肌节。结果：各轮模拟中每根肌原纤维的误差为 {{n:swell.ladder_d33}}（均方根），最终一轮四块凝胶为 {{n:swell.ladder_final}}，盲测凝胶为 {{n:swell.ladder_blind}}；偏差超过 {{n:swell.outlier_band}} 的肌原纤维最多占 {{n:swell.ladder_outliers_final}}。</p>
   </div>
-  <p class="en"><strong>The error bar went up, and the simulation itself raised it: the method working, not failing.</strong></p>
-  <p class="zh"><strong>误差范围变大了，而且是模拟自己调大的：这说明方法在正常工作，不是失灵。</strong></p>
+  <p class="en"><strong>The error bar went up, and the simulation itself raised it.</strong></p>
+  <p class="zh"><strong>误差范围变大了，而且是模拟自己调大的。</strong></p>
 
-  <h3><span class="en">The blind gel comes first</span><span class="zh">先看盲测凝胶</span></h3>
-  <p class="en">Gel S1b is the independent test: a new synthetic gel with a new random seed, every planted defect moved and resized, and nothing tuned after it ran. It holds {{n:swell.n_fibrils}} myofibrils in a {{n:swell.punch_a}} punch expanded {{n:swell.e_sim}}.</p>
-  <p class="zh">S1b 号凝胶是独立检验：换了随机种子的新合成凝胶，所有埋进去的缺陷都换了位置、改了大小，跑完以后什么参数都没再调。它在一块 {{n:swell.punch_a}} 的胶片里放了 {{n:swell.n_fibrils}} 根肌原纤维，放大 {{n:swell.e_sim}}。</p>
+  <h3><span class="en">Our own blind gel (version 1, development)</span><span class="zh">我们自己的盲测凝胶（第一版，开发用）</span></h3>
+  <p class="en">Gel S1b was our own blind test: the same generator with a new random seed, every planted defect moved and resized, and nothing tuned after it ran. It is not independent, because our generator shares our assumptions; red-team gel S3 is the red-team test. It holds {{n:swell.n_fibrils}} myofibrils in a {{n:swell.punch_a}} punch expanded {{n:swell.e_sim}}.</p>
+  <p class="zh">S1b 号凝胶是我们自己的盲测：同一个生成器换了随机种子，所有埋进去的缺陷都换了位置、改了大小，跑完以后什么参数都没再调。它不算独立，因为生成器和我们有同样的假设；红队检验是凝胶 S3。它在一块 {{n:swell.punch_a}} 的胶片里放了 {{n:swell.n_fibrils}} 根肌原纤维，放大 {{n:swell.e_sim}}。</p>
   <div class="stats">
     <div class="panel stat"><b>{{n:swell.blind_mean_err}}</b><span class="en">whole-gel expansion error</span><span class="zh">整块凝胶放大倍数误差</span></div>
     <div class="panel stat"><b>{{n:swell.blind_map_rms}}</b><span class="en">local expansion map, RMS from truth</span><span class="zh">局部放大图与真值的均方根误差</span></div>
@@ -58,20 +62,20 @@
   </div>
   <p class="en muted">Pass rule: the detector named for the defect must flag at least {{n:swell.detect_threshold}} of its area.</p>
   <p class="zh muted">合格标准：该缺陷对应的探测器要标出至少 {{n:swell.detect_threshold}} 的面积。</p>
-  <p class="en">The two misses, plainly: a mild {{n:swell.blind_stretch}} stretch is caught under the wrong label, and a {{n:swell.blind_tear}} tear is too small to see. Across all four synthetic gels, <strong>{{n:swell.checks_pass}} of {{n:swell.checks_total}} checks pass, {{n:swell.checks_fail}} fails and {{n:swell.checks_below}} is below the detection limit</strong>. Three of the gels (S0, S1, S2) are development gels, because the detectors were fixed while looking at S1; S1b is the only independent test. On development gel S1, a {{n:swell.dev_tear}} tear was flagged over {{n:swell.dev_tear_own}} of its area.</p>
-  <p class="zh">两处没做好，直说：轻微的 {{n:swell.blind_stretch}} 拉伸被标错了类别，{{n:swell.blind_tear}} 的裂缝太小看不出来。四块合成凝胶合计，<strong>{{n:swell.checks_total}} 项检查中 {{n:swell.checks_pass}} 项通过，{{n:swell.checks_fail}} 项失败，{{n:swell.checks_below}} 项低于检测下限</strong>。其中 S0、S1、S2 三块是“开发用”凝胶：探测器是对着 S1 调好的，所以只有 S1b 算独立检验。在开发凝胶 S1 上，一条 {{n:swell.dev_tear}} 的裂缝被标出了 {{n:swell.dev_tear_own}} 的面积。</p>
+  <p class="en">The two misses, plainly: a mild {{n:swell.blind_stretch}} stretch is caught under the wrong label, and a {{n:swell.blind_tear}} tear is too small to see. Across all four synthetic gels, <strong>{{n:swell.checks_pass}} of {{n:swell.checks_total}} checks pass, {{n:swell.checks_fail}} fails and {{n:swell.checks_below}} is below the detection limit</strong>. Three of the gels (S0, S1, S2) are development gels, because the detectors were fixed while looking at S1; S1b was our own blind gel, and S3 has since replaced it as the red-team test. On development gel S1, a {{n:swell.dev_tear}} tear was flagged over {{n:swell.dev_tear_own}} of its area.</p>
+  <p class="zh">两处没做好，直说：轻微的 {{n:swell.blind_stretch}} 拉伸被标错了类别，{{n:swell.blind_tear}} 的裂缝太小看不出来。四块合成凝胶合计，<strong>{{n:swell.checks_total}} 项检查中 {{n:swell.checks_pass}} 项通过，{{n:swell.checks_fail}} 项失败，{{n:swell.checks_below}} 项低于检测下限</strong>。其中 S0、S1、S2 三块是“开发用”凝胶：探测器是对着 S1 调好的；S1b 是我们自己的盲测凝胶，后来由 S3 取代成为红队检验。在开发凝胶 S1 上，一条 {{n:swell.dev_tear}} 的裂缝被标出了 {{n:swell.dev_tear_own}} 的面积。</p>
 
   <figure class="fig">
-    <a href="{{root}}assets/img/swell/strain-map-s1b.jpg"><img src="{{root}}assets/img/swell/strain-map-s1b.jpg" alt="Eight-panel strain map of the blind synthetic gel S1b: per-myofibril axial and transverse expansion, true and measured local expansion, anisotropy, fibril versus gel, distortion residual, and detector flags against the planted defects." loading="lazy" width="1600" height="823"></a>
+    <a href="{{root}}assets/img/swell/strain-map-s1b.jpg"><img src="{{root}}assets/img/swell/strain-map-s1b.jpg" alt="Simulation, synthetic data. Eight-panel strain map of the blind synthetic gel S1b: per-myofibril axial and transverse expansion, true and measured local expansion, anisotropy, fibril versus gel, distortion residual, and detector flags against the planted defects." loading="lazy" width="1600" height="877"></a>
     <figcaption><span class="en">Blind gel S1b, all eight maps (tap to enlarge). Top row: every myofibril drawn at its place and angle, coloured by its own axial, then transverse, expansion (grey: too short for the axial ruler); then the true and the measured local expansion. Bottom row: anisotropy, fibril versus gel, the distortion left after the best overall fit, and the flags against the planted defects (solid outline caught, dashed missed). Synthetic data.</span><span class="zh">盲测凝胶 S1b 的全部八张图（点开看大图）。上排：每根肌原纤维按真实位置和角度画出，按它自己的轴向、横向放大倍数上色（灰色表示太短，用不了轴向尺子）；然后是局部放大倍数的真值和测量值。下排：各向异性、纤维与凝胶之比、整体拟合后剩下的畸变，以及探测器标记与埋入缺陷的对照（实线框＝抓到，虚线框＝漏掉）。合成数据。</span></figcaption>
   </figure>
   <div class="grid-2">
     <figure class="fig">
-      <img src="{{root}}assets/img/swell/strain-map-s1b-truth-vs-measured.jpg" alt="Two circular maps of local axial expansion in the blind gel: truth on the left, measurement on the right; they look nearly identical." loading="lazy" width="1050" height="476">
+      <img src="{{root}}assets/img/swell/strain-map-s1b-truth-vs-measured.jpg" alt="Simulation, synthetic data. Two circular maps of local axial expansion in the blind gel: truth on the left, measurement on the right; they look nearly identical." loading="lazy" width="1050" height="512">
       <figcaption><span class="en">Truth (left) and measurement (right): local axial expansion in % from the gel median. RMS difference {{n:swell.blind_map_rms}}.</span><span class="zh">真值（左）和测量值（右）：局部轴向放大倍数相对整块凝胶中位数的百分比偏差。两者均方根差 {{n:swell.blind_map_rms}}。</span></figcaption>
     </figure>
     <figure class="fig">
-      <img src="{{root}}assets/img/swell/strain-map-s1b-flags.jpg" alt="Left: heat map of distortion residual in micrometres. Right: flagged regions compared with planted defects; the tear, outlined dashed, was not flagged." loading="lazy" width="1050" height="484">
+      <img src="{{root}}assets/img/swell/strain-map-s1b-flags.jpg" alt="Simulation, synthetic data. Left: heat map of distortion residual in micrometres. Right: flagged regions compared with planted defects; the tear, outlined dashed, was not flagged." loading="lazy" width="1050" height="520">
       <figcaption><span class="en">Left: distortion left after the best overall fit, in µm. Right: what the detectors flagged (filled) against the planted defects; the dashed tear was missed.</span><span class="zh">左：整体拟合后剩下的畸变，单位微米。右：探测器标出的区域（色块）与埋入缺陷对照；虚线画的裂缝没被发现。</span></figcaption>
     </figure>
   </div>
@@ -89,8 +93,8 @@
       <p class="zh">宽度尺子最娇气：它得知道每根纤维的横截面长什么样。把方形截面当椭圆来拟合，会差 {{n:swell.tr_boxy_dpc}} 到 {{n:swell.tr_boxy_pol}}（取决于膨胀前图像的拍法）。所以流程改成从膨胀后的 z 叠层里直接量每根纤维的截面形状，偏差降到 {{n:swell.tr_shape_post}}。</p>
     </div>
     <div class="panel">
-      <p class="en">Blur calibration still matters. If the before-image blur is calibrated {{n:swell.psf5_case}} too wide, the bias is {{n:swell.tr_psf5}}, so the first gate calibrates it to {{n:swell.psf_cal}}. At that target the worst bias is {{n:swell.tr_worst_g1}}, so the gate holds with margin: {{n:swell.tr_base}} + {{n:swell.tr_worst_g1}} = {{n:swell.tr_gate_used}}, inside {{n:swell.tr_gate}}.</p>
-      <p class="zh">模糊标定照样要紧。膨胀前图像的模糊如果标宽了 {{n:swell.psf5_case}}，偏差就是 {{n:swell.tr_psf5}}；所以第一道关卡要求标定到 {{n:swell.psf_cal}}。在这个精度下最坏偏差是 {{n:swell.tr_worst_g1}}，所以关卡还留有余量：{{n:swell.tr_base}} + {{n:swell.tr_worst_g1}} = {{n:swell.tr_gate_used}}，在 {{n:swell.tr_gate}} 之内。</p>
+      <p class="en">Blur calibration still matters. If the before-image blur is calibrated {{n:swell.psf5_case}} too wide, the bias is {{n:swell.tr_psf5}}, so the first gate calibrates it to {{n:swell.psf_cal}}. At that target the worst bias in our own model is {{n:swell.tr_worst_g1}}. Red-team gel S3 showed the model is not enough: a blur shape the ruler does not model biased it by {{n:tested.s3_tr_bias}}, with the right blur widths or not.</p>
+      <p class="zh">模糊标定照样要紧。膨胀前图像的模糊如果标宽了 {{n:swell.psf5_case}}，偏差就是 {{n:swell.tr_psf5}}；所以第一道关卡要求标定到 {{n:swell.psf_cal}}。在这个精度下，按我们自己的模型最坏偏差是 {{n:swell.tr_worst_g1}}。红队凝胶 S3 证明这个模型不够：一种标尺没建模的模糊形状让它偏了 {{n:tested.s3_tr_bias}}，模糊宽度给没给对都一样。</p>
     </div>
   </div>
   <p class="en">On development gel S2, a planted {{n:swell.aniso_planted}} anisotropy is recovered as {{n:swell.aniso_est}} (truth {{n:swell.aniso_truth}}), and a planted gel stretch of {{n:swell.orient_truth_amp}} along {{n:swell.orient_truth_axis}} is found by the orientation test as {{n:swell.orient_amp}} along {{n:swell.orient_axis}}.</p>
@@ -98,7 +102,7 @@
   <details class="more">
     <summary><span class="en">Development gel S2: anisotropy and gel stretch</span><span class="zh">开发凝胶 S2：各向异性与整体拉伸</span></summary>
     <figure class="fig">
-      <a href="{{root}}assets/img/swell/strain-map-s2.jpg"><img src="{{root}}assets/img/swell/strain-map-s2.jpg" alt="Eight-panel strain map of development gel S2 with a uniform axial anisotropy and a whole-gel stretch; the distortion map shows the stretch as a large smooth residual and no local flags." loading="lazy" width="1600" height="823"></a>
+      <a href="{{root}}assets/img/swell/strain-map-s2.jpg"><img src="{{root}}assets/img/swell/strain-map-s2.jpg" alt="Simulation, synthetic data. Eight-panel strain map of development gel S2 with a uniform axial anisotropy and a whole-gel stretch; the distortion map shows the stretch as a large smooth residual and no local flags." loading="lazy" width="1600" height="877"></a>
       <figcaption><span class="en">Gel S2: every myofibril slightly shorter along its axis than across, and the whole gel stretched along one direction. The stretch shows up as a smooth, growing distortion and is caught by the orientation test, not by the local flags. Synthetic data; a development gel.</span><span class="zh">S2 号凝胶：每根肌原纤维沿轴向比横向略短，整块凝胶还沿一个方向被拉伸。拉伸表现为平滑、由中心向外变大的畸变，是方向检验抓到的，不是局部标记。合成数据，开发用凝胶。</span></figcaption>
     </figure>
   </details>
@@ -107,15 +111,15 @@
   <div class="grid-2">
     <div class="panel">
       <p><span class="tag sim"><span class="en">simulated</span><span class="zh">模拟</span></span></p>
-      <p class="en"><strong>Sampling:</strong> {{n:swell.px_a}} pixels against a Nyquist pixel of {{n:swell.nyq_px_a}}, i.e. {{n:swell.nyq_a}} Nyquist; the {{n:swell.track_b}} track gets {{n:swell.nyq_b}}.<br><strong>Focusing into water:</strong> a dry objective imaging into a water gel suffers spherical aberration, but the Gibson–Lanni model gives the {{n:swell.track_a}} objective a Strehl ratio of at least {{n:swell.strehl_a_all}} over {{n:swell.strehl_depth_a}}; worst over the specimen depth {{n:swell.strehl_a}} ({{n:swell.track_a}}) and {{n:swell.strehl_b}} ({{n:swell.track_b}}). Lateral PSF width {{n:swell.fwhm_a}}.</p>
-      <p class="zh"><strong>采样：</strong>像素 {{n:swell.px_a}}，奈奎斯特要求 {{n:swell.nyq_px_a}}，即奈奎斯特的 {{n:swell.nyq_a}}；{{n:swell.track_b}} 路线为 {{n:swell.nyq_b}}。<br><strong>对焦进水里：</strong>干物镜看进水凝胶会有球差，但 Gibson–Lanni 模型算出 {{n:swell.track_a}} 物镜在 {{n:swell.strehl_depth_a}} 深度内斯特列尔比不低于 {{n:swell.strehl_a_all}}；在样本厚度范围内最差为 {{n:swell.strehl_a}}（{{n:swell.track_a}}）和 {{n:swell.strehl_b}}（{{n:swell.track_b}}）。横向点扩散函数宽 {{n:swell.fwhm_a}}。</p>
+      <p class="en"><strong>Sampling:</strong> {{n:swell.px_a}} pixels against a Nyquist pixel of {{n:swell.nyq_px_a}}, i.e. {{n:swell.nyq_a}} Nyquist; the {{n:swell.track_b}} track gets {{n:swell.nyq_b}}.<br><strong>Focusing into water:</strong> a dry objective imaging into a water gel suffers spherical aberration, but the Gibson–Lanni model gives the {{n:swell.track_a}} objective a Strehl ratio, relative to the gel's surface, of at least {{n:swell.strehl_a_all}} over {{n:swell.strehl_depth_a}} (index mismatch only: it leaves out the objective's own aberrations, its tube length and any coverslip error); worst over the specimen depth {{n:swell.strehl_a}} ({{n:swell.track_a}}) and {{n:swell.strehl_b}} ({{n:swell.track_b}}). Lateral PSF width {{n:swell.fwhm_a}}.</p>
+      <p class="zh"><strong>采样：</strong>像素 {{n:swell.px_a}}，奈奎斯特要求 {{n:swell.nyq_px_a}}，即奈奎斯特的 {{n:swell.nyq_a}}；{{n:swell.track_b}} 路线为 {{n:swell.nyq_b}}。<br><strong>对焦进水里：</strong>干物镜看进水凝胶会有球差，但 Gibson–Lanni 模型算出 {{n:swell.track_a}} 物镜在 {{n:swell.strehl_depth_a}} 深度内、相对凝胶表面的斯特列尔比不低于 {{n:swell.strehl_a_all}}（只算折射率失配：没算物镜自身的像差、筒长和盖玻片误差）；在样本厚度范围内最差为 {{n:swell.strehl_a}}（{{n:swell.track_a}}）和 {{n:swell.strehl_b}}（{{n:swell.track_b}}）。横向点扩散函数宽 {{n:swell.fwhm_a}}。</p>
     </div>
     <div class="panel">
       <p><span class="tag sim"><span class="en">simulated</span><span class="zh">模拟</span></span></p>
       <p class="en"><strong>One gel at {{n:swell.scan_e}}:</strong> {{n:swell.tiles_a}} tiles per plane × {{n:swell.zplanes_a}} planes, {{n:swell.gb_a}} of raw data, {{n:swell.hours_a}} of scanning.</p>
       <p class="zh"><strong>一块放大 {{n:swell.scan_e}} 的凝胶：</strong>每层 {{n:swell.tiles_a}} 个视野 × {{n:swell.zplanes_a}} 层，原始数据 {{n:swell.gb_a}}，扫描 {{n:swell.hours_a}}。</p>
       <p class="en muted">Model limits: magnification comes from a thin-lens model (a ray-traced model was planned but not done), and the camera's noise figures are assumptions not yet checked against a datasheet.</p>
-      <p class="zh muted">模型的局限：放大倍数用的是薄透镜模型（原计划换成光线追迹模型，没来得及做），相机噪声参数是假设值，还没对照数据表核实。</p>
+      <p class="zh muted">模型的局限：放大倍数用的是薄透镜模型（原计划换成光线追迹模型，但没有做），相机噪声参数是假设值，还没对照数据表核实。</p>
     </div>
   </div>
   <div class="panel red">

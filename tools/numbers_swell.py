@@ -83,7 +83,7 @@ put("e_a", f"{num(min(p['e_4x']), 0)}{DASH}{num(max(p['e_4x']), 1)}×", F_CA + "
 put("e_b", f"{num(p['e_10x'], 0)}×", F_CA + ": params.e_10x", "Track B expansion factor")
 put("e_sim", f"{num(SM['constants']['E0'], 1)}×", F_SM + ": constants.E0", "expansion factor of the synthetic gels")
 put("sl_breast", f"{num(p['sl_breast_mean'], 2)} µm", F_CA + ": params.sl_breast_mean",
-    "mean sarcomere length assumed for supermarket breast (fact F-10, verified from an abstract)")
+    "mean sarcomere length assumed for supermarket breast (fact F-10, cited: read from an abstract by an AI)")
 put("myofibril_d", f"{num(p['myofibril_thickness'][0], 0)}{DASH}{num(p['myofibril_thickness'][1], 0)} µm",
     F_CA + ": params.myofibril_thickness", "myofibril thickness range used in the design")
 a45 = OP["scan"]["A_E4.5"]
@@ -233,29 +233,72 @@ put("snr_first", f"{round(min(snr))}{DASH}{round(max(snr))}", F_CA + ": snr_firs
     "first-pass SNR range at 4× before the pedestal was modelled")
 
 # ---------------------------------------------------------------- money
+# D-78 (2026-10-11): a total is the sum of the listed lines only, a floor written "≥ £X" with how many lines it covers;
+# an unpriced line shows no number; no target comparison or ratio is drawn until every line in a total is listed.
 core, build, tg = BU["core"], BU["build"], BU["targets_D15"]
-put("core_range", gbp_range(core["lo"], core["hi"]), F_BU + ": core.lo, core.hi", "sum of line ranges, GBP incl. VAT")
+
+
+def floor(t):   # rounded down: a floor rounded up would overstate it
+    return f"≥ £{math.floor(t['listed'] + 1e-9):,}" if t["n_listed"] else "—"
+
+
+put("core_floor", floor(core), F_BU + ": core.listed", "sum of the listed lines only (a floor), GBP incl. VAT")
 put("core_target", "≤ " + gbp(tg["core"]), F_BU + ": targets_D15.core", "cost target D-15")
-put("core_listed", gbp(core["listed"]), F_BU + ": core.listed", "part of the core priced from supplier pages")
-put("core_n_est", str(core["n_estimate"]), F_BU + ": core.n_estimate", "lines still estimated")
+put("core_n_priced", str(core["n_listed"]), F_BU + ": core.n_listed", "lines priced from supplier pages")
+put("core_n_est", str(core["n_estimate"]), F_BU + ": core.n_estimate", "lines whose price is not yet read")
 put("core_n", str(core["n"]), F_BU + ": core.n", "lines in the imager core")
-put("build_range", gbp_range(build["lo"], build["hi"]), F_BU + ": build.lo, build.hi", "sum of line ranges, GBP incl. VAT")
+put("build_floor", floor(build), F_BU + ": build.listed", "sum of the listed lines only (a floor), GBP incl. VAT")
 put("build_target", "≤ " + gbp(tg["build"]), F_BU + ": targets_D15.build", "cost target D-15")
 put("ceiling", gbp(tg["ceiling"]), F_BU + ": targets_D15.ceiling", "hard ceiling D-15")
-put("build_listed", gbp(build["listed"]), F_BU + ": build.listed", "part of the build priced from supplier pages")
-put("build_n_est", str(build["n_estimate"]), F_BU + ": build.n_estimate", "lines still estimated")
+put("build_n_priced", str(build["n_listed"]), F_BU + ": build.n_listed", "lines priced from supplier pages")
+put("build_n_est", str(build["n_estimate"]), F_BU + ": build.n_estimate", "lines whose price is not yet read")
 put("build_n", str(build["n"]), F_BU + ": build.n", "lines in the full build")
 for b in ("C", "T", "O", "W"):
     bb = BU["baskets"][b]
-    put(f"basket_{b.lower()}", gbp_range(bb["lo"], bb["hi"]), F_BU + f": baskets.{b}", "sum of line ranges")
-    put(f"basket_{b.lower()}_n_est", str(bb["n_estimate"]), F_BU + f": baskets.{b}.n_estimate", "lines still estimated")
+    put(f"basket_{b.lower()}", floor(bb), F_BU + f": baskets.{b}.listed", "sum of the listed lines only (a floor)")
+    put(f"basket_{b.lower()}_n_est", str(bb["n_estimate"]), F_BU + f": baskets.{b}.n_estimate", "lines whose price is not yet read")
     put(f"basket_{b.lower()}_n", str(bb["n"]), F_BU + f": baskets.{b}.n", "lines in the basket")
 pe = BU["project_excl_tools"]
-put("project_range", gbp_range(pe["lo"], pe["hi"]), F_BU + ": project_excl_tools", "all baskets except tools")
+put("project_floor", floor(pe), F_BU + ": project_excl_tools.listed", "all baskets except tools, listed lines only (a floor)")
+put("project_n_est", str(pe["n_estimate"]), F_BU + ": project_excl_tools.n_estimate", "lines whose price is not yet read, all baskets except tools")
+put("project_n", str(pe["n"]), F_BU + ": project_excl_tools.n", "lines, all baskets except tools")
 put("fx", f"EUR {BU['fx']['EUR']}, USD {BU['fx']['USD']}", F_BU + ": fx", "assumed exchange rates to GBP")
-for ln in BU["largest_box_lines"]:
-    put("line_" + ln["id"].lower().replace("-", ""), gbp_range(ln["lo"], ln["hi"]),
-        F_BU + f": largest_box_lines[{ln['id']}]", ln["basis"])
+
+# ---------------------------------------------------------------- price dates (life 8)
+# From the public BOM CSV (src/downloads/swell-bom-<date>.csv, the same bytes as the download's pm/BOM.csv):
+# the first and last dates in its date_checked column.
+import csv  # noqa: E402
+_boms = sorted((SITE / "src" / "downloads").glob("swell-bom-*.csv"))
+if len(_boms) != 1:
+    sys.exit(f"expected one swell-bom-*.csv in src/downloads, found {[b.name for b in _boms]}")
+_rows = csv.DictReader(ln for ln in _boms[0].open(encoding="utf-8-sig") if not ln.startswith("#"))
+_dates = sorted({r["date_checked"] for r in _rows if r["date_checked"]})
+_src = f"src/downloads/{_boms[0].name}: column date_checked"
+put("price_date", _dates[0], _src, "the first date a BOM line was checked")
+put("price_date_last", _dates[-1], _src, "the last date a BOM line was checked")
+
+# ---------------------------------------------------------------- every box line's price (life 12)
+# From the same public CSV, converted as software/sim/budget.py converts (the FX in budget_v1.json; 20% VAT added where
+# vat_incl is "no"); since D-78 every line's price comes from here, and an unpriced line shows "—". A single price keeps
+# its pence, as docs/BOM.md shows it; a range is in whole pounds.
+_fx = BU["fx"]
+
+
+def _line_gbp(r, col):
+    x = float(r[col]) * _fx[r["currency"]] * float(r["qty"])
+    return x if r["vat_incl"] == "yes" else x * 1.2
+
+
+for _r in csv.DictReader(ln for ln in _boms[0].open(encoding="utf-8-sig") if not ln.startswith("#")):
+    _key = "line_" + _r["line_id"].lower().replace("-", "")
+    if _r["box"] not in ("core", "build") or "swell." + _key in N:
+        continue
+    if _r["price_basis"] != "listed":   # D-78: an unpriced line shows no number
+        put(_key, "—", f"src/downloads/{_boms[0].name}: line {_r['line_id']}", "price not yet read (D-78)")
+        continue
+    _lo, _hi = _line_gbp(_r, "unit_low"), _line_gbp(_r, "unit_high")
+    _v = (f"£{_lo:,.2f}" if abs(_lo - round(_lo)) > 0.004 else gbp(_lo)) if abs(_lo - _hi) < 0.005 else gbp_range(_lo, _hi)
+    put(_key, _v, f"src/downloads/{_boms[0].name}: line {_r['line_id']}", _r["price_basis"])
 
 # ---------------------------------------------------------------- quoted (prose only)
 Q = [
@@ -281,37 +324,17 @@ Q = [
     ("ofm_stock_nyq", "0.66×", "docs/design/optics_v1.md", 23, "0.66× Nyquist"),
     ("obj_a_eur", "€109", "pm/DECISIONS.md", 61, "€109 ex VAT"),
     ("cam_price", "£49.87", "pm/BOM.csv", 10, "49.87,49.87,GBP"),
-    ("line_h09", "£49.87", "pm/BOM.csv", 10, "49.87,49.87,GBP,yes,listed"),
-    ("line_h12", "£25–£32", "pm/BOM.csv", 13, ",1,25,32,GBP,yes,estimate"),
-    ("line_h04", "£5–£7", "pm/BOM.csv", 5, ",1,5,7,GBP,yes,estimate"),
-    ("line_h03", "£10–£14", "pm/BOM.csv", 4, ",1,10,14,GBP,yes,estimate"),
-    ("line_h01", "£8–£12", "pm/BOM.csv", 2, ",1,8,12,GBP,yes,estimate"),
-    ("line_h13", "£12–£20", "pm/BOM.csv", 14, ",1,12,20,GBP,yes,estimate"),
-    ("line_h18", "£10–£15", "pm/BOM.csv", 19, ",1,10,15,GBP,yes,estimate"),
-    ("line_h19", "£30–£45", "pm/BOM.csv", 20, ",1,30,45,GBP,yes,estimate"),
-    ("line_h20", "£6–£10", "pm/BOM.csv", 21, ",1,6,10,GBP,yes,estimate"),
-    ("price_date", "2026-10-09", "pm/BOM.csv", 6, "2026-10-09"),
-    ("lab1_month", "£40", "pm/OUTREACH.md", 10, "£40/month"),
-    ("lab2_month", "£600", "pm/OUTREACH.md", 11, "£600/month wet bench"),
-    ("lab2_notice", "3", "pm/OUTREACH.md", 11, "apply ≥ 3 months ahead"),
-    ("lab3_month", "£1,400", "pm/OUTREACH.md", 12, "£1,400/month"),
-    ("lab3_insurance", "£10M", "pm/OUTREACH.md", 12, "£10M public liability"),
-    ("lab3_term", "1", "pm/OUTREACH.md", 12, "1-month contracts"),
-    ("lab4_min", "3", "pm/OUTREACH.md", 13, "≥ 3-month membership"),
-    ("lab5_min", "6", "pm/OUTREACH.md", 14, "≥ 6-month leases"),
-    ("host_start", "3", "pm/OUTREACH.md", 21, "start within 3 months"),
-    ("prices_date", "2026-10-09", "pm/OUTREACH.md", 6, "as listed on 2026-10-09"),
+    # (the example host-lab shortlist and its prices left the site on 2026-10-10; no page uses them)
     ("v_max", "24 V DC", "pm/INVARIANTS.md", 20, "≤ 24 V DC inside the instrument"),
     ("t_cutoff", "50 °C", "pm/INVARIANTS.md", 10, "rated ≤ 50 °C"),
     ("t_denature", "95 °C", "pm/INVARIANTS.md", 23, "95 °C steps never happen on the stage"),
-    ("aa_stock", "40%", "kit/10_SAFETY_LEGAL.md", 21, "Buy it as a 40% solution, never as powder"),
+    # the acrylamide stock as the U-ExM protocol lists it (F-8; kit/10 left the download on 2026-10-10)
+    ("aa_stock", "40%", "pm/VERIFIED_FACTS.md", 14, "stocks 40% AA"),
     ("aps_conc", "10% w/v", "pm/DECISIONS.md", 95, "10% w/v in ≥ 1 g batches"),
     ("aps_batch", "1 g", "pm/DECISIONS.md", 95, "10% w/v in ≥ 1 g batches"),
     ("aband_discard", "~87%", "pm/DECISIONS.md", 116, "discards ~87% of data"),
     ("sl_wooden", "1.91 µm", "pm/VERIFIED_FACTS.md", 16, "1.91 µm wooden breast"),
-    ("t_fridge", "4 °C", "pm/OUTREACH.md", 47, "4 °C and −20 °C"),
-    ("t_freezer", "−20 °C", "pm/OUTREACH.md", 47, "4 °C and −20 °C"),
-    ("t_incubator", "37 °C", "pm/OUTREACH.md", 48, "a 37 °C incubator"),
+    # (t_fridge, t_freezer, t_incubator came from a private enquiry draft that is never public; removed 2026-10-10)
 ]
 Q += [
     ("tr_base", "1%", "pm/DECISIONS.md", 35, "it is 1% plus the worst transverse bias"),
@@ -334,10 +357,8 @@ ANCHOR = {
     "ladder_d33": "D-33", "ladder_outliers_d33": "D-33", "sidelobe_frac": "D-33", "sidelobe_err": "D-33",
     "outlier_band": "D-33", "contrast_range": "D-4", "aband_discard": "D-4", "tear_limit": "D-34",
     "tr_gate": "D-32", "tr_n": "D-32", "psf_cal": "D-32", "tr_base": "D-32", "obj_a_eur": "D-29",
-    "aps_conc": "D-24", "aps_batch": "D-24", "v_max": "INV-5", "t_cutoff": "INV-2", "t_denature": "INV-6", "sl_wooden": "F-10",
-    "cam_price": "line H-09", "line_h09": "line H-09", "line_h12": "line H-12", "line_h04": "line H-04",
-    "line_h03": "line H-03", "line_h01": "line H-01", "line_h13": "line H-13", "line_h18": "line H-18",
-    "line_h19": "line H-19", "line_h20": "line H-20", "price_date": "column date_checked",
+    "aps_conc": "D-24", "aps_batch": "D-24", "v_max": "INV-5", "t_cutoff": "INV-2", "t_denature": "INV-6", "sl_wooden": "F-10", "aa_stock": "F-8",
+    "cam_price": "line H-09",  # the other lines' prices come from the public BOM CSV (life 12)
 }
 checked = skipped = 0
 for key, value, f, line, needle in Q:
@@ -345,6 +366,14 @@ for key, value, f, line, needle in Q:
     if path.exists():
         lines = path.read_text(encoding="utf-8").splitlines()
         hits = [i + 1 for i, t in enumerate(lines) if needle in t]
+        if f == "pm/DECISIONS.md" and ANCHOR.get(key, "").startswith("D-"):
+            # the quote must come from the decision its label names, not from a later entry that repeats it
+            owner, cur = {}, None
+            for i, t in enumerate(lines, 1):
+                m = re.match(r"- \*\*\d{4}-\d{2}-\d{2} · (D-\d+) ·", t)
+                cur = m.group(1) if m else (None if t.startswith("#") else cur)
+                owner[i] = cur
+            hits = [i for i in hits if owner.get(i) == ANCHOR[key]]
         if not hits:
             sys.exit(f"quote for swell.{key} not found in {f} (looked for {needle!r})")
         line = min(hits, key=lambda i: abs(i - line))  # the occurrence nearest the recorded line
@@ -354,14 +383,10 @@ for key, value, f, line, needle in Q:
         old = PREV.get("swell." + key, {}).get("source", "")
         m = re.match(re.escape(f) + r":(\d+) ", old)
         line = int(m.group(1)) if m else line
-    tag = f", {ANCHOR[key]}" if key in ANCHOR else ""
-    put(key, value, f"{f}:{line} (SWELL project notes{tag})", "quoted")
-
-# 6-month and annual host-lab totals, computed from the quoted monthly prices
-for key, months, src in (("lab1_6mo", 6, "lab1_month"), ("lab2_6mo", 6, "lab2_month"),
-                         ("lab2_year", 12, "lab2_month"), ("lab3_6mo", 6, "lab3_month")):
-    monthly = int(N["swell." + src]["value"].lstrip("£").replace(",", ""))
-    put(key, gbp(monthly * months), N["swell." + src]["source"], f"monthly price × {months}")
+    if key in ANCHOR:  # the ID is what a reader can find in the download's copy; its line numbers differ
+        put(key, value, f"{f}, {ANCHOR[key]} (SWELL project notes)", "quoted")
+    else:
+        put(key, value, f"{f}:{line} (SWELL project notes)", "quoted")
 
 
 # ---------------------------------------------------------------- self-checks

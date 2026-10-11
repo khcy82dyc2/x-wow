@@ -6,12 +6,12 @@
  },
  "swell.aa_stock": {
   "value": "40%",
-  "source": "kit/10_SAFETY_LEGAL.md:21 (SWELL project notes)",
+  "source": "pm/VERIFIED_FACTS.md, F-8 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.aband_discard": {
   "value": "~87%",
-  "source": "pm/DECISIONS.md:155 (SWELL project notes, D-4)",
+  "source": "pm/DECISIONS.md, D-4 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.aband_usable_a": {
@@ -36,33 +36,33 @@
  },
  "swell.aps_batch": {
   "value": "1 g",
-  "source": "pm/DECISIONS.md:134 (SWELL project notes, D-24)",
+  "source": "pm/DECISIONS.md, D-24 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.aps_conc": {
   "value": "10% w/v",
-  "source": "pm/DECISIONS.md:134 (SWELL project notes, D-24)",
+  "source": "pm/DECISIONS.md, D-24 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.basket_c": {
-  "value": "£203–£495",
-  "source": "src/data/swell/budget_v1.json: baskets.C",
-  "how": "sum of line ranges"
+  "value": "—",
+  "source": "src/data/swell/budget_v1.json: baskets.C.listed",
+  "how": "sum of the listed lines only (a floor)"
  },
  "swell.basket_c_n": {
-  "value": "5",
+  "value": "4",
   "source": "src/data/swell/budget_v1.json: baskets.C.n",
   "how": "lines in the basket"
  },
  "swell.basket_c_n_est": {
-  "value": "5",
+  "value": "4",
   "source": "src/data/swell/budget_v1.json: baskets.C.n_estimate",
-  "how": "lines still estimated"
+  "how": "lines whose price is not yet read"
  },
  "swell.basket_o": {
-  "value": "£320–£500",
-  "source": "src/data/swell/budget_v1.json: baskets.O",
-  "how": "sum of line ranges"
+  "value": "≥ £240",
+  "source": "src/data/swell/budget_v1.json: baskets.O.listed",
+  "how": "sum of the listed lines only (a floor)"
  },
  "swell.basket_o_n": {
   "value": "3",
@@ -72,27 +72,27 @@
  "swell.basket_o_n_est": {
   "value": "2",
   "source": "src/data/swell/budget_v1.json: baskets.O.n_estimate",
-  "how": "lines still estimated"
+  "how": "lines whose price is not yet read"
  },
  "swell.basket_t": {
-  "value": "£304–£334",
-  "source": "src/data/swell/budget_v1.json: baskets.T",
-  "how": "sum of line ranges"
+  "value": "≥ £69",
+  "source": "src/data/swell/budget_v1.json: baskets.T.listed",
+  "how": "sum of the listed lines only (a floor)"
  },
  "swell.basket_t_n": {
-  "value": "4",
+  "value": "2",
   "source": "src/data/swell/budget_v1.json: baskets.T.n",
   "how": "lines in the basket"
  },
  "swell.basket_t_n_est": {
-  "value": "2",
+  "value": "1",
   "source": "src/data/swell/budget_v1.json: baskets.T.n_estimate",
-  "how": "lines still estimated"
+  "how": "lines whose price is not yet read"
  },
  "swell.basket_w": {
-  "value": "£750–£1,250",
-  "source": "src/data/swell/budget_v1.json: baskets.W",
-  "how": "sum of line ranges"
+  "value": "—",
+  "source": "src/data/swell/budget_v1.json: baskets.W.listed",
+  "how": "sum of the listed lines only (a floor)"
  },
  "swell.basket_w_n": {
   "value": "3",
@@ -102,7 +102,7 @@
  "swell.basket_w_n_est": {
   "value": "3",
   "source": "src/data/swell/budget_v1.json: baskets.W.n_estimate",
-  "how": "lines still estimated"
+  "how": "lines whose price is not yet read"
  },
  "swell.blind_dist_dev": {
   "value": "0.003%",
@@ -174,25 +174,25 @@
   "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.detection['under-digested patch']",
   "how": "area flagged by its own detector"
  },
- "swell.build_listed": {
-  "value": "£328",
+ "swell.build_floor": {
+  "value": "≥ £214",
   "source": "src/data/swell/budget_v1.json: build.listed",
-  "how": "part of the build priced from supplier pages"
+  "how": "sum of the listed lines only (a floor), GBP incl. VAT"
  },
  "swell.build_n": {
-  "value": "26",
+  "value": "31",
   "source": "src/data/swell/budget_v1.json: build.n",
   "how": "lines in the full build"
  },
  "swell.build_n_est": {
-  "value": "22",
+  "value": "28",
   "source": "src/data/swell/budget_v1.json: build.n_estimate",
-  "how": "lines still estimated"
+  "how": "lines whose price is not yet read"
  },
- "swell.build_range": {
-  "value": "£727–£1,072",
-  "source": "src/data/swell/budget_v1.json: build.lo, build.hi",
-  "how": "sum of line ranges, GBP incl. VAT"
+ "swell.build_n_priced": {
+  "value": "3",
+  "source": "src/data/swell/budget_v1.json: build.n_listed",
+  "how": "lines priced from supplier pages"
  },
  "swell.build_target": {
   "value": "≤ £650",
@@ -206,7 +206,7 @@
  },
  "swell.cam_price": {
   "value": "£49.87",
-  "source": "pm/BOM.csv:10 (SWELL project notes, line H-09)",
+  "source": "pm/BOM.csv, line H-09 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.ceiling": {
@@ -236,28 +236,28 @@
  },
  "swell.contrast_range": {
   "value": "5–50%",
-  "source": "pm/DECISIONS.md:155 (SWELL project notes, D-4)",
+  "source": "pm/DECISIONS.md, D-4 (SWELL project notes)",
   "how": "quoted"
  },
- "swell.core_listed": {
-  "value": "£216",
+ "swell.core_floor": {
+  "value": "≥ £103",
   "source": "src/data/swell/budget_v1.json: core.listed",
-  "how": "part of the core priced from supplier pages"
+  "how": "sum of the listed lines only (a floor), GBP incl. VAT"
  },
  "swell.core_n": {
-  "value": "20",
+  "value": "24",
   "source": "src/data/swell/budget_v1.json: core.n",
   "how": "lines in the imager core"
  },
  "swell.core_n_est": {
-  "value": "17",
+  "value": "22",
   "source": "src/data/swell/budget_v1.json: core.n_estimate",
-  "how": "lines still estimated"
+  "how": "lines whose price is not yet read"
  },
- "swell.core_range": {
-  "value": "£524–£784",
-  "source": "src/data/swell/budget_v1.json: core.lo, core.hi",
-  "how": "sum of line ranges, GBP incl. VAT"
+ "swell.core_n_priced": {
+  "value": "2",
+  "source": "src/data/swell/budget_v1.json: core.n_listed",
+  "how": "lines priced from supplier pages"
  },
  "swell.core_target": {
   "value": "≤ £500",
@@ -364,11 +364,6 @@
   "source": "src/data/swell/optics_v1.json: scan.A_E4.5.raw_GB",
   "how": "raw data per gel"
  },
- "swell.host_start": {
-  "value": "3",
-  "source": "pm/OUTREACH.md:21 (SWELL project notes)",
-  "how": "quoted"
- },
  "swell.hours_a": {
   "value": "1.3–2.2 h",
   "source": "src/data/swell/optics_v1.json: scan.A_E4.5.hours_fast_slow",
@@ -377,66 +372,6 @@
  "swell.jitter": {
   "value": "3%",
   "source": "docs/design/strain_map_v1.md:7 (SWELL project notes)",
-  "how": "quoted"
- },
- "swell.lab1_6mo": {
-  "value": "£240",
-  "source": "pm/OUTREACH.md:10 (SWELL project notes)",
-  "how": "monthly price × 6"
- },
- "swell.lab1_month": {
-  "value": "£40",
-  "source": "pm/OUTREACH.md:10 (SWELL project notes)",
-  "how": "quoted"
- },
- "swell.lab2_6mo": {
-  "value": "£3,600",
-  "source": "pm/OUTREACH.md:11 (SWELL project notes)",
-  "how": "monthly price × 6"
- },
- "swell.lab2_month": {
-  "value": "£600",
-  "source": "pm/OUTREACH.md:11 (SWELL project notes)",
-  "how": "quoted"
- },
- "swell.lab2_notice": {
-  "value": "3",
-  "source": "pm/OUTREACH.md:11 (SWELL project notes)",
-  "how": "quoted"
- },
- "swell.lab2_year": {
-  "value": "£7,200",
-  "source": "pm/OUTREACH.md:11 (SWELL project notes)",
-  "how": "monthly price × 12"
- },
- "swell.lab3_6mo": {
-  "value": "£8,400",
-  "source": "pm/OUTREACH.md:12 (SWELL project notes)",
-  "how": "monthly price × 6"
- },
- "swell.lab3_insurance": {
-  "value": "£10M",
-  "source": "pm/OUTREACH.md:12 (SWELL project notes)",
-  "how": "quoted"
- },
- "swell.lab3_month": {
-  "value": "£1,400",
-  "source": "pm/OUTREACH.md:12 (SWELL project notes)",
-  "how": "quoted"
- },
- "swell.lab3_term": {
-  "value": "1",
-  "source": "pm/OUTREACH.md:12 (SWELL project notes)",
-  "how": "quoted"
- },
- "swell.lab4_min": {
-  "value": "3",
-  "source": "pm/OUTREACH.md:13 (SWELL project notes)",
-  "how": "quoted"
- },
- "swell.lab5_min": {
-  "value": "6",
-  "source": "pm/OUTREACH.md:14 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.lab_worst": {
@@ -451,7 +386,7 @@
  },
  "swell.ladder_d33": {
   "value": "0.3–0.6%",
-  "source": "pm/DECISIONS.md:62 (SWELL project notes, D-33)",
+  "source": "pm/DECISIONS.md, D-33 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.ladder_final": {
@@ -461,7 +396,7 @@
  },
  "swell.ladder_outliers_d33": {
   "value": "≤ 0.8%",
-  "source": "pm/DECISIONS.md:62 (SWELL project notes, D-33)",
+  "source": "pm/DECISIONS.md, D-33 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.ladder_outliers_final": {
@@ -475,79 +410,159 @@
   "how": "emission wavelength used"
  },
  "swell.line_h01": {
-  "value": "£8–£12",
-  "source": "pm/BOM.csv:2 (SWELL project notes, line H-01)",
-  "how": "quoted"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-01",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h02": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-02",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h03": {
-  "value": "£10–£14",
-  "source": "pm/BOM.csv:4 (SWELL project notes, line H-03)",
-  "how": "quoted"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-03",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h04": {
-  "value": "£5–£7",
-  "source": "pm/BOM.csv:5 (SWELL project notes, line H-04)",
-  "how": "quoted"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-04",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h05": {
   "value": "£54–£60",
-  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-05]",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-05",
   "how": "listed"
+ },
+ "swell.line_h06": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-06",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h07": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-07",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h08": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-08",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h09": {
   "value": "£49.87",
-  "source": "pm/BOM.csv:10 (SWELL project notes, line H-09)",
-  "how": "quoted"
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-09",
+  "how": "listed"
  },
  "swell.line_h10": {
-  "value": "£112",
-  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-10]",
-  "how": "listed"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-10",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h11": {
-  "value": "£45–£70",
-  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-11]",
-  "how": "estimate"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-11",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h12": {
-  "value": "£25–£32",
-  "source": "pm/BOM.csv:13 (SWELL project notes, line H-12)",
-  "how": "quoted"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-12",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h13": {
-  "value": "£12–£20",
-  "source": "pm/BOM.csv:14 (SWELL project notes, line H-13)",
-  "how": "quoted"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-13",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h14": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-14",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h15": {
-  "value": "£100–£250",
-  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-15]",
-  "how": "estimate"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-15",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h16": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-16",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h17": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-17",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h18": {
-  "value": "£10–£15",
-  "source": "pm/BOM.csv:19 (SWELL project notes, line H-18)",
-  "how": "quoted"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-18",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h19": {
-  "value": "£30–£45",
-  "source": "pm/BOM.csv:20 (SWELL project notes, line H-19)",
-  "how": "quoted"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-19",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h20": {
-  "value": "£6–£10",
-  "source": "pm/BOM.csv:21 (SWELL project notes, line H-20)",
-  "how": "quoted"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-20",
+  "how": "price not yet read (D-78)"
  },
  "swell.line_h21": {
-  "value": "£112",
-  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-21]",
+  "value": "£111",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-21",
   "how": "listed"
  },
+ "swell.line_h22": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-22",
+  "how": "price not yet read (D-78)"
+ },
  "swell.line_h23": {
-  "value": "£40–£75",
-  "source": "src/data/swell/budget_v1.json: largest_box_lines[H-23]",
-  "how": "estimate"
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-23",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h24": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-24",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h25": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-25",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h26": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-26",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h27": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-27",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h28": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-28",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h29": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-29",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h30": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-30",
+  "how": "price not yet read (D-78)"
+ },
+ "swell.line_h31": {
+  "value": "—",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-31",
+  "how": "price not yet read (D-78)"
  },
  "swell.mag_a": {
   "value": "17.8×",
@@ -601,7 +616,7 @@
  },
  "swell.obj_a_eur": {
   "value": "€109",
-  "source": "pm/DECISIONS.md:100 (SWELL project notes, D-29)",
+  "source": "pm/DECISIONS.md, D-29 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.ofm_stock_nyq": {
@@ -631,23 +646,33 @@
  },
  "swell.outlier_band": {
   "value": "±2%",
-  "source": "pm/DECISIONS.md:62 (SWELL project notes, D-33)",
+  "source": "pm/DECISIONS.md, D-33 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.price_date": {
   "value": "2026-10-09",
-  "source": "pm/BOM.csv:6 (SWELL project notes, column date_checked)",
-  "how": "quoted"
+  "source": "src/downloads/swell-bom-2026-10-11.csv: column date_checked",
+  "how": "the first date a BOM line was checked"
  },
- "swell.prices_date": {
-  "value": "2026-10-09",
-  "source": "pm/OUTREACH.md:6 (SWELL project notes)",
-  "how": "quoted"
+ "swell.price_date_last": {
+  "value": "2026-10-11",
+  "source": "src/downloads/swell-bom-2026-10-11.csv: column date_checked",
+  "how": "the last date a BOM line was checked"
  },
- "swell.project_range": {
-  "value": "£2,000–£3,317",
-  "source": "src/data/swell/budget_v1.json: project_excl_tools",
-  "how": "all baskets except tools"
+ "swell.project_floor": {
+  "value": "≥ £454",
+  "source": "src/data/swell/budget_v1.json: project_excl_tools.listed",
+  "how": "all baskets except tools, listed lines only (a floor)"
+ },
+ "swell.project_n": {
+  "value": "41",
+  "source": "src/data/swell/budget_v1.json: project_excl_tools.n",
+  "how": "lines, all baskets except tools"
+ },
+ "swell.project_n_est": {
+  "value": "37",
+  "source": "src/data/swell/budget_v1.json: project_excl_tools.n_estimate",
+  "how": "lines whose price is not yet read, all baskets except tools"
  },
  "swell.psf5_case": {
   "value": "5%",
@@ -656,7 +681,7 @@
  },
  "swell.psf_cal": {
   "value": "±2%",
-  "source": "pm/DECISIONS.md:75 (SWELL project notes, D-32)",
+  "source": "pm/DECISIONS.md, D-32 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.punch_a": {
@@ -711,22 +736,22 @@
  },
  "swell.sidelobe_err": {
   "value": "7–19%",
-  "source": "pm/DECISIONS.md:62 (SWELL project notes, D-33)",
+  "source": "pm/DECISIONS.md, D-33 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.sidelobe_frac": {
   "value": "10–17%",
-  "source": "pm/DECISIONS.md:62 (SWELL project notes, D-33)",
+  "source": "pm/DECISIONS.md, D-33 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.sl_breast": {
   "value": "1.69 µm",
   "source": "src/data/swell/calc_v0.json: params.sl_breast_mean",
-  "how": "mean sarcomere length assumed for supermarket breast (fact F-10, verified from an abstract)"
+  "how": "mean sarcomere length assumed for supermarket breast (fact F-10, cited: read from an abstract by an AI)"
  },
  "swell.sl_wooden": {
   "value": "1.91 µm",
-  "source": "pm/VERIFIED_FACTS.md:16 (SWELL project notes, F-10)",
+  "source": "pm/VERIFIED_FACTS.md, F-10 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.snr_first": {
@@ -766,32 +791,17 @@
  },
  "swell.t_cutoff": {
   "value": "50 °C",
-  "source": "pm/INVARIANTS.md:10 (SWELL project notes, INV-2)",
+  "source": "pm/INVARIANTS.md, INV-2 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.t_denature": {
   "value": "95 °C",
-  "source": "pm/INVARIANTS.md:23 (SWELL project notes, INV-6)",
-  "how": "quoted"
- },
- "swell.t_freezer": {
-  "value": "−20 °C",
-  "source": "pm/OUTREACH.md:47 (SWELL project notes)",
-  "how": "quoted"
- },
- "swell.t_fridge": {
-  "value": "4 °C",
-  "source": "pm/OUTREACH.md:47 (SWELL project notes)",
-  "how": "quoted"
- },
- "swell.t_incubator": {
-  "value": "37 °C",
-  "source": "pm/OUTREACH.md:48 (SWELL project notes)",
+  "source": "pm/INVARIANTS.md, INV-6 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.tear_limit": {
   "value": "~2 µm",
-  "source": "pm/DECISIONS.md:53 (SWELL project notes, D-34)",
+  "source": "pm/DECISIONS.md, D-34 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.tiles_a": {
@@ -801,7 +811,7 @@
  },
  "swell.tr_base": {
   "value": "1%",
-  "source": "pm/DECISIONS.md:74 (SWELL project notes, D-32)",
+  "source": "pm/DECISIONS.md, D-32 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.tr_boxy_dpc": {
@@ -816,7 +826,7 @@
  },
  "swell.tr_gate": {
   "value": "±3%",
-  "source": "pm/DECISIONS.md:71 (SWELL project notes, D-32)",
+  "source": "pm/DECISIONS.md, D-32 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.tr_gate_used": {
@@ -826,7 +836,7 @@
  },
  "swell.tr_n": {
   "value": "200",
-  "source": "pm/DECISIONS.md:71 (SWELL project notes, D-32)",
+  "source": "pm/DECISIONS.md, D-32 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.tr_psf5": {
@@ -866,7 +876,7 @@
  },
  "swell.v_max": {
   "value": "24 V DC",
-  "source": "pm/INVARIANTS.md:20 (SWELL project notes, INV-5)",
+  "source": "pm/INVARIANTS.md, INV-5 (SWELL project notes)",
   "how": "quoted"
  },
  "swell.zplanes_a": {

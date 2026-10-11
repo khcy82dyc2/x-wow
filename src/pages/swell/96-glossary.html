@@ -1,0 +1,48 @@
+<section class="block" id="words">
+  <style>
+    #words dl { display: grid; grid-template-columns: minmax(0, 12rem) minmax(0, 1fr); gap: .5rem 1.2rem; }
+    #words dt { font-weight: 700; color: var(--cyan); }
+    #words dd { margin: 0; }
+    @media (max-width: 640px) { #words dl { grid-template-columns: minmax(0, 1fr); } #words dd { margin-bottom: .6rem; } }
+  </style>
+  <p class="kicker"><span class="en">Words on this page</span><span class="zh">本页用到的词</span></p>
+  <h2><span class="en">A short glossary</span><span class="zh">简明词汇表</span></h2>
+  <dl class="en">
+    <dt>Sarcomere</dt><dd>One repeating unit of a muscle fibre, about {{n:swell.sl_breast}} long in supermarket chicken breast. A muscle contracts by shortening them.</dd>
+    <dt>Myofibril</dt><dd>A thin thread inside a muscle cell, made of sarcomeres joined end to end. SWELL uses them as rulers.</dd>
+    <dt>Z-disc</dt><dd>The thin line where one sarcomere meets the next.</dd>
+    <dt>Expansion factor (E)</dt><dd>How many times bigger the gel made the sample: a length after expansion divided by the same length before.</dd>
+    <dt>E<sub>ax</sub> and E<sub>tr</sub></dt><dd>The expansion factor along a myofibril (axial) and across it (transverse).</dd>
+    <dt>Anisotropy</dt><dd>Growing more in one direction than another. On this page it is E<sub>ax</sub> ÷ E<sub>tr</sub> − 1.</dd>
+    <dt>Non-affine</dt><dd>A distortion that no single stretch, shift and turn of the whole gel can explain, such as a tear or a fold.</dd>
+    <dt>PSF</dt><dd>Point spread function: the blurred spot a microscope makes of a single point of light. The narrower it is, the finer the detail you can see.</dd>
+    <dt>Nyquist sampling</dt><dd>Taking at least two pixels across the finest detail you want to see. With fewer, that detail is lost.</dd>
+    <dt>Strehl ratio</dt><dd>How bright the peak of a focused spot is compared with a perfect lens's, from 0 to 1; 1 means no aberration. On this page it is computed in simulation, relative to the gel's surface.</dd>
+    <dt>q</dt><dd>The number the label-free stripe test hangs on: stripe contrast × √(photons per sample). The higher q is, the more precisely the stripe spacing can be read.</dd>
+    <dt>DPC</dt><dd>Differential phase contrast: lighting a clear specimen from one side, then the other, and comparing the two images, so thin transparent structures show up without a stain.</dd>
+    <dt>Clock tile</dt><dd>One patch of the gel imaged again every 50 tiles during a scan, so that slow swelling during the scan can be measured and taken out.</dd>
+    <dt>Overview camera</dt><dd>A small camera that photographs the whole gel, to measure its overall size before and after expansion.</dd>
+    <dt>CMR</dt><dd>Carcinogenic, mutagenic or toxic for reproduction: hazard classes some gel chemicals carry. UK law restricts selling them to the public.</dd>
+    <dt>G0</dt><dd>The first gate in SWELL's plan: a complete, checked design on paper, before any part is bought or any gel is made. SWELL hasn't passed it.</dd>
+    <dt>Simulated, synthetic</dt><dd>Made by a computer from a model, not measured on anything real.</dd>
+  </dl>
+  <dl class="zh">
+    <dt>肌节</dt><dd>肌纤维里一节一节重复的单位，超市鸡胸肉里长约 {{n:swell.sl_breast}}。肌肉收缩，就是肌节在变短。</dd>
+    <dt>肌原纤维</dt><dd>肌肉细胞里的细丝，由肌节一节接一节串成。SWELL 把它们当尺子用。</dd>
+    <dt>Z 盘</dt><dd>一个肌节和下一个肌节交界处的那条细线。</dd>
+    <dt>膨胀倍数（E）</dt><dd>凝胶把样品放大了多少倍：膨胀后的某段长度除以膨胀前的同一段长度。</dd>
+    <dt>E<sub>ax</sub> 和 E<sub>tr</sub></dt><dd>沿着肌原纤维方向（轴向）和横着它的方向（横向）的膨胀倍数。</dd>
+    <dt>各向异性</dt><dd>往一个方向胀得比另一个方向多。本页里它是 E<sub>ax</sub> ÷ E<sub>tr</sub> − 1。</dd>
+    <dt>非仿射</dt><dd>整块凝胶任何一次统一的拉伸、平移和旋转都解释不了的形变，比如裂开或折叠。</dd>
+    <dt>点扩散函数（PSF）</dt><dd>显微镜把一个光点拍成的那个模糊小斑。它越窄，能看清的细节越细。</dd>
+    <dt>奈奎斯特采样</dt><dd>要看清的最细的细节上，至少要占两个像素。少了，这个细节就丢了。</dd>
+    <dt>斯特列尔比</dt><dd>聚焦光斑的峰值亮度和完美镜头相比是多少，在 0 到 1 之间；1 表示没有像差。本页里它是在模拟中、相对凝胶表面算出来的。</dd>
+    <dt>q</dt><dd>免标记条纹检验所依赖的那个数：条纹反差 × √（每个采样点的光子数）。q 越大，条纹间距读得越准。</dd>
+    <dt>差分相衬（DPC）</dt><dd>先从一侧、再从另一侧照亮透明的样品，比较两张图，让薄而透明的结构不染色也能显出来。</dd>
+    <dt>时钟视野</dt><dd>扫描时每拍 50 个视野就回去重拍一次的同一块凝胶，用来测出并扣掉扫描过程中缓慢的膨胀。</dd>
+    <dt>全景相机</dt><dd>拍下整块凝胶的小相机，用来量凝胶膨胀前后的整体大小。</dd>
+    <dt>CMR</dt><dd>致癌、致突变或有生殖毒性：一些凝胶化学品带有的危害类别。英国法律限制把它们卖给公众。</dd>
+    <dt>G0</dt><dd>SWELL 计划里的第一道关卡：在买任何零件、做任何凝胶之前，有一份完整、经过检查的纸面设计。SWELL 还没有通过它。</dd>
+    <dt>模拟、合成</dt><dd>电脑按模型算出来的，不是在真实的东西上测出来的。</dd>
+  </dl>
+</section>
