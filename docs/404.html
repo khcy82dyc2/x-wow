@@ -50,8 +50,8 @@
 <main id="main">
 
 <section class="block" id="lost">
-  <p class="kicker"><span class="en">Signal lost · 404</span></p>
-  <h1 style="font-size:clamp(2rem,6vw,3.4rem)"><span class="en">Nothing on this bench.</span></h1>
+  <p class="kicker"><span class="en">404</span></p>
+  <h1 style="font-size:clamp(2rem,6vw,3.4rem)"><span class="en">Page not found</span></h1>
   <p class="lead en" id="lost-msg">This page doesn't exist, or it was part of the old x-wow.com and has been folded into a new page.</p>
   
   <p>
@@ -59,14 +59,11 @@
     <a class="btn" href="swell/">SWELL</a>
     <a class="btn ghost" href="#archive"><span class="en">Archive</span></a>
   </p>
-  <aside class="loupe">
-    <p class="en">Searched every drawer. If an old link brought you here, it is probably on the home page now.</p>
-    
-  </aside>
+  <p>If an old link brought you here, the page has probably moved; try the home page.</p>
 </section>
 <script>
 (function () {
-  var map = {"100-intro": "", "about": "", "academy": "lectures/", "ant": "slide-library/", "ascarid": "slide-library/", "beeleg": "slide-library/", "beewing": "slide-library/", "blank-1": "", "bonemarrow": "slide-library/", "butterflywings": "slide-library/", "competition": "lectures/", "consultant": "", "consultation": "", "contact": "", "copy-of-equipment-donor": "back-to-shine/", "courses": "lectures/", "coursework": "lectures/", "demowsi": "slide-scanner/", "dicotyledon-stem": "slide-library/", "donateoldequipment": "back-to-shine/", "donor": "back-to-shine/", "duck": "", "duckkitchen": "", "educationalactivities": "kids-club/", "equipmentreceiver": "back-to-shine/", "events": "lectures/", "faq": "", "fish-gill": "slide-library/", "for-lecture-sponsor": "lectures/", "forum": "", "fundraise": "", "futurecollection": "kids-club/", "futurevetpathologists": "kids-club/", "game": "", "halloffame": "back-to-shine/", "home22": "", "homeold": "", "inventory": "back-to-shine/", "kidney": "slide-library/", "kidsclub": "kids-club/", "kitchenlab": "", "lymphnode-shirt": "", "malawi": "slide-scanner/", "medcon2": "", "members": "", "microadventure": "", "microscope-backtoschool": "back-to-shine/", "mitosis": "slide-library/", "monocot": "slide-library/", "mosquito-wing": "slide-library/", "mutislides": "slide-scanner/", "network": "", "ongoing-projects": "", "p": "", "pillows": "", "pinecone": "slide-library/", "plantcell": "slide-library/", "pollen": "slide-library/", "remote-cancer-diagnosis": "slide-scanner/", "rewards-media-exposure": "", "selling-terms-and-conditions": "", "shop": "", "smartslide": "slide-scanner/", "sperm": "slide-library/", "story": "", "story-new": "slide-scanner/", "tomato": "slide-library/", "videos": "", "vintagepathology": "slide-library/", "volunteer": "", "wat": "", "wsi": "slide-scanner/", "wsimanual": "slide-scanner/", "xwowkidsclub": "kids-club/", "xykiohyta-dicotyledon-stem": "slide-library/"};
+  var map = {"100-intro": "", "about": "", "academy": "lectures/", "ant": "slide-library/", "ascarid": "slide-library/", "beeleg": "slide-library/", "beewing": "slide-library/", "blank-1": "", "bonemarrow": "slide-library/", "butterflywings": "slide-library/", "competition": "lectures/", "consultant": "", "consultation": "", "contact": "", "copy-of-equipment-donor": "back-to-shine/", "courses": "lectures/", "coursework": "lectures/", "demowsi": "slide-scanner/", "dicotyledon-stem": "slide-library/", "donateoldequipment": "back-to-shine/", "donor": "back-to-shine/", "duck": "", "duckkitchen": "", "educationalactivities": "kids-club/", "equipmentreceiver": "back-to-shine/", "events": "lectures/", "faq": "", "fish-gill": "slide-library/", "for-lecture-sponsor": "lectures/", "forum": "", "fundraise": "", "futurecollection": "kids-club/", "futurevetpathologists": "kids-club/", "game": "", "halloffame": "back-to-shine/", "home22": "", "homeold": "", "inventory": "back-to-shine/", "kidney": "slide-library/", "kidsclub": "kids-club/", "kitchenlab": "", "lymphnode-shirt": "", "malawi": "slide-scanner/", "medcon2": "", "members": "", "microadventure": "", "microscope-backtoschool": "back-to-shine/", "mitosis": "slide-library/", "monocot": "slide-library/", "mosquito-wing": "slide-library/", "mutislides": "slide-scanner/", "network": "", "ongoing-projects": "", "p": "", "pillows": "", "pinecone": "slide-library/", "plantcell": "slide-library/", "pollen": "slide-library/", "remote-cancer-diagnosis": "slide-scanner/", "rewards-media-exposure": "", "selling-terms-and-conditions": "", "shop": "", "smartslide": "slide-scanner/", "sperm": "slide-library/", "story": "", "story-new": "slide-scanner/", "swell/claims": "swell/record/#verified", "swell/parts": "swell/record/#bom", "swell/results": "swell/record/#numbers", "swell/safety": "swell/record/#safety", "swell/science": "swell/record/#why-it-works", "tomato": "slide-library/", "videos": "", "vintagepathology": "slide-library/", "volunteer": "", "wat": "", "wsi": "slide-scanner/", "wsimanual": "slide-scanner/", "xwowkidsclub": "kids-club/", "xykiohyta-dicotyledon-stem": "slide-library/"};
   var base = location.pathname.indexOf("/x-wow/") === 0 ? "/x-wow/" : "/";
   var rest = location.pathname.slice(base.length).replace(/^\/+|\/+$/g, "").toLowerCase();
   var first = rest.split("/")[0];
@@ -105,7 +102,7 @@
         <li><a href="safety/"><span class="en">Safety</span></a></li>
         <li><a href="licences/"><span class="en">Licences &amp; trade marks</span></a></li>
         <li><a href="accessibility/"><span class="en">Accessibility</span></a></li>
-        <li><a href="about-ai/"><span class="en">Made by an AI</span></a></li>
+        <li><a href="about-ai/">Made with AI</a></li>
       </ul>
     </nav>
     <div class="fc">
@@ -118,6 +115,7 @@
     </div>
   </div>
   <div class="foot-bottom">
+    <p>Made with AI, not yet checked by a person (<a href="about-ai/">how it is made</a>).</p>
     <p><span class="en">X-WOW · our own text, data and code CC0 1.0; hardware CERN-OHL-P v2; quotations and third-party code keep their own licences (<a href="licences/">details</a>) · the X-WOW name and logo are trade marks; the logo is UK registered trade mark UK00003425680 · no cookies, no tracking</span></p>
   </div>
 </footer>

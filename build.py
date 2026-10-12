@@ -130,7 +130,7 @@ def evidence_html(slug, compact, root):
              f'风险清单：未解决 {r["open"]} 项，已缓解或已解决 {r["retired_or_mitigated"]} 项。</p>'
              '<p class="en muted">The first four stages are desk evidence and fill at most four of seven; the last three move only '
              'on checked reports of real builds. Computed on every build by tools/evidence_bar.py from public files (the '
-             'package, the simulation results, the red-team score, this page\'s claim tags and the public count of checked reports of real builds forwarded from the project\'s email); '
+             'package, the simulation results, the blind-test score, this page\'s claim tags and the public count of checked reports of real builds forwarded from the project\'s email); '
              'the build fails if the bar drifts from them.</p>'
              '<p class="zh muted">前四级是纸面证据，最多只能填满七级中的四级；后三级只有经核对的真实制造报告才会前进。'
              '每次构建都由 tools/evidence_bar.py 根据公开文件重新计算（下载包、仿真结果、红队评分、本页的标签，以及从项目邮箱转来、经核对的制造报告的公开计数），'
@@ -330,10 +330,10 @@ def build_redirects(pages):
         old = old.strip("/").lower()
         if not old or old in pages:
             continue
-        if new.strip("/").split("#")[0] and new.strip("/").split("#")[0] not in pages:   # "#archive" = a home section
+        if new.split("#")[0].strip("/") and new.split("#")[0].strip("/") not in pages:   # "#archive" = a home section
             print(f"  warn: redirect {old} -> {new} targets a page that is not built; using home")
             new = ""
-        target = "../" + new
+        target = "../" * (old.count("/") + 1) + new   # a nested old slug (swell/parts) sits two levels deep
         out = OUT / old / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(REDIRECT.format(target=html.escape(target, quote=True), target_js=json.dumps(target),

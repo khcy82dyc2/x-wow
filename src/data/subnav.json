@@ -6,29 +6,9 @@
    "zh": "SWELL 概览"
   },
   {
-   "path": "swell/science",
-   "en": "Science",
-   "zh": "Science"
-  },
-  {
-   "path": "swell/results",
-   "en": "Results",
-   "zh": "Results"
-  },
-  {
-   "path": "swell/parts",
-   "en": "Parts and cost",
-   "zh": "Parts and cost"
-  },
-  {
-   "path": "swell/safety",
-   "en": "Safety and lab",
-   "zh": "Safety and lab"
-  },
-  {
-   "path": "swell/claims",
-   "en": "Claims ledger",
-   "zh": "Claims ledger"
+   "path": "swell/record",
+   "en": "Full technical record",
+   "zh": "Full technical record"
   },
   {
    "path": "swell/ruler",

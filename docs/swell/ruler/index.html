@@ -48,7 +48,7 @@
   </nav>
 </header>
 <main id="main">
-<nav class="subnav" aria-label="SWELL overview sections"><div class="subnav-in"><a href="../../swell/"><span class="en">SWELL overview</span></a><a href="../../swell/science/"><span class="en">Science</span></a><a href="../../swell/results/"><span class="en">Results</span></a><a href="../../swell/parts/"><span class="en">Parts and cost</span></a><a href="../../swell/safety/"><span class="en">Safety and lab</span></a><a href="../../swell/claims/"><span class="en">Claims ledger</span></a><a href="../../swell/ruler/" aria-current="page"><span class="en">swell-ruler</span></a><a href="../../swell/start/"><span class="en">Start here</span></a><a href="../../swell/download/"><span class="en">Download</span></a><a href="../../swell/credits/"><span class="en">Credits and licences</span></a></div></nav>
+<nav class="subnav" aria-label="SWELL overview sections"><div class="subnav-in"><a href="../../swell/"><span class="en">SWELL overview</span></a><a href="../../swell/record/"><span class="en">Full technical record</span></a><a href="../../swell/ruler/" aria-current="page"><span class="en">swell-ruler</span></a><a href="../../swell/start/"><span class="en">Start here</span></a><a href="../../swell/download/"><span class="en">Download</span></a><a href="../../swell/credits/"><span class="en">Credits and licences</span></a></div></nav>
 <section class="block" id="tool">
 <style>
 #tool pre{white-space:pre-wrap;word-break:break-all;font-family:var(--mono);font-size:.85rem;color:var(--text);background:rgba(5,8,13,.6);padding:.6rem .8rem;border-left:2px solid var(--cyan-dim)}
@@ -58,11 +58,11 @@
 </style>
 <p class="kicker"><span class="en">The part you can try today</span></p>
 <h1 class="page-h"><span class="en">swell-ruler: a proposed chicken-muscle ruler, untested on real images</span></h1>
-<p class="lead en">You don't need the SWELL machine to try its ruler. A lab that already does expansion microscopy could expand a few chicken myofibrils alongside its samples, image them before and after on its own microscope, and get the axial expansion factor of each myofibril long enough to measure (on red-team gel S3, <span class="num" tabindex="0" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_coverage · true pairs that got an axial ratio (red team&#x27;s scorer)">28%</span> of the true pairs got one), a whole-gel strain map and QC flags (which on S3 caught none of the under- and over-expanded patches). One small Python package, free, no account. It is one more member of a family of in-gel rulers (sarcomeres in Sheard et al. 2019, the GelMap grid of Damstra et al. 2023, nuclear pores, photobleached patterns), not a new kind of QC; no journal-grade test of it exists yet.</p>
+<p class="lead en">You don't need the SWELL machine to try its ruler. A lab that already does expansion microscopy could expand a few chicken myofibrils alongside its samples, image them before and after on its own microscope, and get the axial expansion factor of each myofibril long enough to measure (on the separately built test gel, <span class="num" tabindex="0" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_coverage · true pairs that got an axial ratio (red team&#x27;s scorer)">28%</span> of the true pairs got one), a whole-gel strain map and QC flags (which on that gel caught none of the under- and over-expanded patches). One small Python package, free, no account. It is one more member of a family of in-gel rulers (sarcomeres in Sheard et al. 2019, the GelMap grid of Damstra et al. 2023, nuclear pores, photobleached patterns), not a new kind of QC; no journal-grade test of it exists yet.</p>
 
 
 <div class="table-wrap"><table class="data">
-  <thead><tr><th><span class="en">Red-team gel S3, as the red team scored it</span></th><th><span class="en">result</span></th></tr></thead>
+  <thead><tr><th><span class="en">The separately built test gel, as its builder scored it</span></th><th><span class="en">result</span></th></tr></thead>
   <tbody>
     <tr><td><span class="en">gel-mean axial error (median)</span></td><td><span class="num" tabindex="0" title="src/data/swell/strain_map_v2.json: S3.score.gel_mean_E_ax.rel_error_pct · gel-mean axial error, correct matches (red team&#x27;s scorer)">−0.14%</span> (<span class="num" tabindex="0" title="src/data/swell/strain_map_v2.json: S3.score.gel_mean_E_ax.median_rel_error_pct · gel-median axial error (red team&#x27;s scorer)">−0.01%</span>)</td></tr>
     <tr><td><span class="en">per-myofibril axial RMS, on the pairs that got a ratio</span></td><td><span class="num" tabindex="0" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.rms · per-myofibril axial RMS error (red team&#x27;s scorer)">1.8%</span> · <span class="num" tabindex="0" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_coverage · true pairs that got an axial ratio (red team&#x27;s scorer)">28%</span></td></tr>
@@ -78,7 +78,7 @@
 python -m swell_ruler demo</pre>
     <p class="en muted">SHA-256 of <span class="num" tabindex="0" title="src/downloads/swell_ruler-0.1.2-py3-none-any.whl · file name of the swell-ruler wheel">swell_ruler-0.1.2-py3-none-any.whl</span>, to check a downloaded copy: <span class="hash"><span class="num" tabindex="0" title="src/downloads/swell_ruler-0.1.2-py3-none-any.whl · SHA-256 of the wheel; its modules match the zip&#x27;s source byte for byte">f3709576545a05b6dc9dd0ef05ae89bf58f7cc9c9b12fa46f3a9f8eb928e126d</span></span></p>
     
-    <p class="en">The demo draws a synthetic before/after pair with a planted under-expanded patch, measures it and scores each check PASS or FAIL. Today it passes the axial factor and fails the transverse factor and the patch: the same weak spots S3 found. Then run it on your own pair, with your own measured blur widths (PSFs):</p>
+    <p class="en">The demo draws a synthetic before/after pair with a planted under-expanded patch, measures it and scores each check PASS or FAIL. Today it passes the axial factor and fails the transverse factor and the patch: the same weak spots the separately built gel found. Then run it on your own pair, with your own measured blur widths (PSFs):</p>
     
 <pre>python -m swell_ruler images pre.tif post.tif --px-pre 0.194 --px-post 0.194 --e-macro 4.5 --pre-mode dpc --psf-pre 0.55 --psf-post 0.41</pre>
     <p class="en muted">Needs Python 3.9+ (NumPy, SciPy and Pillow come with it). It is not on PyPI, so install it from this link or from the <a href="../../swell/download/#download">SWELL download</a>, which has the source, tests and data format.</p>
@@ -87,28 +87,18 @@ python -m swell_ruler demo</pre>
   <div class="panel">
     <h3><span class="en">What it reports</span></h3>
     <ul class="en">
-      <li><b>Axial factor</b> per myofibril: post ÷ pre sarcomere period, fitted on the post image's own Z-disc ladder. On S3 the gel-level average held up; per-myofibril precision did not (<span class="num" tabindex="0" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.rms · per-myofibril axial RMS error (red team&#x27;s scorer)">1.8%</span> RMS).</li>
-      <li><b>Transverse factor</b>: post ÷ pre width. Biased on S3 by a blur shape it does not model, even with the right blur widths.</li>
+      <li><b>Axial factor</b> per myofibril: post ÷ pre sarcomere period, fitted on the post image's own Z-disc ladder. On the separately built gel the gel-level average held up; per-myofibril precision did not (<span class="num" tabindex="0" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.rms · per-myofibril axial RMS error (red team&#x27;s scorer)">1.8%</span> RMS).</li>
+      <li><b>Transverse factor</b>: post ÷ pre width. Biased on that gel by a blur shape it does not model, even with the right blur widths.</li>
       <li><b>Landmark factor</b>: from neighbours' positions, no calibration needed.</li>
-      <li><b>Maps and flags</b>: local expansion, fibril vs gel, gel stretch, tears and folds, places with no partner. On S3 they caught the bubble and most of the fold, but none of the under- or over-expanded patches.</li>
+      <li><b>Maps and flags</b>: local expansion, fibril vs gel, gel stretch, tears and folds, places with no partner. On that gel they caught the bubble and most of the fold, but none of the under- or over-expanded patches.</li>
       <li><b>Anisotropy</b> is reported only beyond ±1%, and no call is made while the transverse and landmark rulers disagree by more than 3%.</li>
       <li><b>No expansion yet?</b> <code>stripes</code> checks whether your label-free images carry enough striation contrast (go if q ≥ <span class="num" tabindex="0" title="src/data/swell/preimage_v1.json: q_go[&#x27;10&#x27;].rms_1pct · q = m·√N for 1% per-fibril error at 10 sarcomeres">1.2</span>, rescaled to 0.194 µm pixels; q is read from the image's noise, so smoothed images, such as JPEGs or frames from a colour camera, read too high).</li>
     </ul>
     
   </div>
 </div>
-<p class="en"><span class="tag sim">simulated</span> Tested on synthetic gels only, including a synthetic red-team gel generated by a separate AI agent (see <a href="../../swell/results/#tested">Tested harder</a>). It has never seen a real micrograph, and its image front-end is deliberately simple, so check what it detects. Before anyone should trust it: real before/after gels in two chemistries, agreement with an independent in-gel reporter such as a GelMap grid in the same gel, and a fresh blind test.</p>
+<p class="en"><span class="tag sim">simulated</span> Tested on synthetic gels only, including a synthetic gel built separately from the analysis code (see <a href="../../swell/record/#tested">Tested harder</a>). It has never seen a real micrograph, and its image front-end is deliberately simple, so check what it detects. Before anyone should trust it: real before/after gels in two chemistries, agreement with an independent in-gel reporter such as a GelMap grid in the same gel, and a fresh blind test.</p>
 
-</section>
-
-<section class="page-history" id="corrections" aria-label="Page history">
-<details>
-  <summary><span class="en">Page history: 1 dated change, on 12 October 2026</span></summary>
-  <details class="ph-day">
-    <summary><span class="en">12 October 2026</span></summary>
-    <ul class="en"><li>After an AI science audit, the stripes check now warns that q is read from the image's noise, so smoothed images, such as JPEGs or frames from a colour camera, read too high.</li></ul>
-  </details>
-</details>
 </section>
 
 </main>
@@ -135,7 +125,7 @@ python -m swell_ruler demo</pre>
         <li><a href="../../safety/"><span class="en">Safety</span></a></li>
         <li><a href="../../licences/"><span class="en">Licences &amp; trade marks</span></a></li>
         <li><a href="../../accessibility/"><span class="en">Accessibility</span></a></li>
-        <li><a href="../../about-ai/"><span class="en">Made by an AI</span></a></li>
+        <li><a href="../../about-ai/">Made with AI</a></li>
       </ul>
     </nav>
     <div class="fc">
@@ -148,6 +138,7 @@ python -m swell_ruler demo</pre>
     </div>
   </div>
   <div class="foot-bottom">
+    <p>Made with AI, not yet checked by a person (<a href="../../about-ai/">how it is made</a>).</p>
     <p><span class="en">X-WOW · our own text, data and code CC0 1.0; hardware CERN-OHL-P v2; quotations and third-party code keep their own licences (<a href="../../licences/">details</a>) · the X-WOW name and logo are trade marks; the logo is UK registered trade mark UK00003425680 · no cookies, no tracking</span></p>
   </div>
 </footer>

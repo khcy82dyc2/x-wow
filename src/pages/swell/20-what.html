@@ -1,40 +1,32 @@
 <section class="block" id="what-it-is">
   <style>
     #what-it-is .step-n { font: 700 .78rem/1 var(--mono); letter-spacing: .2em; color: var(--gold); margin: 0 0 .6rem; }
-    #what-it-is .north { font-size: clamp(1.1rem, 2.6vw, 1.35rem); color: #fff; }
-    #what-it-is .grid-2 { margin-top: 18px; }
   </style>
-  <p class="kicker"><span class="en">Invention #1 · what it is</span><span class="zh">发明一号 · 这是什么</span></p>
-  <h2><span class="en">Make the sample bigger, then look with modest glass</span><span class="zh">先把样本泡大，再用便宜镜头看</span></h2>
-  <p class="lead en">SWELL is a design for an automated expansion microscope, meant to be cheap; whether it is waits until every part is priced. A small piece of supermarket chicken breast is anchored inside a gel that swells in water, so the muscle is physically enlarged, first by about {{n:swell.e_a}} and later by {{n:swell.e_b}}. A small 3D-printed microscope then scans the swollen gel, tile by tile.</p>
-  <p class="lead zh">SWELL 是一台全自动“膨胀显微镜”的设计，目标是低成本；到底便不便宜，要等每个零件都查到价格才知道。把一小块超市鸡胸肉固定在遇水会膨胀的凝胶里，肌肉就被实打实地放大：先放大约 {{n:swell.e_a}}，以后做到 {{n:swell.e_b}}。然后由一台 3D 打印的小显微镜把泡大的凝胶一格一格扫下来。</p>
-
+  <p class="kicker">What it is</p>
+  <h2>Make the sample bigger, then look with ordinary lenses</h2>
+  <p class="lead">Instead of paying for better glass, SWELL makes the sample itself bigger. A small piece of supermarket chicken breast is anchored inside a gel that swells in water, enlarging the muscle about {{n:swell.e_a}} (later {{n:swell.e_b}}). A small 3D-printed microscope then scans the swollen gel, tile by tile.</p>
   <div class="grid-3">
     <div class="panel">
       <p class="step-n">01</p>
-      <h3><span class="en">Anchor and swell</span><span class="zh">锚定，泡大</span></h3>
-      <p class="en">The muscle's proteins are tied into a sodium-acrylate gel. Heat and detergent loosen the tissue, then the gel swells in water and pulls the proteins apart, ideally by the same amount in every direction.</p>
-      <p class="zh">先把肌肉里的蛋白质“拴”进聚丙烯酸钠凝胶，再用加热和去污剂把组织松开。凝胶在水里膨胀，把蛋白质往外拉开；理想情况下，各个方向放大得一样多。</p>
+      <h3>Anchor and swell</h3>
+      <p>The muscle's proteins are tied into the gel. The tissue is loosened, then the gel swells in water and pulls the proteins apart, ideally by the same amount in every direction.</p>
     </div>
     <div class="panel">
       <p class="step-n">02</p>
-      <h3><span class="en">Image</span><span class="zh">成像</span></h3>
-      <p class="en">A printed flexure stage moves the gel over an objective and a mono camera. Hundreds of tiles and several focus planes are stitched into one image of the whole gel.</p>
-      <p class="zh">一个 3D 打印的柔性载物台带着凝胶在物镜和黑白相机上方移动，几百个视野、好几层焦面拼成一整块凝胶的大图。</p>
+      <h3>Image</h3>
+      <p>A printed stage moves the gel over a modest objective lens and a black-and-white camera. Hundreds of photos are stitched into one image of the whole gel.</p>
     </div>
     <div class="panel">
       <p class="step-n">03</p>
-      <h3><span class="en">Let the meat check itself</span><span class="zh">让肉自己当尺子</span></h3>
-      <p class="en">Muscle comes with rulers. Each myofibril is a chain of sarcomeres, about {{n:swell.sl_breast}} long in broiler chicken breast, by one published study (SWELL assumes supermarket breast is similar). Comparing the stripe spacing of each long myofibril before and after expansion would show how much that myofibril lengthened. Whether that equals the gel's expansion there is untested: dense protein structures can expand less than the gel around them (Damstra et al. 2022; Sheard 2021). Put together, these would give the <strong>strain map</strong>: a picture of how evenly the fibrils expanded across the gel.</p>
-      <p class="zh">肌肉自带尺子。每根肌原纤维由一节节肌节串成，超市鸡胸肉的肌节长约 {{n:swell.sl_breast}}。比较每一根足够长的肌原纤维膨胀前后的条纹间距，可以推算出这根肌原纤维伸长了多少。它是否等于凝胶在那里的膨胀，还没有测试过：致密的蛋白质结构可能比周围的凝胶胀得少（Damstra 等 2022；Sheard 2021）。把它们拼起来，就能画出<strong>应变图</strong>：各处的肌原纤维胀得匀不匀，一眼可见。</p>
+      <h3>Check with the muscle's own stripes</h3>
+      <p>Muscle is striped at a regular spacing, about {{n:swell.sl_breast}} in chicken breast. Measuring the same stripes before and after swelling would show how much each fibre grew, and a map of that would show whether the gel swelled evenly.</p>
     </div>
   </div>
-
-  <div>
-    <div class="panel gold">
-      <p class="kicker"><span class="en">North star</span><span class="zh">北极星目标</span></p>
-      <p class="north en">Chicken in, refill the chemicals, press one button. Out come images, a QC report and a draft paper, with no claim bigger than the QC supports.</p>
-      <p class="north zh">放进鸡肉，补满试剂，按一个键。出来的是图像、质控报告和一篇论文草稿，而且没有一句话超出质控能支持的范围。</p>
-    </div>
-  </div>
+  <p>The goal: put chicken in, refill the chemicals, press one button, and get images, a quality report and a draft paper that claims no more than the report supports.</p>
+  <h3>What isn't known yet</h3>
+  <ul>
+    <li><b>It has never been built.</b> Nothing has been bought or run on a bench. The mechanical design, the lab protocol and the instrument software aren't written yet.</li>
+    <li><b>Every result is a simulation,</b> on computer-made gels, and some checks fail. Whether a muscle fibre grows by the same amount as the gel around it is untested.</li>
+    <li><b>Free to take, but not free of patents.</b> X-WOW claims nothing, but expansion microscopy itself is patented by others (<a href="{{root}}swell/credits/#legal">patent notes</a>).</li>
+  </ul>
 </section>

@@ -48,7 +48,7 @@
   </nav>
 </header>
 <main id="main">
-<nav class="subnav" aria-label="SWELL overview sections"><div class="subnav-in"><a href="../../swell/"><span class="en">SWELL overview</span></a><a href="../../swell/science/"><span class="en">Science</span></a><a href="../../swell/results/"><span class="en">Results</span></a><a href="../../swell/parts/"><span class="en">Parts and cost</span></a><a href="../../swell/safety/"><span class="en">Safety and lab</span></a><a href="../../swell/claims/"><span class="en">Claims ledger</span></a><a href="../../swell/ruler/"><span class="en">swell-ruler</span></a><a href="../../swell/start/" aria-current="page"><span class="en">Start here</span></a><a href="../../swell/download/"><span class="en">Download</span></a><a href="../../swell/credits/"><span class="en">Credits and licences</span></a></div></nav>
+<nav class="subnav" aria-label="SWELL overview sections"><div class="subnav-in"><a href="../../swell/"><span class="en">SWELL overview</span></a><a href="../../swell/record/"><span class="en">Full technical record</span></a><a href="../../swell/ruler/"><span class="en">swell-ruler</span></a><a href="../../swell/start/" aria-current="page"><span class="en">Start here</span></a><a href="../../swell/download/"><span class="en">Download</span></a><a href="../../swell/credits/"><span class="en">Credits and licences</span></a></div></nav>
 <section class="block" id="start-here">
 <style>
 #start-here .sh-status{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:1rem 0}
@@ -95,7 +95,7 @@
 <div class="panel">
   <p><span class="tag cited"><span class="en">cited</span></span></p>
   <details class="more grownup-src"><summary><span class="en">For grown-ups: the reference</span></summary>
-  <p class="en">Reference: in broiler breast muscle, laser diffraction gave SL <b><span class="num" tabindex="0" title="src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci &amp; Puolanne 2020, doi:10.1080/1828051X.2020.1761271) · F-10 as published (laser diffraction, normal breast)">1.69 µm</span></b> in normal meat and <b><span class="num" tabindex="0" title="src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci &amp; Puolanne 2020, doi:10.1080/1828051X.2020.1761271) · F-10 as published (laser diffraction, wooden breast)">1.91 µm</span></b> in "wooden breast", a common texture defect (<span class="num" tabindex="0" title="src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci &amp; Puolanne 2020, doi:10.1080/1828051X.2020.1761271) · wooden breast / normal - 1">13%</span> longer). Soglia, Petracci &amp; Puolanne 2020, <i>Italian Journal of Animal Science</i> (abstract read by an AI). <a href="https://doi.org/10.1080/1828051X.2020.1761271" rel="noopener" target="_blank">doi:10.1080/1828051X.2020.1761271</a></p>
+  <p class="en">Reference: in broiler breast muscle, laser diffraction gave SL <b><span class="num" tabindex="0" title="src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci &amp; Puolanne 2020, doi:10.1080/1828051X.2020.1761271) · F-10 as published (laser diffraction, normal breast)">1.69 µm</span></b> in normal meat and <b><span class="num" tabindex="0" title="src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci &amp; Puolanne 2020, doi:10.1080/1828051X.2020.1761271) · F-10 as published (laser diffraction, wooden breast)">1.91 µm</span></b> in "wooden breast", a common texture defect (<span class="num" tabindex="0" title="src/data/swell/laser_F-10.md (SWELL pm/VERIFIED_FACTS.md F-10; Soglia, Petracci &amp; Puolanne 2020, doi:10.1080/1828051X.2020.1761271) · wooden breast / normal - 1">13%</span> longer). Soglia, Petracci &amp; Puolanne 2020, <i>Italian Journal of Animal Science</i> (abstract read). <a href="https://doi.org/10.1080/1828051X.2020.1761271" rel="noopener" target="_blank">doi:10.1080/1828051X.2020.1761271</a></p>
   
   </details>
 </div>
@@ -258,10 +258,7 @@
   
 </div>
 
-<aside class="loupe">
-  <p class="en">Prediction filed: red light, card at 10 cm, side spots <span class="num" tabindex="0" title="tools/numbers_laser.py + src/data/swell/laser_F-10.md · x = L·tan(asin(mλ/SL)), λ 650 nm, L 10 cm, m = 1">41.7 mm</span> from centre. Nobody at X-WOW has tried it yet.</p>
-  
-</aside>
+<p class="muted">Predicted for red light with the card at 10 cm: side spots <span class="num" tabindex="0" title="tools/numbers_laser.py + src/data/swell/laser_F-10.md · x = L·tan(asin(mλ/SL)), λ 650 nm, L 10 cm, m = 1">41.7 mm</span> from the centre. Nobody at X-WOW has tried it yet.</p>
 <script type="module" src="../../assets/js/diffraction.js"></script>
 </section>
 
@@ -289,7 +286,7 @@
         <li><a href="../../safety/"><span class="en">Safety</span></a></li>
         <li><a href="../../licences/"><span class="en">Licences &amp; trade marks</span></a></li>
         <li><a href="../../accessibility/"><span class="en">Accessibility</span></a></li>
-        <li><a href="../../about-ai/"><span class="en">Made by an AI</span></a></li>
+        <li><a href="../../about-ai/">Made with AI</a></li>
       </ul>
     </nav>
     <div class="fc">
@@ -300,6 +297,7 @@
     </div>
   </div>
   <div class="foot-bottom">
+    <p>Made with AI, not yet checked by a person (<a href="../../about-ai/">how it is made</a>).</p>
     <p><span class="en">X-WOW · our own text, data and code CC0 1.0; hardware CERN-OHL-P v2; quotations and third-party code keep their own licences (<a href="../../licences/">details</a>) · the X-WOW name and logo are trade marks; the logo is UK registered trade mark UK00003425680 · no cookies, no tracking</span></p>
   </div>
 </footer>

@@ -48,7 +48,7 @@
   </nav>
 </header>
 <main id="main">
-<nav class="subnav" aria-label="SWELL overview sections"><div class="subnav-in"><a href="../../swell/"><span class="en">SWELL overview</span></a><a href="../../swell/science/"><span class="en">Science</span></a><a href="../../swell/results/"><span class="en">Results</span></a><a href="../../swell/parts/"><span class="en">Parts and cost</span></a><a href="../../swell/safety/"><span class="en">Safety and lab</span></a><a href="../../swell/claims/"><span class="en">Claims ledger</span></a><a href="../../swell/ruler/"><span class="en">swell-ruler</span></a><a href="../../swell/start/"><span class="en">Start here</span></a><a href="../../swell/download/" aria-current="page"><span class="en">Download</span></a><a href="../../swell/credits/"><span class="en">Credits and licences</span></a></div></nav>
+<nav class="subnav" aria-label="SWELL overview sections"><div class="subnav-in"><a href="../../swell/"><span class="en">SWELL overview</span></a><a href="../../swell/record/"><span class="en">Full technical record</span></a><a href="../../swell/ruler/"><span class="en">swell-ruler</span></a><a href="../../swell/start/"><span class="en">Start here</span></a><a href="../../swell/download/" aria-current="page"><span class="en">Download</span></a><a href="../../swell/credits/"><span class="en">Credits and licences</span></a></div></nav>
 <section class="block" id="download">
 <style>
 #download .hash{font-family:var(--mono);color:var(--gold);word-break:break-all;overflow-wrap:anywhere;font-size:.9rem}
@@ -56,7 +56,7 @@
 #download pre{white-space:pre-wrap;word-break:break-all;font-family:var(--mono);font-size:.85rem;color:var(--text);background:rgba(5,8,13,.6);padding:.6rem .8rem;border-left:2px solid var(--cyan-dim)}
 </style>
 <p class="kicker"><span class="en">Download</span></p>
-<h1 class="page-h"><span class="en">Take it with you</span></h1>
+<h1 class="page-h"><span class="en">Download SWELL</span></h1>
 <p class="lead en">SWELL's desk-stage work in one zip: the audit, the decisions, the fact checks, the simulations and their outputs. Free, no sign-up.</p>
 
 
@@ -71,9 +71,9 @@
   <span class="tag sim"><span class="en">simulation only, never built</span></span>
 </div>
 
-<p class="en"><b>Inside:</b> audit, decisions, errata, invariants, risks, the fact checks (<code>pm/VERIFIED_FACTS.md</code>), orders, ideas and the BOM (most lines not yet priced) with each part's safety rating (<code>pm/</code>); design reports and figures, including the red-team results and the prior-art search (<code>docs/</code>); simulation code, the red-team gel and the <a href="../../swell/ruler/#tool">swell-ruler</a> tool with its tests (<code>software/</code>); simulated data (<code>data/sim/</code>); toolchain scripts (<code>tools/</code>); a README with what changed, the licence map and the licence texts; <code>SAFETY.md</code> with the hazards of each hazardous reagent in its table, cited to the supplier's safety data sheet, and their handling (lab only).</p>
+<p class="en"><b>Inside:</b> audit, decisions, errata, invariants, risks, the fact checks (<code>pm/VERIFIED_FACTS.md</code>), orders, ideas and the BOM (most lines not yet priced) with each part's safety rating (<code>pm/</code>); design reports and figures, including the blind-test results and the prior-art search (<code>docs/</code>); simulation code, the separately built test gel and the <a href="../../swell/ruler/#tool">swell-ruler</a> tool with its tests (<code>software/</code>); simulated data (<code>data/sim/</code>); toolchain scripts (<code>tools/</code>); a README with what changed, the licence map and the licence texts; <code>SAFETY.md</code> with the hazards of each hazardous reagent in its table, cited to the supplier's safety data sheet, and their handling (lab only).</p>
 
-<p class="en"><b>Not inside:</b> the original brief. It planned the gel chemistry in a home wet lab, a plan withdrawn on 9 October 2026; the chemistry belongs only in a laboratory with a fume hood (see <a href="../../swell/safety/#safety">Safety</a>). A few decisions and rows are also left out of this copy; the README lists each one and says why.</p>
+<p class="en"><b>Not inside:</b> the original brief. It planned the gel chemistry in a home wet lab, a plan withdrawn on 9 October 2026; the chemistry belongs only in a laboratory with a fume hood (see <a href="../../swell/record/#safety">Safety</a>). A few decisions and rows are also left out of this copy; the README lists each one and says why.</p>
 
 
 <p class="en">SHA-256 of <span class="num" tabindex="0" title="tools/make_swell_zip.py: ZIP_NAME · file name of this version">swell-g0-2026-10-12.zip</span>:</p>
@@ -89,7 +89,7 @@
 shasum -a 256 swell-g0-2026-10-12.zip             # macOS
 Get-FileHash swell-g0-2026-10-12.zip              # Windows PowerShell</pre>
   <p class="en">The simulations need Python 3.12 with numpy, scipy, matplotlib and pytest, plus MicroscPSF-Py for <code>software/sim/optics_v1.py</code>. Each script rewrites its own report in <code>docs/design/</code>, so you can diff your run against ours. The README lists the commands.</p>
-  <p class="en">Rerun on our machine, with Python 3.12 and the numpy, scipy and matplotlib versions pinned in <code>software/requirements.lock</code>, red-team gel S3 (<code>software/redteam/s3_gen.py</code>) came out byte for byte the same as our original run once decompressed; the <code>.json.gz</code> files themselves differed only in the time stamped in their gzip header. Since 2026-10-10 the generator writes that header with no time stamp, and two more runs on our machine gave byte-identical <code>.json.gz</code> files. We have not tried another computer or other versions of Python, numpy or scipy; there the gel may come out different. To compare yours, print the SHA-256 of each decompressed file:</p>
+  <p class="en">Rerun on our machine, with Python 3.12 and the numpy, scipy and matplotlib versions pinned in <code>software/requirements.lock</code>, the separately built test gel (<code>software/redteam/s3_gen.py</code>) came out byte for byte the same as our original run once decompressed; the <code>.json.gz</code> files themselves differed only in the time stamped in their gzip header. Since 2026-10-10 the generator writes that header with no time stamp, and two more runs on our machine gave byte-identical <code>.json.gz</code> files. We have not tried another computer or other versions of Python, numpy or scipy; there the gel may come out different. To compare yours, print the SHA-256 of each decompressed file:</p>
   
   
 <pre>python -c "import gzip,hashlib,sys;print(hashlib.sha256(gzip.open(sys.argv[1]).read()).hexdigest())" data/sim/S3/obs.json.gz
@@ -98,16 +98,6 @@ python -c "import gzip,hashlib,sys;print(hashlib.sha256(gzip.open(sys.argv[1]).r
   
   <p class="en">Personal details of the owner were removed from the private project files before release. Each removal is marked <code>[personal detail removed]</code>, and none is part of the SWELL design.</p>
   
-</details>
-</section>
-
-<section class="page-history" id="corrections" aria-label="Page history">
-<details>
-  <summary><span class="en">Page history: 2 dated changes, the latest on 12 October 2026</span></summary>
-  <details class="ph-day">
-    <summary><span class="en">12 October 2026</span></summary>
-    <ul class="en"><li>The download is now version v0.2.1 (12 October 2026). Its safety notes carry SWELL's stricter light rule of that day, and two sentences in its decision log that held counts drawn from YouTube comments now carry an erasure note instead. The note saying the download predated the light rule is gone, and the SHA-256 above is the new file's.</li><li>A note by the download button now says the download dates from 11 October 2026 and that SWELL's light requirement was made stricter on 12 October; the current rule is on Safety and lab.</li></ul>
-  </details>
 </details>
 </section>
 
@@ -135,7 +125,7 @@ python -c "import gzip,hashlib,sys;print(hashlib.sha256(gzip.open(sys.argv[1]).r
         <li><a href="../../safety/"><span class="en">Safety</span></a></li>
         <li><a href="../../licences/"><span class="en">Licences &amp; trade marks</span></a></li>
         <li><a href="../../accessibility/"><span class="en">Accessibility</span></a></li>
-        <li><a href="../../about-ai/"><span class="en">Made by an AI</span></a></li>
+        <li><a href="../../about-ai/">Made with AI</a></li>
       </ul>
     </nav>
     <div class="fc">
@@ -148,6 +138,7 @@ python -c "import gzip,hashlib,sys;print(hashlib.sha256(gzip.open(sys.argv[1]).r
     </div>
   </div>
   <div class="foot-bottom">
+    <p>Made with AI, not yet checked by a person (<a href="../../about-ai/">how it is made</a>).</p>
     <p><span class="en">X-WOW · our own text, data and code CC0 1.0; hardware CERN-OHL-P v2; quotations and third-party code keep their own licences (<a href="../../licences/">details</a>) · the X-WOW name and logo are trade marks; the logo is UK registered trade mark UK00003425680 · no cookies, no tracking</span></p>
   </div>
 </footer>
