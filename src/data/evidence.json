@@ -25,7 +25,7 @@
    },
    "red_teamed": {
     "status": "partial",
-    "made_of_en": "a synthetic test gel built separately from the analysis code, scored by its builder's own script and published as scored: 4 of 7 headline checks pass (✓ pairing; ✓ debris rejected; ✓ gel-mean axial factor; ✗ per-myofibril axial precision ≤ 1%; ✗ transverse ruler and anisotropy call; ✗ planted defects flagged; ✓ false flags ≤ 5%)",
+    "made_of_en": "a synthetic test gel built separately by a different AI agent, which may share our blind spots, scored by its builder's own script and published as scored: 4 of 7 headline checks pass (✓ pairing; ✓ debris rejected; ✓ gel-mean axial factor; ✗ per-myofibril axial precision ≤ 1%; ✗ transverse ruler and anisotropy call; ✗ planted defects flagged; ✓ false flags ≤ 5%)",
     "made_of_zh": "一块由另一个 AI 智能体造的红队凝胶，由红队自己的脚本评分并原样公布：7 项主要检查通过 4 项（✓ 配对；✓ 排除碎屑；✓ 整体轴向倍数；✗ 单根轴向精度 ≤ 1%；✗ 横向标尺与各向异性判断；✗ 人为缺陷被标出；✓ 误报 ≤ 5%）"
    },
    "bench_tested": {

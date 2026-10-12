@@ -1,8 +1,8 @@
 /* X-WOW concept-model viewer: a holographic wireframe of an invention, built from boxes, cylinders, tori and tubes.
  * Each root <div data-model="NAME"> loads its model from ./models/NAME.js (parts, shapes, light path, framing) and
  * builds it with ./model-kit.js. A model is a concept: not the engineering CAD.
- * three.js r160 is vendored in ../vendor/three/ (MIT, LICENSE beside it) and is only downloaded when the visitor taps
- * "Load the 3D model". No network calls beyond this site's own files. Without WebGL the inline SVG schematic stays.
+ * three.js r160 is vendored in ../vendor/three/ (MIT, LICENSE beside it) and loads with the page when WebGL is there.
+ * No network calls beyond this site's own files. Without WebGL or JavaScript the inline SVG schematic stays.
  * Once built, the root holds root.cmModel and fires 'cm:ready' (the Realistic view's export reads the meshes there);
  * a 'cm:cover' event with detail true pauses the render loop while something covers the model.
  */
@@ -11,20 +11,12 @@ for (const root of document.querySelectorAll('[data-model]')) boot(root);
 
 function boot(root) {
   if (!webglAvailable()) return; // keep the static SVG schematic
-  // three.js (~0.7 MB) is fetched only when the visitor asks for the 3D model: phones on slow data never pay for it
-  const btn = document.createElement('button');
-  btn.type = 'button';
-  btn.className = 'btn cm-load';
-  btn.innerHTML = '<span class="en">Load the 3D model</span><span class="zh" lang="zh-Hans">加载 3D 模型</span>';
-  btn.addEventListener('click', () => {
-    btn.remove();
-    root.classList.add('is-loading');
-    start(root).catch((err) => {
-      console.warn('[concept-model] falling back to the schematic:', err);
-      root.classList.remove('is-loading', 'is-live');
-    });
-  }, { once: true });
-  root.insertAdjacentElement('afterend', btn);   // below the drawing, never over its base
+  // the 3D model loads on its own (owner's order, 2026-10-12); the schematic shows until it is live, and stays on failure
+  root.classList.add('is-loading');
+  start(root).catch((err) => {
+    console.warn('[concept-model] falling back to the schematic:', err);
+    root.classList.remove('is-loading', 'is-live');
+  });
 }
 
 function webglAvailable() {

@@ -149,7 +149,7 @@ def swell():
         s3_counts = {"s3_pass": n_ok, "s3_total": len(heads)}
         stages["red_teamed"] = {
             "status": "done" if n_ok == len(heads) else "partial",
-            "made_of_en": f"a synthetic test gel built separately from the analysis code, scored by its builder's own script and published as scored: "
+            "made_of_en": f"a synthetic test gel built separately by a different AI agent, which may share our blind spots, scored by its builder's own script and published as scored: "
                           f"{n_ok} of {len(heads)} headline checks pass ("
                           + "; ".join(("✓ " if ok else "✗ ") + en for en, _, ok in heads) + ")",
             "made_of_zh": f"一块由另一个 AI 智能体造的红队凝胶，由红队自己的脚本评分并原样公布：{len(heads)} 项主要检查通过 {n_ok} 项（"

@@ -18,7 +18,7 @@
   <p class="lead en">Every result here comes from synthetic gels with a known truth. Synthetic data tests the analysis pipeline against our own assumptions, not the chemistry: a real build would have to repeat every check on real gels.</p>
   <p class="lead zh">这里的每个结果都来自“已知标准答案”的合成凝胶。合成数据只能拿我们自己的假设去检验分析流程，检验不了化学；真造出来以后，每一项检查都要在真凝胶上重做一遍。</p>
   <div class="panel red">
-    <p class="en"><b>Read this first.</b> This section is version 1, measured on gels from our own generator. The only test gel built separately (see <a href="#tested">Tested harder</a>) went worse: per-myofibril axial error {{n:tested.s3_ax_rms}} RMS with {{n:tested.s3_ax_beyond}} beyond ±2%, a transverse bias of {{n:tested.s3_tr_bias}}, and {{n:tested.s3_flag_under_expansion}} of the under-expanded patch flagged. Treat everything below as development results.</p>
+    <p class="en"><b>Read this first.</b> This section is version 1, measured on gels from our own generator. The only other test, a test gel built separately by a different AI agent, which may share our blind spots (see <a href="#tested">Tested harder</a>) went worse: per-myofibril axial error {{n:tested.s3_ax_rms}} RMS with {{n:tested.s3_ax_beyond}} beyond ±2%, a transverse bias of {{n:tested.s3_tr_bias}}, and {{n:tested.s3_flag_under_expansion}} of the under-expanded patch flagged. Treat everything below as development results.</p>
     <p class="zh"><b>先看这里。</b>这一节是第一版，测的是我们自己的生成器造的凝胶。唯一一块由另一个 AI 智能体的生成器造的考试凝胶 S3（见<a href="#tested">更严的考试</a>）结果更差：每根肌原纤维轴向误差均方根 {{n:tested.s3_ax_rms}}，{{n:tested.s3_ax_beyond}} 超过 ±2%；横向偏差 {{n:tested.s3_tr_bias}}；膨胀不足的区域只标出了 {{n:tested.s3_flag_under_expansion}}。下面的一切都请当作开发阶段的结果来看。</p>
   </div>
 
@@ -35,7 +35,7 @@
   <p class="zh"><strong>误差范围变大了，而且是模拟自己调大的。</strong></p>
 
   <h3><span class="en">Our own blind gel (version 1, development)</span><span class="zh">我们自己的盲测凝胶（第一版，开发用）</span></h3>
-  <p class="en">Our blind gel was made by the same generator with a new random seed, every planted defect moved and resized, and nothing tuned after it ran. It is not independent, because our generator shares our assumptions; the separately built gel (see <a href="#tested">Tested harder</a>) is the harder test. It holds {{n:swell.n_fibrils}} myofibrils in a {{n:swell.punch_a}} punch expanded {{n:swell.e_sim}}.</p>
+  <p class="en">Our blind gel was made by the same generator with a new random seed, every planted defect moved and resized, and nothing tuned after it ran. It is not independent, because our generator shares our assumptions; a test gel built separately by a different AI agent, which may share our blind spots, is the harder test (see <a href="#tested">Tested harder</a>). It holds {{n:swell.n_fibrils}} myofibrils in a {{n:swell.punch_a}} punch expanded {{n:swell.e_sim}}.</p>
   <p class="zh">S1b 号凝胶是我们自己的盲测：同一个生成器换了随机种子，所有埋进去的缺陷都换了位置、改了大小，跑完以后什么参数都没再调。它不算独立，因为生成器和我们有同样的假设；红队检验是凝胶 S3。它在一块 {{n:swell.punch_a}} 的胶片里放了 {{n:swell.n_fibrils}} 根肌原纤维，放大 {{n:swell.e_sim}}。</p>
   <div class="stats">
     <div class="panel stat"><b>{{n:swell.blind_mean_err}}</b><span class="en">whole-gel expansion error</span><span class="zh">整块凝胶放大倍数误差</span></div>
@@ -63,7 +63,7 @@
   </div>
   <p class="en muted">Pass rule: the detector named for the defect must flag at least {{n:swell.detect_threshold}} of its area.</p>
   <p class="zh muted">合格标准：该缺陷对应的探测器要标出至少 {{n:swell.detect_threshold}} 的面积。</p>
-  <p class="en">The two misses, plainly: a mild {{n:swell.blind_stretch}} stretch is caught under the wrong label, and a {{n:swell.blind_tear}} tear is too small to see. Across all four synthetic gels, <strong>{{n:swell.checks_pass}} of {{n:swell.checks_total}} checks pass, {{n:swell.checks_fail}} fails and {{n:swell.checks_below}} is below the detection limit</strong>. Three of the gels are development gels, because the detectors were fixed while looking at one of them; the fourth was our blind gel, and the separately built gel has since replaced it as the main test. On that development gel, a {{n:swell.dev_tear}} tear was flagged over {{n:swell.dev_tear_own}} of its area.</p>
+  <p class="en">The two misses, plainly: a mild {{n:swell.blind_stretch}} stretch is caught under the wrong label, and a {{n:swell.blind_tear}} tear is too small to see. Across all four synthetic gels, <strong>{{n:swell.checks_pass}} of {{n:swell.checks_total}} checks pass, {{n:swell.checks_fail}} fails and {{n:swell.checks_below}} is below the detection limit</strong>. Three of the gels are development gels, because the detectors were fixed while looking at one of them; the fourth was our blind gel, and the test gel built separately by a different AI agent has since replaced it as the main test. On that development gel, a {{n:swell.dev_tear}} tear was flagged over {{n:swell.dev_tear_own}} of its area.</p>
   <p class="zh">两处没做好，直说：轻微的 {{n:swell.blind_stretch}} 拉伸被标错了类别，{{n:swell.blind_tear}} 的裂缝太小看不出来。四块合成凝胶合计，<strong>{{n:swell.checks_total}} 项检查中 {{n:swell.checks_pass}} 项通过，{{n:swell.checks_fail}} 项失败，{{n:swell.checks_below}} 项低于检测下限</strong>。其中 S0、S1、S2 三块是“开发用”凝胶：探测器是对着 S1 调好的；S1b 是我们自己的盲测凝胶，后来由 S3 取代成为红队检验。在开发凝胶 S1 上，一条 {{n:swell.dev_tear}} 的裂缝被标出了 {{n:swell.dev_tear_own}} 的面积。</p>
 
   <figure class="fig">
@@ -94,7 +94,7 @@
       <p class="zh">宽度尺子最娇气：它得知道每根纤维的横截面长什么样。把方形截面当椭圆来拟合，会差 {{n:swell.tr_boxy_dpc}} 到 {{n:swell.tr_boxy_pol}}（取决于膨胀前图像的拍法）。所以流程改成从膨胀后的 z 叠层里直接量每根纤维的截面形状，偏差降到 {{n:swell.tr_shape_post}}。</p>
     </div>
     <div class="panel">
-      <p class="en">Blur calibration still matters. If the before-image blur is calibrated {{n:swell.psf5_case}} too wide, the bias is {{n:swell.tr_psf5}}, so the first gate calibrates it to {{n:swell.psf_cal}}. At that target the worst bias in our own model is {{n:swell.tr_worst_g1}}. The separately built gel showed the model is not enough: a blur shape the ruler does not model biased it by {{n:tested.s3_tr_bias}}, with the right blur widths or not.</p>
+      <p class="en">Blur calibration still matters. If the before-image blur is calibrated {{n:swell.psf5_case}} too wide, the bias is {{n:swell.tr_psf5}}, so the first gate calibrates it to {{n:swell.psf_cal}}. At that target the worst bias in our own model is {{n:swell.tr_worst_g1}}. The test gel built separately by a different AI agent showed the model is not enough: a blur shape the ruler does not model biased it by {{n:tested.s3_tr_bias}}, with the right blur widths or not.</p>
       <p class="zh">模糊标定照样要紧。膨胀前图像的模糊如果标宽了 {{n:swell.psf5_case}}，偏差就是 {{n:swell.tr_psf5}}；所以第一道关卡要求标定到 {{n:swell.psf_cal}}。在这个精度下，按我们自己的模型最坏偏差是 {{n:swell.tr_worst_g1}}。红队凝胶 S3 证明这个模型不够：一种标尺没建模的模糊形状让它偏了 {{n:tested.s3_tr_bias}}，模糊宽度给没给对都一样。</p>
     </div>
   </div>
