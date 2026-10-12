@@ -9,6 +9,19 @@
     try { var s = kind === "local" ? window.localStorage : window.sessionStorage; if (val === undefined) return s.getItem(key); s.setItem(key, val); } catch (e) { return null; }
   }
 
+  /* the sticky sub-page nav sits just under the sticky header, whatever its height */
+  function topH() { var t = document.querySelector(".top"); if (t) doc.style.setProperty("--top-h", t.offsetHeight + "px"); }
+  topH(); window.addEventListener("resize", topH, { passive: true });
+
+  /* a link into a folded section opens it */
+  function openTarget() {
+    var id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
+    [].forEach.call(document.querySelectorAll('details[data-open-on="' + id.replace(/"/g, "") + '"]'), function (d) { d.open = true; });
+    var el = document.getElementById(id), d = el && el.closest ? el.closest("details") : null;
+    while (d) { d.open = true; d = d.parentElement && d.parentElement.closest ? d.parentElement.closest("details") : null; }
+  }
+  openTarget(); window.addEventListener("hashchange", openTarget);
+
   /* ---------- language ---------- */
   function setLang(l, save) {
     if (l === "zh") { doc.setAttribute("data-lang", "zh"); doc.lang = "zh-Hans"; }
@@ -122,7 +135,7 @@
         vsay("LOUPE · no on-device voice found", "LOUPE · 这台设备上没有本地语音");
         return;
       }
-      Array.prototype.forEach.call(document.querySelectorAll(".loupe ." + l), function (p) { texts.push(p.textContent.trim()); });
+      Array.prototype.forEach.call(document.querySelectorAll(".loupe ." + l), function (p) { if (!p.closest(".voice")) texts.push(p.textContent.trim()); });
       if (!texts.length) return;
       speaking = true; vbtn.setAttribute("aria-pressed", "true");
       var synth = window.speechSynthesis;
@@ -134,7 +147,7 @@
         synth.speak(u);
       });
     });
-    document.body.appendChild(vbtn);
+    document.querySelector(".loupe").appendChild(vbtn);   /* inside the first LOUPE note: it never covers the page */
   }
 
   function ready() { boot(); reveal(); voice(); }

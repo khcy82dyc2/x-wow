@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="../assets/img/brand/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
 <link rel="stylesheet" href="../assets/css/site.css">
-<script>(function(){var d=document.documentElement,l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('xwow-lang');}catch(e){}if(!l){l=/^zh/i.test(navigator.language||'')?'zh':'en';}if(l==='zh'){d.setAttribute('data-lang','zh');d.lang='zh-Hans';document.title=d.getAttribute('data-title-zh');}d.className+=' js';try{if(!/noboot/.test(location.search)&&!/\/shrink\//.test(location.pathname)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
+<script>(function(){var d=document.documentElement;/* English only for now (the owner, 2026-10-12): the Chinese text stays in the source, hidden */d.className+=' js';try{if(!/noboot/.test(location.search)&&!/\/shrink\//.test(location.pathname)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
 <script defer src="../assets/js/site.js"></script>
 <script defer src="../assets/js/duck.js"></script>
 </head>
@@ -37,7 +37,6 @@
 <a href="../swell/"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
 <a href="../shrink/" aria-current="page"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
 <a href="../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
-<a href="../videos/"><span class="en">Videos</span><span class="zh">视频</span></a>
 <a href="../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
       </div>
     </details>
@@ -46,13 +45,12 @@
 <a href="../swell/"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
 <a href="../shrink/" aria-current="page"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
 <a href="../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
-<a href="../videos/"><span class="en">Videos</span><span class="zh">视频</span></a>
 <a href="../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
     </div>
   </nav>
-  <button class="lang" id="lang-toggle" type="button" aria-label="切换到中文 / Switch to English"><span class="en">中文</span><span class="zh">EN</span></button>
 </header>
 <main id="main">
+
 <section class="sk" id="shrink" aria-label="SHRINK game">
   <div class="sk-viewer" id="sk-viewer" role="application" aria-label="Zoomable microscope slides: drag to move, pinch, scroll or use the plus and minus keys to shrink and grow"></div>
   <div class="sk-top">
@@ -140,6 +138,8 @@
 <h2><span class="en">What SHRINK is, and what it is not</span><span class="zh" lang="zh-Hans">变小探险是什么，不是什么</span></h2>
 <p class="lead en">SHRINK is a free zoom game for curious children (about 7 to 12, and anyone older) built from <span class="num" title="software/slides (SWELL project): make_web.py manifest less withdrawn.json · slides in the game">32</span> real microscope slides: the kind of prepared teaching slides schools use, scanned at 20× so that one pixel is <span class="num" title="scanner metadata (MPP) · size of one pixel at the slide">0.5037 µm</span> across. Nothing in the pictures is drawn or generated. The <span class="num" title="software/slides (SWELL project): game_content.json · postcards placed one by one by the AI that wrote the game">25</span> postcards in <span class="num" title="software/slides (SWELL project): game_content.json · expeditions">6</span> expeditions were placed one by one on real structures by the AI that wrote the game. Every slide's size and the screen's width are computed from pixels; the sizes in the postcard facts were estimated on the slide and rounded.</p>
 <p class="lead zh" lang="zh-Hans">变小探险是一个给好奇孩子（大约 7 到 12 岁，大一点的也欢迎）的免费缩放游戏，用的是 <span class="num" title="software/slides (SWELL project): make_web.py manifest less withdrawn.json · slides in the game">32</span> 张真正的显微镜玻片：就是学校里用的那种教学切片，用 20 倍扫描，每个像素只有 <span class="num" title="scanner metadata (MPP) · size of one pixel at the slide">0.5037 µm</span>。图里没有任何东西是画出来或生成出来的。<span class="num" title="software/slides (SWELL project): game_content.json · expeditions">6</span> 个探险里的 <span class="num" title="software/slides (SWELL project): game_content.json · postcards placed one by one by the AI that wrote the game">25</span> 张明信片，都是写这个游戏的 AI 逐个放在真实结构上的。每张玻片的大小和屏幕的宽度都由像素算出；明信片知识里的尺寸是在玻片上估量后取整的。</p>
+  <p class="muted"><span class="en">For grown-ups: the game keeps progress only in this browser and sends nothing anywhere (<a href="../privacy/">privacy</a>).</span><span class="zh" lang="zh-Hans">给大人：游戏只把进度存在这个浏览器里，不发送到任何地方（<a href="../privacy/">隐私说明</a>）。</span></p>
+  <details class="more fold" id="grown-ups-more" data-open-on="grown-ups"><summary><span class="en">How it plays, privacy and safety, the slides, the facts</span><span class="zh" lang="zh-Hans">玩法、隐私和安全、玻片、事实核对</span></summary>
 
 <div class="grid-2">
   <div class="panel">
@@ -194,33 +194,46 @@
     <p class="zh muted" lang="zh-Hans">游戏的代码和文字，以及玻片图像：CC0 1.0（图像自 2026 年 10 月 11 日起，由网站主人决定）。用到了 OpenSeadragon（BSD-3-Clause）、PMTiles（BSD-3-Clause）和 fflate（MIT，包含在 PMTiles 里），它们的许可证随网站一起发布。</p>
   </div>
 </div>
+  </details>
 </section>
 
 </main>
 <footer class="foot">
   <div class="foot-grid">
-    <div>
+    <div class="fc">
       <img class="foot-logo" src="../assets/img/brand/xwow-logo-dark-128.png" srcset="../assets/img/brand/xwow-logo-dark-64.png 75w, ../assets/img/brand/xwow-logo-dark-128.png 149w, ../assets/img/brand/xwow-logo-dark-192.png 224w, ../assets/img/brand/xwow-logo-dark-288.png 335w" sizes="112px" width="112" height="96" alt="X-WOW" loading="lazy">
-      <p class="en">Inventions to steal, happily. Everything here is free to build, change and claim. We claim nothing, but can't promise that nobody else holds a patent.</p>
-      <p class="zh">好发明，开心偷。这里的一切都可以免费造、随便改，成功算你的。我们什么都不主张，但不能保证别人没有相关专利。</p>
+      <p><span class="en">Inventions to steal, happily.</span><span class="zh">好发明，开心偷。</span></p>
     </div>
-    <div>
-      <p class="kicker"><span class="en">Licences</span><span class="zh">许可</span></p>
-      <p class="en">Text, data and code: CC0 1.0, except quotations, which stay their authors'. Hardware designs: CERN-OHL-P v2. The X-WOW name and logo are trade marks, not covered by either licence; the logo is a registered UK trade mark (UK00003425680). Third-party code (three.js, OpenSeadragon, PMTiles, fflate) keeps its own MIT or BSD licence. <a href="../swell/#legal">Details and patent notes</a>.</p>
-      <p class="zh">文字、数据、代码：CC0 1.0（引文除外，仍归原作者）；硬件设计：CERN-OHL-P v2。X-WOW 的名称和标志是商标，不在这两个许可之内；标志是英国注册商标（UK00003425680）。第三方代码（three.js、OpenSeadragon、PMTiles、fflate）保留各自的 MIT 或 BSD 许可。<a href="../swell/#legal">详情与专利提示</a>。</p>
+    <nav class="fc" aria-label="Explore">
+      <p class="fc-h"><span class="en">Explore</span><span class="zh">探索</span></p>
+      <ul>
+        <li><a href="../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a></li>
+        <li><a href="../swell/">SWELL</a></li>
+        <li><a href="../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a></li>
+        <li><a href="../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a></li>
+        <li><a href="../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a></li>
+      </ul>
+    </nav>
+    <nav class="fc" aria-label="About and legal">
+      <p class="fc-h"><span class="en">About &amp; legal</span><span class="zh">关于与法律</span></p>
+      <ul>
+        <li><a href="../terms/"><span class="en">Terms of use</span><span class="zh">使用条款</span></a></li>
+        <li><a href="../privacy/"><span class="en">Privacy</span><span class="zh">隐私</span></a></li>
+        <li><a href="../safety/"><span class="en">Safety</span><span class="zh">安全</span></a></li>
+        <li><a href="../licences/"><span class="en">Licences &amp; trade marks</span><span class="zh">许可与商标</span></a></li>
+        <li><a href="../accessibility/"><span class="en">Accessibility</span><span class="zh">无障碍</span></a></li>
+        <li><a href="../about-ai/"><span class="en">Made by an AI</span><span class="zh">由 AI 制作</span></a></li>
+      </ul>
+    </nav>
+    <div class="fc">
+      <p class="fc-h"><span class="en">Contact</span><span class="zh">联系</span></p>
+      <ul>
+        <li><span class="en">For grown-ups: info@x-wow.com</span><span class="zh">给大人：info@x-wow.com</span></li>
+      </ul>
     </div>
-    <div>
-      <p class="kicker"><span class="en">Made by an AI</span><span class="zh">AI 制作</span></p>
-      <p class="en">This site&#x27;s text and code, and SWELL, were made by an AI (Claude, made by Anthropic) working from the owner&#x27;s brief and orders; the archives are X-WOW&#x27;s earlier projects. SWELL has not been built yet. <a href="../swell/#ai">How</a>.</p>
-      <p class="zh">本站的文字和代码，以及 SWELL，都是 AI（Anthropic 的 Claude）按网站主人的要求和指令做的；各个存档是 X-WOW 以前的项目。SWELL 还没有人造出来。<a href="../swell/#ai">怎么做的</a>。</p>
-    </div>
-    <div>
-      <p class="kicker"><span class="en">Open</span><span class="zh">公开</span></p>
-      <p class="en">no cookies, no tracking. <a href="../privacy/">Privacy</a>.</p>
-      <p class="zh">无 cookie、无追踪。<a href="../privacy/">隐私说明</a>。</p>
-      <p class="en">For grown-ups: questions or corrections go to info@x-wow.com.</p>
-      <p class="zh">给大人：问题或更正请发到 info@x-wow.com。</p>
-    </div>
+  </div>
+  <div class="foot-bottom">
+    <p><span class="en">X-WOW · our own text, data and code CC0 1.0; hardware CERN-OHL-P v2; quotations and third-party code keep their own licences (<a href="../licences/">details</a>) · the X-WOW name and logo are trade marks; the logo is UK registered trade mark UK00003425680 · no cookies, no tracking</span><span class="zh">X-WOW · 我们自己的文字、数据和代码采用 CC0 1.0；硬件 CERN-OHL-P v2；引文和第三方代码保留各自的许可 · X-WOW 的名称和标志是商标，标志是英国注册商标 UK00003425680 · 无 cookie、无追踪</span></p>
   </div>
 </footer>
 </body>

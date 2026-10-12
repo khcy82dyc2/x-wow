@@ -121,9 +121,9 @@ def evidence_html(slug, compact, root):
     r = e["risks"] or {"open": 0, "retired_or_mitigated": 0}
     ver_en = f'{c["verified"]} verified (re-derived by a named checker), ' if c["verified"] else ""
     ver_zh = f'已核实（由具名核对者重新推算）{c["verified"]} 条、' if c["verified"] else ""
-    extra = (f'<p class="en">Claims on this page: {ver_en}{c["cited"]} cited, {c["sim"]} simulated, {c["predicted"]} predicted, '
+    extra = (f'<p class="en">Claims across SWELL&#x27;s pages: {ver_en}{c["cited"]} cited, {c["sim"]} simulated, {c["predicted"]} predicted, '
              f'{c["untested"]} untested. Risk register: {r["open"]} open, {r["retired_or_mitigated"]} mitigated or retired.</p>'
-             f'<p class="zh">本页的说法：{ver_zh}引用 {c["cited"]} 条、模拟 {c["sim"]} 条、预测 {c["predicted"]} 条、未测试 {c["untested"]} 条。'
+             f'<p class="zh">SWELL 各页的说法：{ver_zh}引用 {c["cited"]} 条、模拟 {c["sim"]} 条、预测 {c["predicted"]} 条、未测试 {c["untested"]} 条。'
              f'风险清单：未解决 {r["open"]} 项，已缓解或已解决 {r["retired_or_mitigated"]} 项。</p>'
              '<p class="en muted">The first four stages are desk evidence and fill at most four of seven; the last three move only '
              'on checked reports of real builds. Computed on every build by tools/evidence_bar.py from public files (the '
@@ -213,9 +213,25 @@ NAV = [
     ("swell", "swell/", "SWELL", "SWELL"),
     ("shrink", "shrink/", "SHRINK", "变小探险"),
     ("back-to-shine", "back-to-shine/", "Back to Shine", "旧仪器再发光"),
-    ("videos", "videos/", "Videos", "视频"),
     ("archive", "#archive", "Archive", "旧档案"),
 ]
+
+
+FRONT_WORDS = 800
+
+
+def subnav_html(group, slug, root):
+    """A sticky row of links for a page family (src/data/subnav.json), the current page marked."""
+    if not group:
+        return ""
+    items = json.loads((SRC / "data" / "subnav.json").read_text(encoding="utf-8"))[group]
+    links = []
+    for it in items:
+        cur = ' aria-current="page"' if it["path"] == slug else ""
+        links.append(f'<a href="{root}{it["path"]}/"{cur}><span class="en">{html.escape(it["en"])}</span>'
+                     f'<span class="zh">{html.escape(it["zh"])}</span></a>')
+    return (f'<nav class="subnav" aria-label="{html.escape(items[0]["en"])} sections"><div class="subnav-in">'
+            + "".join(links) + "</div></nav>")
 
 
 def nav_html(slug, root):
@@ -234,7 +250,7 @@ def build_pages(numbers):
     layout = (SRC / "layout.html").read_text(encoding="utf-8")
     pages = {}
     for pdir in sorted(p for p in (SRC / "pages").iterdir() if p.is_dir()):
-        slug = pdir.name
+        slug = pdir.name.replace("~", "/")   # a folder named "swell~science" is the page /swell/science/
         meta_f = pdir / "_meta.json"
         frags = sorted(pdir.glob("[0-9]*.html"))
         if not meta_f.exists() or not frags:
@@ -246,24 +262,28 @@ def build_pages(numbers):
         elif slug == "404":
             root, out = "", OUT / "404.html"   # 404 sets <base> at runtime (it is served at any depth)
         else:
-            root, out = "../", OUT / slug / "index.html"
+            root, out = "../" * (slug.count("/") + 1), OUT / slug / "index.html"
         content = "\n".join(add_zh_lang(f.read_text(encoding="utf-8")) for f in frags)
         page = layout
         for k in ("title_en", "title_zh", "description_en", "description_zh"):
             page = page.replace("{{" + k + "}}", html.escape(meta.get(k, ""), quote=True))
         kids = meta.get("audience") == "children"   # A7-30: nothing made for children links to GitHub (its issue tracker)
-        page = page.replace("{{source_en}}", "" if kids else SOURCE_EN).replace("{{source_zh}}", "" if kids else SOURCE_ZH)
-        contact = CONTACT_KIDS if kids else CONTACT   # children's pages name the email for grown-ups, with no link
-        page = page.replace("{{contact_en}}", contact["en"]).replace("{{contact_zh}}", contact["zh"])
-        page = page.replace("{{slug}}", slug).replace("{{nav}}", nav_html(slug, root))
+        page = page.replace("{{contact_items}}", CONTACT_ITEMS_KIDS if kids else CONTACT_ITEMS)
+        page = page.replace("{{slug}}", slug.replace("/", "-")).replace("{{nav}}", nav_html(slug.split("/")[0], root))
+        page = page.replace("{{subnav}}", subnav_html(meta.get("subnav"), slug, root))
         page = page.replace("{{base}}", BASE_SCRIPT if slug == "404" else "")
         page = page.replace("{{content}}", content)
         page = page.replace("{{redirects_json}}", json.dumps(redirect_map(), sort_keys=True))
         page = render(page, root, numbers, f"pages/{slug}")
-        if kids and re.search(r"github\.com|youtube\.com|youtu\.be", page):
+        if kids and re.search(r"github\.com|youtube\.com|youtu\.be|//x\.com|twitter\.com", page):
             fail(f"pages/{slug}: a page for children links to GitHub or YouTube (nowhere a child shouldn't be)")
         if kids and "mailto:" in page:
             fail(f"pages/{slug}: a page for children carries an email link (the footer names the address for grown-ups)")
+        if meta.get("front"):   # standing rule (the owner, 2026-10-12): a front page shows <= ~800 words before its sub-page tiles
+            import front_words  # noqa: PLC0415  (tools/front_words.py, stdlib)
+            n = front_words.count(page)
+            if n > FRONT_WORDS:
+                fail(f"pages/{slug}: {n} words before the sub-page tiles; a front page keeps to {FRONT_WORDS} (depth goes in sub-pages)")
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(page, encoding="utf-8")
         pages[slug] = out
@@ -271,10 +291,11 @@ def build_pages(numbers):
     return pages
 
 
-CONTACT = {"en": 'Questions or corrections: <a href="mailto:info@x-wow.com">info@x-wow.com</a>.',
-           "zh": '问题或更正：<a href="mailto:info@x-wow.com">info@x-wow.com</a>。'}
-CONTACT_KIDS = {"en": "For grown-ups: questions or corrections go to info@x-wow.com.",
-                "zh": "给大人：问题或更正请发到 info@x-wow.com。"}
+CONTACT_ITEMS = ('<li><a href="mailto:info@x-wow.com">info@x-wow.com</a></li>\n'
+                 '        <li><a href="https://x.com/X_WowCom" target="_blank" rel="noopener">@X_WowCom <span class="en">on X</span><span class="zh">（X）</span></a></li>\n'
+                 '        <li><a href="{{gh}}" target="_blank" rel="noopener"><span class="en">Site source on GitHub</span><span class="zh">网站源码（GitHub）</span></a></li>')
+# A7-30 / Wall 7: pages made for children link nowhere a child shouldn't go: the address only, for grown-ups, no links
+CONTACT_ITEMS_KIDS = '<li><span class="en">For grown-ups: info@x-wow.com</span><span class="zh">给大人：info@x-wow.com</span></li>'
 
 
 BASE_SCRIPT = (
@@ -287,7 +308,7 @@ REDIRECT = """<!doctype html>
 <meta name="robots" content="noindex">
 <meta http-equiv="refresh" content="0; url={target}">
 <link rel="canonical" href="{canonical}">
-<script>location.replace({target_js} + location.hash);</script>
+<script>location.replace({target_js} + ({target_js}.indexOf("#") < 0 ? location.hash : ""));</script>
 <style>body{{background:#05080d;color:#d8eef6;font:16px system-ui,sans-serif;padding:2rem}}a{{color:#4fd8ff}}</style>
 </head><body><p>This page has moved: <a href="{target}">{label}</a>. 此页面已搬家：<a href="{target}">{label}</a>。</p></body></html>
 """
@@ -310,7 +331,7 @@ def build_redirects(pages):
         old = old.strip("/").lower()
         if not old or old in pages:
             continue
-        if new.strip("/") and new.strip("/").split("#")[0] not in pages:
+        if new.strip("/").split("#")[0] and new.strip("/").split("#")[0] not in pages:   # "#archive" = a home section
             print(f"  warn: redirect {old} -> {new} targets a page that is not built; using home")
             new = ""
         target = "../" + new
@@ -332,6 +353,20 @@ def copy_static():
     for name in ("CNAME", "favicon.ico", "site.webmanifest"):  # custom domain and site icons live at the root
         if (SRC / name).exists():
             shutil.copy(SRC / name, OUT / name)
+
+
+def check_anchor_maps():
+    """A front page's script that sends old #anchors to sub-pages (pages/*/97-anchors.html): every target must exist,
+    because the link checker can't follow a redirect done by script."""
+    problems = []
+    for f in (SRC / "pages").glob("*/97-anchors.html"):
+        m = re.search(r"var m=(\{.*?\});", f.read_text(encoding="utf-8"))
+        front = f.parent.name.replace("~", "/")
+        for anchor, sub in json.loads(m.group(1)).items():
+            page = OUT / front / sub / "index.html"
+            if not page.exists() or f'id="{anchor}"' not in page.read_text(encoding="utf-8"):
+                problems.append(f"{front}/#{anchor} redirects to {front}/{sub}/#{anchor}, which doesn't exist")
+    return problems
 
 
 def write_seo(pages):
@@ -610,7 +645,7 @@ def main():
     unpublish_stale_renders()
     build_redirects(pages)
     write_seo(pages)
-    problems = (check_site() + check_root_files() + check_public_tree() + check_figures() + check_card_numbers(numbers)
+    problems = (check_site() + check_anchor_maps() + check_root_files() + check_public_tree() + check_figures() + check_card_numbers(numbers)
                 + check_secrets() + check_people_words() + realistic.check())
     for pr in problems:
         print("  PROBLEM " + pr)

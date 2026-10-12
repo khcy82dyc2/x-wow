@@ -182,11 +182,18 @@ ol.steps > li::before { content: counter(s, decimal-leading-zero); position: abs
 .wall .entry h3 { font-size: 1rem; margin-bottom: .3rem; }
 .wall .entry p { margin: 0; color: var(--muted); font-size: .85rem; }
 
-/* footer */
+/* footer: four short columns and one bottom line, no paragraphs */
 .foot { border-top: 1px solid var(--line); background: rgba(3, 6, 10, .8); margin-top: 40px; }
-.foot-grid { max-width: var(--wrap); margin: 0 auto; padding: 40px 16px; display: grid; gap: 24px; grid-template-columns: 1fr; font-size: .9rem; color: var(--muted); }
-@media (min-width: 760px) { .foot-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.foot-grid { max-width: var(--wrap); margin: 0 auto; padding: 32px 16px 20px; display: grid; gap: 22px 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); font-size: .88rem; color: var(--muted); }
+@media (min-width: 760px) { .foot-grid { grid-template-columns: 1.3fr 1fr 1.2fr 1fr; } }
 .foot p { margin: 0 0 .5rem; }
+.foot ul { list-style: none; margin: 0; padding: 0; }
+.foot li { margin: 0 0 .35rem; }
+.foot a { color: var(--text); text-decoration: none; }
+.foot a:hover, .foot a:focus-visible { color: var(--cyan); text-decoration: underline; }
+.foot .fc-h { font: .74rem/1.3 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--cyan); margin-bottom: .7rem; }
+.foot-bottom { max-width: var(--wrap); margin: 0 auto; padding: 14px 16px 26px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; justify-content: space-between; font-size: .78rem; color: var(--muted); }
+.foot-bottom p { margin: 0; flex: 1 1 32rem; }
 .foot-logo { display: block; width: 112px; height: auto; margin: 0 0 .9rem; }
 
 /* reveal on scroll (JS adds .reveal only when motion is allowed) */
@@ -213,7 +220,7 @@ html.boot-pending .top, html.boot-pending main, html.boot-pending .foot { visibi
 @keyframes bootlogo { from { opacity: 0; transform: scale(.94); } to { opacity: 1; transform: none; } }
 
 /* LOUPE voice button */
-.voice { position: fixed; right: 14px; bottom: 14px; z-index: 25; display: none; align-items: center; gap: .45rem; padding: .55rem .75rem; font: 700 .7rem/1 var(--mono); letter-spacing: .16em; color: var(--gold); background: rgba(5, 8, 13, .9); border: 1px solid rgba(255, 181, 71, .45); border-radius: 99px; cursor: pointer; }
+.voice { position: static; margin-top: .8rem; display: none; align-items: center; gap: .45rem; padding: .55rem .75rem; font: 700 .7rem/1 var(--mono); letter-spacing: .16em; color: var(--gold); background: rgba(5, 8, 13, .9); border: 1px solid rgba(255, 181, 71, .45); border-radius: 99px; cursor: pointer; }
 .voice.ready { display: inline-flex; }
 @media (max-width: 720px) { .voice { position: static; margin: 0 16px 24px; } }
 .voice[aria-pressed="true"] { background: var(--gold); color: #000; }
@@ -271,3 +278,16 @@ html.boot-pending .top, html.boot-pending main, html.boot-pending .foot { visibi
 @media (max-width:640px){.cm .rv{padding:24px 10px 20px;gap:.35rem}.cm .rv-note{font-size:.72rem;line-height:1.4}.cm .rv-views{gap:.25rem}.cm .rv-view{min-height:32px;padding:.3rem .4rem;font-size:.6rem;letter-spacing:0}}
 .loupe .home-spark { margin-top: .7rem; color: #eaf7fc; }
 .loupe .home-spark b { color: var(--gold); }
+/* page history: the dated change notes, kept on the page (never silent) but out of the way */
+.page-history { max-width: var(--wrap); margin: 0 auto; padding: 0 16px 20px; font-size: .8rem; color: var(--muted); }
+.page-history > details > summary { cursor: pointer; color: var(--muted); }
+.page-history > details > summary:hover { color: var(--text); }
+.page-history .ph-day { margin: .6rem 0 0 1rem; }
+.page-history .ph-day > summary { cursor: pointer; font-family: var(--mono); }
+.page-history ul { margin: .3rem 0 .3rem 1rem; padding-left: 1rem; }
+/* sub-page navigation: one sticky row under the header, scrolls sideways on phones */
+.subnav { position: sticky; top: var(--top-h, 72px); z-index: 20; background: rgba(5, 8, 13, .94); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); }
+.subnav-in { max-width: var(--wrap); margin: 0 auto; padding: 0 16px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: thin; }
+.subnav a { flex: none; padding: .7rem .65rem; font: .74rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; }
+.subnav a:hover { color: var(--text); }
+.subnav a[aria-current="page"] { color: var(--cyan); border-bottom-color: var(--cyan); }

@@ -163,6 +163,9 @@ def compute() -> dict:
 
 
 def html(root: str, numbers: dict) -> tuple[str, list[str]]:
+    """The board, in the order the owner set on 2026-10-12: a stats strip, the cards straight away (sortable and
+    filterable), then the Sparks lane, then the Killed list (collapsed). Labels are single-language spans, so only
+    the page's active language ever shows (option text, which can't hold spans, is English: the site is English-only)."""
     b = compute()
     lad, fields = b["ladder"], {f["id"]: f for f in b["fields"]}
     names = {c["id"]: c for c in b["cards"]}
@@ -175,79 +178,101 @@ def html(root: str, numbers: dict) -> tuple[str, list[str]]:
         return (f' <span class="bd-mark bd-mark-{m}">{both("new", "新")}</span>' if m == "new" else
                 f' <span class="bd-mark bd-mark-{m}">{both("moved", "前进")}</span>' if m == "moved" else "")
 
-    def cost(c):
+    def cost_value(c):
         if c.get("cost_key") and c["cost_key"] in numbers:
-            v = str(numbers[c["cost_key"]]["value"])
+            return str(numbers[c["cost_key"]]["value"])
+        return None
+
+    def cost(c):
+        v = cost_value(c)
+        if v is not None:
             return both(c["cost_en"].replace("{}", v), c["cost_zh"].replace("{}", v))
         return both(c["cost_en"], c["cost_zh"])
 
+    def cost_num(c):   # priced-so-far, for sorting; unpriced cards sort last
+        v = cost_value(c)
+        m = re.search(r"\d[\d,]*(?:\.\d+)?", v or "")
+        return m.group(0).replace(",", "") if m else ""
+
     k = b["counters"]
-    out = [f'<div class="bd-count"><div><b>{k["ideas"]}</b>{both("invention on the board" if k["ideas"] == 1 else "inventions on the board", "项发明在看板上")}</div>'
-           f'<div><b>{k["past_theory"]}</b>{both("past the theory check", "项已过理论核对")}</div>'
-           f'<div><b>{k["guides"]}</b>{both("build guides published", "份制作指南已发布")}</div>'
-           f'<div><a class="bd-count-link" href="#sparks"><b>{k["sparks"]}</b>{both("sparks waiting for their check", "个火花等待检验")}</a></div>'
-           f'<div><b>{k["moved_week"]}</b>{both("stages reached in the last 7 days", "个阶段在最近 7 天达成")}</div>'
-           f'<div><b>{k["killed"]}</b>{both("ideas killed, with reasons", "个点子被否决，附理由")}</div></div>'
-           f'<p class="bd-asof">{both("Counts and marks as of " + k["today"] + ", the day this page was last built.", "计数和标记截至 " + k["today"] + "，即本页最近一次生成的日期。")}</p>']
+    # the latest motion, folded into the stats strip
     feed = [("stage", ev["date"], ev) for ev in b["events"]]
-    feed += [("spark", x["added"], x) for x in b["sparks"] if x.get("status") == "spark" and x.get("added")]
-    feed.sort(key=lambda t: t[1], reverse=True)
+    feed += [("spark", x["added"], x) for x in sorted(b["sparks"], key=lambda x: x["name_en"]) if x.get("status") == "spark" and x.get("added")]
+    feed.sort(key=lambda t: t[1], reverse=True)   # newest day first; within a day, names A-Z (the same rule as the home page)
+    last = ""
     if feed:
-        chips = []
-        for kind, _, ev in feed[:10]:
-            if kind == "spark":
-                chips.append(f'<li><time>{e(ev["added"])}</time> <a href="#sparks">{both("Spark: " + ev["name_en"], "火花：" + ev["name_zh"])}</a></li>')
-                continue
-            c, st = names[ev["inv"]], next(s for s in lad if s["id"] == ev["stage"])
-            gap = lad.index(st) > c["top"] + 1
-            note = (f' <span class="muted">{both("(reached before " + lad[c["top"] + 1]["en"] + ")", "（先于" + lad[c["top"] + 1]["zh"] + "）")}</span>'
-                    if gap else "")
-            chips.append(f'<li><time>{ev["date"]}</time> {both(c["name_en"], c["name_zh"])} → {both(st["en"], st["zh"])}{note}</li>')
-        out.append(f'<div class="bd-moved"><p class="kicker">{both("Latest on the board", "看板最新动态")}</p><ul>{"".join(chips)}</ul></div>')
-    out.append("{{SPARKS}}")
-    used = {c["field"] for c in b["cards"]}     # a filter with no card behind it would show an empty board
-    fopts = "".join(f'<button type="button" data-field="{e(f["id"])}" aria-pressed="false">{both(f["en"], f["zh"])}</button>'
-                    for f in b["fields"] if f["id"] in used)
-    sopts = "".join(f'<option value="{i}">{e(s["en"])} · {e(s["zh"])}</option>' for i, s in enumerate(lad))
-    out.append(f'<div class="bd-filter" role="group" aria-label="Filter and sort"><div class="bd-fields"><button type="button" data-field="" aria-pressed="true">{both("All", "全部")}</button>{fopts}</div>'
-               f'<label>{both("Reached at least", "至少到达")} <select data-stage><option value="-1">–</option>{sopts}</select></label>'
-               f'<label>{both("Sort", "排序")} <select data-sort><option value="pct">{e("most advanced · 最靠前")}</option><option value="last">{e("recently moved · 最近前进")}</option></select></label></div>')
+        kind, when, ev = feed[0]
+        if kind == "spark":
+            what = both("spark: " + ev["name_en"], "火花：" + ev["name_zh"])
+        else:
+            st = next(x for x in lad if x["id"] == ev["stage"])
+            what = both(names[ev["inv"]]["name_en"] + " → " + st["en"], names[ev["inv"]]["name_zh"] + " → " + st["zh"])
+        last = f'<li class="bd-last">{both("last moved", "最近前进")} <time>{e(when)}</time>: {what}</li>'
+    out = [f'<ul class="bd-stats" aria-label="Board totals">'
+           f'<li><b>{k["ideas"]}</b> {both("invention" if k["ideas"] == 1 else "inventions", "项发明")}</li>'
+           f'<li><b>{k["past_theory"]}</b> {both("past the theory check", "项已过理论核对")}</li>'
+           f'<li><b>{k["guides"]}</b> {both("build guides", "份制作指南")}</li>'
+           f'<li><a href="#sparks"><b>{k["sparks"]}</b> {both("sparks", "个火花")}</a></li>'
+           f'<li><a href="#killed"><b>{k["killed"]}</b> {both("killed", "个被否决")}</a></li>'
+           f'{last}<li class="bd-asof">{both("as of " + k["today"], "截至 " + k["today"])}</li></ul>']
+
+    used = [f for f in b["fields"] if f["id"] in {c["field"] for c in b["cards"]}]
+    fopts = "".join(f'<option value="{e(f["id"])}">{e(f["en"])}</option>' for f in used)
+    sopts = "".join(f'<option value="{i}">{e(s["en"])}</option>' for i, s in enumerate(lad))
+    out.append(
+        '<div class="bd-filter" role="group" aria-label="Sort and filter the inventions">'
+        f'<label>{both("Sort", "排序")} <select data-sort>'
+        '<option value="pct">Completion</option><option value="last">Recently moved</option>'
+        '<option value="new">Newest</option><option value="cost">Cheapest (priced so far)</option>'
+        '<option value="field">Category</option></select></label>'
+        f'<label>{both("Category", "类别")} <select data-field><option value="">All</option>{fopts}</select></label>'
+        f'<label>{both("Reached at least", "至少到达")} <select data-stage><option value="-1">Any stage</option>{sopts}</select></label>'
+        '</div>')
     cards = []
     for c in sorted(b["cards"], key=lambda c: (-c["pct"], c["name_en"])):
         got = {r["id"] for r in c["reached"]}
         segs = "".join(f'<i class="{"on" if s["id"] in got else ""}" style="flex:{s["weight"]}" title="{e(s["en"])}"></i>' for s in lad)
         label = lad[c["top"]] if c["top"] >= 0 else {"en": "Not started", "zh": "未开始"}
         f = fields.get(c["field"], {"en": c["field"], "zh": c["field"]})
+        concept = next((r["date"] for r in c["reached"] if r["id"] == "concept"), "")
         link = (f'<a class="bd-more" href="{root}{e(c["page"])}">{both("See the invention", "看看这个发明")} →</a>') if c.get("page") else ""
         files = " · ".join(f'<a href="{root}{e(p)}">{both(s["en"].lower(), s["zh"])}</a>' for s in lad for r in c["reached"] if r["id"] == s["id"]
                            for p in r["files"][:1] if not p.startswith("zip:"))
         cards.append(
-            f'<article class="bd-card panel" data-field="{e(c["field"])}" data-pct="{c["pct"]}" data-top="{c["top"]}" data-last="{e(c["last"])}">'
+            f'<article class="bd-card panel" data-field="{e(c["field"])}" data-fieldname="{e(f["en"])}" data-pct="{c["pct"]}" data-top="{c["top"]}" '
+            f'data-last="{e(c["last"])}" data-new="{e(concept)}" data-cost="{cost_num(c)}" data-name="{e(c["name_en"])}">'
             f'<p class="bd-field">{both(f["en"], f["zh"])}{mark(c["mark"])}</p><h3>{both(c["name_en"], c["name_zh"])}</h3>'
             f'<p class="bd-hook">{both(c["hook_en"], c["hook_zh"])}</p><p class="bd-what">{both(c["what_en"], c["what_zh"])}</p>'
             f'<p class="bd-cost">{cost(c)}</p>'
             f'<div class="bd-bar" role="img" aria-label="{c["pct"]}% of the stage ladder">{segs}</div>'
-            f'<p class="bd-stage"><b>{c["pct"]}%</b> · {both(label["en"], label["zh"])} · {both("last advanced", "上次前进")} <time>{e(c["last"] or "–")}</time></p>'
+            f'<p class="bd-stage"><b>{c["pct"]}%</b> · {both(label["en"], label["zh"])} · {both("last advanced", "上次前进")} <time>{e(c["last"] or "–")}</time>'
+            f' <a class="bd-q" href="#how-counted" title="How the bar is counted" aria-label="How the bar is counted">?</a></p>'
             f'<p class="bd-files">{both("Proof files: ", "证据文件：")}{files or "–"}</p>'
             + (f'<p class="bd-checked">{both("Theory checked by: " + c["theory_checked_by_en"], "理论由谁核对：" + c["theory_checked_by_zh"])}</p>'
                if any(r["id"] == "theory" for r in c["reached"]) else "")
             + (f'<p class="bd-gate">{both(c["gate_en"], c["gate_zh"])}</p>' if c.get("gate_en") else "")
             + f'<p class="bd-steal">{both("Steal this happily: no credit needed.", "开心拿走：不用署名。")}</p>{link}</article>')
     out.append('<div class="bd-grid">' + "".join(cards) + "</div>")
-    live = sorted((x for x in b["sparks"] if x.get("status") == "spark"), key=lambda x: (x.get("added", ""), x["name_en"]))
+
+    live = sorted((x for x in b["sparks"] if x.get("status") == "spark"), key=lambda x: x["name_en"])
     live.sort(key=lambda x: x.get("added", ""), reverse=True)  # newest day first, names A-Z within a day
+
+    def prior(x):
+        st = x.get("prior_art_status") or "not yet searched"
+        return f'<span class="bd-pa bd-pa-{e(st.replace(" ", "-"))}">{both("Prior art: " + st, "在先技术：" + st)}</span>'
     sparks = "".join(
-        f'<li class="bd-spark panel"><p class="bd-field">{both("spark", "火花")} · <time>{e(x["added"])}</time>{mark(x["mark"])}</p>'
+        f'<li class="bd-spark panel" data-new="{e(x.get("added", ""))}" data-name="{e(x["name_en"])}" data-pa="{e(x.get("prior_art_status") or "not yet searched")}">'
+        f'<p class="bd-field">{both("spark", "火花")} · <time>{e(x["added"])}</time>{mark(x["mark"])} {prior(x)}</p>'
         f'<h3>{both(x["name_en"], x["name_zh"])}</h3><p>{both(x["line_en"], x["line_zh"])}</p>'
-        f'<p class="bd-why">{both("Why it might matter: " + x["why_en"], "可能的意义：" + x["why_zh"])}</p>'
-        f'<p class="bd-files">{both("From: " + x["from_en"] + ". Earlier work: " + x["prior_art_en"] + ".", "来源：" + x["from_zh"] + "。前人的工作：" + x["prior_art_zh"] + "。")}</p></li>'
+        f'<details class="bd-spark-more"><summary>{both("Why it might matter, and where it came from", "可能的意义和来源")}</summary>'
+        f'<p class="bd-why">{both(x["why_en"], x["why_zh"])}</p>'
+        f'<p class="bd-files">{both("From: " + x["from_en"] + ". Earlier work: " + x["prior_art_en"] + ".", "来源：" + x["from_zh"] + "。前人的工作：" + x["prior_art_zh"] + "。")}</p></details></li>'
         for x in live)
-    lane = (f'<section class="bd-sparks" id="sparks" aria-labelledby="sparks-h"><h2 class="kicker" id="sparks-h">{both("Sparks", "火花")}</h2>'
-               f'<p class="bd-lane-note">{both("Ideas that passed the first test: each would make something hidden, too small, too fast or too faint visible. They are untested ideas, not claims: none is said to be new until its search for earlier work is done, and none has a bar until it becomes a card.", "通过了第一关的点子：每一个都可能让藏着的、太小的、太快的或太暗的东西被看见。它们是还没检验的点子，不是结论：在查完前人的工作之前，不说任何一个是新的；变成卡片之前，也没有进度条。")}</p>'
+    out.append(f'<section class="bd-sparks" id="sparks" aria-labelledby="sparks-h"><h2 class="kicker" id="sparks-h">{both("Sparks", "火花")} ({len(live)})</h2>'
+               f'<p class="bd-lane-note">{both("Ideas that passed the first test: each could make something hidden visible. Untested, not claims: none is called new before its search for earlier work, and none has a bar until it is a card.", "通过了第一关的点子：每一个都可能让藏着的、太小的、太快的或太暗的东西被看见。是还没检验的点子，不是结论：在查完前人的工作之前，不说任何一个是新的；变成卡片之前，也没有进度条。")}</p>'
+               f'<div class="bd-filter" role="group" aria-label="Sort the sparks"><label>{both("Sort sparks", "火花排序")} <select data-spark-sort>'
+               '<option value="new">Newest</option><option value="name">Name</option><option value="pa">Prior-art result</option></select></label></div>'
                f'<ul class="bd-spark-list">{sparks}</ul></section>')
-    out = [lane if x == "{{SPARKS}}" else x for x in out]
-    if lane not in out:
-        out.insert(1, lane)
     dead = sorted(b["killed"], key=lambda x: x["name_en"])
     dead.sort(key=lambda x: x["date"], reverse=True)
     out.append(f'<details class="bd-killed" id="killed"><summary>{both("Killed, and why", "被否决的点子，以及原因")} ({len(dead)})</summary><ul>'
@@ -270,7 +295,7 @@ def newest_spark(root: str) -> str:
     live = [x for x in b["sparks"] if x.get("status") == "spark"]
     if not live:
         return ""
-    x = sorted(live, key=lambda x: (x.get("added", ""), x["name_en"]))[-1]
+    x = sorted(sorted(live, key=lambda x: x["name_en"]), key=lambda x: x.get("added", ""), reverse=True)[0]   # newest day, then A-Z
     e = H.escape
     return (f'<p class="home-spark"><span class="en">Newest spark ({e(x["added"])}): <b>{e(x["name_en"])}</b>. '
             f'{e(x["line_en"])} <a href="{root}inventions/#sparks">All {len(live)} sparks</a></span>'

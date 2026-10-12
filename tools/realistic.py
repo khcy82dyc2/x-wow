@@ -59,7 +59,7 @@ def button_html(model: str, root: str, entry: dict) -> str:
     data = {
         "model": model, "parts": entry["parts"], "label": LABEL,
         "views": [{"id": v["id"], "name": v["name"], "alt": v["alt"], "visible": len(v["visible"]),
-                   "width": v["width"], "height": v["height"],
+                   "width": v["width"], "height": v["height"], "camera": v.get("camera"),
                    "files": {fmt: {w: root + f for w, f in sizes.items()} for fmt, sizes in v["files"].items()}}
                   for v in entry["views"]],
         "note": entry["note"],

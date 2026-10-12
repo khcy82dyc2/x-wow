@@ -30,8 +30,8 @@ export const MODEL = {
     ['steppers', 'c', [0, 0, 0],
       { en: 'Steppers + Z', zh: '步进电机 + Z 轴' },
       { en: 'Three steppers + Z drive', zh: '三个步进电机 + Z 轴驱动' },
-      { en: 'Cheap 28BYJ-48 motors move X, Y and focus; focus moves the optics, never the wet sample. Printed covers go over their gears, and opening the lid stops them.',
-        zh: '便宜的 28BYJ-48 电机负责 X、Y 和对焦；对焦时动的是镜头，不碰湿样本。齿轮上盖着打印的护罩，一开盖电机就停。' }],
+      { en: 'Cheap 28BYJ-48 motors move X, Y and focus; focus moves the optics, never the wet sample. Printed covers go over their gears (not drawn in this concept model), and opening the lid stops them.',
+        zh: '便宜的 28BYJ-48 电机负责 X、Y 和对焦；对焦时动的是镜头，不碰湿样本。齿轮上盖着打印的护罩（这个概念模型里没画出来），一开盖电机就停。' }],
     ['chamber', 'c', [0, 7.4, 0],
       { en: 'Sample chamber', zh: '样本仓' },
       { en: 'Sample chamber + gel disc', zh: '样本仓 + 凝胶片' },
@@ -169,7 +169,7 @@ export const MODEL = {
     }
     P.stage.anchor.set(4.5, 11.2, 4.5);
 
-    /* 3. three steppers: X and Y actuator columns, Z column driving the optics; a printed cover over each gear (H-27) */
+    /* 3. three steppers: X and Y actuator columns, Z column driving the optics; the printed gear covers (H-27) are left out of this simple model, as in the owner's preferred version */
     {
       const p = P.steppers;
       for (const s of [-1, 1]) {
@@ -182,7 +182,6 @@ export const MODEL = {
         km.cyl(1.4, 1.4, 1.9, s * 7.5, 10.45, 5, { mat: 'steel' });
         km.box(1.5, 1.3, 0.6, s * 7.5, 10.4, 6.6, { mat: 'plastic-blue' });
         km.cyl(0.25, 0.25, 0.6, s * 7.5, 11.7, 5, { ribs: 0, seg: 12, mat: 'steel' });
-        km.cyl(1.15, 1.15, 0.8, s * 7.5, 11.8, 5, { ribs: 4 });
         if (s < 0) p.anchorObj = mot;
       }
       const zc = sub(p, p.group, [0, 1.0, 2.6]);
@@ -193,7 +192,6 @@ export const MODEL = {
       const kzm = kit(p, zm);
       kzm.cyl(1.4, 1.4, 1.9, 0, 7.45, 7.5, { mat: 'steel' });
       kzm.box(1.5, 1.3, 0.6, 0, 7.4, 9.1, { mat: 'plastic-blue' });
-      kzm.cyl(1.15, 1.15, 0.8, 0, 8.8, 7.5, { ribs: 4 });
       p.anchor.set(-7.5, 11.4, 5);
     }
 

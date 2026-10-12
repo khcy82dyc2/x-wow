@@ -81,7 +81,7 @@
     '@keyframes xd-z{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(-4px);opacity:1}}' +
     '@keyframes xd-swell{0%,72%,100%{transform:scale(1)}35%,48%{transform:scale(1.22)}}' +
     '.duck-ctl{max-width:' + WRAP + 'px;margin:0 auto;padding:0 16px 28px;font-size:.8rem;color:var(--muted,#86a7b5);text-align:center}' +
-    '.duck-ctl button{margin-left:.4em;font:inherit;color:var(--cyan,#4fd8ff);background:transparent;border:1px solid var(--line,rgba(79,216,255,.22));border-radius:12px;padding:2px 10px;cursor:pointer}' +
+    '.duck-ctl button{margin-left:.6em;font:inherit;color:var(--muted,#86a7b5);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}.duck-ctl button:hover{color:var(--cyan,#4fd8ff)}.duck-ctl .duck-help{margin-left:.6em;color:var(--muted,#86a7b5)}' +
     '@media (prefers-reduced-motion: reduce){.xduck,.xduck *{animation:none!important;transition:none!important}}' +
     '@media print{.xduck,.duck-ctl{display:none}}';
 
@@ -92,8 +92,12 @@
   // the footer line: what the duck is, what it keeps, and the keyboard way to hide it or bring it back
   var ctl = d.createElement("p");
   ctl.className = "duck-ctl";
-  ctl.innerHTML = '<span class="en">The X-WOW duck is silent and drawn in code by an AI. It sleeps until you tap it or wake it here; awake, it reacts to scrolling, the pointer, pauses and what is in the middle of the screen on this page, keeps no record and sends nothing anywhere. </span>' +
-    '<span class="zh">X-WOW 的小鸭不说话，是 AI 用代码画的。你点它一下或在这里叫醒它之前，它一直在睡觉；醒来后，它对这一页上的滚动、指针、停顿和屏幕中间的内容做出反应，不留记录，也不往任何地方发送任何东西。</span>';
+  // the footer keeps only small controls; what the duck does and keeps is explained on the privacy page
+  var help = d.createElement("a");
+  help.href = "/privacy/#duck";
+  help.className = "duck-help";
+  help.setAttribute("aria-label", "About the duck in the margin");
+  help.textContent = "?";
   var wakeBtn = d.createElement("button");
   wakeBtn.type = "button";
   wakeBtn.innerHTML = '<span class="en">Wake the duck</span><span class="zh">叫醒小鸭</span>';
@@ -101,6 +105,7 @@
   var btn = d.createElement("button");
   btn.type = "button";
   ctl.appendChild(btn);
+  ctl.appendChild(help);
   foot.appendChild(ctl);
 
   var el = null, mode = "", alive = false, woken = false, timers = {}, raf = 0;

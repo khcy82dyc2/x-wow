@@ -47,15 +47,23 @@
 #board .bd-killed summary{cursor:pointer;font-weight:600}
 #board .bd-killed ul{padding-left:1.1rem}
 #board .bd-killed time{font-family:var(--mono);color:var(--muted);margin-right:4px}
-@media (max-width:560px){#board .bd-count{grid-template-columns:1fr 1fr}}
+#board .bd-stats{list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px;padding:10px 0 12px;margin:.8rem 0 1rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+#board .bd-stats b{font-family:var(--mono);color:var(--cyan);font-size:1.05rem}
+#board .bd-stats a{color:inherit;text-decoration:none}#board .bd-stats a:hover b{text-decoration:underline}
+#board .bd-stats time{font-family:var(--mono);color:var(--gold)}#board .bd-stats .bd-asof{margin-left:auto;font-size:.8rem}
+#board .bd-q{display:inline-block;margin-left:6px;width:1.2em;height:1.2em;line-height:1.2em;text-align:center;border:1px solid var(--line);border-radius:50%;font-size:.75rem;text-decoration:none}
+#board .bd-pa{display:inline-block;margin-left:6px;padding:0 6px;border:1px solid var(--line);border-radius:9px;font:600 .66rem/1.5 var(--mono);letter-spacing:.04em;color:var(--muted);text-transform:none}
+#board .bd-spark-list{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}#board .bd-spark-more summary{cursor:pointer;font-size:.82rem;color:var(--muted)}
 </style>
 <p class="kicker"><span class="en">Inventions board</span><span class="zh">发明看板</span></p>
 <h2><span class="en">Every X-WOW invention, and how far it has really got</span><span class="zh">X-WOW 的每一项发明，以及它真正走到了哪一步</span></h2>
-<p class="lead en">Each card says what the invention does, what it would cost and where it stands. A bar moves only when the proof file for that stage exists (a theory note with its numbers, a priced parts list, a build guide), and its date is the day that file first existed in X-WOW&#x27;s own records, not the day it went online. The board grows when an idea passes X-WOW's gate: cheap, wow, unique, a seeing core. It is never padded. SWELL, the first invention, predates the gate and has not passed it; its card says why. Every card is free to build, change and claim. We claim nothing on any of them, but we can't promise that nobody else holds a patent: each invention's page says what we found. Just above the cards are the <a href="#sparks">Sparks</a>: new ideas shown the day they pass the first test, before the deeper checks, and the ideas we <a href="#killed">killed</a>, with the reason.</p>
-<p class="lead zh">每张卡片写明这项发明做什么、要花多少钱、现在到了哪一步。只有当那一阶段的证据文件真的存在（带数字的理论说明、定价的零件清单、制作指南），进度条才会前进；日期是那个文件最早出现在 X-WOW 自己记录里的那一天，不是它上线的日子。只有通过 X-WOW 关卡的想法才会上板：便宜、惊艳、独一无二、核心是"看见"。绝不凑数。第一项发明 SWELL 比关卡早，也没有通过关卡；它的卡片写明了原因。每张卡片都可以免费去造、去改、去署自己的名字。我们对它们什么都不主张，但不能保证别人没有相关专利：每项发明的页面都写明了我们查到的情况。卡片上方是<a href="#sparks">火花</a>：新点子通过第一关的当天就放上来，还没经过更深入的检验；还有我们<a href="#killed">否决的点子</a>，附上理由。</p>
+<p class="lead en">A bar moves only when the proof file for that stage exists; the most advanced invention comes first.</p>
+<p class="lead zh">只有那一阶段的证据文件真的存在，进度条才会前进；走得最远的发明排在最前面。</p>
 {{board}}
-<details class="bd-ladder">
+<details class="bd-ladder" id="how-counted">
   <summary><span class="en">How the bar is counted</span><span class="zh">进度条怎么算</span></summary>
+  <p class="en">Each card says what the invention does, what it would cost and where it stands. A bar moves only when the proof file for that stage exists (a theory note with its numbers, a priced parts list, a build guide), and its date is the day that file first existed in X-WOW&#x27;s own records, not the day it went online. The board grows when an idea passes X-WOW's gate: cheap, wow, unique, a seeing core. It is never padded. SWELL, the first invention, predates the gate and has not passed it; its card says why. Every card is free to build, change and claim. We claim nothing on any of them, but we can't promise that nobody else holds a patent: each invention's page says what we found. Below the cards are the <a href="#sparks">Sparks</a>: new ideas shown the day they pass the first test, before the deeper checks, and the ideas we <a href="#killed">killed</a>, with the reason.</p>
+  <p class="zh">每张卡片写明这项发明做什么、要花多少钱、现在到了哪一步。只有当那一阶段的证据文件真的存在（带数字的理论说明、定价的零件清单、制作指南），进度条才会前进；日期是那个文件最早出现在 X-WOW 自己记录里的那一天，不是它上线的日子。只有通过 X-WOW 关卡的想法才会上板：便宜、惊艳、独一无二、核心是"看见"。绝不凑数。第一项发明 SWELL 比关卡早，也没有通过关卡；它的卡片写明了原因。每张卡片都可以免费去造、去改、去署自己的名字。我们对它们什么都不主张，但不能保证别人没有相关专利：每项发明的页面都写明了我们查到的情况。卡片下面是<a href="#sparks">火花</a>：新点子通过第一关的当天就放上来，还没经过更深入的检验；还有我们<a href="#killed">否决的点子</a>，附上理由。</p>
   <ol class="en">
     <li>Concept (10): a card with the hook, three sentences, the twelve-principle triage, the prior-art search and the AI reviewer's verdict.</li>
     <li>Theory checked (15): the science written out with at least three computed or cited numbers; the card names who checked it (so far, only AIs).</li>
@@ -79,12 +87,26 @@
 </details>
 <script>
 (function(){var root=document.getElementById("board");if(!root)return;var grid=root.querySelector(".bd-grid");if(!grid)return;
-var field="",stage=-1,sort="pct";
-function apply(){var cards=[].slice.call(grid.children);cards.forEach(function(c){var ok=(!field||c.getAttribute("data-field")===field)&&(+c.getAttribute("data-top")>=stage);c.hidden=!ok;});
-cards.sort(function(a,b){return sort==="last"?(b.getAttribute("data-last")||"").localeCompare(a.getAttribute("data-last")||""):(+b.getAttribute("data-pct"))-(+a.getAttribute("data-pct"));}).forEach(function(c){grid.appendChild(c);});}
-[].forEach.call(root.querySelectorAll(".bd-fields button"),function(b){b.addEventListener("click",function(){field=b.getAttribute("data-field");[].forEach.call(root.querySelectorAll(".bd-fields button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});apply();});});
-var s=root.querySelector("[data-stage]");if(s)s.addEventListener("change",function(){stage=+s.value;apply();});
-var o=root.querySelector("[data-sort]");if(o)o.addEventListener("change",function(){sort=o.value;apply();});
-var k=document.getElementById("killed");function oh(){if(k&&location.hash==="#killed")k.open=true;}window.addEventListener("hashchange",oh);oh();})();
+var KEY="xwow-board-sort";function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}function put(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+var so=root.querySelector("[data-sort]"),fo=root.querySelector("[data-field]"),st=root.querySelector("[data-stage]");
+var sort=get()||"pct";if(so&&so.querySelector('option[value="'+sort+'"]'))so.value=sort;else sort="pct";
+function cmp(a,b){var A=function(k){return a.getAttribute(k)||"";},B=function(k){return b.getAttribute(k)||"";};
+ if(sort==="last")return B("data-last").localeCompare(A("data-last"));
+ if(sort==="new")return B("data-new").localeCompare(A("data-new"));
+ if(sort==="cost"){var x=A("data-cost"),y=B("data-cost");if(!x&&!y)return 0;if(!x)return 1;if(!y)return -1;return (+x)-(+y);}
+ if(sort==="field")return A("data-fieldname").localeCompare(B("data-fieldname"))||A("data-name").localeCompare(B("data-name"));
+ return (+B("data-pct"))-(+A("data-pct"))||A("data-name").localeCompare(B("data-name"));}
+function apply(){var field=fo?fo.value:"",stage=st?+st.value:-1,cards=[].slice.call(grid.children);
+ cards.forEach(function(c){c.hidden=!((!field||c.getAttribute("data-field")===field)&&(+c.getAttribute("data-top")>=stage));});
+ cards.sort(cmp).forEach(function(c){grid.appendChild(c);});}
+if(so)so.addEventListener("change",function(){sort=so.value;put(sort);apply();});
+if(fo)fo.addEventListener("change",apply);if(st)st.addEventListener("change",apply);apply();
+var list=root.querySelector(".bd-spark-list"),ss=root.querySelector("[data-spark-sort]");
+if(list&&ss)ss.addEventListener("change",function(){var v=ss.value;[].slice.call(list.children).sort(function(a,b){
+ if(v==="name")return a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));
+ if(v==="pa")return a.getAttribute("data-pa").localeCompare(b.getAttribute("data-pa"))||a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));
+ return b.getAttribute("data-new").localeCompare(a.getAttribute("data-new"))||a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));}).forEach(function(c){list.appendChild(c);});});
+function oh(){["killed","how-counted"].forEach(function(id){var d=document.getElementById(id);if(d&&location.hash==="#"+id)d.open=true;});}
+window.addEventListener("hashchange",oh);oh();})();
 </script>
 </section>

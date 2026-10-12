@@ -1,0 +1,54 @@
+{
+ "swell": [
+  {
+   "path": "swell",
+   "en": "SWELL overview",
+   "zh": "SWELL 概览"
+  },
+  {
+   "path": "swell/science",
+   "en": "Science",
+   "zh": "Science"
+  },
+  {
+   "path": "swell/results",
+   "en": "Results",
+   "zh": "Results"
+  },
+  {
+   "path": "swell/parts",
+   "en": "Parts and cost",
+   "zh": "Parts and cost"
+  },
+  {
+   "path": "swell/safety",
+   "en": "Safety and lab",
+   "zh": "Safety and lab"
+  },
+  {
+   "path": "swell/claims",
+   "en": "Claims ledger",
+   "zh": "Claims ledger"
+  },
+  {
+   "path": "swell/ruler",
+   "en": "swell-ruler",
+   "zh": "swell-ruler"
+  },
+  {
+   "path": "swell/start",
+   "en": "Start here",
+   "zh": "Start here"
+  },
+  {
+   "path": "swell/download",
+   "en": "Download",
+   "zh": "Download"
+  },
+  {
+   "path": "swell/credits",
+   "en": "Credits and licences",
+   "zh": "Credits and licences"
+  }
+ ]
+}

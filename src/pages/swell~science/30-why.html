@@ -1,0 +1,92 @@
+<section class="block" id="why-it-works">
+  <style>
+    #why-it-works .diagram { margin: 1.6rem 0; }
+    #why-it-works .diagram svg { display: block; width: 100%; max-width: 680px; height: auto; }
+    #why-it-works .box { fill: rgba(10, 26, 38, .55); stroke: var(--line); }
+    #why-it-works .halo { fill: var(--cyan); fill-opacity: .24; }
+    #why-it-works .dot { fill: var(--gold); }
+    #why-it-works .band { fill: var(--cyan); fill-opacity: .22; }
+    #why-it-works .zline { stroke: var(--gold); stroke-width: 2; }
+    #why-it-works .dim { stroke: var(--muted); stroke-width: 1.5; fill: none; }
+    #why-it-works .arrow { stroke: var(--cyan); stroke-width: 2.5; fill: none; }
+    #why-it-works .lbl { fill: var(--text); font: 600 19px var(--sans); }
+    #why-it-works .sub { fill: var(--muted); font: 16px var(--sans); }
+    #why-it-works .sym { fill: var(--cyan); font: 600 18px var(--mono); }
+    #why-it-works .formula { font-family: var(--mono); color: var(--cyan); }
+    #why-it-works .credits { font-size: .9rem; color: var(--muted); }
+  </style>
+  <p class="kicker"><span class="en">Why it works</span><span class="zh">为什么行得通</span></p>
+  <h2><span class="en">Three cheap ideas</span><span class="zh">三个便宜的点子</span></h2>
+  <p class="lead en">The project's design rule: chemistry does the resolution work, so the optics can stay cheap. More expansion with a modest lens beats expensive glass.</p>
+  <p class="lead zh">项目的设计原则：分辨率交给化学，光学就可以便宜。多胀几倍、配一个普通镜头，胜过昂贵的玻璃。</p>
+
+  <figure class="fig diagram">
+    <svg viewBox="0 0 600 390" role="img" aria-label="Diagram. Top: two nearby points blur into one blob through a lens; after expansion the same blur leaves them apart. Bottom: the sarcomere stripes before and after expansion; the expansion factor is the ratio of their spacings.">
+      <rect class="box" x="6" y="8" width="270" height="168" rx="4"/>
+      <rect class="box" x="324" y="8" width="270" height="168" rx="4"/>
+      <text class="lbl en" x="20" y="36">Lens alone</text><text class="lbl zh" x="20" y="36">只靠镜头</text>
+      <text class="lbl en" x="338" y="36">After expansion</text><text class="lbl zh" x="338" y="36">膨胀之后</text>
+      <circle class="halo" cx="122" cy="98" r="36"/><circle class="halo" cx="160" cy="98" r="36"/>
+      <circle class="dot" cx="122" cy="98" r="4"/><circle class="dot" cx="160" cy="98" r="4"/>
+      <circle class="halo" cx="392" cy="98" r="36"/><circle class="halo" cx="526" cy="98" r="36"/>
+      <circle class="dot" cx="392" cy="98" r="4"/><circle class="dot" cx="526" cy="98" r="4"/>
+      <text class="sub en" x="20" y="162">two molecules, one blur</text><text class="sub zh" x="20" y="162">两个分子，糊成一团</text>
+      <text class="sub en" x="338" y="162">same blur, now apart</text><text class="sub zh" x="338" y="162">模糊没变，但分开了</text>
+      <path class="arrow" d="M284 92 H314 M304 82 L314 92 L304 102"/>
+      <text class="sym" x="282" y="124">×E</text>
+
+      <rect class="box" x="6" y="196" width="588" height="186" rx="4"/>
+      <text class="lbl en" x="20" y="224">The ruler inside the meat</text><text class="lbl zh" x="20" y="224">肉里自带的尺子</text>
+      <g>
+        <rect class="band" x="33" y="244" width="14" height="66"/><rect class="band" x="68" y="244" width="14" height="66"/>
+        <rect class="band" x="103" y="244" width="14" height="66"/><rect class="band" x="138" y="244" width="14" height="66"/>
+        <rect class="band" x="173" y="244" width="14" height="66"/><rect class="band" x="208" y="244" width="14" height="66"/>
+        <path class="zline" d="M40 244 V310 M75 244 V310 M110 244 V310 M145 244 V310 M180 244 V310 M215 244 V310"/>
+        <path class="dim" d="M40 322 H75 M40 316 V328 M75 316 V328"/>
+        <text class="sym" x="30" y="350">SL₀</text>
+      </g>
+      <path class="arrow" d="M244 277 H284 M274 267 L284 277 L274 287"/>
+      <g>
+        <rect class="band" x="303" y="244" width="14" height="66"/><rect class="band" x="389" y="244" width="14" height="66"/>
+        <rect class="band" x="475" y="244" width="14" height="66"/><rect class="band" x="561" y="244" width="14" height="66"/>
+        <path class="zline" d="M310 244 V310 M396 244 V310 M482 244 V310 M568 244 V310"/>
+        <path class="dim" d="M310 322 H396 M310 316 V328 M396 316 V328"/>
+        <text class="sym" x="320" y="350">SL₁</text>
+      </g>
+      <text class="sym" x="400" y="372">E = SL₁ ÷ SL₀</text>
+    </svg>
+    <figcaption><span class="en">Top: the lens blur stays the same size; expansion moves the molecules out of each other's blur. Bottom: blur changes how sharp each stripe looks, not how far apart the stripes are, so the ratio of the spacings before (SL₀) and after (SL₁) gives the local expansion. Schematic, not to scale.</span><span class="zh">上：镜头的模糊圈大小不变，膨胀把分子从彼此的模糊圈里拉了出来。下：模糊只改变每条条纹清不清楚，不改变条纹之间的距离，所以膨胀前（SL₀）和膨胀后（SL₁）的间距之比就是这个位置的放大倍数。示意图，不按比例。</span></figcaption>
+  </figure>
+
+  <div class="grid-3">
+    <div class="panel">
+      <h3><span class="en">1 · Grow the sample, not the glass</span><span class="zh">1 · 放大样本，而不是升级镜头</span></h3>
+      <p class="en">A lens cannot separate two points closer than about 0.61·λ/NA. For the {{n:swell.na_a}} NA objective at {{n:swell.lam_em}} that is {{n:swell.res_lens_a}}. Expansion moves the molecules apart before the light ever reaches the lens, and the project's rule of thumb is effective resolution ≈ optical resolution ÷ E. In original-specimen units that is about {{n:swell.res_exp_a}} at {{n:swell.res_e_a}}, and {{n:swell.res_exp_b}} at {{n:swell.res_e_b}} with the {{n:swell.na_b}} NA objective.</p>
+      <p class="zh">镜头分不开比约 0.61·λ/NA 更近的两个点。数值孔径 {{n:swell.na_a}} 的物镜在 {{n:swell.lam_em}} 波长下，这个距离是 {{n:swell.res_lens_a}}。膨胀在光到达镜头之前就把分子拉开了；项目的经验公式是：有效分辨率 ≈ 光学分辨率 ÷ E。换算回原样本尺度，{{n:swell.res_e_a}} 时约 {{n:swell.res_exp_a}}；换数值孔径 {{n:swell.na_b}} 的物镜、放大 {{n:swell.res_e_b}} 时约 {{n:swell.res_exp_b}}。</p>
+      <p class="en muted">The lens's diffraction limit does not change; the specimen gets bigger. These are paper numbers, and still not electron microscopy: you only see what you label, and the chemistry can make its own artefacts.</p>
+      <p class="en muted">Who got there first: Zhang, Chang and colleagues paired expansion with a webcam mini-microscope in 2016 ("expansion mini-microscopy"), reaching, after expansion, a resolution comparable to a benchtop microscope's on unexpanded samples, at a hundredth to a thousandth of the price. SWELL builds on their idea.</p>
+      <p class="zh muted">谁先做到的：Zhang、Chang 等人在 2016 年就把膨胀显微和网络摄像头做的迷你显微镜结合起来（"膨胀迷你显微"），膨胀之后，用百分之一到千分之一的价格，达到了与台式显微镜看未膨胀样品相当的分辨率。SWELL 是在他们的思路上往前走。</p>
+      <p class="zh muted">镜头的衍射极限一点没变，变大的是样本。这些都是纸面计算，也远不是电镜：只能看到被标记的东西，化学步骤本身还可能制造假象。</p>
+    </div>
+    <div class="panel">
+      <h3><span class="en">2 · A ruler grown into the meat</span><span class="zh">2 · 长在肉里的尺子</span></h3>
+      <p class="formula">E = SL<sub>post</sub> ÷ SL<sub>pre</sub></p>
+      <p class="en">Sarcomere spacing is measured on the same myofibril before and after expansion. The project's notes call the period blur-invariant: blur softens each stripe but leaves the spacing alone, so the ratio survives cheap optics. The before-image should need no label: differential phase contrast with four oblique LEDs is predicted to show the stripes (the project's choice after the physics check; untested), with crossed polarisers as a cross-check.</p>
+      <p class="zh">在同一根肌原纤维上，膨胀前后各量一次肌节间距。项目笔记说这个周期“不受模糊影响”：模糊只让条纹变软，间距不变，所以便宜镜头也能用这个比值。膨胀前那张图应该不用染色：按预测，用四个斜射 LED 做差分相衬（DPC）能看到条纹（这是物理核算后项目选定的方式，未经测试），正交偏振光作为交叉核对。</p>
+      <p class="en muted">It replaced the textbook A-band ruler, which needs sarcomeres long enough to show an I-band: only about {{n:swell.aband_usable_a}} of supermarket breast at {{n:swell.track_a}}.</p>
+      <p class="zh muted">它取代了教科书里的 A 带尺子。那把尺子要求肌节长到能看见 I 带，超市鸡胸肉在 {{n:swell.track_a}} 下只有约 {{n:swell.aband_usable_a}} 合格。</p>
+      <p class="en muted">Who got there first: Chen, Tillberg and Boyden (2015), who introduced expansion microscopy, imaged the same cells before and after expansion and measured how far lengths moved (under 1% of the distance in cultured cells, 2–4% in brain slices). Sheard and colleagues (2019) used the periodicity of sarcomeres and the fixed width of Z-discs as intrinsic reporters of local gel expansion in heart cells, and Sheard's 2021 thesis found the sarcomere factor lower than the gel's. A 2022 thesis by Migliore expanded isolated rabbit myofibrils, imaged them without labels and used the A-band as the ruler. VISTA (Miao, Lin, Qian and Wei, 2022) measured expansion by comparing label-free images of the same structures before and after. What SWELL adds is pairing each myofibril's label-free period before expansion with its own period after.</p>
+      <p class="zh muted">谁先做到的：发明膨胀显微术的 Chen、Tillberg 与 Boyden（2015）就在膨胀前后拍同一批细胞，量出长度偏移了多少（培养细胞里不到距离的 1%，脑切片里 2–4%）。Sheard 等人（2019）在心肌细胞里，用肌节的周期和 Z 盘的固定宽度作为凝胶局部膨胀的内在指示；Sheard 2021 年的学位论文发现，肌节算出的倍数比凝胶的低。Migliore 2022 年的学位论文膨胀过分离的兔肌原纤维，不染色成像，并用 A 带当尺子。VISTA（Miao、Lin、Qian 与 Wei，2022）通过比较同一结构膨胀前后的免标记图像来测膨胀。SWELL 加的是：把每一根肌原纤维膨胀前的免标记周期，和它自己膨胀后的周期配对。</p>
+    </div>
+    <div class="panel">
+      <h3><span class="en">3 · Cheap glass, just enough of it</span><span class="zh">3 · 便宜镜头，刚好够用</span></h3>
+      <p class="en">Motic PL 40X/0.65 and PL 20X/0.40 plan objectives, one {{n:swell.tube_f}} achromat {{n:swell.tube_d}} behind the objective, and a mono IMX296 global-shutter camera ({{n:swell.cam_format}}) at {{n:swell.cam_price}}. Together: {{n:swell.mag_a}} and {{n:swell.px_a}} pixels, which is {{n:swell.nyq_a}} Nyquist for the {{n:swell.track_a}} track and {{n:swell.nyq_b}} for the {{n:swell.track_b}} track.</p>
+      <p class="zh">Motic PL 40X/0.65 和 PL 20X/0.40 平场物镜，物镜后 {{n:swell.tube_d}} 处放一片 {{n:swell.tube_f}} 消色差透镜，再配一台 {{n:swell.cam_price}} 的 IMX296 黑白全局快门相机（{{n:swell.cam_format}}）。合起来是 {{n:swell.mag_a}}、每像素 {{n:swell.px_a}}：{{n:swell.track_a}} 路线达到奈奎斯特采样的 {{n:swell.nyq_a}}，{{n:swell.track_b}} 路线为 {{n:swell.nyq_b}}。</p>
+      <p class="en muted">The stock OpenFlexure lens would undersample ({{n:swell.ofm_stock_nyq}} Nyquist), and a colour sensor wastes signal, so neither is used. The stage would be a fork of the open OpenFlexure Microscope v7, run by a Raspberry Pi 5 and a Pico 2.</p>
+      <p class="zh muted">OpenFlexure 自带的镜头会欠采样（只有奈奎斯特的 {{n:swell.ofm_stock_nyq}}），彩色传感器又浪费信号，所以都不用。载物台将改自开源的 OpenFlexure 显微镜 v7，由树莓派 5 和 Pico 2 控制。</p>
+    </div>
+  </div>
+
+  <p class="credits en">Built on open work: the OpenFlexure Microscope (Collins et al., 2020; <a href="https://build.openflexure.org/openflexure-microscope/master/parts/optics/microscope-objective.html" target="_blank" rel="noopener">build docs</a>), expansion microscopy (Chen, Tillberg &amp; Boyden, 2015), expansion mini-microscopy (<a href="https://doi.org/10.1038/srep22691" target="_blank" rel="noopener">Zhang, Chang et al., 2016</a>), sarcomeres as intrinsic expansion reporters (<a href="https://doi.org/10.1021/acsnano.8b08742" target="_blank" rel="noopener">Sheard et al., 2019</a>), U-ExM (Gambarotto et al., 2019), pan-ExM (<a href="https://doi.org/10.1038/s41467-020-17523-8" target="_blank" rel="noopener">M'Saad &amp; Bewersdorf, 2020</a>) and TREx (<a href="https://elifesciences.org/articles/73775" target="_blank" rel="noopener">Damstra et al., 2022</a>). Every source, with what SWELL took from it, is listed under <a href="{{root}}swell/credits/#inspiration">credits</a>.</p>
+  <p class="credits zh">站在这些公开成果的肩膀上：OpenFlexure 显微镜（Collins 等，2020；<a href="https://build.openflexure.org/openflexure-microscope/master/parts/optics/microscope-objective.html" target="_blank" rel="noopener">搭建文档</a>）、膨胀显微术（Chen、Tillberg 与 Boyden，2015）、膨胀迷你显微（<a href="https://doi.org/10.1038/srep22691" target="_blank" rel="noopener">Zhang、Chang 等，2016</a>）、以肌节作为膨胀的内在指示（<a href="https://doi.org/10.1021/acsnano.8b08742" target="_blank" rel="noopener">Sheard 等，2019</a>）、U-ExM（Gambarotto 等，2019）、pan-ExM（<a href="https://doi.org/10.1038/s41467-020-17523-8" target="_blank" rel="noopener">M'Saad 与 Bewersdorf，2020</a>）和 TREx（<a href="https://elifesciences.org/articles/73775" target="_blank" rel="noopener">Damstra 等，2022</a>）。所有出处，以及 SWELL 从中借了什么，都列在<a href="{{root}}swell/credits/#inspiration">致谢</a>里。</p>
+</section>

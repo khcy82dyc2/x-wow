@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en" data-title-en="SWELL · Claims ledger · X-WOW" data-title-zh="SWELL · Claims ledger · X-WOW" data-desc-en="Every SWELL claim with its status (verified, simulated, predicted or untested) and who checked it, and the cheapest-first evidence ladder." data-desc-zh="Every SWELL claim with its status (verified, simulated, predicted or untested) and who checked it, and the cheapest-first evidence ladder.">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SWELL · Claims ledger · X-WOW</title>
+<meta name="description" content="Every SWELL claim with its status (verified, simulated, predicted or untested) and who checked it, and the cheapest-first evidence ladder.">
+<meta name="theme-color" content="#05080d">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="SWELL · Claims ledger · X-WOW">
+<meta property="og:description" content="Every SWELL claim with its status (verified, simulated, predicted or untested) and who checked it, and the cheapest-first evidence ladder.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://x-wow.com/assets/img/og-xwow.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The X-WOW logo, a microscope in a coloured ring, inside a loupe reticle, beside the line: Inventions to steal, happily.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="../../assets/img/brand/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>(function(){var d=document.documentElement;/* English only for now (the owner, 2026-10-12): the Chinese text stays in the source, hidden */d.className+=' js';try{if(!/noboot/.test(location.search)&&!/\/shrink\//.test(location.pathname)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
+<script defer src="../../assets/js/site.js"></script>
+<script defer src="../../assets/js/duck.js"></script>
+</head>
+<body data-page="swell-claims">
+<a class="skip" href="#main"><span class="en">Skip to content</span><span class="zh">跳到正文</span></a>
+<header class="top">
+  <a class="brand" href="../../" aria-label="X-WOW home">
+    <img class="brand-logo" src="../../assets/img/brand/xwow-logo-dark-64.png" srcset="../../assets/img/brand/xwow-logo-dark-64.png 75w, ../../assets/img/brand/xwow-logo-dark-128.png 149w, ../../assets/img/brand/xwow-logo-dark-192.png 224w, ../../assets/img/brand/xwow-logo-dark-288.png 335w" sizes="(max-width: 820px) 56px, 70px" width="70" height="60" alt="X-WOW">
+  </a>
+  <nav class="nav" aria-label="Main">
+    <details class="menu">
+      <summary><span class="en">Menu</span><span class="zh">菜单</span></summary>
+      <div class="menu-links">
+<a href="../../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a>
+<a href="../../swell/" aria-current="page"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
+<a href="../../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
+<a href="../../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
+<a href="../../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
+      </div>
+    </details>
+    <div class="nav-links">
+<a href="../../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a>
+<a href="../../swell/" aria-current="page"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
+<a href="../../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
+<a href="../../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
+<a href="../../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
+    </div>
+  </nav>
+</header>
+<main id="main">
+<nav class="subnav" aria-label="SWELL overview sections"><div class="subnav-in"><a href="../../swell/"><span class="en">SWELL overview</span><span class="zh">SWELL 概览</span></a><a href="../../swell/science/"><span class="en">Science</span><span class="zh">Science</span></a><a href="../../swell/results/"><span class="en">Results</span><span class="zh">Results</span></a><a href="../../swell/parts/"><span class="en">Parts and cost</span><span class="zh">Parts and cost</span></a><a href="../../swell/safety/"><span class="en">Safety and lab</span><span class="zh">Safety and lab</span></a><a href="../../swell/claims/" aria-current="page"><span class="en">Claims ledger</span><span class="zh">Claims ledger</span></a><a href="../../swell/ruler/"><span class="en">swell-ruler</span><span class="zh">swell-ruler</span></a><a href="../../swell/start/"><span class="en">Start here</span><span class="zh">Start here</span></a><a href="../../swell/download/"><span class="en">Download</span><span class="zh">Download</span></a><a href="../../swell/credits/"><span class="en">Credits and licences</span><span class="zh">Credits and licences</span></a></div></nav>
+<section class="block" id="verified">
+  <style>
+    #verified td:nth-child(2) { white-space: nowrap; }
+    #verified .legend { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: 1rem 0; font-size: .92rem; color: var(--muted); }
+  </style>
+  <p class="kicker"><span class="en">Cited, simulated, predicted, untested</span><span class="zh" lang="zh-Hans">引用、模拟、预测、未测试</span></p>
+  <h2><span class="en">What is known, and how well</span><span class="zh" lang="zh-Hans">哪些是知道的，知道到什么程度</span></h2>
+  <div class="legend">
+    <span><span class="tag cited"><span class="en">cited</span><span class="zh" lang="zh-Hans">引用</span></span><span class="en">someone else's published result, read at its source by an AI</span><span class="zh" lang="zh-Hans">别人已发表的结果，由 AI 读过其原始出处</span></span>
+    <span><span class="tag sim"><span class="en">simulated</span><span class="zh" lang="zh-Hans">模拟</span></span><span class="en">computed on synthetic data</span><span class="zh" lang="zh-Hans">在合成数据上算出</span></span>
+    <span><span class="tag predicted"><span class="en">predicted</span><span class="zh" lang="zh-Hans">预测</span></span><span class="en">an estimate, not yet measured or priced</span><span class="zh" lang="zh-Hans">估计值，尚未测量或查到标价</span></span>
+    <span><span class="tag untested"><span class="en">untested</span><span class="zh" lang="zh-Hans">未测试</span></span><span class="en">assumed, disputed or never tried</span><span class="zh" lang="zh-Hans">只是假设、有争议或从没试过</span></span>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data">
+      <thead><tr>
+        <th><span class="en">Claim</span><span class="zh" lang="zh-Hans">说法</span></th>
+        <th><span class="en">Status</span><span class="zh" lang="zh-Hans">状态</span></th>
+        <th><span class="en">Evidence</span><span class="zh" lang="zh-Hans">依据</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><td><span class="en">Broiler breast sarcomeres average <span class="num" title="src/data/swell/calc_v0.json: params.sl_breast_mean · mean sarcomere length assumed for supermarket breast (fact F-10, cited: read from an abstract by an AI)">1.69 µm</span> (<span class="num" title="pm/VERIFIED_FACTS.md, F-10 (SWELL project notes) · quoted">1.91 µm</span> in wooden-breast fillets).</span><span class="zh" lang="zh-Hans">肉鸡胸肉的肌节平均 <span class="num" title="src/data/swell/calc_v0.json: params.sl_breast_mean · mean sarcomere length assumed for supermarket breast (fact F-10, cited: read from an abstract by an AI)">1.69 µm</span>（木质化胸肉为 <span class="num" title="pm/VERIFIED_FACTS.md, F-10 (SWELL project notes) · quoted">1.91 µm</span>）。</span></td><td><span class="tag cited"><span class="en">cited</span><span class="zh" lang="zh-Hans">引用</span></span></td><td><span class="en">F-10: a laser-diffraction study, read from its abstract</span><span class="zh" lang="zh-Hans">F-10：一项激光衍射研究，依据其摘要</span></td></tr>
+        <tr><td><span class="en">Mono IMX296 global-shutter boards for the Raspberry Pi exist (<span class="num" title="src/data/swell/optics_v1.json: parts.camera · sensor format of the mono IMX296">1456 × 1088 px, 3.45 µm</span>); the official Pi Global Shutter Camera is colour, so it is not used.</span><span class="zh" lang="zh-Hans">树莓派可用的 IMX296 黑白全局快门相机板确实存在（<span class="num" title="src/data/swell/optics_v1.json: parts.camera · sensor format of the mono IMX296">1456 × 1088 px, 3.45 µm</span>）；官方全局快门相机是彩色的，所以不用。</span></td><td><span class="tag cited"><span class="en">cited</span><span class="zh" lang="zh-Hans">引用</span></span></td><td><span class="en">F-5, F-27, F-28: vendor pages and the product brief</span><span class="zh" lang="zh-Hans">F-5、F-27、F-28：厂商页面和产品简介</span></td></tr>
+        <tr><td><span class="en">The NHS-ester pan-staining step follows the published pan-ExM method.</span><span class="zh" lang="zh-Hans">NHS 酯全蛋白染色沿用已发表的 pan-ExM 方法。</span></td><td><span class="tag cited"><span class="en">cited</span><span class="zh" lang="zh-Hans">引用</span></span></td><td><span class="en">F-18: full text, Methods</span><span class="zh" lang="zh-Hans">F-18：论文全文的方法部分</span></td></tr>
+        <tr><td><span class="en">UK REACH Annex XVII bars supplying CMR substances to the public, and covers formaldehyde through Reg. (EU) 2018/675.</span><span class="zh" lang="zh-Hans">英国 REACH 附件 XVII 禁止向公众供应 CMR 物质，并通过 (EU) 2018/675 号条例覆盖甲醛。</span></td><td><span class="tag cited"><span class="en">cited</span><span class="zh" lang="zh-Hans">引用</span></span></td><td><span class="en">F-12: the legislation itself</span><span class="zh" lang="zh-Hans">F-12：法规原文</span></td></tr>
+        <tr><td><span class="en">TREx reaches about <span class="num" title="src/data/swell/calc_v0.json: params.e_10x · Track B expansion factor">10×</span> in one step; its published correction traces a lab discrepancy to the TEMED stock.</span><span class="zh" lang="zh-Hans">TREx 一步可放大约 <span class="num" title="src/data/swell/calc_v0.json: params.e_10x · Track B expansion factor">10×</span>；其发表的更正把不同实验室结果的差异归因于 TEMED 母液。</span></td><td><span class="tag cited"><span class="en">cited</span><span class="zh" lang="zh-Hans">引用</span></span></td><td><span class="en">F-7, F-20: the paper and its correction</span><span class="zh" lang="zh-Hans">F-7、F-20：论文及其更正</span></td></tr>
+        <tr><td><span class="en">Bis-acrylamide is a Cat. 1B mutagen (Muta. 1B, H340) in Great Britain's legally binding classification list.</span><span class="zh" lang="zh-Hans">在大不列颠具有法律约束力的分类清单里，双丙烯酰胺是 1B 类致突变物（Muta. 1B，H340）。</span></td><td><span class="tag cited"><span class="en">cited</span><span class="zh" lang="zh-Hans">引用</span></span></td><td><span class="en">F-13, checked 2026-10-10 by the X-WOW AI agent against HSE's GB mandatory classification list (in legal effect from 2025-09-23) and re-derived by a separate AI review, not by a person; one supplier's 2023 sheet still leaves its solution unclassified (<a href="../../swell/safety/#sds-sources">safety sources</a>). Until 2026-10-10 this row said "untested".</span><span class="zh" lang="zh-Hans">F-13，2026-10-10 由 X-WOW 的 AI 代理对照英国 HSE 的大不列颠强制分类清单核对（该分类自 2025-09-23 起具有法律效力），并由另一轮 AI 审查重新推算，不是人工核对；有一家供应商 2023 年的 SDS 仍没给它的溶液分类（<a href="../../swell/safety/#sds-sources">安全资料来源</a>）。2026-10-10 之前，这一行标的是“未检验”。</span></td></tr>
+        <tr><td><span class="en">The chicken A-band is about <span class="num" title="src/data/swell/calc_v0.json: params.a_band · A-band length assumed for chicken (fact F-17: not verified)">1.6 µm</span> long.</span><span class="zh" lang="zh-Hans">鸡肉的 A 带长约 <span class="num" title="src/data/swell/calc_v0.json: params.a_band · A-band length assumed for chicken (fact F-17: not verified)">1.6 µm</span>。</span></td><td><span class="tag untested"><span class="en">untested</span><span class="zh" lang="zh-Hans">未测试</span></span></td><td><span class="en">F-17: only a generic vertebrate value</span><span class="zh" lang="zh-Hans">F-17：只有脊椎动物的通用数值</span></td></tr>
+        <tr><td><span class="en">The 40X objective&#x27;s price.</span><span class="zh" lang="zh-Hans">40X 物镜的价格。</span></td><td><span class="tag untested"><span class="en">untested</span><span class="zh" lang="zh-Hans">未测试</span></span></td><td><span class="en">F-30: seen only in a search result; the maker&#x27;s page answers with an anti-bot check, so it is not yet read and stays out of the totals. The 20X objective&#x27;s price was read on its shop page on 11 October 2026.</span><span class="zh" lang="zh-Hans">F-30：只在搜索结果里见过；厂商页面会先弹出反机器人检查，所以算尚未查价，不计入总数。20X 物镜的价格已于 2026 年 10 月 11 日在商店页面上读到。</span></td></tr>
+        <tr><td><span class="en">The camera's quantum efficiency, read noise and full well used in the light budget.</span><span class="zh" lang="zh-Hans">光预算里用到的相机量子效率、读出噪声和满阱容量。</span></td><td><span class="tag untested"><span class="en">untested</span><span class="zh" lang="zh-Hans">未测试</span></span></td><td><span class="en">F-23: datasheet values not yet confirmed</span><span class="zh" lang="zh-Hans">F-23：数据表数值尚未确认</span></td></tr>
+        <tr><td><span class="en">The axial ruler measures each myofibril to <span class="num" title="pm/DECISIONS.md, D-33 (SWELL project notes) · quoted">0.3–0.6%</span> RMS on our own gels, but <span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.rms · per-myofibril axial RMS error (red team&#x27;s scorer)">1.8%</span> on red-team gel S3 (<span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.frac_beyond_2pct · myofibrils beyond ±2% (red team&#x27;s scorer)">7.5%</span> beyond ±2%).</span><span class="zh" lang="zh-Hans">轴向尺子在我们自己的凝胶上对每根肌原纤维的误差为 <span class="num" title="pm/DECISIONS.md, D-33 (SWELL project notes) · quoted">0.3–0.6%</span>（均方根），在红队凝胶 S3 上是 <span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.rms · per-myofibril axial RMS error (red team&#x27;s scorer)">1.8%</span>（<span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.frac_beyond_2pct · myofibrils beyond ±2% (red team&#x27;s scorer)">7.5%</span> 超过 ±2%）。</span></td><td><span class="tag sim"><span class="en">simulated</span><span class="zh" lang="zh-Hans">模拟</span></span></td><td><span class="en">D-33; <a href="https://github.com/khcy82dyc2/x-wow/blob/main/src/data/swell/strain_map_v1.json" target="_blank" rel="noopener">strain_map_v1.json</a> (own gels); <a href="https://github.com/khcy82dyc2/x-wow/blob/main/src/data/swell/strain_map_v2.json" target="_blank" rel="noopener">strain_map_v2.json</a> (S3)</span><span class="zh" lang="zh-Hans">D-33；<a href="https://github.com/khcy82dyc2/x-wow/blob/main/src/data/swell/strain_map_v1.json" target="_blank" rel="noopener">strain_map_v1.json</a>（自己的凝胶）；<a href="https://github.com/khcy82dyc2/x-wow/blob/main/src/data/swell/strain_map_v2.json" target="_blank" rel="noopener">strain_map_v2.json</a>（S3）</span></td></tr>
+        <tr><td><span class="en">Our own blind gel S1b: whole-gel expansion error <span class="num" title="src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.gel_mean_E_err · gel-mean expansion error vs truth">−0.11%</span>, false flags <span class="num" title="src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.false_flag_rate · share of defect-free gel area flagged">0.00%</span>; the hotspot and the under-digested patch are caught. On red-team gel S3 the under- and over-expanded patches were not (<span class="num" title="src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[under_expansion] · area of the planted under_expansion region flagged by any flag (red team&#x27;s scorer)">0%</span>, <span class="num" title="src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[over_expansion] · area of the planted over_expansion region flagged by any flag (red team&#x27;s scorer)">0%</span>).</span><span class="zh" lang="zh-Hans">我们自己的盲测凝胶 S1b：整体放大误差 <span class="num" title="src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.gel_mean_E_err · gel-mean expansion error vs truth">−0.11%</span>，误报 <span class="num" title="src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.false_flag_rate · share of defect-free gel area flagged">0.00%</span>；膨胀不足区和消化不足区都被抓到。在红队凝胶 S3 上，膨胀不足和过度的区域都没被抓到（<span class="num" title="src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[under_expansion] · area of the planted under_expansion region flagged by any flag (red team&#x27;s scorer)">0%</span>、<span class="num" title="src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[over_expansion] · area of the planted over_expansion region flagged by any flag (red team&#x27;s scorer)">0%</span>）。</span></td><td><span class="tag sim"><span class="en">simulated</span><span class="zh" lang="zh-Hans">模拟</span></span></td><td><span class="en">D-34; strain_map_v1.json, gel S1b; strain_map_v2.json, gel S3</span><span class="zh" lang="zh-Hans">D-34；strain_map_v1.json，S1b 号凝胶；strain_map_v2.json，S3 号凝胶</span></td></tr>
+        <tr><td><span class="en">Known misses: the <span class="num" title="src/data/swell/strain_map_v1.json: scenarios.S1b.scenario.band · planted stretched patch">+2.5%</span> stretch gets the wrong label; the <span class="num" title="src/data/swell/strain_map_v1.json: scenarios.S1b.scenario.tear_open · planted tear opening">1.5 µm</span> tear is below the limit.</span><span class="zh" lang="zh-Hans">已知漏洞：<span class="num" title="src/data/swell/strain_map_v1.json: scenarios.S1b.scenario.band · planted stretched patch">+2.5%</span> 拉伸被标错类别；<span class="num" title="src/data/swell/strain_map_v1.json: scenarios.S1b.scenario.tear_open · planted tear opening">1.5 µm</span> 裂缝低于检测下限。</span></td><td><span class="tag sim"><span class="en">simulated</span><span class="zh" lang="zh-Hans">模拟</span></span></td><td><span class="en">strain_map_v1.json, gel S1b</span><span class="zh" lang="zh-Hans">strain_map_v1.json，S1b 号凝胶</span></td></tr>
+        <tr><td><span class="en">With each cross-section's shape measured, the transverse ruler's bias is <span class="num" title="src/data/swell/strain_map_v1.json: width_mc[&#x27;* | … shape from post …&#x27;] · worst |bias| when each cross-section&#x27;s shape is measured from the post z-projection">≤ 0.04%</span> on our own gels, but <span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_tr_correct_matches.bias · transverse ruler bias (red team&#x27;s scorer)">−17.8%</span> on red-team gel S3 (a blur shape it does not model).</span><span class="zh" lang="zh-Hans">量出每根纤维的截面形状后，横向尺子的偏差在我们自己的凝胶上为 <span class="num" title="src/data/swell/strain_map_v1.json: width_mc[&#x27;* | … shape from post …&#x27;] · worst |bias| when each cross-section&#x27;s shape is measured from the post z-projection">≤ 0.04%</span>，在红队凝胶 S3 上是 <span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_tr_correct_matches.bias · transverse ruler bias (red team&#x27;s scorer)">−17.8%</span>（一种它没建模的模糊形状）。</span></td><td><span class="tag sim"><span class="en">simulated</span><span class="zh" lang="zh-Hans">模拟</span></span></td><td><span class="en">D-32; strain_map_v1.json (own gels); strain_map_v2.json (S3)</span><span class="zh" lang="zh-Hans">D-32；strain_map_v1.json（自己的凝胶）；strain_map_v2.json（S3）</span></td></tr>
+        <tr><td><span class="en">The <span class="num" title="src/data/swell/calc_v0.json: resolution[&#x27;4x&#x27;] · name of the ~4× expansion track (Track A)">4×</span> track samples at <span class="num" title="src/data/swell/optics_v1.json: sampling.A.rows[d_mm=25].nyquist_ratio · sampling ÷ Nyquist (pass band 0.8–1.25)">1.03×</span> Nyquist, with a Strehl ratio, relative to the gel's surface and from index mismatch only, of at least <span class="num" title="src/data/swell/optics_v1.json: strehl.A[*].strehl · minimum over all depths">0.98</span> over <span class="num" title="src/data/swell/optics_v1.json: strehl.A[*].depth_um · depth range simulated into water, Track A">0–12 µm</span>.</span><span class="zh" lang="zh-Hans"><span class="num" title="src/data/swell/calc_v0.json: resolution[&#x27;4x&#x27;] · name of the ~4× expansion track (Track A)">4×</span> 路线采样为奈奎斯特的 <span class="num" title="src/data/swell/optics_v1.json: sampling.A.rows[d_mm=25].nyquist_ratio · sampling ÷ Nyquist (pass band 0.8–1.25)">1.03×</span>，<span class="num" title="src/data/swell/optics_v1.json: strehl.A[*].depth_um · depth range simulated into water, Track A">0–12 µm</span> 深度内、相对凝胶表面且只算折射率失配的斯特列尔比不低于 <span class="num" title="src/data/swell/optics_v1.json: strehl.A[*].strehl · minimum over all depths">0.98</span>。</span></td><td><span class="tag sim"><span class="en">simulated</span><span class="zh" lang="zh-Hans">模拟</span></span></td><td><span class="en">D-29; <a href="https://github.com/khcy82dyc2/x-wow/blob/main/src/data/swell/optics_v1.json" target="_blank" rel="noopener">optics_v1.json</a> (thin-lens and Gibson–Lanni models)</span><span class="zh" lang="zh-Hans">D-29；<a href="https://github.com/khcy82dyc2/x-wow/blob/main/src/data/swell/optics_v1.json" target="_blank" rel="noopener">optics_v1.json</a>（薄透镜与 Gibson–Lanni 模型）</span></td></tr>
+        <tr><td><span class="en">Signal-to-noise reaches <span class="num" title="src/data/swell/optics_v1.json: checks[6].check · SNR threshold named in the check">10</span> at the lowest labelling.</span><span class="zh" lang="zh-Hans">最低标记率下信噪比能达到 <span class="num" title="src/data/swell/optics_v1.json: checks[6].check · SNR threshold named in the check">10</span>。</span></td><td><span class="tag sim"><span class="en">simulated: fails</span><span class="zh" lang="zh-Hans">模拟：未达标</span></span></td><td><span class="en">optics_v1.json; risk R30, open</span><span class="zh" lang="zh-Hans">optics_v1.json；风险 R30，未解决</span></td></tr>
+        <tr><td><span class="en">The full build costs <span class="num" title="src/data/swell/budget_v1.json: build.listed · sum of the listed lines only (a floor), GBP incl. VAT">≥ £214</span>: the sum of the lines priced so far.</span><span class="zh" lang="zh-Hans">完整整机的成本 <span class="num" title="src/data/swell/budget_v1.json: build.listed · sum of the listed lines only (a floor), GBP incl. VAT">≥ £214</span>：这只是目前已查到价格的条目之和。</span></td><td><span class="tag cited"><span class="en">cited</span><span class="zh" lang="zh-Hans">引用</span></span></td><td><span class="en">D-78; <a href="https://github.com/khcy82dyc2/x-wow/blob/main/src/data/swell/budget_v1.json" target="_blank" rel="noopener">budget_v1.json</a>; <span class="num" title="src/data/swell/budget_v1.json: build.n_listed · lines priced from supplier pages">3</span> of <span class="num" title="src/data/swell/budget_v1.json: build.n · lines in the full build">31</span> lines priced from supplier pages, <span class="num" title="src/data/swell/budget_v1.json: build.n_estimate · lines whose price is not yet read">28</span> not yet read, so no full total yet</span><span class="zh" lang="zh-Hans">D-78；<a href="https://github.com/khcy82dyc2/x-wow/blob/main/src/data/swell/budget_v1.json" target="_blank" rel="noopener">budget_v1.json</a>；<span class="num" title="src/data/swell/budget_v1.json: build.n · lines in the full build">31</span> 条中 <span class="num" title="src/data/swell/budget_v1.json: build.n_listed · lines priced from supplier pages">3</span> 条的价格读自供应商页面，<span class="num" title="src/data/swell/budget_v1.json: build.n_estimate · lines whose price is not yet read">28</span> 条尚未查价，所以还没有完整总数</span></td></tr>
+        <tr><td><span class="en">Label-free before-images have enough contrast (<span class="num" title="pm/DECISIONS.md, D-4 (SWELL project notes) · quoted">5–50%</span> assumed).</span><span class="zh" lang="zh-Hans">不染色的膨胀前图像对比度够用（假设为 <span class="num" title="pm/DECISIONS.md, D-4 (SWELL project notes) · quoted">5–50%</span>）。</span></td><td><span class="tag untested"><span class="en">untested</span><span class="zh" lang="zh-Hans">未测试</span></span></td><td><span class="en"><a href="https://github.com/khcy82dyc2/x-wow/blob/main/src/data/swell/calc_v0.json" target="_blank" rel="noopener">calc_v0.json</a>; risk R21</span><span class="zh" lang="zh-Hans"><a href="https://github.com/khcy82dyc2/x-wow/blob/main/src/data/swell/calc_v0.json" target="_blank" rel="noopener">calc_v0.json</a>；风险 R21</span></td></tr>
+        <tr><td><span class="en">The gel chemistry expands chicken myofibrils evenly.</span><span class="zh" lang="zh-Hans">这套凝胶化学能把鸡肉肌原纤维均匀地胀大。</span></td><td><span class="tag untested"><span class="en">untested</span><span class="zh" lang="zh-Hans">未测试</span></span></td><td><span class="en">Never run; risks R5, R13</span><span class="zh" lang="zh-Hans">从没做过；风险 R5、R13</span></td></tr>
+        <tr><td><span class="en">One button: chicken in, images, QC report and paper draft out.</span><span class="zh" lang="zh-Hans">一键：鸡肉进去，图像、质控报告和论文草稿出来。</span></td><td><span class="tag untested"><span class="en">untested</span><span class="zh" lang="zh-Hans">未测试</span></span></td><td><span class="en">A design goal; the mechanical and fluidic designs and the instrument software were never written</span><span class="zh" lang="zh-Hans">设计目标；机械和流体设计、仪器软件都还没写</span></td></tr>
+        <tr><td><span class="en">No earlier expansion microscopy on a 3D-printed microscope was found, and no paired, label-free before-and-after period ratio on the same myofibril. Isolated vertebrate myofibrils have been expanded before (rabbit; a 2022 thesis).</span><span class="zh" lang="zh-Hans">没找到在 3D 打印显微镜上做膨胀显微的先例，也没找到对同一根肌原纤维做膨胀前后免标记周期配对比值的先例。分离的脊椎动物肌原纤维以前有人膨胀过（兔肌；一篇 2022 年的学位论文）。</span></td><td><span class="tag untested"><span class="en">untested</span><span class="zh" lang="zh-Hans">未测试</span></span></td><td><span class="en">F-19 and prior_art.md (10 searches, 10 Oct 2026), and an AI review's 17 more searches the same day (an AI told to read as a sceptical specialist); nearest prior art: Zhang et al. 2016 (expansion on a mini-microscope) and expansion of muscle biopsies at neuromuscular junctions; a 2022 thesis on expanded myofibrillar bundles</span><span class="zh" lang="zh-Hans">F-19 与 prior_art.md（2026 年 10 月 10 日的 10 次检索），以及同一天一次 AI 审查（让 AI 扮演挑剔的专业读者）另做的 17 次检索；最接近的前人工作：Zhang 等 2016（在迷你显微镜上做膨胀）、对肌肉活检神经肌肉接头的膨胀；以及一篇 2022 年关于膨胀肌原纤维束的学位论文</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="en muted">Nothing here is tagged "verified": on X-WOW that word is kept for a result re-derived from the raw material by a named checker who didn't build it, and the checks above were made by AI. F-, D- and R- numbers are fact, decision and risk IDs in the project's notes. The JSON files are the simulation outputs, published unchanged with this site.</p>
+  <p class="zh muted" lang="zh-Hans">这里没有一条标成“已核实”：在 X-WOW，这个词只留给由一位没参与制作的具名核对者、从原始材料重新推算出来的结果，而上面的核对都是 AI 做的。F-、D-、R- 开头的编号分别是项目笔记里的事实、决定和风险编号。JSON 文件是模拟的原始输出，随本站原样公开。</p>
+
+  <aside class="loupe"><p class="en">Build count: zero. Every SWELL result above came from a simulation or a price page; no gel has been made and no part has been bought.</p><p class="zh" lang="zh-Hans">已建造数量：零。上面每个 SWELL 结果都来自模拟或价格页面；一块凝胶都没做过，一个零件都没买过。</p></aside>
+</section>
+
+<section class="block" id="ladder">
+<style>
+#ladder .rungs{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:1.2rem}
+#ladder .rung h3{margin-top:.2rem}
+#ladder .rung .n{font-family:var(--mono);color:var(--gold);font-size:.85rem;letter-spacing:.08em}
+#ladder .rung dl{margin:.6rem 0;display:grid;grid-template-columns:auto 1fr;gap:.25rem .6rem;font-size:.92rem}
+#ladder .rung dt{color:var(--muted)}
+#ladder .rung dd{margin:0}
+#ladder .rung .wall{margin-top:.7rem;font-size:.88rem}
+#ladder .rung .wall .entry{display:block;margin:.4rem 0;padding:.5rem .7rem}
+#ladder .rung .wall .entry h3{font-size:.95rem;margin:0}
+#ladder .lab{border-color:var(--red)}
+#ladder .arrow{color:var(--cyan);font-family:var(--mono)}
+</style>
+<p class="kicker"><span class="en">Evidence ladder</span><span class="zh" lang="zh-Hans">证据阶梯</span></p>
+<h2><span class="en">Climb it cheapest first</span><span class="zh" lang="zh-Hans">从最便宜的一级开始爬</span></h2>
+<p class="lead en">Before anyone spends money on a lab, three home rungs, each done with an adult, test the parts of SWELL that chemistry can't fix: can the stripes be measured, are they bright enough to be a ruler, and are the fragments long enough? Each rung has a pass mark and a safety note.</p>
+<p class="lead zh" lang="zh-Hans">在谁花钱进实验室之前，先用三级在家、每一级都由大人陪同做的小实验，检验 SWELL 里化学帮不上忙的部分：条纹量得出来吗？够不够清楚，能不能当尺子？碎片够不够长？每一级都有及格线和安全提示。</p>
+
+<div class="rungs">
+  <div class="panel rung">
+    <p class="n"><span class="en">RUNG 1</span><span class="zh" lang="zh-Hans">第 1 级</span></p>
+    <h3><span class="en">Measure a chicken with a laser</span><span class="zh" lang="zh-Hans">用激光量一量鸡肉</span></h3>
+    <p class="en">Shine a laser pointer through a thin strip of chicken breast and measure the diffraction spots: the sarcomere length falls out of one line of maths. <a href="../../swell/start/#start-here">How to do it</a>.</p>
+    <p class="zh" lang="zh-Hans">用激光笔照穿一薄条鸡胸肉，量衍射亮点的位置，一行算式就能算出肌节长度。<a href="../../swell/start/#start-here">具体做法</a>。</p>
+    <dl class="en"><dt>Pass</dt><dd>first-order spots on both sides; three strips within <span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 1: three strips agree within this of their mean">±5%</span> of their mean, inside <span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 1: the sarcomere length must fall inside this range">1.5–2.0 µm</span></dd>
+      <dt>Safety</dt><dd>a family experiment, age guide 8 and up: the adult handles the laser, the knife, the glass and the raw chicken. Use a red (650 nm) Class 2 pointer, 1 mW or less: cheap green ones can leak invisible infrared. Never at eyes or shiny surfaces; lay the strip so the fibres run level, which keeps the side spots at table height; hold the slides in a peg or clip, not fingers; raw-meat hygiene</dd></dl>
+    <dl class="zh" lang="zh-Hans"><dt>及格</dt><dd>中央两侧都有一级亮点；三条肉的结果都在平均值 <span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 1: three strips agree within this of their mean">±5%</span> 以内，并落在 <span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 1: the sarcomere length must fall inside this range">1.5–2.0 µm</span> 之间</dd>
+      <dt>安全</dt><dd>家庭实验，适合 8 岁及以上：激光笔、刀、玻片和生鸡肉都由大人来拿。用红色（650 nm）、2 类、1 mW 及以下的激光笔：便宜的绿色激光笔可能漏出看不见的红外光。绝不对着眼睛或反光面；肉条要让纤维水平放，这样两侧的亮点都留在桌面高度；用夹子夹住玻片，不要用手拿；按生肉卫生处理</dd></dl>
+  </div>
+
+  <div class="panel rung">
+    <p class="n"><span class="en">RUNG 2</span><span class="zh" lang="zh-Hans">第 2 级</span></p>
+    <h3><span class="en">See the stripes</span><span class="zh" lang="zh-Hans">看见条纹</span></h3>
+    <p class="en">Blend a pea-sized piece of chicken breast for a few seconds in ice-cold, weak salt water (6 g of salt per litre; much stronger brine dissolves the stripes), put a drop under a coverslip on any microscope with a 40× objective, and let <a href="../../swell/ruler/#tool">swell-ruler</a> measure the stripes. Plain bright-field with the condenser wide open shows almost nothing: close the condenser iris or tilt the light. Measure your pixel size with a stage micrometer (or from your rung-1 sarcomere length). No stain and no lab chemicals.</p>
+    <p class="zh" lang="zh-Hans">把豌豆大小的一块鸡胸肉放进冰冷的淡盐水里（每升 6 克盐；盐水太浓会把条纹溶掉），打碎几秒钟，取一滴盖上盖玻片，放到任何带 40 倍物镜的显微镜下，再让 <a href="../../swell/ruler/#tool">swell-ruler</a> 量条纹。普通明场、聚光镜光圈全开时几乎看不见：把光圈收小，或者让光斜着照。用台微尺（或用第 1 级测出的肌节长度）定出像素大小。不染色，不用实验室化学品。</p>
+    <dl class="en"><dt>Pass</dt><dd>median q of <span class="num" title="src/data/swell/preimage_v1.json: q_go[&#x27;10&#x27;].rms_1pct · q = m·√N for 1% per-fibril error at 10 sarcomeres">1.2</span> or more (rescaled to 0.194 µm pixels; raw or PNG frames, not JPEG) over <span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 2: myofibrils with ≥ 10 sarcomeres needed">10</span>+ myofibrils with 10+ sarcomeres: SWELL's go/no-go for the label-free ruler. Bright-field in salt water is not the design's DPC in a gel, so a pass is encouraging, not proof</dd>
+      <dt>Safety</dt><dd>age guide 10 and up, with an adult. Kitchen salt only. The adult handles the raw chicken, runs the blender, and handles the coverslip, the glass slides and the stage micrometer; children look and run the software. Raw-meat hygiene</dd></dl>
+    <dl class="zh" lang="zh-Hans"><dt>及格</dt><dd><span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 2: myofibrils with ≥ 10 sarcomeres needed">10</span> 根以上、每根 10 个以上肌节的肌原纤维，q 中位数达到 <span class="num" title="src/data/swell/preimage_v1.json: q_go[&#x27;10&#x27;].rms_1pct · q = m·√N for 1% per-fibril error at 10 sarcomeres">1.2</span> 或以上（按 0.194 µm 像素换算；用原始或 PNG 图，不用 JPEG）：这就是 SWELL 免标记标尺的继续/放弃标准。盐水里的明场不等于设计里凝胶中的差分相衬，所以及格是好兆头，不是证明</dd>
+      <dt>安全</dt><dd>适合 10 岁及以上，必须有大人一起。只用厨房食盐。生鸡肉、搅拌机、盖玻片、载玻片和台微尺都由大人来拿；孩子负责看显微镜和运行软件。按生肉卫生处理</dd></dl>
+  </div>
+
+  <div class="panel rung">
+    <p class="n"><span class="en">RUNG 3</span><span class="zh" lang="zh-Hans">第 3 级</span></p>
+    <h3><span class="en">Long enough fragments</span><span class="zh" lang="zh-Hans">碎片够不够长</span></h3>
+    <p class="en">The ruler needs fragments with at least 8 sarcomeres. The same images give a length histogram; gentler blending keeps fragments longer.</p>
+    <p class="zh" lang="zh-Hans">标尺需要至少 8 个肌节长的碎片。同一批图片就能画出长度分布；搅得轻一点，碎片就更长。</p>
+    <dl class="en"><dt>Pass</dt><dd><span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 3: fragments with ≥ 8 sarcomeres needed">40%</span> or more of fragments with 8+ sarcomeres (the simulation assumed <span class="num" title="src/data/swell/strain_map_v2.json: dev.S0.metrics.n_eligible / n_fibrils · fraction of simulated fragments with ≥ 8 whole sarcomeres">44%</span>)</dd>
+      <dt>Safety</dt><dd>as rung 2</dd></dl>
+    <dl class="zh" lang="zh-Hans"><dt>及格</dt><dd>8 个肌节以上的碎片占 <span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 3: fragments with ≥ 8 sarcomeres needed">40%</span> 或以上（仿真假设的是 <span class="num" title="src/data/swell/strain_map_v2.json: dev.S0.metrics.n_eligible / n_fibrils · fraction of simulated fragments with ≥ 8 whole sarcomeres">44%</span>）</dd>
+      <dt>安全</dt><dd>同第 2 级</dd></dl>
+  </div>
+
+  <div class="panel rung lab">
+    <p class="n"><span class="en">RUNG 4 · LAB ONLY</span><span class="zh" lang="zh-Hans">第 4 级 · 只在实验室</span></p>
+    <h3><span class="en">First gels in a proper lab</span><span class="zh" lang="zh-Hans">在正规实验室做第一批凝胶</span></h3>
+    <p class="en">Only once rungs 1–3 pass, and only in a lab with a fume hood, under its own safety rules. The gel chemistry uses restricted carcinogenic reagents. Never at home.</p>
+    <p class="zh" lang="zh-Hans">只有前三级都及格后才做，而且只能在有通风橱的实验室里、按实验室自己的安全规定做。凝胶化学要用受管制的致癌试剂，绝不在家里做。</p>
+    <dl class="en"><dt>Pass</dt><dd><span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 4: gels that must pass">3</span> gels: pre-image q ≥ <span class="num" title="src/data/swell/preimage_v1.json: q_go[&#x27;10&#x27;].rms_1pct · q = m·√N for 1% per-fibril error at 10 sarcomeres">1.2</span>; per-myofibril axial precision <span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 4: per-myofibril axial precision">≤ 1%</span> (<code>per_fibril_spread</code> in result.json); isotropy inside the <span class="num" title="pm/DECISIONS.md D-32 (the transverse gate D-50 points to) · rung 4: isotropy gate">±3%</span> gate. Reported, not a pass mark: the gel-mean axial factor next to the overview camera's whole-gel factor (the gel's diameter after ÷ before), and their ratio. A gate of <span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 4: the gate D-50 set on the gel-mean axial factor against the overview camera&#x27;s factor; dropped 2026-10-10 (D-68), quoted for the record">±0.5%</span> on that ratio was dropped on 10 October 2026, before anyone climbed: a whole gel's factor is itself uncertain (observers' estimates of one gel ranged from 8.6 to 9.4 in GelMap, Damstra et al. 2023), and a myofibril may expand less than its gel.</dd>
+      <dt>Safety</dt><dd><a href="../../swell/safety/#safety">the safety section</a>, the lab's own risk assessment, and nothing chemical outside it</dd></dl>
+    <dl class="zh" lang="zh-Hans"><dt>及格</dt><dd><span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 4: gels that must pass">3</span> 块凝胶：膨胀前图像 q ≥ <span class="num" title="src/data/swell/preimage_v1.json: q_go[&#x27;10&#x27;].rms_1pct · q = m·√N for 1% per-fibril error at 10 sarcomeres">1.2</span>；每根肌原纤维轴向精度 <span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 4: per-myofibril axial precision">≤ 1%</span>（result.json 里的 <code>per_fibril_spread</code>）；各向同性在 <span class="num" title="pm/DECISIONS.md D-32 (the transverse gate D-50 points to) · rung 4: isotropy gate">±3%</span> 门限内。只报告、不设及格线：整块凝胶的平均轴向倍数、全景相机测得的整体倍数（胶片直径，膨胀后 ÷ 膨胀前），以及两者之比。原来对这个比值设的 <span class="num" title="pm/DECISIONS.md D-50 (evidence-ladder pass marks) · rung 4: the gate D-50 set on the gel-mean axial factor against the overview camera&#x27;s factor; dropped 2026-10-10 (D-68), quoted for the record">±0.5%</span> 门限，已在 2026 年 10 月 10 日、还没有人开始爬之前取消：整块凝胶的倍数本身就不确定（GelMap 里，不同人对同一块凝胶的估计在 8.6 到 9.4 之间；Damstra 等 2023），而且肌原纤维可能比它所在的凝胶胀得少。</dd>
+      <dt>安全</dt><dd><a href="../../swell/safety/#safety">安全一节</a>、实验室自己的风险评估，任何化学品都不出实验室</dd></dl>
+  </div>
+</div>
+
+<aside class="loupe">
+  <p class="en">Rung 2 is the cheapest place for SWELL to die. If the stripes are too faint there, no amount of chemistry saves the ruler.</p>
+  <p class="zh" lang="zh-Hans">第 2 级是 SWELL 最便宜的"死法"。如果在那里条纹就太淡，再多化学也救不了这把尺子。</p>
+</aside>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="foot-grid">
+    <div class="fc">
+      <img class="foot-logo" src="../../assets/img/brand/xwow-logo-dark-128.png" srcset="../../assets/img/brand/xwow-logo-dark-64.png 75w, ../../assets/img/brand/xwow-logo-dark-128.png 149w, ../../assets/img/brand/xwow-logo-dark-192.png 224w, ../../assets/img/brand/xwow-logo-dark-288.png 335w" sizes="112px" width="112" height="96" alt="X-WOW" loading="lazy">
+      <p><span class="en">Inventions to steal, happily.</span><span class="zh">好发明，开心偷。</span></p>
+    </div>
+    <nav class="fc" aria-label="Explore">
+      <p class="fc-h"><span class="en">Explore</span><span class="zh">探索</span></p>
+      <ul>
+        <li><a href="../../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a></li>
+        <li><a href="../../swell/">SWELL</a></li>
+        <li><a href="../../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a></li>
+        <li><a href="../../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a></li>
+        <li><a href="../../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a></li>
+      </ul>
+    </nav>
+    <nav class="fc" aria-label="About and legal">
+      <p class="fc-h"><span class="en">About &amp; legal</span><span class="zh">关于与法律</span></p>
+      <ul>
+        <li><a href="../../terms/"><span class="en">Terms of use</span><span class="zh">使用条款</span></a></li>
+        <li><a href="../../privacy/"><span class="en">Privacy</span><span class="zh">隐私</span></a></li>
+        <li><a href="../../safety/"><span class="en">Safety</span><span class="zh">安全</span></a></li>
+        <li><a href="../../licences/"><span class="en">Licences &amp; trade marks</span><span class="zh">许可与商标</span></a></li>
+        <li><a href="../../accessibility/"><span class="en">Accessibility</span><span class="zh">无障碍</span></a></li>
+        <li><a href="../../about-ai/"><span class="en">Made by an AI</span><span class="zh">由 AI 制作</span></a></li>
+      </ul>
+    </nav>
+    <div class="fc">
+      <p class="fc-h"><span class="en">Contact</span><span class="zh">联系</span></p>
+      <ul>
+        <li><a href="mailto:info@x-wow.com">info@x-wow.com</a></li>
+        <li><a href="https://x.com/X_WowCom" target="_blank" rel="noopener">@X_WowCom <span class="en">on X</span><span class="zh">（X）</span></a></li>
+        <li><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener"><span class="en">Site source on GitHub</span><span class="zh">网站源码（GitHub）</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p><span class="en">X-WOW · our own text, data and code CC0 1.0; hardware CERN-OHL-P v2; quotations and third-party code keep their own licences (<a href="../../licences/">details</a>) · the X-WOW name and logo are trade marks; the logo is UK registered trade mark UK00003425680 · no cookies, no tracking</span><span class="zh">X-WOW · 我们自己的文字、数据和代码采用 CC0 1.0；硬件 CERN-OHL-P v2；引文和第三方代码保留各自的许可 · X-WOW 的名称和标志是商标，标志是英国注册商标 UK00003425680 · 无 cookie、无追踪</span></p>
+  </div>
+</footer>
+</body>
+</html>

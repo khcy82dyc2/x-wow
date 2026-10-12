@@ -1,0 +1,44 @@
+<section class="block" id="ai">
+<p class="kicker"><span class="en">AI transparency</span><span class="zh">AI 透明度</span></p>
+<h2><span class="en">Made by an AI, from a person&#x27;s brief. Built by nobody, yet.</span><span class="zh">AI 做的，按一个人的要求做。还没人造出来。</span></h2>
+<p class="lead en">SWELL was designed, simulated and documented by an AI: Claude, made by Anthropic, used through Claude Code, working from the project owner's brief and orders. The project stopped before its first gate (G0). The AI wrote the audit, the simulation code, the documents, and this website's text and code.</p>
+<p class="lead zh">SWELL 的设计、仿真和文档都是由 AI 完成的：用的是 Anthropic 公司的 Claude，通过 Claude Code 使用，依据项目负责人的任务书和指令来做。项目在第一道关卡（G0）之前就停了。审计、仿真代码、文档，以及这个网站的文字和代码，都是 AI 写的。</p>
+
+<div class="grid-2">
+  <div class="panel">
+    <h3><span class="en">What that means for you</span><span class="zh">这对你意味着什么</span></h3>
+    <ul class="en">
+      <li><span class="tag sim">simulated</span> Every SWELL result is from simulation until someone builds it. Nothing was measured on a real machine.</li>
+      <li>You can check everything: the <a href="{{root}}swell/download/#download">download</a> holds the audit, the decisions log, the fact-check table with its sources, the simulation code and its outputs. Rerun the code and compare.</li>
+      <li>An AI can be confidently wrong.</li>
+    </ul>
+    <ul class="zh">
+      <li><span class="tag sim">模拟</span> 在有人真正造出来之前，SWELL 的每一个结果都来自仿真。没有任何数据是在真机上测的。</li>
+      <li>一切都能查：<a href="{{root}}swell/download/#download">下载包</a>里有审计报告、决策日志、带出处的事实核查表、仿真代码和输出结果。重新跑一遍代码，对照一下。</li>
+      <li>AI 也会一本正经地出错。</li>
+    </ul>
+  </div>
+  <div class="panel">
+    <h3><span class="en">How the AI was kept honest</span><span class="zh">怎么让 AI 保持诚实</span></h3>
+    <ul class="en">
+      <li><b>Every number from code.</b> Numbers in generated documents are computed from data or a cited source (invariant INV-18).</li>
+      <li><b>Every claim tied to a check.</b> A claim must be bound to a passing QC metric (INV-15).</li>
+      <li><b>A second pair of eyes.</b> Work counts as checked only after a fresh AI session that didn't build it has checked it. That is an AI check, not a person's.</li>
+      <li><b>Facts with verdicts.</b> Each key fact in the project notes records how far an AI could check it against its source (in full, in part, or not yet), with the source (<code>pm/VERIFIED_FACTS.md</code>).</li>
+      <li><b>Never an author.</b> In any paper, the AI is disclosed as the journal requires and never listed as an author.</li>
+    </ul>
+    <ul class="zh">
+      <li><b>每个数字都来自代码。</b>生成文档里的数字都由数据或有出处的来源计算得出（不变量 INV-18）。</li>
+      <li><b>每个结论都绑定检验。</b>结论必须对应一项通过的质控指标（INV-15）。</li>
+      <li><b>第二双眼睛。</b>一项工作只有经过一个没参与制作的新 AI 会话检查，才算“检查过”。这是 AI 的检查，不是人的。</li>
+      <li><b>事实带判定。</b>项目笔记里的每条关键事实，都记下 AI 对照出处能核对到什么程度（全部、部分或尚未），并附出处（<code>pm/VERIFIED_FACTS.md</code>）。</li>
+      <li><b>从不署名。</b>任何论文里，AI 都会按期刊要求如实披露，但绝不列为作者。</li>
+    </ul>
+  </div>
+</div>
+
+<aside class="loupe">
+  <p class="en">Full disclosure: I'm software too, and I've never seen a sarcomere. Rerun the code before you believe me.</p>
+  <p class="zh">坦白说：我也是软件，从没亲眼见过肌节。信我之前，先把代码跑一遍。</p>
+</aside>
+</section>

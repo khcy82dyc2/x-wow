@@ -416,6 +416,10 @@ for vid in [v for v in opt["views"].split(",") if v] or list(VIEWS):
     scene.render.filepath = f"{OUT}/{vid}.png"
     bpy.ops.render.render(write_still=True)
     info["views"].append({"id": vid, "az": az, "el": el, "distance_m": round(dist, 4), "render_s": round(time.time() - t0, 1),
+                          # what the page's "Overlay realistic" needs to put the 3D view exactly under the picture:
+                          # the aim point in the model's own (three.js, cm) frame, and the lens shift (fractions of width)
+                          "target_cm": [round(centre.x / CM, 4), round(centre.z / CM, 4), round(-centre.y / CM, 4)],
+                          "shift_x": round(cam_data.shift_x, 6), "shift_y": round(cam_data.shift_y, 6),
                           "points": {k: len(v) for k, v in SAMPLES_BY_PART.items()}, "seen": counts,
                           "visible": [k for k, n in counts.items() if n >= 3]})
     print(f"scene.py: {vid} rendered in {info['views'][-1]['render_s']} s; shows {len(info['views'][-1]['visible'])} of {len(parts_out)} parts")

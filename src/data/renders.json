@@ -1,7 +1,7 @@
 {
  "models": {
   "swell": {
-   "hash": "sha256:b0dc93e69ca893dbf3ed58fefb616e73b856cb448a89e27b52f46b69aef39df4",
+   "hash": "sha256:92f0db7e1f255339fcf0807e5baa39f01dedd2ae37e6b254d3ab7d573921c9d2",
    "sources": [
     "assets/js/model-kit.js",
     "assets/js/models/swell.js"
@@ -27,7 +27,7 @@
     "lid",
     "thermal"
    ],
-   "rendered": "2026-10-11",
+   "rendered": "2026-10-12",
    "renderer": {
     "blender": "4.5.14 LTS",
     "engine": "Cycles",
@@ -41,7 +41,7 @@
      1000
     ]
    },
-   "scene": "tools/render/scene.py sha256:347c0b1a0b7c8c3f1b63f4ee937ce0bd26442f62477ff8fdc3cb8150f9792570",
+   "scene": "tools/render/scene.py sha256:b57d5797ab2ccebdf4c63030d065cfa90816b756fc9944deb53737579fe19cd7",
    "scale": {
     "ok": true,
     "worst_import_cm": 4e-06,
@@ -101,9 +101,19 @@
      "camera": {
       "azimuth_deg": 34.0,
       "elevation_deg": 21.0,
-      "distance_m": 0.8493
+      "distance_m": 0.8493,
+      "target_cm": [
+       0.725,
+       10.0635,
+       1.675
+      ],
+      "shift_x": 0.038054,
+      "shift_y": -0.061513,
+      "lens_mm": 70,
+      "sensor_mm": 36,
+      "sensor_fit": "horizontal"
      },
-     "render_s": 10.3
+     "render_s": 10.6
     },
     {
      "id": "left",
@@ -151,9 +161,19 @@
      "camera": {
       "azimuth_deg": 304.0,
       "elevation_deg": 18.0,
-      "distance_m": 0.9982
+      "distance_m": 0.9982,
+      "target_cm": [
+       0.725,
+       10.0635,
+       1.675
+      ],
+      "shift_x": -0.009232,
+      "shift_y": -0.049164,
+      "lens_mm": 70,
+      "sensor_mm": 36,
+      "sensor_fit": "horizontal"
      },
-     "render_s": 9.1
+     "render_s": 8.6
     },
     {
      "id": "top",
@@ -202,9 +222,19 @@
      "camera": {
       "azimuth_deg": 18.0,
       "elevation_deg": 58.0,
-      "distance_m": 0.8626
+      "distance_m": 0.8626,
+      "target_cm": [
+       0.725,
+       10.0635,
+       1.675
+      ],
+      "shift_x": 0.00518,
+      "shift_y": -0.013528,
+      "lens_mm": 70,
+      "sensor_mm": 36,
+      "sensor_fit": "horizontal"
      },
-     "render_s": 9.5
+     "render_s": 8.9
     },
     {
      "id": "back",
@@ -254,9 +284,19 @@
      "camera": {
       "azimuth_deg": 214.0,
       "elevation_deg": 20.0,
-      "distance_m": 1.055
+      "distance_m": 1.055,
+      "target_cm": [
+       0.725,
+       10.0635,
+       1.675
+      ],
+      "shift_x": -0.009377,
+      "shift_y": -0.026728,
+      "lens_mm": 70,
+      "sensor_mm": 36,
+      "sensor_fit": "horizontal"
      },
-     "render_s": 8.9
+     "render_s": 8.8
     }
    ]
   }

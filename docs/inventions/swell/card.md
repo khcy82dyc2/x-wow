@@ -63,7 +63,7 @@ AI reviews only: fresh Claude agents, not people, and never an expert, independe
 - 2026-10-09: an AI review session reran the download; its points, and what changed, are on the SWELL page ("Tested
   harder").
 - 2026-10-10: three AI reviews of the page and the download, role-playing a builder, a sceptical expansion-microscopy
-  academic and an IP-and-overclaim reader (a fourth reviewed the videos page, not SWELL).
+  academic and an IP-and-overclaim reader (a fourth reviewed the since-removed videos page, not SWELL).
 - 2026-10-10: the charter's expert test, run as an AI review: an AI role-playing a sceptical specialist in expansion and quantitative
   light microscopy. Principle 11: pass with credit, narrow. Principle 12: fail. Closest existing things: Sheard et al.
   2019 (a sarcomere-period expansion factor in expanded heart cells) for the ruler, GelMap (Damstra et al. 2023) for

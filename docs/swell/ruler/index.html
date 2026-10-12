@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" data-title-en="SWELL · swell-ruler · X-WOW" data-title-zh="SWELL · swell-ruler · X-WOW" data-desc-en="The swell-ruler software: how to install it and what it reports from a before-and-after pair of images." data-desc-zh="The swell-ruler software: how to install it and what it reports from a before-and-after pair of images.">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SWELL · swell-ruler · X-WOW</title>
+<meta name="description" content="The swell-ruler software: how to install it and what it reports from a before-and-after pair of images.">
+<meta name="theme-color" content="#05080d">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="SWELL · swell-ruler · X-WOW">
+<meta property="og:description" content="The swell-ruler software: how to install it and what it reports from a before-and-after pair of images.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://x-wow.com/assets/img/og-xwow.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The X-WOW logo, a microscope in a coloured ring, inside a loupe reticle, beside the line: Inventions to steal, happily.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="../../assets/img/brand/apple-touch-icon.png">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>(function(){var d=document.documentElement;/* English only for now (the owner, 2026-10-12): the Chinese text stays in the source, hidden */d.className+=' js';try{if(!/noboot/.test(location.search)&&!/\/shrink\//.test(location.pathname)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
+<script defer src="../../assets/js/site.js"></script>
+<script defer src="../../assets/js/duck.js"></script>
+</head>
+<body data-page="swell-ruler">
+<a class="skip" href="#main"><span class="en">Skip to content</span><span class="zh">跳到正文</span></a>
+<header class="top">
+  <a class="brand" href="../../" aria-label="X-WOW home">
+    <img class="brand-logo" src="../../assets/img/brand/xwow-logo-dark-64.png" srcset="../../assets/img/brand/xwow-logo-dark-64.png 75w, ../../assets/img/brand/xwow-logo-dark-128.png 149w, ../../assets/img/brand/xwow-logo-dark-192.png 224w, ../../assets/img/brand/xwow-logo-dark-288.png 335w" sizes="(max-width: 820px) 56px, 70px" width="70" height="60" alt="X-WOW">
+  </a>
+  <nav class="nav" aria-label="Main">
+    <details class="menu">
+      <summary><span class="en">Menu</span><span class="zh">菜单</span></summary>
+      <div class="menu-links">
+<a href="../../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a>
+<a href="../../swell/" aria-current="page"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
+<a href="../../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
+<a href="../../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
+<a href="../../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
+      </div>
+    </details>
+    <div class="nav-links">
+<a href="../../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a>
+<a href="../../swell/" aria-current="page"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
+<a href="../../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
+<a href="../../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
+<a href="../../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
+    </div>
+  </nav>
+</header>
+<main id="main">
+<nav class="subnav" aria-label="SWELL overview sections"><div class="subnav-in"><a href="../../swell/"><span class="en">SWELL overview</span><span class="zh">SWELL 概览</span></a><a href="../../swell/science/"><span class="en">Science</span><span class="zh">Science</span></a><a href="../../swell/results/"><span class="en">Results</span><span class="zh">Results</span></a><a href="../../swell/parts/"><span class="en">Parts and cost</span><span class="zh">Parts and cost</span></a><a href="../../swell/safety/"><span class="en">Safety and lab</span><span class="zh">Safety and lab</span></a><a href="../../swell/claims/"><span class="en">Claims ledger</span><span class="zh">Claims ledger</span></a><a href="../../swell/ruler/" aria-current="page"><span class="en">swell-ruler</span><span class="zh">swell-ruler</span></a><a href="../../swell/start/"><span class="en">Start here</span><span class="zh">Start here</span></a><a href="../../swell/download/"><span class="en">Download</span><span class="zh">Download</span></a><a href="../../swell/credits/"><span class="en">Credits and licences</span><span class="zh">Credits and licences</span></a></div></nav>
+<section class="block" id="tool">
+<style>
+#tool pre{white-space:pre-wrap;word-break:break-all;font-family:var(--mono);font-size:.85rem;color:var(--text);background:rgba(5,8,13,.6);padding:.6rem .8rem;border-left:2px solid var(--cyan-dim)}
+#tool code{font-family:var(--mono)}
+#tool table.data{min-width:0}
+#tool .hash{font-family:var(--mono);color:var(--gold);word-break:break-all;overflow-wrap:anywhere;font-size:.85rem}
+</style>
+<p class="kicker"><span class="en">The part you can try today</span><span class="zh" lang="zh-Hans">今天就能试的部分</span></p>
+<h2><span class="en">swell-ruler: a proposed chicken-muscle ruler, untested on real images</span><span class="zh" lang="zh-Hans">swell-ruler：一把提议中的"鸡肉标尺"，还没在真实图像上测试过</span></h2>
+<p class="lead en">You don't need the SWELL machine to try its ruler. A lab that already does expansion microscopy could expand a few chicken myofibrils alongside its samples, image them before and after on its own microscope, and get the axial expansion factor of each myofibril long enough to measure (on red-team gel S3, <span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_coverage · true pairs that got an axial ratio (red team&#x27;s scorer)">28%</span> of the true pairs got one), a whole-gel strain map and QC flags (which on S3 caught none of the under- and over-expanded patches). One small Python package, free, no account. It is one more member of a family of in-gel rulers (sarcomeres in Sheard et al. 2019, the GelMap grid of Damstra et al. 2023, nuclear pores, photobleached patterns), not a new kind of QC; no journal-grade test of it exists yet.</p>
+<p class="lead zh" lang="zh-Hans">不需要 SWELL 这台机器，也能试它的标尺。已经在做膨胀显微的实验室，可以在样品旁边一起膨胀几根鸡肉肌原纤维，用自己的显微镜拍膨胀前后的图，得到每一根够长的肌原纤维的轴向膨胀倍数（在红队凝胶 S3 上，真实配对里有 <span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_coverage · true pairs that got an axial ratio (red team&#x27;s scorer)">28%</span> 得到了倍数）、整块凝胶的应变图和质控标记（在 S3 上，它们一处膨胀不足或过度的区域都没标出来）。一个很小的 Python 包，免费，不用注册。它只是"凝胶内标尺"这一家族里的又一员（Sheard 等 2019 用肌节、Damstra 等 2023 的 GelMap 网格、核孔、光漂白图案），不是一种新的质控；目前还没有达到期刊标准的检验。</p>
+
+<div class="table-wrap"><table class="data">
+  <thead><tr><th><span class="en">Red-team gel S3, as the red team scored it</span><span class="zh" lang="zh-Hans">红队凝胶 S3，按红队的评分</span></th><th><span class="en">result</span><span class="zh" lang="zh-Hans">结果</span></th></tr></thead>
+  <tbody>
+    <tr><td><span class="en">gel-mean axial error (median)</span><span class="zh" lang="zh-Hans">整块凝胶平均轴向误差（中位数）</span></td><td><span class="num" title="src/data/swell/strain_map_v2.json: S3.score.gel_mean_E_ax.rel_error_pct · gel-mean axial error, correct matches (red team&#x27;s scorer)">−0.14%</span> (<span class="num" title="src/data/swell/strain_map_v2.json: S3.score.gel_mean_E_ax.median_rel_error_pct · gel-median axial error (red team&#x27;s scorer)">−0.01%</span>)</td></tr>
+    <tr><td><span class="en">per-myofibril axial RMS, on the pairs that got a ratio</span><span class="zh" lang="zh-Hans">每根肌原纤维轴向误差均方根（只算得到比值的配对）</span></td><td><span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.rms · per-myofibril axial RMS error (red team&#x27;s scorer)">1.8%</span> · <span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_coverage · true pairs that got an axial ratio (red team&#x27;s scorer)">28%</span></td></tr>
+    <tr><td><span class="en">transverse ruler bias</span><span class="zh" lang="zh-Hans">横向标尺偏差</span></td><td><b><span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_tr_correct_matches.bias · transverse ruler bias (red team&#x27;s scorer)">−17.8%</span></b></td></tr>
+    <tr><td><span class="en">under- and over-expanded patches flagged</span><span class="zh" lang="zh-Hans">膨胀不足和过度区域被标出</span></td><td><b><span class="num" title="src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[under_expansion] · area of the planted under_expansion region flagged by any flag (red team&#x27;s scorer)">0%</span> · <span class="num" title="src/data/swell/strain_map_v2.json: S3.score.defects.per_defect[over_expansion] · area of the planted over_expansion region flagged by any flag (red team&#x27;s scorer)">0%</span></b></td></tr>
+  </tbody>
+</table></div>
+
+<div class="grid-2">
+  <div class="panel">
+    <h3><span class="en">Install and try</span><span class="zh" lang="zh-Hans">安装和试用</span></h3>
+<pre>python -m pip install "swell-ruler[images,figures] @ https://x-wow.com/downloads/<span class="num" title="src/downloads/swell_ruler-0.1.2-py3-none-any.whl · file name of the swell-ruler wheel">swell_ruler-0.1.2-py3-none-any.whl</span>"
+python -m swell_ruler demo</pre>
+    <p class="en muted">SHA-256 of <span class="num" title="src/downloads/swell_ruler-0.1.2-py3-none-any.whl · file name of the swell-ruler wheel">swell_ruler-0.1.2-py3-none-any.whl</span>, to check a downloaded copy: <span class="hash"><span class="num" title="src/downloads/swell_ruler-0.1.2-py3-none-any.whl · SHA-256 of the wheel; its modules match the zip&#x27;s source byte for byte">f3709576545a05b6dc9dd0ef05ae89bf58f7cc9c9b12fa46f3a9f8eb928e126d</span></span></p>
+    <p class="zh muted" lang="zh-Hans"><span class="num" title="src/downloads/swell_ruler-0.1.2-py3-none-any.whl · file name of the swell-ruler wheel">swell_ruler-0.1.2-py3-none-any.whl</span> 的 SHA‑256 校验值，可用来核对下载的文件：<span class="hash"><span class="num" title="src/downloads/swell_ruler-0.1.2-py3-none-any.whl · SHA-256 of the wheel; its modules match the zip&#x27;s source byte for byte">f3709576545a05b6dc9dd0ef05ae89bf58f7cc9c9b12fa46f3a9f8eb928e126d</span></span></p>
+    <p class="en">The demo draws a synthetic before/after pair with a planted under-expanded patch, measures it and scores each check PASS or FAIL. Today it passes the axial factor and fails the transverse factor and the patch: the same weak spots S3 found. Then run it on your own pair, with your own measured blur widths (PSFs):</p>
+    <p class="zh" lang="zh-Hans">演示会生成一对合成的膨胀前后图像，里面埋了一块膨胀不足的区域，然后测量，并给每一项检查打"通过/不通过"。现在它的轴向倍数通过，横向倍数和那块区域不通过：正是 S3 找到的弱点。接着可以用你自己的图片，并填上你自己测出的模糊宽度（PSF）：</p>
+<pre>python -m swell_ruler images pre.tif post.tif --px-pre 0.194 --px-post 0.194 --e-macro 4.5 --pre-mode dpc --psf-pre 0.55 --psf-post 0.41</pre>
+    <p class="en muted">Needs Python 3.9+ (NumPy, SciPy and Pillow come with it). It is not on PyPI, so install it from this link or from the <a href="../../swell/download/#download">SWELL download</a>, which has the source, tests and data format.</p>
+    <p class="zh muted" lang="zh-Hans">需要 Python 3.9 以上（NumPy、SciPy 和 Pillow 会一起装上）。它不在 PyPI 上，请用这个链接安装，或者用 <a href="../../swell/download/#download">SWELL 下载包</a>，里面有源码、测试和数据格式。</p>
+  </div>
+  <div class="panel">
+    <h3><span class="en">What it reports</span><span class="zh" lang="zh-Hans">它会报告什么</span></h3>
+    <ul class="en">
+      <li><b>Axial factor</b> per myofibril: post ÷ pre sarcomere period, fitted on the post image's own Z-disc ladder. On S3 the gel-level average held up; per-myofibril precision did not (<span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.rms · per-myofibril axial RMS error (red team&#x27;s scorer)">1.8%</span> RMS).</li>
+      <li><b>Transverse factor</b>: post ÷ pre width. Biased on S3 by a blur shape it does not model, even with the right blur widths.</li>
+      <li><b>Landmark factor</b>: from neighbours' positions, no calibration needed.</li>
+      <li><b>Maps and flags</b>: local expansion, fibril vs gel, gel stretch, tears and folds, places with no partner. On S3 they caught the bubble and most of the fold, but none of the under- or over-expanded patches.</li>
+      <li><b>Anisotropy</b> is reported only beyond ±1%, and no call is made while the transverse and landmark rulers disagree by more than 3%.</li>
+      <li><b>No expansion yet?</b> <code>stripes</code> checks whether your label-free images carry enough striation contrast (go if q ≥ <span class="num" title="src/data/swell/preimage_v1.json: q_go[&#x27;10&#x27;].rms_1pct · q = m·√N for 1% per-fibril error at 10 sarcomeres">1.2</span>, rescaled to 0.194 µm pixels).</li>
+    </ul>
+    <ul class="zh" lang="zh-Hans">
+      <li><b>轴向倍数</b>（每根肌原纤维）：膨胀后与膨胀前的肌节周期之比，用膨胀后图像自己的 Z 盘"梯子"拟合。在 S3 上，整块凝胶的平均值扛住了，每根纤维的精度没有（均方根 <span class="num" title="src/data/swell/strain_map_v2.json: S3.score.E_ax_correct_matches.rms · per-myofibril axial RMS error (red team&#x27;s scorer)">1.8%</span>）。</li>
+      <li><b>横向倍数</b>：膨胀前后的宽度之比。在 S3 上，即使给对了模糊宽度，也被一种它没建模的模糊形状带偏了。</li>
+      <li><b>地标倍数</b>：由周围纤维的位置算出，不需要标定。</li>
+      <li><b>图和标记</b>：局部膨胀、纤维与凝胶是否一致、凝胶被拉伸、撕裂和折叠、找不到配对的地方。在 S3 上抓到了气泡和大部分折叠，但膨胀不足和过度的区域一个都没抓到。</li>
+      <li><b>各向异性</b>超过 ±1% 才报告；横向标尺和地标标尺相差超过 3% 时，不下结论。</li>
+      <li><b>还没做膨胀？</b><code>stripes</code> 能先检查你的免标记图像条纹反差够不够（q ≥ <span class="num" title="src/data/swell/preimage_v1.json: q_go[&#x27;10&#x27;].rms_1pct · q = m·√N for 1% per-fibril error at 10 sarcomeres">1.2</span> 就可以继续，按 0.194 µm 像素换算）。</li>
+    </ul>
+  </div>
+</div>
+<p class="en"><span class="tag sim">simulated</span> Tested on synthetic gels only, including a red-team gel built by a separate AI agent (see <a href="../../swell/results/#tested">Tested harder</a>). It has never seen a real micrograph, and its image front-end is deliberately simple, so check what it detects. Before anyone should trust it: real before/after gels in two chemistries, agreement with an independent in-gel reporter such as a GelMap grid in the same gel, and a fresh blind test.</p>
+<p class="zh" lang="zh-Hans"><span class="tag sim">模拟</span>只在合成凝胶上测试过，其中包括一块由另一个 AI 智能体造的"红队"凝胶（见<a href="../../swell/results/#tested">更严的考试</a>）。它还没见过一张真实的显微照片，图像前端也故意做得很简单，所以请检查它找到的东西。要让人信它，还需要：两种化学方法下的真实膨胀前后凝胶、在同一块凝胶里和独立的标尺（比如 GelMap 网格）对得上，以及一次新的盲测。</p>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="foot-grid">
+    <div class="fc">
+      <img class="foot-logo" src="../../assets/img/brand/xwow-logo-dark-128.png" srcset="../../assets/img/brand/xwow-logo-dark-64.png 75w, ../../assets/img/brand/xwow-logo-dark-128.png 149w, ../../assets/img/brand/xwow-logo-dark-192.png 224w, ../../assets/img/brand/xwow-logo-dark-288.png 335w" sizes="112px" width="112" height="96" alt="X-WOW" loading="lazy">
+      <p><span class="en">Inventions to steal, happily.</span><span class="zh">好发明，开心偷。</span></p>
+    </div>
+    <nav class="fc" aria-label="Explore">
+      <p class="fc-h"><span class="en">Explore</span><span class="zh">探索</span></p>
+      <ul>
+        <li><a href="../../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a></li>
+        <li><a href="../../swell/">SWELL</a></li>
+        <li><a href="../../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a></li>
+        <li><a href="../../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a></li>
+        <li><a href="../../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a></li>
+      </ul>
+    </nav>
+    <nav class="fc" aria-label="About and legal">
+      <p class="fc-h"><span class="en">About &amp; legal</span><span class="zh">关于与法律</span></p>
+      <ul>
+        <li><a href="../../terms/"><span class="en">Terms of use</span><span class="zh">使用条款</span></a></li>
+        <li><a href="../../privacy/"><span class="en">Privacy</span><span class="zh">隐私</span></a></li>
+        <li><a href="../../safety/"><span class="en">Safety</span><span class="zh">安全</span></a></li>
+        <li><a href="../../licences/"><span class="en">Licences &amp; trade marks</span><span class="zh">许可与商标</span></a></li>
+        <li><a href="../../accessibility/"><span class="en">Accessibility</span><span class="zh">无障碍</span></a></li>
+        <li><a href="../../about-ai/"><span class="en">Made by an AI</span><span class="zh">由 AI 制作</span></a></li>
+      </ul>
+    </nav>
+    <div class="fc">
+      <p class="fc-h"><span class="en">Contact</span><span class="zh">联系</span></p>
+      <ul>
+        <li><a href="mailto:info@x-wow.com">info@x-wow.com</a></li>
+        <li><a href="https://x.com/X_WowCom" target="_blank" rel="noopener">@X_WowCom <span class="en">on X</span><span class="zh">（X）</span></a></li>
+        <li><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener"><span class="en">Site source on GitHub</span><span class="zh">网站源码（GitHub）</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p><span class="en">X-WOW · our own text, data and code CC0 1.0; hardware CERN-OHL-P v2; quotations and third-party code keep their own licences (<a href="../../licences/">details</a>) · the X-WOW name and logo are trade marks; the logo is UK registered trade mark UK00003425680 · no cookies, no tracking</span><span class="zh">X-WOW · 我们自己的文字、数据和代码采用 CC0 1.0；硬件 CERN-OHL-P v2；引文和第三方代码保留各自的许可 · X-WOW 的名称和标志是商标，标志是英国注册商标 UK00003425680 · 无 cookie、无追踪</span></p>
+  </div>
+</footer>
+</body>
+</html>

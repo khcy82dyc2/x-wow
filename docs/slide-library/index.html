@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="../assets/img/brand/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
 <link rel="stylesheet" href="../assets/css/site.css">
-<script>(function(){var d=document.documentElement,l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('xwow-lang');}catch(e){}if(!l){l=/^zh/i.test(navigator.language||'')?'zh':'en';}if(l==='zh'){d.setAttribute('data-lang','zh');d.lang='zh-Hans';document.title=d.getAttribute('data-title-zh');}d.className+=' js';try{if(!/noboot/.test(location.search)&&!/\/shrink\//.test(location.pathname)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
+<script>(function(){var d=document.documentElement;/* English only for now (the owner, 2026-10-12): the Chinese text stays in the source, hidden */d.className+=' js';try{if(!/noboot/.test(location.search)&&!/\/shrink\//.test(location.pathname)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
 <script defer src="../assets/js/site.js"></script>
 <script defer src="../assets/js/duck.js"></script>
 </head>
@@ -37,7 +37,6 @@
 <a href="../swell/"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
 <a href="../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
 <a href="../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
-<a href="../videos/"><span class="en">Videos</span><span class="zh">视频</span></a>
 <a href="../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
       </div>
     </details>
@@ -46,13 +45,12 @@
 <a href="../swell/"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
 <a href="../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
 <a href="../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
-<a href="../videos/"><span class="en">Videos</span><span class="zh">视频</span></a>
 <a href="../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
     </div>
   </nav>
-  <button class="lang" id="lang-toggle" type="button" aria-label="切换到中文 / Switch to English"><span class="en">中文</span><span class="zh">EN</span></button>
 </header>
 <main id="main">
+
 <section class="block" id="sl-hero">
   <p class="kicker"><span class="en">Digital slides · free · no microscope needed</span><span class="zh" lang="zh-Hans">数字切片 · 免费 · 不需要显微镜</span></p>
   <h2><span class="en">Akpan's Slide Library</span><span class="zh" lang="zh-Hans">Akpan 的切片库</span></h2>
@@ -183,9 +181,11 @@
   <p class="zh" lang="zh-Hans">想给自己的课堂做这样的切片？一台带相机的显微镜加上拼接软件就能做；<a href="../slide-scanner/">切片扫描仪页面</a>写了现在谁在做这类软件。</p>
 </section>
 
-<section class="block" id="corrections">
-  <details class="more">
-    <summary><span class="en">Corrections · 10 October 2026</span><span class="zh" lang="zh-Hans">更正 · 2026 年 10 月 10 日</span></summary>
+<section class="page-history" id="corrections" aria-label="Page history">
+<details>
+  <summary><span class="en">Page history: 2 dated changes, the latest on 10 October 2026</span><span class="zh" lang="zh-Hans">页面修改记录：2 条，最近一次 2026 年 10 月 10 日</span></summary>
+  <details class="ph-day">
+    <summary><span class="en">10 October 2026</span><span class="zh" lang="zh-Hans">2026 年 10 月 10 日</span></summary>
     <ul class="en">
       <li>One slide, a kidney section whose label names no species, is held back until its species is confirmed. So the library now lists <span class="num" title="src/data/slides/easyzoom-2026-10-10.json (the image host&#x27;s public metadata, read 2026-10-10) · slides linked on the page">13</span> slides and about <span class="num" title="src/data/slides/easyzoom-2026-10-10.json (the image host&#x27;s public metadata, read 2026-10-10) · sum of width × height, in billions of pixels">3.0</span> billion pixels, not 14 slides and 3.2 billion.</li>
       <li>"Live, checked 9 Oct 2026" was tagged "verified". An AI checked the links that day, and the tag now says so.</li>
@@ -195,33 +195,48 @@
       <li>“在线，2026-10-09 已核实”原来标的是“已核实”。其实是那天由 AI 检查了链接，标签现在这样写明。</li>
     </ul>
   </details>
+</details>
 </section>
 
 </main>
 <footer class="foot">
   <div class="foot-grid">
-    <div>
+    <div class="fc">
       <img class="foot-logo" src="../assets/img/brand/xwow-logo-dark-128.png" srcset="../assets/img/brand/xwow-logo-dark-64.png 75w, ../assets/img/brand/xwow-logo-dark-128.png 149w, ../assets/img/brand/xwow-logo-dark-192.png 224w, ../assets/img/brand/xwow-logo-dark-288.png 335w" sizes="112px" width="112" height="96" alt="X-WOW" loading="lazy">
-      <p class="en">Inventions to steal, happily. Everything here is free to build, change and claim. We claim nothing, but can't promise that nobody else holds a patent.</p>
-      <p class="zh">好发明，开心偷。这里的一切都可以免费造、随便改，成功算你的。我们什么都不主张，但不能保证别人没有相关专利。</p>
+      <p><span class="en">Inventions to steal, happily.</span><span class="zh">好发明，开心偷。</span></p>
     </div>
-    <div>
-      <p class="kicker"><span class="en">Licences</span><span class="zh">许可</span></p>
-      <p class="en">Text, data and code: CC0 1.0, except quotations, which stay their authors'. Hardware designs: CERN-OHL-P v2. The X-WOW name and logo are trade marks, not covered by either licence; the logo is a registered UK trade mark (UK00003425680). Third-party code (three.js, OpenSeadragon, PMTiles, fflate) keeps its own MIT or BSD licence. <a href="../swell/#legal">Details and patent notes</a>.</p>
-      <p class="zh">文字、数据、代码：CC0 1.0（引文除外，仍归原作者）；硬件设计：CERN-OHL-P v2。X-WOW 的名称和标志是商标，不在这两个许可之内；标志是英国注册商标（UK00003425680）。第三方代码（three.js、OpenSeadragon、PMTiles、fflate）保留各自的 MIT 或 BSD 许可。<a href="../swell/#legal">详情与专利提示</a>。</p>
+    <nav class="fc" aria-label="Explore">
+      <p class="fc-h"><span class="en">Explore</span><span class="zh">探索</span></p>
+      <ul>
+        <li><a href="../inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a></li>
+        <li><a href="../swell/">SWELL</a></li>
+        <li><a href="../shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a></li>
+        <li><a href="../back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a></li>
+        <li><a href="../#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a></li>
+      </ul>
+    </nav>
+    <nav class="fc" aria-label="About and legal">
+      <p class="fc-h"><span class="en">About &amp; legal</span><span class="zh">关于与法律</span></p>
+      <ul>
+        <li><a href="../terms/"><span class="en">Terms of use</span><span class="zh">使用条款</span></a></li>
+        <li><a href="../privacy/"><span class="en">Privacy</span><span class="zh">隐私</span></a></li>
+        <li><a href="../safety/"><span class="en">Safety</span><span class="zh">安全</span></a></li>
+        <li><a href="../licences/"><span class="en">Licences &amp; trade marks</span><span class="zh">许可与商标</span></a></li>
+        <li><a href="../accessibility/"><span class="en">Accessibility</span><span class="zh">无障碍</span></a></li>
+        <li><a href="../about-ai/"><span class="en">Made by an AI</span><span class="zh">由 AI 制作</span></a></li>
+      </ul>
+    </nav>
+    <div class="fc">
+      <p class="fc-h"><span class="en">Contact</span><span class="zh">联系</span></p>
+      <ul>
+        <li><a href="mailto:info@x-wow.com">info@x-wow.com</a></li>
+        <li><a href="https://x.com/X_WowCom" target="_blank" rel="noopener">@X_WowCom <span class="en">on X</span><span class="zh">（X）</span></a></li>
+        <li><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener"><span class="en">Site source on GitHub</span><span class="zh">网站源码（GitHub）</span></a></li>
+      </ul>
     </div>
-    <div>
-      <p class="kicker"><span class="en">Made by an AI</span><span class="zh">AI 制作</span></p>
-      <p class="en">This site&#x27;s text and code, and SWELL, were made by an AI (Claude, made by Anthropic) working from the owner&#x27;s brief and orders; the archives are X-WOW&#x27;s earlier projects. SWELL has not been built yet. <a href="../swell/#ai">How</a>.</p>
-      <p class="zh">本站的文字和代码，以及 SWELL，都是 AI（Anthropic 的 Claude）按网站主人的要求和指令做的；各个存档是 X-WOW 以前的项目。SWELL 还没有人造出来。<a href="../swell/#ai">怎么做的</a>。</p>
-    </div>
-    <div>
-      <p class="kicker"><span class="en">Open</span><span class="zh">公开</span></p>
-      <p class="en"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">Site source on GitHub</a> · no cookies, no tracking. <a href="../privacy/">Privacy</a>.</p>
-      <p class="zh"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">网站源码在 GitHub</a> · 无 cookie、无追踪。<a href="../privacy/">隐私说明</a>。</p>
-      <p class="en">Questions or corrections: <a href="mailto:info@x-wow.com">info@x-wow.com</a>.</p>
-      <p class="zh">问题或更正：<a href="mailto:info@x-wow.com">info@x-wow.com</a>。</p>
-    </div>
+  </div>
+  <div class="foot-bottom">
+    <p><span class="en">X-WOW · our own text, data and code CC0 1.0; hardware CERN-OHL-P v2; quotations and third-party code keep their own licences (<a href="../licences/">details</a>) · the X-WOW name and logo are trade marks; the logo is UK registered trade mark UK00003425680 · no cookies, no tracking</span><span class="zh">X-WOW · 我们自己的文字、数据和代码采用 CC0 1.0；硬件 CERN-OHL-P v2；引文和第三方代码保留各自的许可 · X-WOW 的名称和标志是商标，标志是英国注册商标 UK00003425680 · 无 cookie、无追踪</span></p>
   </div>
 </footer>
 </body>

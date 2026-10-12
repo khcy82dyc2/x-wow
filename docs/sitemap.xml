@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://x-wow.com/about-ai/</loc></url>
+  <url><loc>https://x-wow.com/accessibility/</loc></url>
   <url><loc>https://x-wow.com/back-to-shine/</loc></url>
   <url><loc>https://x-wow.com/</loc></url>
   <url><loc>https://x-wow.com/inventions/</loc></url>
   <url><loc>https://x-wow.com/kids-club/</loc></url>
   <url><loc>https://x-wow.com/lectures/</loc></url>
+  <url><loc>https://x-wow.com/licences/</loc></url>
   <url><loc>https://x-wow.com/pathology4kids/</loc></url>
   <url><loc>https://x-wow.com/privacy/</loc></url>
+  <url><loc>https://x-wow.com/safety/</loc></url>
   <url><loc>https://x-wow.com/shrink/</loc></url>
   <url><loc>https://x-wow.com/slide-library/</loc></url>
   <url><loc>https://x-wow.com/slide-scanner/</loc></url>
   <url><loc>https://x-wow.com/swell/</loc></url>
-  <url><loc>https://x-wow.com/videos/</loc></url>
+  <url><loc>https://x-wow.com/swell/claims/</loc></url>
+  <url><loc>https://x-wow.com/swell/credits/</loc></url>
+  <url><loc>https://x-wow.com/swell/download/</loc></url>
+  <url><loc>https://x-wow.com/swell/parts/</loc></url>
+  <url><loc>https://x-wow.com/swell/results/</loc></url>
+  <url><loc>https://x-wow.com/swell/ruler/</loc></url>
+  <url><loc>https://x-wow.com/swell/safety/</loc></url>
+  <url><loc>https://x-wow.com/swell/science/</loc></url>
+  <url><loc>https://x-wow.com/swell/start/</loc></url>
+  <url><loc>https://x-wow.com/terms/</loc></url>
 </urlset>

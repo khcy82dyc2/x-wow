@@ -295,7 +295,9 @@ def finish(model: str, data: dict, info: dict, work: Path, blender: Path, views:
                           f"It shows {k} of the model's {n} parts, at least in part.",
                     "zh": f"渲染概念图，不是照片：{title_zh} 概念模型，{a['zh']}，放在朴素的深色地面上。画面里能看到模型 {n} 个部件中的 {k} 个（至少看到一部分）。"},
             "visible": v["visible"], "width": w0, "height": h0, "files": files,
-            "camera": {"azimuth_deg": v["az"], "elevation_deg": v["el"], "distance_m": v["distance_m"]},
+            "camera": {"azimuth_deg": v["az"], "elevation_deg": v["el"], "distance_m": v["distance_m"],
+                       "target_cm": v["target_cm"], "shift_x": v["shift_x"], "shift_y": v["shift_y"],
+                       "lens_mm": info["lens_mm"], "sensor_mm": 36, "sensor_fit": "horizontal"},
             "render_s": v["render_s"],
         })
         print(f"finish: {vid}: {k}/{n} parts visible; "

@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="./assets/img/brand/apple-touch-icon.png">
 <link rel="manifest" href="./site.webmanifest">
 <link rel="stylesheet" href="./assets/css/site.css">
-<script>(function(){var d=document.documentElement,l;try{l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('xwow-lang');}catch(e){}if(!l){l=/^zh/i.test(navigator.language||'')?'zh':'en';}if(l==='zh'){d.setAttribute('data-lang','zh');d.lang='zh-Hans';document.title=d.getAttribute('data-title-zh');}d.className+=' js';try{if(!/noboot/.test(location.search)&&!/\/shrink\//.test(location.pathname)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
+<script>(function(){var d=document.documentElement;/* English only for now (the owner, 2026-10-12): the Chinese text stays in the source, hidden */d.className+=' js';try{if(!/noboot/.test(location.search)&&!/\/shrink\//.test(location.pathname)&&!sessionStorage.getItem('xwow-booted')&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))d.className+=' boot-pending';}catch(e){}})();</script>
 <script defer src="./assets/js/site.js"></script>
 <script defer src="./assets/js/duck.js"></script>
 </head>
@@ -37,7 +37,6 @@
 <a href="./swell/"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
 <a href="./shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
 <a href="./back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
-<a href="./videos/"><span class="en">Videos</span><span class="zh">视频</span></a>
 <a href="./#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
       </div>
     </details>
@@ -46,13 +45,12 @@
 <a href="./swell/"><span class="en">SWELL</span><span class="zh">SWELL</span></a>
 <a href="./shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a>
 <a href="./back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a>
-<a href="./videos/"><span class="en">Videos</span><span class="zh">视频</span></a>
 <a href="./#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a>
     </div>
   </nav>
-  <button class="lang" id="lang-toggle" type="button" aria-label="切换到中文 / Switch to English"><span class="en">中文</span><span class="zh">EN</span></button>
 </header>
 <main id="main">
+
 <section class="block hero" id="top">
   <svg class="reticle" viewBox="0 0 400 400" aria-hidden="true">
     <g fill="none" stroke="#4fd8ff">
@@ -72,13 +70,13 @@
   <p class="lead zh" lang="zh-Hans">看得更近的办法，以及做出这些工具的办法：没有门槛，免费送出。谁造出来，成功就算谁的。</p>
   <p>
     <a class="btn gold" href="./swell/"><span class="en">Invention #1: SWELL</span><span class="zh" lang="zh-Hans">发明 #1：SWELL</span></a>
-    <a class="btn" href="./swell/#start-here"><span class="en">Measure a chicken with a laser</span><span class="zh" lang="zh-Hans">用激光量一量鸡肉</span></a>
+    <a class="btn" href="./swell/start/#start-here"><span class="en">Measure a chicken with a laser</span><span class="zh" lang="zh-Hans">用激光量一量鸡肉</span></a>
     <a class="btn ghost" href="#manifesto"><span class="en">Why free?</span><span class="zh" lang="zh-Hans">为什么免费？</span></a>
   </p>
   <aside class="loupe">
     <p class="en">Bench status: one invention, designed on paper and simulated, never built. The first person to build it gets the credit.</p>
     <p class="zh" lang="zh-Hans">工作台状态：一件发明，纸上设计、已模拟，尚未有人造出。第一个造出来的人，功劳归你。</p>
-    <p class="home-spark"><span class="en">Newest spark (2026-10-11): <b>Swing scale for hidden mass</b>. Hang an object on three strings and time how it twists: the timing tells how its mass is spread around its middle. <a href="./inventions/#sparks">All 10 sparks</a></span><span class="zh">最新火花（2026-10-11）：<b>看见隐藏质量的秋千秤</b>。用三根线把东西吊起来，记下它来回扭转的时间：这个时间能告诉你它的质量是怎样围绕中心分布的。 <a href="./inventions/#sparks">全部 10 个火花</a></span></p>
+    <p class="home-spark"><span class="en">Newest spark (2026-10-11): <b>Heat-map paper</b>. A liquid-crystal sheet changes colour with temperature, so it paints heat as a picture: a fading handprint, or a leaf kept cool by its own evaporation. <a href="./inventions/#sparks">All 10 sparks</a></span><span class="zh">最新火花（2026-10-11）：<b>热成像纸</b>。液晶片会随温度变色，把热量画成一幅图：慢慢消失的手印，或者靠自己蒸发水分保持凉爽的叶子。 <a href="./inventions/#sparks">全部 10 个火花</a></span></p>
   </aside>
 </section>
 
@@ -126,7 +124,7 @@
       <p class="grow en">An automated expansion microscope, designed to be cheap. Swell a sample a few times bigger, image it with modest optics, and let the muscle's own stripes check the result.</p>
       <p class="grow zh" lang="zh-Hans">一台以低成本为目标设计的全自动膨胀显微镜：把样本泡大几倍，用普通的镜头拍，再用肌肉自带的条纹当尺子检查结果。</p>
       <div class="ebar compact" role="group" aria-label="Evidence bar: stage 4 of 7"><ol class="ebar-steps"><li class="done desk" title="a public page with the problem, the idea and its sources"><span class="en">Idea</span><span class="zh">想法</span></li><li class="partial desk" title="5 of 9 design pieces written: ✓ concept and calculations; ✓ optics on paper; ✓ bill of materials (most lines not yet priced); ✓ QC pipeline and strain map; ✓ pre-image design; ✗ wet-lab protocol; ✗ safety pack; ✗ mechanical CAD; ✗ instrument software"><span class="en">Designed</span><span class="zh">设计</span></li><li class="partial desk" title="47 simulated checks pass, 1 fail, 1 below the detection limit (synthetic gels)"><span class="en">Simulated</span><span class="zh">模拟</span></li><li class="partial desk now" title="a red-team gel built by a separate AI agent, scored by the red team&#x27;s own script and published as scored: 4 of 7 headline checks pass (✓ pairing; ✓ debris rejected; ✓ gel-mean axial factor; ✗ per-myofibril axial precision ≤ 1%; ✗ transverse ruler and anisotropy call; ✗ planted defects flagged; ✓ false flags ≤ 5%)"><span class="en">Red-teamed</span><span class="zh">红队检验</span></li><li class="none world" title="0 of 2 ruler rungs (2: see the stripes, 3: fragment lengths) passed by a checked report; rung 1 (a laser on chicken) is a warm-up and does not count (0 of 3 home rungs passed in all)"><span class="en">Bench-tested</span><span class="zh">台面实测</span></li><li class="none world" title="0 checked report(s) of a working build by someone else"><span class="en">Built by someone else</span><span class="zh">别人造出来</span></li><li class="none world" title="0 independent rebuild(s) passing the same QC thresholds"><span class="en">Rebuilt independently</span><span class="zh">独立复现</span></li></ol><p class="ebar-now"><span class="en">Stage 4 of 7 reached: <b>Red-teamed</b>, on the desk. Only partly done: designed, simulated, red-teamed. Next: rung 2 of the evidence ladder: see the stripes under any 40× microscope.</span><span class="zh">到达第 4 级（共 7 级）：<b>红队检验</b>，还在纸面上。其中只完成了一部分的：设计、模拟、红队检验。下一步：证据阶梯第 2 级：用任何 40 倍显微镜看见条纹。</span></p><p class="ebar-link"><a href="./swell/#evidence"><span class="en">What the bar is made of</span><span class="zh">这条进度由什么构成</span></a></p></div>
-      <p><a class="btn gold" href="./swell/"><span class="en">Open SWELL</span><span class="zh" lang="zh-Hans">打开 SWELL</span></a><a class="btn" href="./swell/#start-here"><span class="en">Measure a chicken with a laser</span><span class="zh" lang="zh-Hans">用激光量一量鸡肉</span></a></p>
+      <p><a class="btn gold" href="./swell/"><span class="en">Open SWELL</span><span class="zh" lang="zh-Hans">打开 SWELL</span></a><a class="btn" href="./swell/start/#start-here"><span class="en">Measure a chicken with a laser</span><span class="zh" lang="zh-Hans">用激光量一量鸡肉</span></a></p>
     </article>
     <article class="panel card">
       <span class="idx">+</span>
@@ -147,6 +145,7 @@
 <section class="block" id="origin">
   <p class="kicker"><span class="en">Origin</span><span class="zh" lang="zh-Hans">起源</span></p>
   <h2><span class="en">From Pathology Without Borders to borderless invention</span><span class="zh" lang="zh-Hans">从无国界病理，到无国界发明</span></h2>
+  <details class="more fold" id="origin-more"><summary><span class="en">Read the origin story</span><span class="zh" lang="zh-Hans">读一读起源</span></summary>
   <div class="lead">
     <p class="en">X-WOW began as the Pathology Without Borders Initiative. From December 2018 its founder found microscopes new homes with people who needed them, seven by the old site's count, and began asking labs for the retired ones gathering dust. In 2019, kind people chipped in for a low-cost slide scanner, so doctors treating children with cancer in Malawi could share slides with colleagues 7,400 miles away. A microbiology student in Abuja told the founder that most students around him never touch a real microscope. So scanned biology slides went online, named after him, and he went on to start a kids' science club. When classrooms closed in 2020, scientists gave free online lectures to students across Africa and beyond, part-funded by the Royal College of Pathologists' Public Engagement Grant.</p>
     <p class="zh" lang="zh-Hans">X-WOW 最早叫“无国界病理”计划。从 2018 年 12 月起，X-WOW 的创办人给显微镜找新家，送到需要的人手里，按旧网站的统计一共七台；也开始向实验室讨要那些在角落吃灰的退役显微镜。2019 年，一群好心人凑钱买了一套便宜的切片扫描系统，让马拉维给孩子看癌症的医生，能把切片发给 7,400 英里外的同行一起看。阿布贾一位学微生物的大学生告诉创办人，他身边的同学大多从没碰过真正的显微镜。于是扫描好的生物切片被放到网上，用他的名字命名；后来他自己办起了儿童科学俱乐部。2020 年教室关门，科学家们为非洲和世界各地的学生开了免费网课，部分经费来自英国皇家病理学家学会的公众参与基金。</p>
@@ -157,13 +156,14 @@
     <p class="en">Inputs, 2018–2020: seven microscopes, one scanner, a season of free lectures. The numbers were small; the lesson was not.</p>
     <p class="zh" lang="zh-Hans">2018–2020 年的投入：七台显微镜、一台扫描仪、一季免费讲座。数字不大，学到的东西不小。</p>
   </aside>
+  </details>
 </section>
 
 <section class="block" id="archive">
   <p class="kicker"><span class="en">From the archive</span><span class="zh" lang="zh-Hans">旧档案</span></p>
   <h2><span class="en">What came before</span><span class="zh" lang="zh-Hans">之前做过的事</span></h2>
-  <p class="lead en">From 2018 to 2022, X-WOW ran lectures, a kids' science club, free teaching material and science videos, and shared digital slides and a slide scanner. These pages keep the record and credit the people who made it happen.</p>
-  <p class="lead zh" lang="zh-Hans">2018 到 2022 年间，X-WOW 办过讲座、儿童科学俱乐部，做过免费教材和科学视频，也分享过数字切片和切片扫描仪。这些页面留下记录，也感谢让这一切发生的人。</p>
+  <p class="lead en">From 2018 to 2020, X-WOW ran lectures, a kids' science club and free teaching material, and shared digital slides and a slide scanner. These pages keep the record and credit the people who made it happen.</p>
+  <p class="lead zh" lang="zh-Hans">2018 到 2020 年间，X-WOW 办过讲座、儿童科学俱乐部，做过免费教材，也分享过数字切片和切片扫描仪。这些页面留下记录，也感谢让这一切发生的人。</p>
   <div class="grid-3">
     <a class="panel card" href="./slide-library/" style="text-decoration:none;color:inherit">
       <span class="idx">2018–2019</span>
@@ -192,12 +192,6 @@
       <p class="grow en">A past collaboration, and who makes the software now.</p>
       <p class="grow zh" lang="zh-Hans">一段过去的合作，以及现在谁在做这类软件。</p>
     </a>
-    <a class="panel card" href="./videos/" style="text-decoration:none;color:inherit">
-      <span class="idx"><span class="num" title="YouTube Data API videos.list, publish dates read 2026-10-10 (public on each video&#x27;s YouTube page; tools/numbers_videos.py) · the shortest span of whole years holding at least 90% of the dated videos">2021–2022</span></span>
-      <h3><span class="en">Science videos</span><span class="zh" lang="zh-Hans">科学视频</span></h3>
-      <p class="grow en">Science videos: real lab kit, played for laughs, to get kids into science. What worked and what didn't.</p>
-      <p class="grow zh" lang="zh-Hans">科学视频：真正的实验设备，用搞笑的方式讲，让孩子走近科学。成了什么，没成什么。</p>
-    </a>
     <a class="panel card" href="./back-to-shine/" style="text-decoration:none;color:inherit">
       <span class="idx">2018–2020</span>
       <h3><span class="en">Back to Shine</span><span class="zh" lang="zh-Hans">旧仪器再发光</span></h3>
@@ -207,9 +201,16 @@
   </div>
 </section>
 
-<section class="block" id="corrections">
-  <details class="more">
-    <summary><span class="en">Corrections · 11 October 2026</span><span class="zh" lang="zh-Hans">更正 · 2026 年 10 月 11 日</span></summary>
+<section class="page-history" id="corrections" aria-label="Page history">
+<details>
+  <summary><span class="en">Page history: 14 dated changes, the latest on 12 October 2026</span><span class="zh" lang="zh-Hans">页面修改记录：14 条，最近一次 2026 年 10 月 12 日</span></summary>
+  <details class="ph-day">
+    <summary><span class="en">12 October 2026</span><span class="zh" lang="zh-Hans">2026 年 10 月 12 日</span></summary>
+    <ul class="en"><li>The Archive's opening line said X-WOW's projects ran "from 2018 to 2022" and included science videos. The science-videos page has been taken off the site, and the only source for 2022 went with it, so the line again says 2018 to 2020, as it did before 11 October.</li><li>The footer is shorter. Its licence line now names what isn't CC0 (hardware under CERN-OHL-P v2, quotations, third-party code) and links to a Licences page; it says the site was made by an AI. The long texts moved to their own pages: Licences and trade marks, Made by an AI, Terms of use, Safety, Accessibility.</li></ul>
+    <ul class="zh" lang="zh-Hans"><li>“旧档案”开头那句原来说 X-WOW 的项目从“2018 到 2022 年”，还包括科学视频。科学视频页面已从网站撤下，2022 年唯一的来源也一起撤了，所以这句话又改回 2018 到 2020 年，和 10 月 11 日之前一样。</li><li>页脚变短了。许可那一行现在写明哪些不是 CC0（硬件用 CERN-OHL-P v2、引文、第三方代码），并链接到“许可与商标”页面；也写明网站由 AI 制作。原来的长段文字搬到了各自的页面：许可与商标、由 AI 制作、使用条款、安全、无障碍。</li></ul>
+  </details>
+  <details class="ph-day">
+    <summary><span class="en">11 October 2026</span><span class="zh" lang="zh-Hans">2026 年 10 月 11 日</span></summary>
     <ul class="en">
       <li>The download panel said "Text, data and code are CC0". The download also holds official licence texts and quotations, which keep their own terms, and the X-WOW name and logo are excluded; the panel now says so.</li>
       <li>The footer on every page said "This site and SWELL were made with AI assistance". An AI did that work, from the owner&#x27;s brief and orders, as SWELL&#x27;s AI section already said; the footer now says so, and adds that the archives are X-WOW&#x27;s earlier projects.</li>
@@ -227,8 +228,8 @@
       <li>SWELL 的卡片原来写“一台便宜的全自动膨胀显微镜”，“用便宜的镜头拍”。它的大多数零件还没查到价格，这一点其实并不知道，所以现在改说 SWELL 的设计目标是低成本、用普通的镜头。</li>
     </ul>
   </details>
-  <details class="more">
-    <summary><span class="en">Corrections · 10 October 2026</span><span class="zh" lang="zh-Hans">更正 · 2026 年 10 月 10 日</span></summary>
+  <details class="ph-day">
+    <summary><span class="en">10 October 2026</span><span class="zh" lang="zh-Hans">2026 年 10 月 10 日</span></summary>
     <p class="en">Claims this page made in public, corrected. Nothing is changed silently; earlier versions stay in the site's public history on GitHub.</p>
     <p class="zh" lang="zh-Hans">这一页公开说过、现在更正的内容。我们不悄悄改动；旧版本留在网站在 GitHub 上的公开历史里。</p>
     <ul class="en">
@@ -248,33 +249,48 @@
       <li>SWELL 卡片上的“免费，随便造”现在改为“免费拿走”：照这些文件还造不出这台仪器。</li>
     </ul>
   </details>
+</details>
 </section>
 
 </main>
 <footer class="foot">
   <div class="foot-grid">
-    <div>
+    <div class="fc">
       <img class="foot-logo" src="./assets/img/brand/xwow-logo-dark-128.png" srcset="./assets/img/brand/xwow-logo-dark-64.png 75w, ./assets/img/brand/xwow-logo-dark-128.png 149w, ./assets/img/brand/xwow-logo-dark-192.png 224w, ./assets/img/brand/xwow-logo-dark-288.png 335w" sizes="112px" width="112" height="96" alt="X-WOW" loading="lazy">
-      <p class="en">Inventions to steal, happily. Everything here is free to build, change and claim. We claim nothing, but can't promise that nobody else holds a patent.</p>
-      <p class="zh">好发明，开心偷。这里的一切都可以免费造、随便改，成功算你的。我们什么都不主张，但不能保证别人没有相关专利。</p>
+      <p><span class="en">Inventions to steal, happily.</span><span class="zh">好发明，开心偷。</span></p>
     </div>
-    <div>
-      <p class="kicker"><span class="en">Licences</span><span class="zh">许可</span></p>
-      <p class="en">Text, data and code: CC0 1.0, except quotations, which stay their authors'. Hardware designs: CERN-OHL-P v2. The X-WOW name and logo are trade marks, not covered by either licence; the logo is a registered UK trade mark (UK00003425680). Third-party code (three.js, OpenSeadragon, PMTiles, fflate) keeps its own MIT or BSD licence. <a href="./swell/#legal">Details and patent notes</a>.</p>
-      <p class="zh">文字、数据、代码：CC0 1.0（引文除外，仍归原作者）；硬件设计：CERN-OHL-P v2。X-WOW 的名称和标志是商标，不在这两个许可之内；标志是英国注册商标（UK00003425680）。第三方代码（three.js、OpenSeadragon、PMTiles、fflate）保留各自的 MIT 或 BSD 许可。<a href="./swell/#legal">详情与专利提示</a>。</p>
+    <nav class="fc" aria-label="Explore">
+      <p class="fc-h"><span class="en">Explore</span><span class="zh">探索</span></p>
+      <ul>
+        <li><a href="./inventions/"><span class="en">Inventions</span><span class="zh">发明</span></a></li>
+        <li><a href="./swell/">SWELL</a></li>
+        <li><a href="./shrink/"><span class="en">SHRINK</span><span class="zh">变小探险</span></a></li>
+        <li><a href="./back-to-shine/"><span class="en">Back to Shine</span><span class="zh">旧仪器再发光</span></a></li>
+        <li><a href="./#archive"><span class="en">Archive</span><span class="zh">旧档案</span></a></li>
+      </ul>
+    </nav>
+    <nav class="fc" aria-label="About and legal">
+      <p class="fc-h"><span class="en">About &amp; legal</span><span class="zh">关于与法律</span></p>
+      <ul>
+        <li><a href="./terms/"><span class="en">Terms of use</span><span class="zh">使用条款</span></a></li>
+        <li><a href="./privacy/"><span class="en">Privacy</span><span class="zh">隐私</span></a></li>
+        <li><a href="./safety/"><span class="en">Safety</span><span class="zh">安全</span></a></li>
+        <li><a href="./licences/"><span class="en">Licences &amp; trade marks</span><span class="zh">许可与商标</span></a></li>
+        <li><a href="./accessibility/"><span class="en">Accessibility</span><span class="zh">无障碍</span></a></li>
+        <li><a href="./about-ai/"><span class="en">Made by an AI</span><span class="zh">由 AI 制作</span></a></li>
+      </ul>
+    </nav>
+    <div class="fc">
+      <p class="fc-h"><span class="en">Contact</span><span class="zh">联系</span></p>
+      <ul>
+        <li><a href="mailto:info@x-wow.com">info@x-wow.com</a></li>
+        <li><a href="https://x.com/X_WowCom" target="_blank" rel="noopener">@X_WowCom <span class="en">on X</span><span class="zh">（X）</span></a></li>
+        <li><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener"><span class="en">Site source on GitHub</span><span class="zh">网站源码（GitHub）</span></a></li>
+      </ul>
     </div>
-    <div>
-      <p class="kicker"><span class="en">Made by an AI</span><span class="zh">AI 制作</span></p>
-      <p class="en">This site&#x27;s text and code, and SWELL, were made by an AI (Claude, made by Anthropic) working from the owner&#x27;s brief and orders; the archives are X-WOW&#x27;s earlier projects. SWELL has not been built yet. <a href="./swell/#ai">How</a>.</p>
-      <p class="zh">本站的文字和代码，以及 SWELL，都是 AI（Anthropic 的 Claude）按网站主人的要求和指令做的；各个存档是 X-WOW 以前的项目。SWELL 还没有人造出来。<a href="./swell/#ai">怎么做的</a>。</p>
-    </div>
-    <div>
-      <p class="kicker"><span class="en">Open</span><span class="zh">公开</span></p>
-      <p class="en"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">Site source on GitHub</a> · no cookies, no tracking. <a href="./privacy/">Privacy</a>.</p>
-      <p class="zh"><a href="https://github.com/khcy82dyc2/x-wow" target="_blank" rel="noopener">网站源码在 GitHub</a> · 无 cookie、无追踪。<a href="./privacy/">隐私说明</a>。</p>
-      <p class="en">Questions or corrections: <a href="mailto:info@x-wow.com">info@x-wow.com</a>.</p>
-      <p class="zh">问题或更正：<a href="mailto:info@x-wow.com">info@x-wow.com</a>。</p>
-    </div>
+  </div>
+  <div class="foot-bottom">
+    <p><span class="en">X-WOW · our own text, data and code CC0 1.0; hardware CERN-OHL-P v2; quotations and third-party code keep their own licences (<a href="./licences/">details</a>) · the X-WOW name and logo are trade marks; the logo is UK registered trade mark UK00003425680 · no cookies, no tracking</span><span class="zh">X-WOW · 我们自己的文字、数据和代码采用 CC0 1.0；硬件 CERN-OHL-P v2；引文和第三方代码保留各自的许可 · X-WOW 的名称和标志是商标，标志是英国注册商标 UK00003425680 · 无 cookie、无追踪</span></p>
   </div>
 </footer>
 </body>

@@ -82,7 +82,8 @@ def risks_from_zip(path):
 
 def claim_tags(slug):
     counts = {"verified": 0, "cited": 0, "sim": 0, "predicted": 0, "untested": 0}
-    for f in sorted((SRC / "pages" / slug).glob("[0-9]*.html")):
+    dirs = [SRC / "pages" / slug] + sorted((SRC / "pages").glob(slug + "~*"))   # a front page and its sub-pages
+    for f in sorted(f for d in dirs for f in d.glob("[0-9]*.html")):
         for m in re.finditer(r'class="tag (verified|cited|sim|predicted|untested)">(?![\u3400-\u9fff])', f.read_text(encoding="utf-8")):
             counts[m.group(1)] += 1
     return counts

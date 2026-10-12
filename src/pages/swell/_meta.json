@@ -1,7 +1,8 @@
 {
-  "title_en": "SWELL: an expansion microscope designed to be cheap",
-  "title_zh": "SWELL：以低成本为目标的膨胀显微镜",
-  "description_en": "Invention #1: an automated expansion-microscopy imager for chicken muscle, designed to be cheap. Designed and simulated on paper, never built, free to take; the instrument is for building in an equipped workshop or lab, by adults.",
-  "description_zh": "发明一号：一台以鸡肉为样本、以低成本为目标设计的自动膨胀显微镜。只在纸上设计和模拟过，从未造出来，免费拿去用；仪器只适合由成年人在设备齐全的工坊或实验室里造。",
-  "nav": "swell"
+ "title_en": "SWELL: an expansion microscope designed to be cheap",
+ "title_zh": "SWELL：以低成本为目标的膨胀显微镜",
+ "description_en": "Invention #1: an automated expansion-microscopy imager for chicken muscle, designed to be cheap. Designed and simulated on paper, never built, free to take; the instrument is for building in an equipped workshop or lab, by adults.",
+ "description_zh": "发明一号：一台以鸡肉为样本、以低成本为目标设计的自动膨胀显微镜。只在纸上设计和模拟过，从未造出来，免费拿去用；仪器只适合由成年人在设备齐全的工坊或实验室里造。",
+ "nav": "swell",
+ "front": true
 }
