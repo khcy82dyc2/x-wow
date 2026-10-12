@@ -269,9 +269,9 @@ def html(root: str, numbers: dict) -> tuple[str, list[str]]:
         f'<li class="bd-spark panel" data-new="{e(x.get("added", ""))}" data-name="{e(x["name_en"])}" data-pa="{e(x.get("prior_art_status") or "not yet searched")}">'
         f'<p class="bd-field">{both("spark", "火花")} · <time>{e(x["added"])}</time>{mark(x["mark"])} {prior(x)}</p>'
         f'<h3>{both(x["name_en"], x["name_zh"])}</h3><p>{both(x["line_en"], x["line_zh"])}</p>'
-        f'<details class="bd-spark-more"><summary>{both("Why it might matter, and where it came from", "可能的意义和来源")}</summary>'
+        f'<details class="bd-spark-more"><summary>{both("Why it might matter, and earlier work", "可能的意义和前人的工作")}</summary>'
         f'<p class="bd-why">{both(x["why_en"], x["why_zh"])}</p>'
-        f'<p class="bd-files">{both("From: " + x["from_en"] + ". Earlier work: " + x["prior_art_en"] + ".", "来源：" + x["from_zh"] + "。前人的工作：" + x["prior_art_zh"] + "。")}</p></details></li>'
+        f'<p class="bd-files">{both(("From: " + x["from_en"] + ". " if x.get("from_en") else "") + "Earlier work: " + x["prior_art_en"] + ".", ("来源：" + x["from_zh"] + "。" if x.get("from_zh") else "") + "前人的工作：" + x["prior_art_zh"] + "。")}</p></details></li>'
         for x in live)
     out.append(f'<section class="bd-sparks" id="sparks" aria-labelledby="sparks-h"><h2 class="kicker" id="sparks-h">{both("Sparks", "火花")} ({len(live)})</h2>'
                f'<p class="bd-lane-note">{both("Ideas that passed the first test: each could make something hidden visible. Untested, not claims: none is called new before its search for earlier work, and none has a bar until it is a card.", "通过了第一关的点子：每一个都可能让藏着的、太小的、太快的或太暗的东西被看见。是还没检验的点子，不是结论：在查完前人的工作之前，不说任何一个是新的；变成卡片之前，也没有进度条。")}</p>'
