@@ -49,6 +49,21 @@
     "source": "src/data/swell/strain_map_v2.json: dev.S2.metrics.anisotropy.truth",
     "how": "true value"
   },
+  "tested.v2_ci_miss": {
+    "value": "4",
+    "source": "src/data/swell/strain_map_v2.json: dev[S0,S1,S1b,S2,S4].metrics.anisotropy (ci95 against truth)",
+    "how": "own gels whose 95% CI for the anisotropy misses the true value (S0, S1, S1b, S4)"
+  },
+  "tested.v2_n_gels": {
+    "value": "5",
+    "source": "src/data/swell/strain_map_v2.json: dev[S0,S1,S1b,S2,S4]",
+    "how": "own synthetic gels in version 2 (S4_no_clock is S4 rerun)"
+  },
+  "tested.v2_etr_bias": {
+    "value": "+0.05% to +0.14%",
+    "source": "src/data/swell/strain_map_v2.json: dev[S0,S1,S1b,S2,S4].metrics.per_fibril_Etr_bias",
+    "how": "range over the five own gels of the mean of (measured ÷ true transverse factor − 1) per myofibril"
+  },
   "tested.drift_slope_clock": {
     "value": "−0.036%/h",
     "source": "src/data/swell/strain_map_v2.json: dev.S4.metrics.drift_slope_pct_per_h",
@@ -150,9 +165,54 @@
     "how": "true anisotropy (E_tr/E_ax − 1) (red team's scorer)"
   },
   "tested.s3_drift": {
-    "value": "−0.015%/h",
+    "value": "−0.02%/h",
     "source": "src/data/swell/strain_map_v2.json: S3.score.residual_drift.slope_pct_per_h",
-    "how": "residual drift after the clock (red team's scorer)"
+    "how": "residual drift after the clock: straight-line slope of the axial error against time, correct matches with error < 5% (red team's scorer)"
+  },
+  "tested.s3_drift_se": {
+    "value": "0.10%/h",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.residual_drift.slope_se_pct_per_h",
+    "how": "standard error of that slope (red team's scorer)"
+  },
+  "tested.s3_drift_uncorr": {
+    "value": "+0.07%/h",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.residual_drift.uncorrected_drift_slope_pct_per_h",
+    "how": "the same slope for the planted drift itself: what a pipeline with no drift correction would show (red team's scorer)"
+  },
+  "tested.s3_drift_all": {
+    "value": "−0.15%/h",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.residual_drift.slope_all_pct_per_h",
+    "how": "the slope over every correct match, the errors beyond 5% included (red team's scorer)"
+  },
+  "tested.s3_drift_excluded": {
+    "value": "10",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.residual_drift.excluded_abs_err_over_5pct",
+    "how": "correct matches left out of the slope for an axial error beyond 5% (red team's scorer)"
+  },
+  "tested.s3_drift_n": {
+    "value": "320",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.residual_drift.n",
+    "how": "correct matches with a time and an axial ratio (red team's scorer)"
+  },
+  "tested.s3_drift_bins": {
+    "value": "0.1%",
+    "source": "src/data/swell/strain_map_v2.json: S3.score.residual_drift.binned_median_rel_err_pct[*].median",
+    "how": "a bound: every one of the 6 time-binned median axial errors lies within ± this (largest 0.0815%; red team's scorer)"
+  },
+  "tested.s3_drift_planted": {
+    "value": "+0.48%",
+    "source": "src/downloads/swell-g0-2026-10-11.zip!software/redteam/README.md, table of planted defects, row 'Expansion drift'",
+    "how": "quoted: the peak of the scan-time expansion drift the red team planted in S3, before it fell back"
+  },
+  "tested.flag_floor": {
+    "value": "1%",
+    "source": "src/downloads/swell-g0-2026-10-11.zip!software/swell_ruler/swell_ruler/strainmap.py: FLOOR",
+    "how": "smallest smoothed local change a map flag can fire on (four standard errors where that is larger)"
+  },
+  "tested.flag_kernel": {
+    "value": "45 µm",
+    "source": "src/downloads/swell-g0-2026-10-11.zip!software/swell_ruler/swell_ruler/strainmap.py: KERNEL",
+    "how": "standard deviation of the Gaussian that smooths the maps before the flags are judged"
   },
   "tested.s3_aniso_truth_axtr": {
     "value": "+1.2%",
@@ -239,6 +299,21 @@
     "source": "src/data/swell/preimage_v1.json: slope_demo['slope 20% | v2']",
     "how": "same, flat-fielded (v2)"
   },
+  "tested.slope0_v1": {
+    "value": "0.34%",
+    "source": "src/data/swell/preimage_v1.json: slope_demo['slope 0% | v1']",
+    "how": "even light, mean removed only (v1)"
+  },
+  "tested.slope0_v2": {
+    "value": "0.39%",
+    "source": "src/data/swell/preimage_v1.json: slope_demo['slope 0% | v2']",
+    "how": "even light, flat-fielded (v2)"
+  },
+  "tested.slope_trials": {
+    "value": "300",
+    "source": "src/downloads/swell-g0-2026-10-11.zip!software/sim/preimage_v1.py: slope_demo(trials=…)",
+    "how": "random draws behind each figure; every case draws its own, and no confidence interval is computed"
+  },
   "tested.dpc_m": {
     "value": "2.3%",
     "source": "src/data/swell/preimage_v1.json: modes['DPC, 4 …'].m_best",
@@ -248,6 +323,26 @@
     "value": "10",
     "source": "src/data/swell/preimage_v1.json: modes['DPC, 4 …'].q_best",
     "how": "predicted q with 4 frame pairs"
+  },
+  "tested.dpc_n": {
+    "value": "200,000",
+    "source": "src/data/swell/preimage_v1.json: modes['DPC, 4 …'].N_best",
+    "how": "photo-electrons (detected photons) per sample that this q assumes, 4 frame pairs, shot noise only"
+  },
+  "tested.sim_m_fund": {
+    "value": "10.5%",
+    "source": "src/downloads/swell-g0-2026-10-11.zip!software/sim/gen_dev.py: generate(m_pre=…, photons_pre=…) and pre_axial()'s weight on cos 2πφ (the same in software/sim/strain_map_sim.py: pre_post_profiles())",
+    "how": "fundamental striation contrast of the simulated before-image: weight 0.7 × m_pre 0.15"
+  },
+  "tested.sim_photons_pre": {
+    "value": "5,000",
+    "source": "src/downloads/swell-g0-2026-10-11.zip!software/sim/gen_dev.py: generate(m_pre=…, photons_pre=…) and pre_axial()'s weight on cos 2πφ (the same in software/sim/strain_map_sim.py: pre_post_profiles())",
+    "how": "mean detected photons per sample of the simulated before-image, with Poisson (shot) noise only"
+  },
+  "tested.sim_q": {
+    "value": "7.4",
+    "source": "src/downloads/swell-g0-2026-10-11.zip!software/sim/gen_dev.py: generate(m_pre=…, photons_pre=…) and pre_axial()'s weight on cos 2πφ (the same in software/sim/strain_map_sim.py: pre_post_profiles())",
+    "how": "q = m·√N of the simulated before-image, as D-46 defines q"
   },
   "tested.pol_cover": {
     "value": "42%–78%",
@@ -288,6 +383,11 @@
     "value": "0.14%",
     "source": "src/data/swell/labelling_v1.json: panexm_20ug_ml_fraction[1] / 10",
     "how": "the kit's 2 µg/mL: ten times less dye"
+  },
+  "tested.lab_kit_range": {
+    "value": "0.030%–0.96%",
+    "source": "src/data/swell/labelling_v1.json: kit_2ug_ml_fraction",
+    "how": "the kit's stain over every input range (pan-ExM's range ÷ 10)"
   },
   "tested.rung1_sl": {
     "value": "1.5–2.0 µm",

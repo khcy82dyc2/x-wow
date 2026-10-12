@@ -29,6 +29,8 @@
     <p class="zh">第一次纸面计算说：一段含 {{n:swell.first_est_n}} 个肌节的肌原纤维，放大倍数能测准到 {{n:swell.first_est}}（均方根误差），前提是膨胀前图像的对比度在 {{n:swell.contrast_range}} 之间。可这个计算假设肌节长得完全一样。真实肌节一节和一节之间差约 {{n:swell.jitter}}，原来的估计方法（自由频率拟合）一遇到这种抖动（以及某些肌节长度）就会锁到旁瓣上：{{n:swell.sidelobe_frac}} 的肌原纤维被算错 {{n:swell.sidelobe_err}}。第一次整块凝胶模拟因此挂掉了 {{n:swell.first_run_fail}} 项检查。</p>
     <p class="en">The fix is the <strong>Z-disc ladder</strong>: the Z-discs in the expanded image define a sarcomere-by-sarcomere coordinate, and the before-image is fitted on that ladder, so the jitter is carried along instead of fought. Segments need at least {{n:swell.min_sarc}} sarcomeres. Result: {{n:swell.ladder_d33}} RMS per myofibril across simulation runs, {{n:swell.ladder_final}} across the four gels of the final run and {{n:swell.ladder_blind}} on the blind gel, with at most {{n:swell.ladder_outliers_final}} of myofibrils off by more than {{n:swell.outlier_band}}.</p>
     <p class="zh">修正办法叫 <strong>Z 盘梯子</strong>：用膨胀后图像里的 Z 盘标出一节一节的肌节坐标，再沿着这把“梯子”去拟合膨胀前的图像，抖动被顺着带走，而不是硬扛。每段至少要 {{n:swell.min_sarc}} 个肌节。结果：各轮模拟中每根肌原纤维的误差为 {{n:swell.ladder_d33}}（均方根），最终一轮四块凝胶为 {{n:swell.ladder_final}}，盲测凝胶为 {{n:swell.ladder_blind}}；偏差超过 {{n:swell.outlier_band}} 的肌原纤维最多占 {{n:swell.ladder_outliers_final}}。</p>
+    <p class="en">These precision figures hold only under the simulation's conditions: before-image stripes with a fundamental contrast of {{n:tested.sim_m_fund}} at {{n:tested.sim_photons_pre}} detected photons per sample (q ≈ {{n:tested.sim_q}}), shot noise only, a Gaussian blur of exactly known width, and one-dimensional profiles handed straight to the ruler, with no image to segment or stitch. The design's DPC before-image is predicted to reach only {{n:tested.dpc_m}} contrast, made up for by about {{n:tested.dpc_n}} detected photons per sample (q ≈ {{n:tested.dpc_q}}), again assuming shot noise only.</p>
+    <p class="zh">这些精度数字只在模拟的条件下成立：膨胀前图像条纹的基频反差为 {{n:tested.sim_m_fund}}，每个采样点 {{n:tested.sim_photons_pre}} 个被探测到的光子（q 约 {{n:tested.sim_q}}），只有散粒噪声，模糊是宽度完全已知的高斯模糊，交给标尺的是一维轮廓，没有需要分割或拼接的图像。按预测，设计里的差分相衬膨胀前图像反差只有 {{n:tested.dpc_m}}，靠每个采样点约 {{n:tested.dpc_n}} 个被探测到的光子来弥补（q 约 {{n:tested.dpc_q}}），同样假设只有散粒噪声。</p>
   </div>
   <p class="en"><strong>The error bar went up, and the simulation itself raised it.</strong></p>
   <p class="zh"><strong>误差范围变大了，而且是模拟自己调大的。</strong></p>
@@ -38,9 +40,9 @@
   <p class="zh">S1b 号凝胶是我们自己的盲测：同一个生成器换了随机种子，所有埋进去的缺陷都换了位置、改了大小，跑完以后什么参数都没再调。它不算独立，因为生成器和我们有同样的假设；红队检验是凝胶 S3。它在一块 {{n:swell.punch_a}} 的胶片里放了 {{n:swell.n_fibrils}} 根肌原纤维，放大 {{n:swell.e_sim}}。</p>
   <div class="stats">
     <div class="panel stat"><b>{{n:swell.blind_mean_err}}</b><span class="en">whole-gel expansion error</span><span class="zh">整块凝胶放大倍数误差</span></div>
-    <div class="panel stat"><b>{{n:swell.blind_map_rms}}</b><span class="en">local expansion map, RMS from truth</span><span class="zh">局部放大图与真值的均方根误差</span></div>
+    <div class="panel stat"><b>{{n:swell.blind_map_rms}}</b><span class="en">local expansion map, RMS from the truth smoothed the same way (a Gaussian of {{n:swell.map_kernel}} standard deviation), so finer detail isn't scored</span><span class="zh">局部放大图与同样平滑过的真值（标准差 {{n:swell.map_kernel}} 的高斯）之间的均方根误差，更细的细节不计分</span></div>
     <div class="panel stat"><b>{{n:swell.blind_false}}</b><span class="en">false flags in the defect-free area</span><span class="zh">无缺陷区域的误报</span></div>
-    <div class="panel stat"><b>{{n:swell.blind_dist_dev}}</b><span class="en">distortion curve, worst gap from truth</span><span class="zh">畸变曲线与真值的最大差距</span></div>
+    <div class="panel stat"><b>{{n:swell.blind_dist_dev}}</b><span class="en">distortion curve, worst gap from truth, on this gel; over all our own gels in both versions it ranges {{n:swell.dist_dev_range}}, all inside the check's {{n:swell.dist_check}}</span><span class="zh">畸变曲线与真值的最大差距（这块凝胶）；在两个版本的我们自己的所有凝胶上，它在 {{n:swell.dist_dev_range}} 之间，都在检查要求的 {{n:swell.dist_check}} 以内</span></div>
   </div>
 
   <div class="table-wrap">
@@ -80,13 +82,13 @@
     </figure>
   </div>
 
-  <h3><span class="en">Coverage: about half the myofibrils carry the axial ruler</span><span class="zh">覆盖率：约一半肌原纤维能用轴向尺子</span></h3>
+  <h3><span class="en">Coverage: on our own gels (version 1), about half the myofibrils carry the axial ruler</span><span class="zh">覆盖率：在我们自己的凝胶上（第一版），约一半肌原纤维能用轴向尺子</span></h3>
   <p class="en">Every myofibril gets the transverse (width) ruler and the landmark (position) ruler. Only segments of at least {{n:swell.min_sarc}} sarcomeres get the axial period ratio: {{n:swell.coverage_blind_n}} of {{n:swell.n_fibrils}} ({{n:swell.coverage_blind_pct}}) in the blind gel and {{n:swell.coverage_dev_n}} of {{n:swell.n_fibrils}} ({{n:swell.coverage_dev_pct}}) in the development gels. In real meat this would depend on how gently the tissue is homogenised.</p>
   <p class="zh">每根肌原纤维都能用横向（宽度）尺子和地标（位置）尺子。但只有至少 {{n:swell.min_sarc}} 个肌节长的片段才能算轴向周期比：盲测凝胶的 {{n:swell.n_fibrils}} 根里有 {{n:swell.coverage_blind_n}} 根（{{n:swell.coverage_blind_pct}}），开发凝胶为 {{n:swell.coverage_dev_n}} 根（{{n:swell.coverage_dev_pct}}）。换成真肉，这取决于打碎组织时有多温柔。</p>
 
   <h3><span class="en">Transverse isotropy and the shape-aware ruler</span><span class="zh">横向各向同性与“认形状”的尺子</span></h3>
-  <p class="en">A gel can swell evenly along a myofibril and unevenly across it. So the pass criteria include transverse isotropy, E<sub>ax</sub> ÷ E<sub>tr</sub> − 1 within {{n:swell.tr_gate}} (95% CI, n ≥ {{n:swell.tr_n}}), and the axial and transverse factors are always reported separately. On the blind gel the transverse factor per myofibril is {{n:swell.etr_blind}} (bias ± SD).</p>
-  <p class="zh">凝胶可能顺着肌原纤维胀得很匀，横着却不匀。所以合格标准里加了横向各向同性：E<sub>ax</sub> ÷ E<sub>tr</sub> − 1 落在 {{n:swell.tr_gate}} 以内（95% 置信区间，n ≥ {{n:swell.tr_n}}），轴向和横向的放大倍数永远分开报告。盲测凝胶上，每根肌原纤维的横向放大倍数偏差为 {{n:swell.etr_blind}}（偏差 ± 标准差）。</p>
+  <p class="en">A gel can swell evenly along a myofibril and unevenly across it. So the pass criteria include transverse isotropy, E<sub>ax</sub> ÷ E<sub>tr</sub> − 1 within {{n:swell.tr_gate}} (95% CI, n ≥ {{n:swell.tr_n}} myofibrils), and the axial and transverse factors are always reported separately. That interval counts only the scatter between myofibrils, not error they all share, and on our synthetic gels it has proved too narrow (<a href="#tested">Tested harder</a>, point 3), so a real test would have to use whole gels as the unit; that test isn't designed yet. On the blind gel the transverse factor per myofibril is {{n:swell.etr_blind}} (bias ± SD).</p>
+  <p class="zh">凝胶可能顺着肌原纤维胀得很匀，横着却不匀。所以合格标准里加了横向各向同性：E<sub>ax</sub> ÷ E<sub>tr</sub> − 1 落在 {{n:swell.tr_gate}} 以内（95% 置信区间，n ≥ {{n:swell.tr_n}} 根肌原纤维），轴向和横向的放大倍数永远分开报告。这个区间只算肌原纤维之间的离散，不算它们共有的误差，而在我们的合成凝胶上已经证明它太窄（见<a href="#tested">更严的考试</a>第 3 条），所以真正的检验得以整块凝胶为单位；这种检验还没设计出来。盲测凝胶上，每根肌原纤维的横向放大倍数偏差为 {{n:swell.etr_blind}}（偏差 ± 标准差）。</p>
   <div class="grid-2">
     <div class="panel">
       <p class="en">The width ruler is the fragile one: it needs a model of each cross-section. A boxy cross-section fitted as an ellipse is off by {{n:swell.tr_boxy_dpc}} to {{n:swell.tr_boxy_pol}}, depending on the before-image method. So the pipeline measures each myofibril's cross-section shape from the expanded z-stack, and the bias drops to {{n:swell.tr_shape_post}}.</p>

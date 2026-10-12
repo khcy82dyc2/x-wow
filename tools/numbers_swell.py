@@ -5,6 +5,7 @@ Stdlib only:  python tools/numbers_swell.py
 
 Inputs are the SWELL design outputs, copied unchanged into src/data/swell/:
   strain_map_v1.json  whole-gel strain map (synthetic gels S0, S1, S1b, S2)
+  strain_map_v2.json  only for the distortion-curve range over both versions and its check's pass band
   optics_v1.json      sampling, Strehl, tiles and SNR for the specified optics
   calc_v0.json        first design calculations (resolution, rulers, SNR)
   budget_v1.json      priced BOM totals per basket
@@ -65,9 +66,11 @@ def gbp_range(lo, hi):
 
 
 SM = load("strain_map_v1.json")
+V2 = load("strain_map_v2.json")   # only for the distortion-curve range across both versions (Q-11)
 OP = load("optics_v1.json")
 CA = load("calc_v0.json")
 BU = load("budget_v1.json")
+F_V2 = "src/data/swell/strain_map_v2.json"
 F_SM = "src/data/swell/strain_map_v1.json"
 F_OP = "src/data/swell/optics_v1.json"
 F_CA = "src/data/swell/calc_v0.json"
@@ -84,6 +87,8 @@ put("e_b", f"{num(p['e_10x'], 0)}×", F_CA + ": params.e_10x", "Track B expansio
 put("e_sim", f"{num(SM['constants']['E0'], 1)}×", F_SM + ": constants.E0", "expansion factor of the synthetic gels")
 put("sl_breast", f"{num(p['sl_breast_mean'], 2)} µm", F_CA + ": params.sl_breast_mean",
     "mean sarcomere length assumed for supermarket breast (fact F-10, cited: read from an abstract by an AI)")
+put("sl_breast_sd", f"{num(p['sl_breast_sd'], 2)} µm", F_CA + ": params.sl_breast_sd",
+    "spread (standard deviation) of sarcomere length within a sample: an assumption, not a measurement")
 put("myofibril_d", f"{num(p['myofibril_thickness'][0], 0)}{DASH}{num(p['myofibril_thickness'][1], 0)} µm",
     F_CA + ": params.myofibril_thickness", "myofibril thickness range used in the design")
 a45 = OP["scan"]["A_E4.5"]
@@ -123,6 +128,8 @@ put("nyq_a", f"{num(rowA['nyquist_ratio'], 2)}×", F_OP + ": sampling.A.rows[d_m
 put("mag_b", f"{num(rowB['M'], 1)}×", F_OP + ": sampling.B.rows[d_mm=25].M", "total magnification, Track B")
 put("nyq_b", f"{num(rowB['nyquist_ratio'], 2)}×", F_OP + ": sampling.B.rows[d_mm=25].nyquist_ratio",
     "sampling ÷ Nyquist (pass band 0.8–1.25)")
+put("px_b", f"{num(rowB['px_um'], 3)} µm", F_OP + ": sampling.B.rows[d_mm=25].px_um",
+    "pixel size at the sample, Track B (20X objective)")
 cam = OP["parts"]["camera"]
 put("cam_format", f"{cam['w']} × {cam['h']} px, {num(cam['px_um'], 2)} µm", F_OP + ": parts.camera",
     "sensor format of the mono IMX296")
@@ -150,6 +157,20 @@ put("blind_false", pct(blind["false_flag_rate"]), F_SM + ": scenarios.S1b.metric
     "share of defect-free gel area flagged")
 put("blind_dist_dev", pct(blind["distortion_curve_max_dev"], 3),
     F_SM + ": scenarios.S1b.metrics.distortion_curve_max_dev", "worst deviation of the distortion curve from truth")
+put("map_kernel", f"{num(SM['constants']['kernel_um'], 0)} µm", F_SM + ": constants.kernel_um",
+    "standard deviation of the Gaussian that smooths the expansion maps; the true map is smoothed the same way "
+    "before the map error is scored, so detail finer than this isn't scored")
+# Q-11 (N1 a): one gel's distortion figure beside the spread over every own gel in both versions (S3 not included)
+_dev = ([s["metrics"]["distortion_curve_max_dev"] for s in sc.values()]
+        + [V2["dev"][g]["metrics"]["distortion_curve_max_dev"] for g in ("S0", "S1", "S1b", "S2", "S4")])
+put("dist_dev_range", f"{pct(min(_dev), 3)}{DASH}{pct(max(_dev), 2)}",
+    F_SM + ": scenarios[*].metrics.distortion_curve_max_dev; " + F_V2 + ": dev[S0,S1,S1b,S2,S4].metrics.distortion_curve_max_dev",
+    "min–max over our own synthetic gels, version 1 (four gels) and version 2 (five gels)")
+_lab = next(c["check"] for c in V2["checks"] if "distortion curve within" in c["check"])
+_m = re.search(r"distortion curve within (±(\d+(?:\.\d+)?)%)", _lab)
+put("dist_check", _m.group(1), F_V2 + f": checks[*].check ('{_lab.split(': ', 1)[1]}')", "the check's pass band")
+# the band in the label is the threshold recount_checks() applies below, and every gel in the range sits inside it
+assert float(_m.group(2)) / 100 == 0.005 and max(_dev) <= 0.005, (_lab, max(_dev))
 put("blind_hotspot", pct(-blind_s["hotspot"], 0), F_SM + ": scenarios.S1b.scenario.hotspot", "planted under-expanded hotspot")
 put("blind_undig", pct(-blind_s["undig"], 0), F_SM + ": scenarios.S1b.scenario.undig", "planted under-digested patch")
 put("blind_stretch", pct(blind_s["band"], 1, plus=True), F_SM + ": scenarios.S1b.scenario.band", "planted stretched patch")
@@ -276,6 +297,11 @@ _dates = sorted({r["date_checked"] for r in _rows if r["date_checked"]})
 _src = f"src/downloads/{_boms[0].name}: column date_checked"
 put("price_date", _dates[0], _src, "the first date a BOM line was checked")
 put("price_date_last", _dates[-1], _src, "the last date a BOM line was checked")
+# 50-bom.html says every price read so far is in pounds, so no total uses a currency conversion (Q-11, N-9)
+_cur = {r["currency"] for r in csv.DictReader(ln for ln in _boms[0].open(encoding="utf-8-sig") if not ln.startswith("#"))
+        if r["price_basis"] == "listed"}
+if _cur != {"GBP"}:
+    sys.exit(f"a listed BOM line is priced in {sorted(_cur - {'GBP'})}: 50-bom.html says no total uses a currency conversion")
 
 # ---------------------------------------------------------------- every box line's price (life 12)
 # From the same public CSV, converted as software/sim/budget.py converts (the FX in budget_v1.json; 20% VAT added where

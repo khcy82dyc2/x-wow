@@ -95,22 +95,27 @@ def evidence_html(slug, compact, root):
         st = e["stages"][key]
         cls = st["status"] + (" desk" if i < e["desk_stages"] else " world") + (" now" if i + 1 == cur else "")
         tip = html.escape(st["made_of_en"], quote=True)
-        lis.append(f'<li class="{cls}" title="{tip}"><span class="en">{html.escape(en)}</span>'
+        label = html.escape(en)
+        if compact:   # narrow card cells: long words break with a hyphen
+            label = label.replace("independently", "indepen&shy;dently").replace("Simulated", "Simu&shy;lated")
+        lis.append(f'<li class="{cls}" title="{tip}"><span class="en">{label}</span>'
                    f'<span class="zh">{html.escape(zh)}</span></li>')
     steps = '<ol class="ebar-steps">' + "".join(lis) + "</ol>"
     desk_note_en = "on the desk" if cur <= e["desk_stages"] else "in the real world"
     desk_note_zh = "还在纸面上" if cur <= e["desk_stages"] else "已在真实世界"
     partial = [(en, zh) for key, en, zh in stages[:cur] if e["stages"][key]["status"] == "partial"]
-    part_en = (" Not finished: " + ", ".join(en.lower() for en, _ in partial) + ".") if partial else ""
+    part_en = (" Unfinished (hatched): " + ", ".join(en.lower() for en, _ in partial) + ".") if partial else ""
     part_zh = ("其中只完成了一部分的：" + "、".join(zh for _, zh in partial) + "。") if partial else ""
-    now = (f'<p class="ebar-now"><span class="en">Stage {cur} of {e["stages_total"]} started: <b>{html.escape(lab_en)}</b>, '
+    now = (f'<p class="ebar-now"><span class="en">Furthest stage: {cur} of {e["stages_total"]}, <b>{html.escape(lab_en)}</b>, '
            f'{desk_note_en}.{html.escape(part_en)} Next: {html.escape(e["next_en"])}.</span>'
            f'<span class="zh">到达第 {cur} 级（共 {e["stages_total"]} 级）：<b>{html.escape(lab_zh)}</b>，{desk_note_zh}。'
            f'{html.escape(part_zh)}下一步：{html.escape(e["next_zh"])}。</span></p>')
     if compact:
         link = f'{root}{slug}/#evidence'
         return (f'<div class="ebar compact" role="group" aria-label="Evidence bar: stage {cur} of {e["stages_total"]}">'
-                f'{steps}{now}<p class="ebar-link"><a href="{link}"><span class="en">What the bar is made of</span>'
+                f'{steps}<p class="ebar-key"><span class="en">Solid: done · hatched: started, not finished · outline: '
+                f'not started · dashed: real-world stages · gold ring: furthest stage</span></p>'
+                f'{now}<p class="ebar-link"><a href="{link}"><span class="en">What the bar is made of</span>'
                 f'<span class="zh">这条进度由什么构成</span></a></p></div>')
     rows = []
     for key, en, zh in stages:

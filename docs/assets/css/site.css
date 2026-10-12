@@ -250,7 +250,10 @@ html.boot-pending .top, html.boot-pending main, html.boot-pending .foot { visibi
 .ebar-list{margin:.5rem 0;padding-left:1.1rem;font-size:.9rem}
 .ebar-list li{margin:.25rem 0}
 .ebar.compact{margin:.8rem 0 .6rem;padding:.55rem .6rem}
-.ebar.compact .ebar-steps li{font-size:.56rem;min-height:2.1rem;padding:.3rem .15rem}
+.ebar.compact .ebar-steps{grid-template-columns:repeat(4,1fr)}
+.ebar.compact .ebar-steps li:nth-child(4){margin-right:0}
+.ebar.compact .ebar-steps li{font-size:.56rem;min-height:2.1rem;padding:.3rem .15rem;letter-spacing:0;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}
+.ebar-key{margin:.45rem 0 0;font-size:.74rem;color:var(--muted)}
 .ebar.compact .ebar-now{font-size:.82rem}
 [data-lang="zh"] .ebar-steps li{text-transform:none;font-size:.72rem}
 @media (max-width:520px){.ebar-steps{grid-template-columns:repeat(4,1fr)}.ebar-steps li:nth-child(4){margin-right:0}

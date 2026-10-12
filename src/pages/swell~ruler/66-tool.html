@@ -41,7 +41,7 @@ python -m swell_ruler demo</pre>
       <li><b>Landmark factor</b>: from neighbours' positions, no calibration needed.</li>
       <li><b>Maps and flags</b>: local expansion, fibril vs gel, gel stretch, tears and folds, places with no partner. On S3 they caught the bubble and most of the fold, but none of the under- or over-expanded patches.</li>
       <li><b>Anisotropy</b> is reported only beyond ±1%, and no call is made while the transverse and landmark rulers disagree by more than 3%.</li>
-      <li><b>No expansion yet?</b> <code>stripes</code> checks whether your label-free images carry enough striation contrast (go if q ≥ {{n:tested.q_go}}, rescaled to 0.194 µm pixels).</li>
+      <li><b>No expansion yet?</b> <code>stripes</code> checks whether your label-free images carry enough striation contrast (go if q ≥ {{n:tested.q_go}}, rescaled to 0.194 µm pixels; q is read from the image's noise, so smoothed images, such as JPEGs or frames from a colour camera, read too high).</li>
     </ul>
     <ul class="zh">
       <li><b>轴向倍数</b>（每根肌原纤维）：膨胀后与膨胀前的肌节周期之比，用膨胀后图像自己的 Z 盘"梯子"拟合。在 S3 上，整块凝胶的平均值扛住了，每根纤维的精度没有（均方根 {{n:tested.s3_ax_rms}}）。</li>
@@ -49,7 +49,7 @@ python -m swell_ruler demo</pre>
       <li><b>地标倍数</b>：由周围纤维的位置算出，不需要标定。</li>
       <li><b>图和标记</b>：局部膨胀、纤维与凝胶是否一致、凝胶被拉伸、撕裂和折叠、找不到配对的地方。在 S3 上抓到了气泡和大部分折叠，但膨胀不足和过度的区域一个都没抓到。</li>
       <li><b>各向异性</b>超过 ±1% 才报告；横向标尺和地标标尺相差超过 3% 时，不下结论。</li>
-      <li><b>还没做膨胀？</b><code>stripes</code> 能先检查你的免标记图像条纹反差够不够（q ≥ {{n:tested.q_go}} 就可以继续，按 0.194 µm 像素换算）。</li>
+      <li><b>还没做膨胀？</b><code>stripes</code> 能先检查你的免标记图像条纹反差够不够（q ≥ {{n:tested.q_go}} 就可以继续，按 0.194 µm 像素换算；q 是从图像的噪声读出来的，所以被抹平过的图像，比如 JPEG 或彩色相机拍的画面，会读得偏高）。</li>
     </ul>
   </div>
 </div>

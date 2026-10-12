@@ -299,6 +299,16 @@
   "source": "src/data/swell/strain_map_v1.json: scenarios.S1.metrics.detection.tear",
   "how": "area of the S1 tear flagged"
  },
+ "swell.dist_check": {
+  "value": "±0.5%",
+  "source": "src/data/swell/strain_map_v2.json: checks[*].check ('distortion curve within ±0.5% of truth (≥ 25 µm, noise floor removed)')",
+  "how": "the check's pass band"
+ },
+ "swell.dist_dev_range": {
+  "value": "0.002%–0.17%",
+  "source": "src/data/swell/strain_map_v1.json: scenarios[*].metrics.distortion_curve_max_dev; src/data/swell/strain_map_v2.json: dev[S0,S1,S1b,S2,S4].metrics.distortion_curve_max_dev",
+  "how": "min–max over our own synthetic gels, version 1 (four gels) and version 2 (five gels)"
+ },
  "swell.dose_worst": {
   "value": "3.2×",
   "source": "src/data/swell/optics_v1.json: snr_pedestal[f_lab=0.005, myofibril_um=2]",
@@ -574,6 +584,11 @@
   "source": "src/data/swell/optics_v1.json: sampling.B.rows[d_mm=25].M",
   "how": "total magnification, Track B"
  },
+ "swell.map_kernel": {
+  "value": "45 µm",
+  "source": "src/data/swell/strain_map_v1.json: constants.kernel_um",
+  "how": "standard deviation of the Gaussian that smooths the expansion maps; the true map is smoothed the same way before the map error is scored, so detail finer than this isn't scored"
+ },
  "swell.min_sarc": {
   "value": "8",
   "source": "docs/design/strain_map_v1.md:5 (SWELL project notes)",
@@ -694,6 +709,11 @@
   "source": "src/data/swell/optics_v1.json: sampling.A.rows[d_mm=25].px_um",
   "how": "pixel size at the sample"
  },
+ "swell.px_b": {
+  "value": "0.388 µm",
+  "source": "src/data/swell/optics_v1.json: sampling.B.rows[d_mm=25].px_um",
+  "how": "pixel size at the sample, Track B (20X objective)"
+ },
  "swell.res_e_a": {
   "value": "4.5×",
   "source": "src/data/swell/calc_v0.json: resolution.4x",
@@ -748,6 +768,11 @@
   "value": "1.69 µm",
   "source": "src/data/swell/calc_v0.json: params.sl_breast_mean",
   "how": "mean sarcomere length assumed for supermarket breast (fact F-10, cited: read from an abstract by an AI)"
+ },
+ "swell.sl_breast_sd": {
+  "value": "0.08 µm",
+  "source": "src/data/swell/calc_v0.json: params.sl_breast_sd",
+  "how": "spread (standard deviation) of sarcomere length within a sample: an assumption, not a measurement"
  },
  "swell.sl_wooden": {
   "value": "1.91 µm",
