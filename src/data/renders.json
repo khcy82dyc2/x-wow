@@ -1,7 +1,7 @@
 {
  "models": {
   "swell": {
-   "hash": "sha256:92f0db7e1f255339fcf0807e5baa39f01dedd2ae37e6b254d3ab7d573921c9d2",
+   "hash": "sha256:68387d55156999a28669c257f96f805f25cbfe8e0f787e1c9f10b33660877054",
    "sources": [
     "assets/js/model-kit.js",
     "assets/js/models/swell.js"
@@ -113,7 +113,7 @@
       "sensor_mm": 36,
       "sensor_fit": "horizontal"
      },
-     "render_s": 10.6
+     "render_s": 10.0
     },
     {
      "id": "left",
@@ -173,7 +173,7 @@
       "sensor_mm": 36,
       "sensor_fit": "horizontal"
      },
-     "render_s": 8.6
+     "render_s": 9.5
     },
     {
      "id": "top",
@@ -234,7 +234,7 @@
       "sensor_mm": 36,
       "sensor_fit": "horizontal"
      },
-     "render_s": 8.9
+     "render_s": 9.7
     },
     {
      "id": "back",
@@ -296,7 +296,7 @@
       "sensor_mm": 36,
       "sensor_fit": "horizontal"
      },
-     "render_s": 8.8
+     "render_s": 9.1
     }
    ]
   }

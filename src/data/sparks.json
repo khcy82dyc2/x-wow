@@ -36,21 +36,21 @@
    "why_en": "How fast the speckle changes could show growth a camera can't see directly. Only a sealed Class 1 or 2 laser product, handled by an adult and never pointed at anyone's eyes.",
    "why_zh": "散斑变化的快慢，也许能显示相机直接看不到的生长。只用密封的 1 类或 2 类激光产品，由大人操作，绝不对着任何人的眼睛。",
    "prior_art_en": "biospeckle research comes first; the search for cheap versions is not yet done", "prior_art_zh": "生物散斑研究在先；便宜做法的检索还没做"},
-  {"id": "thermochromic-map", "added": "2026-10-11", "from_en": "the owner's idea", "from_zh": "网站主人的点子", "status": "spark",
+  {"id": "thermochromic-map", "added": "2026-10-11", "from_en": "the owner's idea; the thirsty-plant use came from a headline in the HardwareX journal feed (the paper not yet opened)", "from_zh": "网站主人的点子；植物缺水的用法是从 HardwareX 期刊订阅源里一篇关于植物热成像的开源硬件论文的标题中提炼的（论文本身还没打开读过）", "status": "spark",
    "name_en": "Heat-map paper", "name_zh": "热成像纸",
    "line_en": "A liquid-crystal sheet changes colour with temperature, so it paints heat as a picture: a fading handprint, or a leaf kept cool by its own evaporation.",
    "line_zh": "液晶片会随温度变色，把热量画成一幅图：慢慢消失的手印，或者靠自己蒸发水分保持凉爽的叶子。",
    "why_en": "A thirsty plant may show up warmer before it droops, so a cheap sheet could let anyone see a plant's thirst early.",
    "why_zh": "缺水的植物在耷拉下来之前可能就会变暖，所以一张便宜的片子也许能让任何人提早看出植物渴了。",
    "prior_art_en": "not yet searched", "prior_art_zh": "还没检索"},
-  {"id": "shadow-gate", "added": "2026-10-11", "from_en": "a principle drawn from a news-feed headline about an open-hardware paper on droplet sensing (the paper itself not yet opened)", "from_zh": "从新闻源里一篇关于液滴检测的开源硬件论文的标题中提炼的原理（论文本身还没打开读过）", "status": "spark",
+  {"id": "shadow-gate", "added": "2026-10-11", "from_en": "a headline in the HardwareX journal feed (the paper not yet opened)", "from_zh": "从 HardwareX 期刊订阅源里一篇关于液滴检测的开源硬件论文的标题中提炼的原理（论文本身还没打开读过）", "status": "spark",
    "name_en": "Shadow gate", "name_zh": "影子门",
    "line_en": "Anything small that crosses a thin beam of light dims it for a moment; timing those dips tells how big and how fast it was.",
    "line_zh": "任何小东西穿过一束细光时，都会让光暗一下；记下这些变暗的时刻，就能知道它有多大、有多快。",
    "why_en": "Falling drops, seeds or grains could be sized and timed with a cheap light sensor or a phone's slow-motion video.",
    "why_zh": "落下的水滴、种子或颗粒，也许用便宜的光传感器或手机慢动作视频就能量出大小和速度。",
    "prior_art_en": "not yet searched (light gates are common in schools)", "prior_art_zh": "还没检索（光电门在学校里很常见）"},
-  {"id": "swing-scale", "added": "2026-10-11", "from_en": "a principle drawn from a news-feed headline about an open-hardware paper on a three-string pendulum (the paper itself not yet opened)", "from_zh": "从新闻源里一篇关于三线摆的开源硬件论文的标题中提炼的原理（论文本身还没打开读过）", "status": "spark",
+  {"id": "swing-scale", "added": "2026-10-11", "from_en": "a headline in the HardwareX journal feed (the paper not yet opened)", "from_zh": "从 HardwareX 期刊订阅源里一篇关于三线摆的开源硬件论文的标题中提炼的原理（论文本身还没打开读过）", "status": "spark",
    "name_en": "Swing scale for hidden mass", "name_zh": "看见隐藏质量的秋千秤",
    "line_en": "Hang an object on three strings and time how it twists: the timing tells how its mass is spread around its middle.",
    "line_zh": "用三根线把东西吊起来，记下它来回扭转的时间：这个时间能告诉你它的质量是怎样围绕中心分布的。",
@@ -78,6 +78,6 @@
   {"id": "clock-tile", "date": "2026-10-10", "name_en": "Clock tile for slow scans", "name_zh": "慢速扫描的时钟格",
    "reason_en": "Not an invention of its own: it is a step inside SWELL's method, and stays there.", "reason_zh": "它不是一项独立的发明，而是 SWELL 方法里的一步，就留在那里。"},
   {"id": "water-bead-lesson", "date": "2026-10-10", "name_en": "Water-bead expansion lesson", "name_zh": "吸水珠膨胀课",
-   "reason_en": "Water beads are a known danger to young children: the US Consumer Product Safety Commission warns that swallowed beads can swell and block the intestines (as reported by NBC News, 20 March 2024). Not for a site children use, in any form.", "reason_zh": "吸水珠对小孩子是公认的危险：美国消费品安全委员会警告，吞下的珠子会在体内胀大、堵住肠子（据 NBC 新闻 2024 年 3 月 20 日报道）。孩子会用的网站，不以任何形式采用。"}
+   "reason_en": "Water beads are a known danger to young children: the UK Office for Product Safety and Standards warns that swallowed beads expand and can block a child's gut, needing surgery, and that the beads can also cause choking (safety alert, GOV.UK, 19 September 2024, read 12 October 2026). Not for a site children use, in any form.", "reason_zh": "吸水珠对小孩子是公认的危险：英国产品安全与标准办公室警告，吞下的珠子会胀大、堵住孩子的肠子，需要手术，也可能让孩子窒息（安全警示，GOV.UK，2024 年 9 月 19 日，2026 年 10 月 12 日读取）。孩子会用的网站，不以任何形式采用。"}
  ]
 }

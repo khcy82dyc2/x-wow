@@ -12,6 +12,8 @@
   /* the sticky sub-page nav sits just under the sticky header, whatever its height */
   function topH() { var t = document.querySelector(".top"); if (t) doc.style.setProperty("--top-h", t.offsetHeight + "px"); }
   topH(); window.addEventListener("resize", topH, { passive: true });
+  var cur = document.querySelector('.subnav a[aria-current="page"]');   /* phones: the current sub-page is in view */
+  if (cur && cur.parentNode.scrollWidth > cur.parentNode.clientWidth) cur.parentNode.scrollLeft = cur.offsetLeft - 16;
 
   /* a link into a folded section opens it */
   function openTarget() {
@@ -41,7 +43,7 @@
     en: ["<b>LOUPE</b> · waking the workshop",
          "lights ........ on",
          "bench ......... 1 invention (SWELL) · simulated, never built",
-         "licence check . free to take, free to change, free to claim",
+         "licence check . free to take, free to change, no credit needed",
          "ready. take anything."],
     zh: ["<b>LOUPE</b> · 工作间启动中",
          "灯光 ........ 开",

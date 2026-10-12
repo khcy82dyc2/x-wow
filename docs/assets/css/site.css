@@ -291,3 +291,11 @@ html.boot-pending .top, html.boot-pending main, html.boot-pending .foot { visibi
 .subnav a { flex: none; padding: .7rem .65rem; font: .74rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; }
 .subnav a:hover { color: var(--text); }
 .subnav a[aria-current="page"] { color: var(--cyan); border-bottom-color: var(--cyan); }
+.num:focus::after, .num:active::after { content: " · " attr(title); font-size: .75rem; font-weight: 400; font-family: var(--sans); color: var(--muted); }
+
+/* a page's own title is its h1, sized like the section headings below it */
+h1.page-h { font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.2; margin: 0 0 .6em; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+/* phones: wide data tables scroll sideways instead of hiding columns */
+@media (max-width: 640px) { table.data { display: block; overflow-x: auto; } }
+.num { text-transform: none; }   /* an uppercase heading must not turn µm into ΜM */

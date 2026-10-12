@@ -61,14 +61,15 @@ def main() -> int:
     r = build(c)
     expect("clean: build passes", r.returncode == 0, (r.stdout + r.stderr)[-300:])
     for slug in kids:
-        page = (c / "docs" / slug / "index.html").read_text(encoding="utf-8")
+        page = (c / "docs" / slug.replace("~", "/") / "index.html").read_text(encoding="utf-8")   # swell~start is swell/start/
         expect(f"clean: {slug} has no email link", "mailto:" not in page)
-        expect(f"clean: {slug} names the address for grown-ups", "For grown-ups: questions or corrections go to info@x-wow.com" in page)
+        expect(f"clean: {slug} names the address for grown-ups", "For grown-ups: info@x-wow.com" in page)
     other = (c / "docs" / "swell" / "index.html").read_text(encoding="utf-8")
     expect("clean: other pages keep the email link", 'href="mailto:info@x-wow.com"' in other)
 
     for name, planted, why in (("mailto", '<p><a href="mailto:someone@example.org">write</a></p>', "carries an email link"),
-                               ("github", '<p><a href="https://github.com/x/y">code</a></p>', "links to GitHub or YouTube")):
+                               ("github", '<p><a href="https://github.com/x/y">code</a></p>', "links off-site"),
+                               ("x", '<p><a href="https://x.com/someone">post</a></p>', "links off-site")):
         c = copy_site(name)
         frag = sorted((c / "src" / "pages" / kids[0]).glob("[0-9]*.html"))[0]
         frag.write_text(frag.read_text(encoding="utf-8") + "\n" + planted + "\n", encoding="utf-8")

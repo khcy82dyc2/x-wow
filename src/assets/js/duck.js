@@ -94,7 +94,7 @@
   ctl.className = "duck-ctl";
   // the footer keeps only small controls; what the duck does and keeps is explained on the privacy page
   var help = d.createElement("a");
-  help.href = "/privacy/#duck";
+  help.href = "/privacy/#duck";   // the site is served from the domain root
   help.className = "duck-help";
   help.setAttribute("aria-label", "About the duck in the margin");
   help.textContent = "?";

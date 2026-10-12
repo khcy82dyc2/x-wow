@@ -4,7 +4,7 @@
 file per slide, read by the SHRINK game (x-wow.com/shrink/) with byte-range requests to this site.
 
 - **Made from:** Aperio scans at 20x (0.5037 micrometres per pixel), white-balanced so empty glass reads white, cut into
-  512-pixel WebP tiles and packed with PMTiles. The scans were made by the X-WOW owner, not as part of any job.
+  512-pixel WebP tiles and packed with PMTiles. The scans were made by X-WOW's owner.
 - **Licence:** CC0 1.0 (the owner's decision, 11 October 2026). The X-WOW name and logo are not part of it.
 - **Left out:** slides of human tissue and of disease, mammalian reproductive organs, and eight organ slides whose labels
   name no species.

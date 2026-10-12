@@ -23,6 +23,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent / "tools"))
 import evidence_bar  # noqa: E402  (stdlib only)
 import board  # noqa: E402  (stdlib only: the Inventions board, bars computed from proof files)
+import english_only  # noqa: E402  (stdlib: no hidden Chinese in the built pages)
 import realistic  # noqa: E402  (stdlib only: the Realistic view's renders, keyed to their model's hash)
 
 ROOT = Path(__file__).resolve().parent
@@ -100,9 +101,9 @@ def evidence_html(slug, compact, root):
     desk_note_en = "on the desk" if cur <= e["desk_stages"] else "in the real world"
     desk_note_zh = "还在纸面上" if cur <= e["desk_stages"] else "已在真实世界"
     partial = [(en, zh) for key, en, zh in stages[:cur] if e["stages"][key]["status"] == "partial"]
-    part_en = (" Only partly done: " + ", ".join(en.lower() for en, _ in partial) + ".") if partial else ""
+    part_en = (" Not finished: " + ", ".join(en.lower() for en, _ in partial) + ".") if partial else ""
     part_zh = ("其中只完成了一部分的：" + "、".join(zh for _, zh in partial) + "。") if partial else ""
-    now = (f'<p class="ebar-now"><span class="en">Stage {cur} of {e["stages_total"]} reached: <b>{html.escape(lab_en)}</b>, '
+    now = (f'<p class="ebar-now"><span class="en">Stage {cur} of {e["stages_total"]} started: <b>{html.escape(lab_en)}</b>, '
            f'{desk_note_en}.{html.escape(part_en)} Next: {html.escape(e["next_en"])}.</span>'
            f'<span class="zh">到达第 {cur} 级（共 {e["stages_total"]} 级）：<b>{html.escape(lab_zh)}</b>，{desk_note_zh}。'
            f'{html.escape(part_zh)}下一步：{html.escape(e["next_zh"])}。</span></p>')
@@ -176,7 +177,7 @@ def render(text, root, numbers, where):
             fail(f"{where}: unknown number {{{{n:{key}}}}}")
         e = numbers[key]
         tip = e["source"] + ((" · " + e["how"]) if e.get("how") else "")
-        return f'<span class="num" title="{html.escape(tip, quote=True)}">{html.escape(str(e["value"]))}</span>'
+        return f'<span class="num" tabindex="0" title="{html.escape(tip, quote=True)}">{html.escape(str(e["value"]))}</span>'
     def raw(m):  # bare value, for use inside attributes (value="", data-*)
         key = m.group(1).strip()
         if key not in numbers:
@@ -275,8 +276,9 @@ def build_pages(numbers):
         page = page.replace("{{content}}", content)
         page = page.replace("{{redirects_json}}", json.dumps(redirect_map(), sort_keys=True))
         page = render(page, root, numbers, f"pages/{slug}")
+        page = english_only.strip(page)   # the owner's English-only order: hidden Chinese doesn't ship
         if kids and re.search(r"github\.com|youtube\.com|youtu\.be|//x\.com|twitter\.com", page):
-            fail(f"pages/{slug}: a page for children links to GitHub or YouTube (nowhere a child shouldn't be)")
+            fail(f"pages/{slug}: a page for children links off-site to GitHub, YouTube or X (nowhere a child shouldn't be)")
         if kids and "mailto:" in page:
             fail(f"pages/{slug}: a page for children carries an email link (the footer names the address for grown-ups)")
         if meta.get("front"):   # standing rule (the owner, 2026-10-12): a front page shows <= ~800 words before its sub-page tiles
@@ -292,7 +294,7 @@ def build_pages(numbers):
 
 
 CONTACT_ITEMS = ('<li><a href="mailto:info@x-wow.com">info@x-wow.com</a></li>\n'
-                 '        <li><a href="https://x.com/X_WowCom" target="_blank" rel="noopener">@X_WowCom <span class="en">on X</span><span class="zh">（X）</span></a></li>\n'
+                 '        <li><a href="https://x.com/X_WowCom" target="_blank" rel="noopener">@X_WowCom <span class="en">on X</span><span class="zh">（X）</span></a> <span class="en">(posts only; write to info@x-wow.com)</span><span class="zh">（只发帖；联系请写信到 info@x-wow.com）</span></li>\n'
                  '        <li><a href="{{gh}}" target="_blank" rel="noopener"><span class="en">Site source on GitHub</span><span class="zh">网站源码（GitHub）</span></a></li>')
 # A7-30 / Wall 7: pages made for children link nowhere a child shouldn't go: the address only, for grown-ups, no links
 CONTACT_ITEMS_KIDS = '<li><span class="en">For grown-ups: info@x-wow.com</span><span class="zh">给大人：info@x-wow.com</span></li>'
@@ -310,7 +312,7 @@ REDIRECT = """<!doctype html>
 <link rel="canonical" href="{canonical}">
 <script>location.replace({target_js} + ({target_js}.indexOf("#") < 0 ? location.hash : ""));</script>
 <style>body{{background:#05080d;color:#d8eef6;font:16px system-ui,sans-serif;padding:2rem}}a{{color:#4fd8ff}}</style>
-</head><body><p>This page has moved: <a href="{target}">{label}</a>. 此页面已搬家：<a href="{target}">{label}</a>。</p></body></html>
+</head><body><p>This page has moved: <a href="{target}">{label}</a>. </p></body></html>
 """
 
 
@@ -362,6 +364,9 @@ def check_anchor_maps():
     for f in (SRC / "pages").glob("*/97-anchors.html"):
         m = re.search(r"var m=(\{.*?\});", f.read_text(encoding="utf-8"))
         front = f.parent.name.replace("~", "/")
+        if not m:
+            problems.append(f"{f.relative_to(SRC).as_posix()}: no anchor map (var m={{...}};) found")
+            continue
         for anchor, sub in json.loads(m.group(1)).items():
             page = OUT / front / sub / "index.html"
             if not page.exists() or f'id="{anchor}"' not in page.read_text(encoding="utf-8"):

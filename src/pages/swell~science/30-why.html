@@ -16,8 +16,8 @@
     #why-it-works .credits { font-size: .9rem; color: var(--muted); }
   </style>
   <p class="kicker"><span class="en">Why it works</span><span class="zh">为什么行得通</span></p>
-  <h2><span class="en">Three cheap ideas</span><span class="zh">三个便宜的点子</span></h2>
-  <p class="lead en">The project's design rule: chemistry does the resolution work, so the optics can stay cheap. More expansion with a modest lens beats expensive glass.</p>
+  <h1 class="page-h"><span class="en">Three ideas to keep it cheap</span><span class="zh">三个便宜的点子</span></h1>
+  <p class="lead en">The project's design rule: chemistry does the resolution work, so the optics can stay modest. More expansion with a modest lens is meant to stand in for expensive glass.</p>
   <p class="lead zh">项目的设计原则：分辨率交给化学，光学就可以便宜。多胀几倍、配一个普通镜头，胜过昂贵的玻璃。</p>
 
   <figure class="fig diagram">
@@ -71,15 +71,15 @@
     <div class="panel">
       <h3><span class="en">2 · A ruler grown into the meat</span><span class="zh">2 · 长在肉里的尺子</span></h3>
       <p class="formula">E = SL<sub>post</sub> ÷ SL<sub>pre</sub></p>
-      <p class="en">Sarcomere spacing is measured on the same myofibril before and after expansion. The project's notes call the period blur-invariant: blur softens each stripe but leaves the spacing alone, so the ratio survives cheap optics. The before-image should need no label: differential phase contrast with four oblique LEDs is predicted to show the stripes (the project's choice after the physics check; untested), with crossed polarisers as a cross-check.</p>
+      <p class="en">Sarcomere spacing is measured on the same myofibril before and after expansion. The project's notes call the period blur-invariant: blur softens each stripe but leaves the spacing alone, so the ratio survives modest optics. The before-image should need no label: differential phase contrast with four oblique LEDs is predicted to show the stripes (the project's choice after the physics check; untested), with crossed polarisers as a cross-check.</p>
       <p class="zh">在同一根肌原纤维上，膨胀前后各量一次肌节间距。项目笔记说这个周期“不受模糊影响”：模糊只让条纹变软，间距不变，所以便宜镜头也能用这个比值。膨胀前那张图应该不用染色：按预测，用四个斜射 LED 做差分相衬（DPC）能看到条纹（这是物理核算后项目选定的方式，未经测试），正交偏振光作为交叉核对。</p>
       <p class="en muted">It replaced the textbook A-band ruler, which needs sarcomeres long enough to show an I-band: only about {{n:swell.aband_usable_a}} of supermarket breast at {{n:swell.track_a}}.</p>
       <p class="zh muted">它取代了教科书里的 A 带尺子。那把尺子要求肌节长到能看见 I 带，超市鸡胸肉在 {{n:swell.track_a}} 下只有约 {{n:swell.aband_usable_a}} 合格。</p>
-      <p class="en muted">Who got there first: Chen, Tillberg and Boyden (2015), who introduced expansion microscopy, imaged the same cells before and after expansion and measured how far lengths moved (under 1% of the distance in cultured cells, 2–4% in brain slices). Sheard and colleagues (2019) used the periodicity of sarcomeres and the fixed width of Z-discs as intrinsic reporters of local gel expansion in heart cells, and Sheard's 2021 thesis found the sarcomere factor lower than the gel's. A 2022 thesis by Migliore expanded isolated rabbit myofibrils, imaged them without labels and used the A-band as the ruler. VISTA (Miao, Lin, Qian and Wei, 2022) measured expansion by comparing label-free images of the same structures before and after. What SWELL adds is pairing each myofibril's label-free period before expansion with its own period after.</p>
+      <p class="en muted">Who got there first: Chen, Tillberg and Boyden (2015), who introduced expansion microscopy, imaged the same cells before and after expansion and measured how far lengths moved (under 1% of the distance in cultured cells, 2–4% in brain slices). Sheard and colleagues (2019) used the periodicity of sarcomeres and the fixed width of Z-discs as intrinsic reporters of local gel expansion in heart cells, and Sheard's 2021 thesis found the sarcomere factor lower than the gel's. A 2022 thesis by Migliore expanded isolated rabbit myofibrils, imaged them without labels and used the A-band as the ruler. VISTA (Miao, Lin, Qian and Wei, 2022) measured expansion by comparing label-free images of the same structures before and after. In our dated searches (docs/design/prior_art.md in the download, 10 October 2026) we found nothing that pairs each myofibril's label-free period before expansion with its own period after.</p>
       <p class="zh muted">谁先做到的：发明膨胀显微术的 Chen、Tillberg 与 Boyden（2015）就在膨胀前后拍同一批细胞，量出长度偏移了多少（培养细胞里不到距离的 1%，脑切片里 2–4%）。Sheard 等人（2019）在心肌细胞里，用肌节的周期和 Z 盘的固定宽度作为凝胶局部膨胀的内在指示；Sheard 2021 年的学位论文发现，肌节算出的倍数比凝胶的低。Migliore 2022 年的学位论文膨胀过分离的兔肌原纤维，不染色成像，并用 A 带当尺子。VISTA（Miao、Lin、Qian 与 Wei，2022）通过比较同一结构膨胀前后的免标记图像来测膨胀。SWELL 加的是：把每一根肌原纤维膨胀前的免标记周期，和它自己膨胀后的周期配对。</p>
     </div>
     <div class="panel">
-      <h3><span class="en">3 · Cheap glass, just enough of it</span><span class="zh">3 · 便宜镜头，刚好够用</span></h3>
+      <h3><span class="en">3 · Modest glass, just enough of it</span><span class="zh">3 · 便宜镜头，刚好够用</span></h3>
       <p class="en">Motic PL 40X/0.65 and PL 20X/0.40 plan objectives, one {{n:swell.tube_f}} achromat {{n:swell.tube_d}} behind the objective, and a mono IMX296 global-shutter camera ({{n:swell.cam_format}}) at {{n:swell.cam_price}}. Together: {{n:swell.mag_a}} and {{n:swell.px_a}} pixels, which is {{n:swell.nyq_a}} Nyquist for the {{n:swell.track_a}} track and {{n:swell.nyq_b}} for the {{n:swell.track_b}} track.</p>
       <p class="zh">Motic PL 40X/0.65 和 PL 20X/0.40 平场物镜，物镜后 {{n:swell.tube_d}} 处放一片 {{n:swell.tube_f}} 消色差透镜，再配一台 {{n:swell.cam_price}} 的 IMX296 黑白全局快门相机（{{n:swell.cam_format}}）。合起来是 {{n:swell.mag_a}}、每像素 {{n:swell.px_a}}：{{n:swell.track_a}} 路线达到奈奎斯特采样的 {{n:swell.nyq_a}}，{{n:swell.track_b}} 路线为 {{n:swell.nyq_b}}。</p>
       <p class="en muted">The stock OpenFlexure lens would undersample ({{n:swell.ofm_stock_nyq}} Nyquist), and a colour sensor wastes signal, so neither is used. The stage would be a fork of the open OpenFlexure Microscope v7, run by a Raspberry Pi 5 and a Pico 2.</p>

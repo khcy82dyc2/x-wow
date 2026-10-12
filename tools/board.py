@@ -219,7 +219,8 @@ def html(root: str, numbers: dict) -> tuple[str, list[str]]:
     used = [f for f in b["fields"] if f["id"] in {c["field"] for c in b["cards"]}]
     fopts = "".join(f'<option value="{e(f["id"])}">{e(f["en"])}</option>' for f in used)
     sopts = "".join(f'<option value="{i}">{e(s["en"])}</option>' for i, s in enumerate(lad))
-    out.append(
+    if len(b["cards"]) > 1:   # sorting a single card is noise
+      out.append(
         '<div class="bd-filter" role="group" aria-label="Sort and filter the inventions">'
         f'<label>{both("Sort", "排序")} <select data-sort>'
         '<option value="pct">Completion</option><option value="last">Recently moved</option>'
@@ -236,8 +237,12 @@ def html(root: str, numbers: dict) -> tuple[str, list[str]]:
         f = fields.get(c["field"], {"en": c["field"], "zh": c["field"]})
         concept = next((r["date"] for r in c["reached"] if r["id"] == "concept"), "")
         link = (f'<a class="bd-more" href="{root}{e(c["page"])}">{both("See the invention", "看看这个发明")} →</a>') if c.get("page") else ""
-        files = " · ".join(f'<a href="{root}{e(p)}">{both(s["en"].lower(), s["zh"])}</a>' for s in lad for r in c["reached"] if r["id"] == s["id"]
-                           for p in r["files"][:1] if not p.startswith("zip:"))
+        def proof(s, p):   # a proof file inside the download is named and linked to the download section
+            if p.startswith("zip:"):
+                member = p.split("!", 1)[1].split("/")[-1]
+                return f'<a href="{root}{e(c["page"])}download/">{both(s["en"].lower() + " (" + member + ", in the download)", s["zh"] + "（" + member + "，在下载包里）")}</a>'
+            return f'<a href="{root}{e(p)}">{both(s["en"].lower(), s["zh"])}</a>'
+        files = " · ".join(proof(s, p) for s in lad for r in c["reached"] if r["id"] == s["id"] for p in r["files"][:1])
         cards.append(
             f'<article class="bd-card panel" data-field="{e(c["field"])}" data-fieldname="{e(f["en"])}" data-pct="{c["pct"]}" data-top="{c["top"]}" '
             f'data-last="{e(c["last"])}" data-new="{e(concept)}" data-cost="{cost_num(c)}" data-name="{e(c["name_en"])}">'
