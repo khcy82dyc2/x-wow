@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="en" data-title-en="Inventions board · X-WOW" data-desc-en="Every X-WOW invention on one board: what it does, what it would cost, and how far it has really got. Bars move only when the proof file for a stage exists. Steal any of them happily.">
+<html lang="en" data-title-en="Coming soon · X-WOW" data-desc-en="X-WOW&#x27;s inventions page is coming back later. Meanwhile, see SWELL, invention #1, and the slide game SHRINK.">
 <head>
 <meta charset="utf-8">
+<meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inventions board · X-WOW</title>
-<meta name="description" content="Every X-WOW invention on one board: what it does, what it would cost, and how far it has really got. Bars move only when the proof file for a stage exists. Steal any of them happily.">
+<title>Coming soon · X-WOW</title>
+<meta name="description" content="X-WOW&#x27;s inventions page is coming back later. Meanwhile, see SWELL, invention #1, and the slide game SHRINK.">
 <meta name="theme-color" content="#05080d">
 <meta name="color-scheme" content="dark">
-<meta property="og:title" content="Inventions board · X-WOW">
-<meta property="og:description" content="Every X-WOW invention on one board: what it does, what it would cost, and how far it has really got. Bars move only when the proof file for a stage exists. Steal any of them happily.">
+<meta property="og:title" content="Coming soon · X-WOW">
+<meta property="og:description" content="X-WOW&#x27;s inventions page is coming back later. Meanwhile, see SWELL, invention #1, and the slide game SHRINK.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://x-wow.com/assets/img/og-xwow.png">
 <meta property="og:image:width" content="1200">
@@ -33,7 +34,6 @@
     <details class="menu">
       <summary><span class="en">Menu</span></summary>
       <div class="menu-links">
-<a href="../inventions/" aria-current="page"><span class="en">Inventions</span></a>
 <a href="../swell/"><span class="en">SWELL</span></a>
 <a href="../shrink/"><span class="en">SHRINK</span></a>
 <a href="../back-to-shine/"><span class="en">Back to Shine</span></a>
@@ -41,7 +41,6 @@
       </div>
     </details>
     <div class="nav-links">
-<a href="../inventions/" aria-current="page"><span class="en">Inventions</span></a>
 <a href="../swell/"><span class="en">SWELL</span></a>
 <a href="../shrink/"><span class="en">SHRINK</span></a>
 <a href="../back-to-shine/"><span class="en">Back to Shine</span></a>
@@ -51,112 +50,14 @@
 </header>
 <main id="main">
 
-<section class="block" id="board">
-<style>
-#board .bd-count{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:1rem 0}
-#board .bd-count div{padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
-#board .bd-count b{display:block;font:700 clamp(2rem,6vw,3.2rem)/1 var(--mono);color:var(--cyan)}
-#board .bd-count span{font-size:.9rem;color:var(--muted)}
-#board .bd-moved ul{list-style:none;display:flex;gap:8px;overflow-x:auto;padding:0;margin:.4rem 0 1rem;scrollbar-width:thin}
-#board .bd-moved li{flex:none;padding:6px 10px;border:1px solid var(--line);border-radius:16px;font-size:.85rem;white-space:nowrap}
-#board .bd-moved time{font-family:var(--mono);color:var(--gold);margin-right:4px}
-#board .bd-filter{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:.6rem 0 1rem;font-size:.9rem}
-#board .bd-fields{display:flex;flex-wrap:wrap;gap:6px}
-#board .bd-fields button{padding:4px 12px;border-radius:14px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer}
-#board .bd-fields button[aria-pressed="true"]{background:var(--cyan);color:#001018;border-color:var(--cyan)}
-#board select{background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:3px 6px;font:inherit}
-#board .bd-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
-#board .bd-card{display:flex;flex-direction:column;gap:6px}
-#board .bd-card h3{margin:0;font-family:var(--mono);letter-spacing:.08em}
-#board .bd-field{margin:0;font:600 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
-#board .bd-hook{margin:0;font-weight:600}
-#board .bd-what{margin:0;font-size:.92rem;color:var(--text)}
-#board .bd-cost{margin:0;font-size:.88rem;color:var(--muted)}
-#board .bd-bar{display:flex;gap:2px;height:12px;margin-top:4px}
-#board .bd-bar i{background:rgba(134,167,181,.22);border-radius:2px}
-#board .bd-bar i.on{background:linear-gradient(90deg,var(--cyan),var(--ok))}
-#board .bd-stage{margin:0;font-size:.85rem}
-#board .bd-stage b{font-family:var(--mono);color:var(--cyan)}
-#board .bd-stage time{font-family:var(--mono)}
-#board .bd-files,#board .bd-steal,#board .bd-checked{margin:0;font-size:.8rem;color:var(--muted)}
-#board .bd-more{margin-top:auto;font-weight:600}
-#board .bd-ladder{font-size:.85rem;color:var(--muted)}
-#board .bd-gate{font-size:.85rem;color:var(--gold)}
-#board .bd-ladder ol{padding-left:1.2rem}
-#board .bd-count-link{display:block;color:inherit;text-decoration:none}#board .bd-count-link:hover b{text-decoration:underline}
-#board .bd-asof{font-size:.8rem;color:var(--muted);margin:-.4rem 0 1rem}
-#board .bd-mark{display:inline-block;margin-left:8px;padding:0 7px;border-radius:9px;font:700 .68rem/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;vertical-align:1px}
-#board .bd-mark-new{background:var(--gold);color:#1a1200}
-#board .bd-mark-moved{border:1px solid var(--cyan);color:var(--cyan)}
-#board .bd-sparks{margin-top:2.2rem}
-#board .bd-sparks h2.kicker{font-size:inherit;margin:0 0 .4rem}
-#board .bd-lane-note{color:var(--muted);font-size:.92rem;max-width:72ch}
-#board .bd-spark-list{list-style:none;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
-#board .bd-spark{display:flex;flex-direction:column;gap:6px;border-style:dashed}
-#board .bd-spark h3{margin:0;font-size:1.02rem}
-#board .bd-spark p{margin:0;font-size:.9rem}
-#board .bd-why{color:var(--text)}
-#board .bd-killed{margin:1.4rem 0;font-size:.9rem}
-#board .bd-killed summary{cursor:pointer;font-weight:600}
-#board .bd-killed ul{padding-left:1.1rem}
-#board .bd-killed time{font-family:var(--mono);color:var(--muted);margin-right:4px}
-#board .bd-stats{list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px;padding:10px 0 12px;margin:.8rem 0 1rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.9rem;color:var(--muted)}
-#board .bd-stats b{font-family:var(--mono);color:var(--cyan);font-size:1.05rem}
-#board .bd-stats a{color:inherit;text-decoration:none}#board .bd-stats a:hover b{text-decoration:underline}
-#board .bd-stats time{font-family:var(--mono);color:var(--gold)}#board .bd-stats .bd-asof{margin-left:auto;font-size:.8rem}
-#board .bd-q{display:inline-block;margin-left:6px;width:1.2em;height:1.2em;line-height:1.2em;text-align:center;border:1px solid var(--line);border-radius:50%;font-size:.75rem;text-decoration:none}
-#board .bd-pa{display:inline-block;margin-left:6px;padding:0 6px;border:1px solid var(--line);border-radius:9px;font:600 .66rem/1.5 var(--mono);letter-spacing:.04em;color:var(--muted);text-transform:none}
-#board .bd-spark-list{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}#board .bd-spark-more summary{cursor:pointer;font-size:.82rem;color:var(--muted)}
-</style>
-<p class="kicker"><span class="en">Inventions board</span></p>
-<h1 class="page-h"><span class="en">Every X-WOW invention, and how far it has really got</span></h1>
-<p class="lead en">A bar moves only when the proof file for that stage exists; the most advanced invention comes first.</p>
-
-<ul class="bd-stats" aria-label="Board totals"><li><b>1</b> <span class="en">invention</span></li><li><b>1</b> <span class="en">past the theory check</span></li><li><b>0</b> <span class="en">build guides</span></li><li><a href="#sparks"><b>7</b> <span class="en">sparks</span></a></li><li><a href="#killed"><b>3</b> <span class="en">killed</span></a></li><li class="bd-last"><span class="en">last moved</span> <time>2026-10-11</time>: <span class="en">spark: Leaf-glow clock</span></li><li class="bd-asof"><span class="en">as of 2026-10-12</span></li></ul>
-<div class="bd-grid"><article class="bd-card panel" data-field="microscopy" data-fieldname="Microscopy" data-pct="25" data-top="1" data-last="2026-10-10" data-new="2026-10-10" data-cost="214" data-name="SWELL"><p class="bd-field"><span class="en">Microscopy</span> <span class="bd-mark bd-mark-moved"><span class="en">moved</span></span></p><h3><span class="en">SWELL</span></h3><p class="bd-hook"><span class="en">An expansion microscope designed to check every gel against chicken muscle.</span></p><p class="bd-what"><span class="en">A hydrogel swells the specimen 4 to 10 times so a microscope with a 3D-printed stage, designed to be cheap, could resolve detail below the light&#x27;s limit, in the specimen&#x27;s own units. Chicken myofibrils expanded alongside carry sarcomeres, built-in rulers that would report how much each fibril grew; whether that matches the gel around them is untested. It is a partial desk design (<span class="num" tabindex="0" title="src/data/evidence.json: swell.counts · computed by tools/evidence_bar.py from the latest SWELL package and the red team&#x27;s score">5</span> of its <span class="num" tabindex="0" title="src/data/evidence.json: swell.counts · computed by tools/evidence_bar.py from the latest SWELL package and the red team&#x27;s score">9</span> design documents are written; <span class="num" tabindex="0" title="src/data/evidence.json: swell.counts · computed by tools/evidence_bar.py from the latest SWELL package and the red team&#x27;s score">the wet-lab protocol, the safety pack, the mechanical CAD and the instrument software</span> are not), with simulations and a red-team test, given away free; it has never been built.</span></p><p class="bd-cost"><span class="en">≥ £214 for the parts priced so far; most aren&#x27;t priced yet, so there is no full cost</span></p><div class="bd-bar" role="img" aria-label="25% of the stage ladder"><i class="on" style="flex:10" title="Concept"></i><i class="on" style="flex:15" title="Theory checked"></i><i class="" style="flex:15" title="Design drafted"></i><i class="" style="flex:10" title="Parts priced"></i><i class="" style="flex:15" title="Build guide"></i><i class="" style="flex:20" title="Prototype built"></i><i class="" style="flex:15" title="Validated"></i></div><p class="bd-stage"><b>25%</b> · <span class="en">Theory checked</span> · <span class="en">last advanced</span> <time>2026-10-10</time> <a class="bd-q" href="#how-counted" title="How the bar is counted" aria-label="How the bar is counted">?</a></p><p class="bd-files"><span class="en">Proof files: </span><a href="../inventions/swell/card.md"><span class="en">concept</span></a> · <a href="../swell/download/"><span class="en">theory checked (calc_v0.md, in the download)</span></a></p><p class="bd-checked"><span class="en">Theory checked by: AI checks only (fresh Claude sessions that didn&#x27;t write it); no person has checked it</span></p><p class="bd-gate"><span class="en">Has not passed X-WOW&#x27;s gate: it predates it; an AI review (10 October 2026; an AI told to read as a sceptical specialist) scored principle 12, &quot;feels like 2030&quot;, a fail, and principles 2 (scientifically wow) and 4 (it checks itself) are untested or weak. Shown as the first invention, with its card.</span></p><p class="bd-steal"><span class="en">Steal this happily: no credit needed.</span></p><a class="bd-more" href="../swell/"><span class="en">See the invention</span> →</a></article></div>
-<section class="bd-sparks" id="sparks" aria-labelledby="sparks-h"><h2 class="kicker" id="sparks-h"><span class="en">Sparks</span> (7)</h2><p class="bd-lane-note"><span class="en">Ideas that passed the first test: each could make something hidden visible. Untested, not claims: none is called new before its search for earlier work, and none has a bar until it is a card.</span></p><div class="bd-filter" role="group" aria-label="Sort the sparks"><label><span class="en">Sort sparks</span> <select data-spark-sort><option value="new">Newest</option><option value="name">Name</option><option value="pa">Prior-art result</option></select></label></div><ul class="bd-spark-list"><li class="bd-spark panel" data-new="2026-10-11" data-name="Leaf-glow clock" data-pa="not yet searched"><p class="bd-field"><span class="en">spark</span> · <time>2026-10-11</time> <span class="bd-mark bd-mark-new"><span class="en">new</span></span> <span class="bd-pa bd-pa-not-yet-searched"><span class="en">Prior art: not yet searched</span></span></p><h3><span class="en">Leaf-glow clock</span></h3><p><span class="en">A leaf kept in the dark and then lit gives off a faint red glow that rises and falls over seconds to minutes as photosynthesis starts up (the Kautsky effect).</span></p><details class="bd-spark-more"><summary><span class="en">Why it might matter, and earlier work</span></summary><p class="bd-why"><span class="en">A filtered phone camera might watch that curve, a clock of the leaf&#x27;s own machinery, with ordinary visible light only.</span></p><p class="bd-files"><span class="en">Earlier work: not yet searched (the Kautsky effect is classic plant science; we will credit it).</span></p></details></li><li class="bd-spark panel" data-new="2026-10-11" data-name="Moiré magnifier" data-pa="not yet searched"><p class="bd-field"><span class="en">spark</span> · <time>2026-10-11</time> <span class="bd-mark bd-mark-new"><span class="en">new</span></span> <span class="bd-pa bd-pa-not-yet-searched"><span class="en">Prior art: not yet searched</span></span></p><h3><span class="en">Moiré magnifier</span></h3><p><span class="en">Lay one printed line pattern over another and a movement too small to see becomes broad bands sweeping across the sheet.</span></p><details class="bd-spark-more"><summary><span class="en">Why it might matter, and earlier work</span></summary><p class="bd-why"><span class="en">Two printed sheets might measure tiny bending or swelling, with the bands doing the magnifying.</span></p><p class="bd-files"><span class="en">Earlier work: not yet searched (moiré methods are long established; we will credit them).</span></p></details></li><li class="bd-spark panel" data-new="2026-10-11" data-name="Rolling-shutter time microscope" data-pa="not yet searched"><p class="bd-field"><span class="en">spark</span> · <time>2026-10-11</time> <span class="bd-mark bd-mark-new"><span class="en">new</span></span> <span class="bd-pa bd-pa-not-yet-searched"><span class="en">Prior art: not yet searched</span></span></p><h3><span class="en">Rolling-shutter time microscope</span></h3><p><span class="en">A phone camera reads its picture one row at a time, so a single photo of something fast (a plucked string, a spinning fan) holds a time-line in its stripes.</span></p><details class="bd-spark-more"><summary><span class="en">Why it might matter, and earlier work</span></summary><p class="bd-why"><span class="en">It could measure speeds and frequencies far too fast for the eye with nothing but the phone in your pocket.</span></p><p class="bd-files"><span class="en">Earlier work: not yet searched (rolling-shutter measurement is studied in research; we will credit what we find).</span></p></details></li><li class="bd-spark panel" data-new="2026-10-11" data-name="Screen-polariser microscope" data-pa="not yet searched"><p class="bd-field"><span class="en">spark</span> · <time>2026-10-11</time> <span class="bd-mark bd-mark-new"><span class="en">new</span></span> <span class="bd-pa bd-pa-not-yet-searched"><span class="en">Prior art: not yet searched</span></span></p><h3><span class="en">Screen-polariser microscope</span></h3><p><span class="en">Many phone and laptop screens give out polarised light; with a second polarising film, raw starch grains glow with dark crosses that fade once the starch is cooked.</span></p><details class="bd-spark-more"><summary><span class="en">Why it might matter, and earlier work</span></summary><p class="bd-why"><span class="en">It would show cooking happen at the level of how molecules are packed, using a screen you already own. Raw and already-cooked food side by side; any heating is an adult&#x27;s job.</span></p><p class="bd-files"><span class="en">Earlier work: not yet searched.</span></p></details></li><li class="bd-spark panel" data-new="2026-10-11" data-name="Seedling speckle growth" data-pa="not yet searched"><p class="bd-field"><span class="en">spark</span> · <time>2026-10-11</time> <span class="bd-mark bd-mark-new"><span class="en">new</span></span> <span class="bd-pa bd-pa-not-yet-searched"><span class="en">Prior art: not yet searched</span></span></p><h3><span class="en">Seedling speckle growth</span></h3><p><span class="en">Laser light scattered off a living seedling makes a grainy speckle that shimmers as cells move and grow. This is biospeckle, an established research method; the spark is only about making it cheap and safe.</span></p><details class="bd-spark-more"><summary><span class="en">Why it might matter, and earlier work</span></summary><p class="bd-why"><span class="en">How fast the speckle changes could show growth a camera can&#x27;t see directly. Only a sealed Class 1 or 2 laser product, handled by an adult and never pointed at anyone&#x27;s eyes.</span></p><p class="bd-files"><span class="en">Earlier work: biospeckle research comes first; the search for cheap versions is not yet done.</span></p></details></li><li class="bd-spark panel" data-new="2026-10-10" data-name="ReLens" data-pa="not yet searched"><p class="bd-field"><span class="en">spark</span> · <time>2026-10-10</time> <span class="bd-pa bd-pa-not-yet-searched"><span class="en">Prior art: not yet searched</span></span></p><h3><span class="en">ReLens</span></h3><p><span class="en">A printed adapter and a phone app could turn one retired microscope objective into a measuring microscope that checks itself against a ruler on the slide.</span></p><details class="bd-spark-more"><summary><span class="en">Why it might matter, and earlier work</span></summary><p class="bd-why"><span class="en">Retired lab optics are often thrown away; one good lens could be a school&#x27;s first calibrated microscope.</span></p><p class="bd-files"><span class="en">From: Back to Shine. Earlier work: not yet searched (phone microscope adapters are common; anything new would have to be the self-check).</span></p></details></li><li class="bd-spark panel" data-new="2026-10-10" data-name="SlideBox" data-pa="not yet searched"><p class="bd-field"><span class="en">spark</span> · <time>2026-10-10</time> <span class="bd-pa bd-pa-not-yet-searched"><span class="en">Prior art: not yet searched</span></span></p><h3><span class="en">SlideBox</span></h3><p><span class="en">A phone, a printed stage and free hosting might turn any school&#x27;s box of slides into an explorable SHRINK world.</span></p><details class="bd-spark-more"><summary><span class="en">Why it might matter, and earlier work</span></summary><p class="bd-why"><span class="en">Whole-slide scanners are out of reach for most schools; their slide boxes sit in cupboards.</span></p><p class="bd-files"><span class="en">From: X-WOW&#x27;s slide-scanner archive and SHRINK. Earlier work: not yet searched (phone slide-scanning and open microscopes exist; we will credit them).</span></p></details></li></ul></section>
-<details class="bd-killed" id="killed"><summary><span class="en">Killed, and why</span> (3)</summary><ul><li><time>2026-10-10</time> <b><span class="en">Clock tile for slow scans</span></b>: <span class="en">Not an invention of its own: it is a step inside SWELL&#x27;s method, and stays there.</span></li><li><time>2026-10-10</time> <b><span class="en">Salad-spinner cell sorter</span></b>: <span class="en">It separates things but shows nothing: no seeing core, so it fails X-WOW&#x27;s first test.</span></li><li><time>2026-10-10</time> <b><span class="en">Water-bead expansion lesson</span></b>: <span class="en">Water beads are a known danger to young children: the UK Office for Product Safety and Standards warns that swallowed beads expand and can block a child&#x27;s gut, needing surgery, and that the beads can also cause choking (safety alert, GOV.UK, 19 September 2024, read 12 October 2026). Not for a site children use, in any form.</span></li></ul></details>
-<details class="bd-ladder" id="how-counted">
-  <summary><span class="en">How the bar is counted</span></summary>
-  <p class="en">Each card says what the invention does, what it would cost and where it stands. A bar moves only when the proof file for that stage exists (a theory note with its numbers, a priced parts list, a build guide), and its date is the day that file first existed in X-WOW&#x27;s own records, not the day it went online. The board grows when an idea passes X-WOW's gate: cheap, wow, unique, a seeing core. It is never padded. SWELL, the first invention, predates the gate and has not passed it; its card says why. Every card is free to build, change and claim. We claim nothing on any of them, but we can't promise that nobody else holds a patent: each invention's page says what we found. Below the cards are the <a href="#sparks">Sparks</a>: new ideas shown the day they pass the first test, before the deeper checks, and the ideas we <a href="#killed">killed</a>, with the reason.</p>
-  
-  <ol class="en">
-    <li>Concept (10): a card with the hook, three sentences, the twelve-principle triage, the prior-art search and the AI reviewer's verdict.</li>
-    <li>Theory checked (15): the science written out with at least three computed or cited numbers; the card names who checked it (so far, only AIs).</li>
-    <li>Design drafted (15): drawings, a schematic or CAD files (a text document, a plot or a render never counts).</li>
-    <li>Parts priced (10): at least five parts, each with a price, a link and the date checked.</li>
-    <li>Build guide (15): numbered steps, a safety section and the built-in check.</li>
-    <li>Prototype built (20): hardware, a build report from someone outside X-WOW, with who checked it (X-WOW itself stops at simulated prototypes); software, a public working version at its address.</li>
-    <li>Validated (15): measured results against the claims, with who checked them, checked independently.</li>
-  </ol>
-  
-  <p class="en">The bar adds every stage whose proof exists. The stage named on a card is the furthest one with every stage before it done, so a card never claims a step it skipped.</p>
-  
-</details>
-<script>
-(function(){var root=document.getElementById("board");if(!root)return;var grid=root.querySelector(".bd-grid");if(!grid)return;
-var KEY="xwow-board-sort";function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}function put(v){try{localStorage.setItem(KEY,v);}catch(e){}}
-var so=root.querySelector("[data-sort]"),fo=root.querySelector("[data-field]"),st=root.querySelector("[data-stage]");
-var sort=get()||"pct";if(so&&so.querySelector('option[value="'+sort+'"]'))so.value=sort;else sort="pct";
-function cmp(a,b){var A=function(k){return a.getAttribute(k)||"";},B=function(k){return b.getAttribute(k)||"";};
- if(sort==="last")return B("data-last").localeCompare(A("data-last"));
- if(sort==="new")return B("data-new").localeCompare(A("data-new"));
- if(sort==="cost"){var x=A("data-cost"),y=B("data-cost");if(!x&&!y)return 0;if(!x)return 1;if(!y)return -1;return (+x)-(+y);}
- if(sort==="field")return A("data-fieldname").localeCompare(B("data-fieldname"))||A("data-name").localeCompare(B("data-name"));
- return (+B("data-pct"))-(+A("data-pct"))||A("data-name").localeCompare(B("data-name"));}
-function apply(){var field=fo?fo.value:"",stage=st?+st.value:-1,cards=[].slice.call(grid.children);
- cards.forEach(function(c){c.hidden=!((!field||c.getAttribute("data-field")===field)&&(+c.getAttribute("data-top")>=stage));});
- cards.sort(cmp).forEach(function(c){grid.appendChild(c);});}
-if(so)so.addEventListener("change",function(){sort=so.value;put(sort);apply();});
-if(fo)fo.addEventListener("change",apply);if(st)st.addEventListener("change",apply);apply();
-var list=root.querySelector(".bd-spark-list"),ss=root.querySelector("[data-spark-sort]");
-if(list&&ss)ss.addEventListener("change",function(){var v=ss.value;[].slice.call(list.children).sort(function(a,b){
- if(v==="name")return a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));
- if(v==="pa")return a.getAttribute("data-pa").localeCompare(b.getAttribute("data-pa"))||a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));
- return b.getAttribute("data-new").localeCompare(a.getAttribute("data-new"))||a.getAttribute("data-name").localeCompare(b.getAttribute("data-name"));}).forEach(function(c){list.appendChild(c);});});
-function oh(){["killed","how-counted"].forEach(function(id){var d=document.getElementById(id);if(d&&location.hash==="#"+id)d.open=true;});}
-window.addEventListener("hashchange",oh);oh();})();
-</script>
+<section class="block" id="soon">
+  <p class="kicker"><span class="en">Inventions</span></p>
+  <h1 class="page-h"><span class="en">Coming soon</span></h1>
+  <p class="lead en">This page is being reworked and will come back later. Meanwhile, invention #1 is here, and so is the slide game.</p>
+  <p>
+    <a class="btn gold" href="../swell/"><span class="en">Invention #1: SWELL</span></a>
+    <a class="btn" href="../shrink/"><span class="en">Play SHRINK</span></a>
+  </p>
 </section>
 
 <section class="page-history" id="corrections" aria-label="Page history">
@@ -164,7 +65,7 @@ window.addEventListener("hashchange",oh);oh();})();
   <summary><span class="en">Page history: 1 dated change, on 12 October 2026</span></summary>
   <details class="ph-day">
     <summary><span class="en">12 October 2026</span></summary>
-    <ul class="en"><li>Three sparks, "Shadow gate", "Swing scale for hidden mass" and "Heat-map paper", are taken down. Each drew on a journal headline whose paper had not been opened, so the people behind the work were not credited. They come back only once the paper is read and credited by author and title. Five other sparks said they were "the owner's idea", although each rests on an established principle that others discovered; that line is gone until each principle is credited to its source.</li></ul>
+    <ul class="en"><li>The Inventions board is hidden while it is reworked, and this page says it will come back. Earlier the same day, three of its sparks had been taken down because they drew on journal papers that hadn't been read and credited, and five sparks had stopped calling an established principle the owner's idea.</li></ul>
   </details>
 </details>
 </section>
@@ -179,7 +80,6 @@ window.addEventListener("hashchange",oh);oh();})();
     <nav class="fc" aria-label="Explore">
       <p class="fc-h"><span class="en">Explore</span></p>
       <ul>
-        <li><a href="../inventions/"><span class="en">Inventions</span></a></li>
         <li><a href="../swell/">SWELL</a></li>
         <li><a href="../shrink/"><span class="en">SHRINK</span></a></li>
         <li><a href="../back-to-shine/"><span class="en">Back to Shine</span></a></li>

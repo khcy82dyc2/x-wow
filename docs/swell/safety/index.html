@@ -33,7 +33,6 @@
     <details class="menu">
       <summary><span class="en">Menu</span></summary>
       <div class="menu-links">
-<a href="../../inventions/"><span class="en">Inventions</span></a>
 <a href="../../swell/" aria-current="page"><span class="en">SWELL</span></a>
 <a href="../../shrink/"><span class="en">SHRINK</span></a>
 <a href="../../back-to-shine/"><span class="en">Back to Shine</span></a>
@@ -41,7 +40,6 @@
       </div>
     </details>
     <div class="nav-links">
-<a href="../../inventions/"><span class="en">Inventions</span></a>
 <a href="../../swell/" aria-current="page"><span class="en">SWELL</span></a>
 <a href="../../shrink/"><span class="en">SHRINK</span></a>
 <a href="../../back-to-shine/"><span class="en">Back to Shine</span></a>
@@ -151,7 +149,7 @@
         <li><span class="en"><strong>Low voltage:</strong> ≤ <span class="num" tabindex="0" title="pm/INVARIANTS.md, INV-5 (SWELL project notes) · quoted">24 V DC</span> inside, from certified external supplies with fused rails. Never wire mains.</span></li>
         <li><span class="en"><strong>Liquids:</strong> only the sealed sample vessel sits over the objective, with a drip ring, a sleeve and a leak sensor; no reservoirs above the optics or electronics.</span></li>
         <li><span class="en"><strong>Stage rules:</strong> no CMR liquids, no gel casting and no <span class="num" tabindex="0" title="pm/INVARIANTS.md, INV-6 (SWELL project notes) · quoted">95 °C</span> steps on the stage.</span></li>
-        <li><span class="en"><strong>Light:</strong> the high-power excitation LED runs only inside the closed box, and opening the lid cuts it; the white and oblique LEDs, which the interlock doesn't cover, must be ones their makers rate safe to look into. Never look into the excitation LED. No lasers and no ultraviolet source in the reference build. The laser pointer in the family experiment is separate from the instrument and has <a href="../../swell/start/#laser-safety">its own safety box</a>. <em>Open:</em> the LED isn't chosen yet, so its eye-safety risk group (IEC 62471) is unknown; X-WOW's own rule is no light bright enough to hurt eyes looked at directly, and how SWELL meets it is still to be settled.</span></li>
+        <li><span class="en"><strong>Light:</strong> the excitation light, an LED behind a diffuser, must be in IEC 62471's Exempt or Risk Group 1 ("low risk") group as fitted, by its maker's rating or a measurement: X-WOW's rule is no light bright enough to hurt eyes looked at directly. A bare high-power blue LED can be Risk Group 2: the <a href="https://look.ams-osram.com/m/1d720a7b18ab3fce/original/Details-on-photobiological-safety-of-LED-light-sources.pdf" rel="noopener" target="_blank">ams-OSRAM application note AN002</a> (2025-09-16, read 2026-10-12) gives a 470 nm blue LED of 5 cd as Risk Group 2. The light runs only inside the closed box, and opening the lid cuts it. Never look into the excitation light. The white and oblique LEDs, which the interlock doesn't cover, must be in IEC 62471's Exempt group, by their makers' rating. No lasers and no ultraviolet source in the reference build. The laser pointer in the family experiment is separate from the instrument and has <a href="../../swell/start/#laser-safety">its own safety box</a>. <em>Open:</em> no LED is chosen yet, and whether a light this low-risk is bright enough for SWELL's fluorescence imaging hasn't been worked out.</span></li>
       </ul>
     </div>
   </div>
@@ -159,7 +157,11 @@
 
 <section class="page-history" id="safety-corrected" aria-label="Page history">
 <details>
-  <summary><span class="en">Page history: 1 dated change, the latest on 10 October 2026</span></summary>
+  <summary><span class="en">Page history: 2 dated changes, the latest on 12 October 2026</span></summary>
+  <details class="ph-day">
+    <summary><span class="en">12 October 2026</span></summary>
+    <ul class="en"><li>The light rule now says what the excitation light must be: in IEC 62471's Exempt or Risk Group 1 ("low risk") group as fitted, LED plus diffuser, with the lid interlock. A bare high-power blue LED can be Risk Group 2 (a maker's application note is cited); the warning never to look into the excitation light stays. The white and oblique LEDs, which the interlock doesn't cover, must be in the Exempt group. Whether a low-risk light is bright enough for SWELL's imaging is open.</li></ul>
+  </details>
   <details class="ph-day">
     <summary><span class="en">10 October 2026</span></summary>
     <ul class="en"><li>This table was first written from the project's notes. Each chemical's hazards are now read from the sheet cited, with HSE's GB classification of the substance beside them where it is higher: acrylamide stays "toxic" if swallowed and absorbed through the skin, and formaldehyde, once "toxic by inhalation", is fatal if inhaled as a substance. What else changed: imidazole, a reproductive toxicant in the rigor buffer, was missing and is added, with acrylic acid and sodium hydroxide for the fallback; sodium acrylate's sheet gives no irritant class, only aquatic hazards, so "irritant" is gone; "sodium azide: not used" now says the calibration beads may bring it in; water beads, once listed with an "ingestion hazard", are now out of the design, with the UK safety alert's words on why (a gut blockage that needs surgery, or choking); the light rule says which LEDs the lid interlock covers and still says never to look into the excitation LED; handling follows the sheets, with a fume hood for acrylamide, TEMED, imidazole and formaldehyde; TEMED's "strong-smelling" is gone (not a hazard class), and its "never in a domestic fridge" and raw chicken's "dedicated tools never return to a kitchen" are gone with the withdrawn plan to do any of this at home (TEMED is stored in a flammables cabinet; the chicken's tools stay dedicated).</li></ul>
@@ -178,7 +180,6 @@
     <nav class="fc" aria-label="Explore">
       <p class="fc-h"><span class="en">Explore</span></p>
       <ul>
-        <li><a href="../../inventions/"><span class="en">Inventions</span></a></li>
         <li><a href="../../swell/">SWELL</a></li>
         <li><a href="../../shrink/"><span class="en">SHRINK</span></a></li>
         <li><a href="../../back-to-shine/"><span class="en">Back to Shine</span></a></li>

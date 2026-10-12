@@ -210,7 +210,6 @@ def render(text, root, numbers, where):
 
 
 NAV = [
-    ("inventions", "inventions/", "Inventions", "发明"),
     ("swell", "swell/", "SWELL", "SWELL"),
     ("shrink", "shrink/", "SHRINK", "变小探险"),
     ("back-to-shine", "back-to-shine/", "Back to Shine", "旧仪器再发光"),
@@ -273,6 +272,8 @@ def build_pages(numbers):
         page = page.replace("{{slug}}", slug.replace("/", "-")).replace("{{nav}}", nav_html(slug.split("/")[0], root))
         page = page.replace("{{subnav}}", subnav_html(meta.get("subnav"), slug, root))
         page = page.replace("{{base}}", BASE_SCRIPT if slug == "404" else "")
+        if meta.get("noindex"):   # e.g. the hidden board's Coming soon page: no search indexing, not in the sitemap
+            page = page.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n' + NOINDEX, 1)
         page = page.replace("{{content}}", content)
         page = page.replace("{{redirects_json}}", json.dumps(redirect_map(), sort_keys=True))
         page = render(page, root, numbers, f"pages/{slug}")
@@ -316,11 +317,17 @@ REDIRECT = """<!doctype html>
 """
 
 
+# Old slugs kept only as plain redirect pages (the owner's decision, 2026-10-12): left out of the map the 404 page
+# carries, so they don't appear in that page's source.
+STUB_ONLY = {"peppapath", "asianmuminlaw", "akpan-microscope", "akpanmicroscope", "thankyouolaleke"}
+
+
 def redirect_map():
     f = SRC / "redirects.json"
     if not f.exists():
         return {}
-    return {k.strip("/").lower(): v for k, v in json.loads(f.read_text(encoding="utf-8")).items()}
+    return {k.strip("/").lower(): v for k, v in json.loads(f.read_text(encoding="utf-8")).items()
+            if k.strip("/").lower() not in STUB_ONLY}
 
 
 def build_redirects(pages):
@@ -348,7 +355,7 @@ def build_redirects(pages):
 
 
 def copy_static():
-    for name in ("assets", "downloads", "inventions"):   # inventions/: the board's public proof files
+    for name in ("assets", "downloads"):   # src/inventions/ (the hidden board's proof files) stays out of the build
         if (SRC / name).exists():
             shutil.copytree(SRC / name, OUT / name, dirs_exist_ok=True)
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
@@ -374,8 +381,12 @@ def check_anchor_maps():
     return problems
 
 
+NOINDEX = '<meta name="robots" content="noindex">'
+
+
 def write_seo(pages):
-    urls = [SITE_URL + ("" if s == "index" else s + "/") for s in sorted(pages) if s != "404"]
+    urls = [SITE_URL + ("" if s == "index" else s + "/") for s in sorted(pages) if s != "404"
+            and NOINDEX not in pages[s].read_text(encoding="utf-8")]   # a page marked noindex stays out of the sitemap
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls) + "</urlset>\n", encoding="utf-8")
@@ -530,7 +541,7 @@ def check_public_tree():
             if m:
                 problems.append(f"{where}: forbidden ({why}): '{m.group(0)}'")
 
-    files = [f for d in (SRC, ROOT / "tools", ROOT / ".github") if d.exists() for f in sorted(d.rglob("*")) if f.is_file()]
+    files = [f for d in (SRC, ROOT / "tools", ROOT / ".github", ROOT / "hidden") if d.exists() for f in sorted(d.rglob("*")) if f.is_file()]
     files += [ROOT / n for n in (".gitignore", ".zenodo.json", "CITATION.cff", "LICENSE", "README.md", "build.py")
               if (ROOT / n).exists()]
     for f in files:

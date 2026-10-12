@@ -165,8 +165,8 @@
   {
    "line": "H-13",
    "kind": "maker-rating",
-   "rating_en": "Driver (Mean Well LDD-350HW, the version with 22 AWG leads fitted): 9–56 V DC in, 350 mA constant current, short-circuit and over-temperature protected. LED not chosen: needs its maker's IEC 62471 risk group.",
-   "rating_zh": "驱动（Mean Well LDD-350HW，自带 22 AWG 引线的型号）：输入 9–56 V 直流，恒流 350 mA，带短路和过温保护。LED 尚未选定：需要其厂商给出 IEC 62471 风险组别。",
+   "rating_en": "Driver (Mean Well LDD-350HW, the version with 22 AWG leads fitted): 9–56 V DC in, 350 mA constant current, short-circuit and over-temperature protected. LED not chosen. Requirement: the light as fitted, LED plus diffuser, in IEC 62471's Exempt or Risk Group 1 (\"low risk\") group, by its maker's rating or a measurement; a bare high-power blue LED can be Risk Group 2 (an ams-OSRAM application note gives a 470 nm, 5 cd blue LED as Risk Group 2). It sits inside the light-tight box, and the lid microswitch (H-18) cuts its supply when the lid opens.",
+   "rating_zh": "驱动（Mean Well LDD-350HW，自带 22 AWG 引线的型号）：输入 9–56 V 直流，恒流 350 mA，带短路和过温保护。LED 尚未选定。要求：装好后的光（LED 加扩散片）属于 IEC 62471 的“豁免”或“1 类（低风险）”组，以厂商评级或实测为准；裸的大功率蓝光 LED 可能属于 2 类（ams-OSRAM 的一份应用说明举例说 470 nm、5 cd 的蓝光 LED 属于 2 类）。它装在不透光的盒子里，开盖时盖子微动开关（H-18）切断它的电源。",
    "part_en": "Excitation LED (blue) + constant-current driver",
    "part_zh": "激发 LED（蓝光）+ 恒流驱动",
    "source": {
@@ -186,13 +186,22 @@
     "read": "2026-10-10",
     "sha256": "6b69394e1ceb7acf4f38e180e30874dad351f8b0c2795b2de89a9bd17a751de5",
     "quote": "Photobiological safety of lamps and lamp systems … including LEDs but excluding lasers"
+   },
+   "source3": {
+    "publisher": "ams-OSRAM AG",
+    "title": "Details on photobiological safety of LED light sources, Application Note AN002 [maker application note, PDF]",
+    "doc_revision": "2025-09-16",
+    "url": "https://look.ams-osram.com/m/1d720a7b18ab3fce/original/Details-on-photobiological-safety-of-LED-light-sources.pdf",
+    "read": "2026-10-12",
+    "sha256": "a805c73eb6acadab889edabc6d518c78778954d9b1ee9ba08a87bb68425b6c18",
+    "quote": "Risk Group “low risk” (RG 1) No hazard due to normal behavioral limitations on exposure … A blue LED with a luminous intensity of 5 cd or 20 cd and a dominant wavelength of 470 nm, for example, falls into Risk Group 2."
    }
   },
   {
    "line": "H-14",
    "kind": "required",
-   "rating_en": "Not chosen: each LED's maker must state its IEC 62471 risk group, and only LEDs it rates safe to look into qualify, because the lid interlock covers only the excitation LED; constant-current drivers on the fused 24 V-or-less supply.",
-   "rating_zh": "尚未选定：每颗 LED 的厂商都必须给出 IEC 62471 风险组别，而且只有厂商认定可以直视的 LED 才能用，因为盖子联锁只管激发 LED；恒流驱动接在带保险丝、不超过 24 V 的电源上。",
+   "rating_en": "Not chosen: each LED's maker must rate it in IEC 62471's Exempt group, because the lid interlock covers only the excitation LED; constant-current drivers on the fused 24 V-or-less supply.",
+   "rating_zh": "尚未选定：每颗 LED 都必须由厂商评为 IEC 62471 的“豁免”组，因为盖子联锁只管激发 LED；恒流驱动接在带保险丝、不超过 24 V 的电源上。",
    "part_en": "White and oblique LEDs + drivers",
    "part_zh": "白光 LED 和斜照 LED + 驱动",
    "source": {
