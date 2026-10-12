@@ -47,7 +47,18 @@ const UI = {
   part: { en: 'PART', zh: '部件' },
   close: { en: 'Close', zh: '关闭' },
   status: { en: 'Concept · never built', zh: '概念 · 尚未造出' },
+  pause: { en: 'Pause', zh: '暂停', name: { en: "Pause the model's motion", zh: '暂停模型动画' } },
+  play: { en: 'Play', zh: '播放', name: { en: "Play the model's motion", zh: '播放模型动画' } },
 };
+
+/* pause / play (WCAG 2.2.2): reduced-motion devices start paused; a choice made with the button lasts for this tab */
+const MOTION_KEY = 'xwow-model-motion';
+function motionChoice() {
+  try { return sessionStorage.getItem(MOTION_KEY); } catch (e) { return null; }
+}
+function keepMotionChoice(v) {
+  try { sessionStorage.setItem(MOTION_KEY, v); } catch (e) { /* storage blocked: the choice lasts for this page */ }
+}
 
 /* ---------- the model ---------- */
 
@@ -69,6 +80,8 @@ async function start(root) {
   const coarse = matchMedia('(pointer: coarse)');
   const lang = () => (document.documentElement.dataset.lang === 'zh' ? 'zh' : 'en');
   const say = (o) => o[lang()];
+  let chosen = motionChoice();
+  let paused = chosen === 'paused' || (chosen !== 'playing' && reduce.matches);
 
   /* colours from the site's CSS variables, with the contract's values as fallback */
   const css = getComputedStyle(hero);
@@ -198,7 +211,7 @@ async function start(root) {
   );
   scan.add(scanFill);
   scene.add(scan);
-  scan.visible = !reduce.matches;
+  scan.visible = !paused;
 
   /* centre height of each part, for the scan-ring shimmer */
   model.updateMatrixWorld(true);
@@ -255,7 +268,7 @@ async function start(root) {
     let j = 0;
     for (const bm of BEAMS) {
       for (let i = 0; i < bm.n; i++) {
-        const f = reduce.matches ? (i + 0.5) / bm.n : (((time * 0.00018 * bm.speed) + i / bm.n) % 1);
+        const f = paused ? (i + 0.5) / bm.n : (((time * 0.00018 * bm.speed) + i / bm.n) % 1);
         photonPos[j++] = bm.A.x + (bm.B.x - bm.A.x) * f;
         photonPos[j++] = bm.A.y + (bm.B.y - bm.A.y) * f;
         photonPos[j++] = bm.A.z + (bm.B.z - bm.A.z) * f;
@@ -339,6 +352,18 @@ async function start(root) {
     beam.visible = beamOn;
     setPressed('beam', beamOn);
   }
+  function applyMotion() {
+    scan.visible = !paused;
+    root.classList.toggle('is-paused', paused); // stops the blinking "concept model" box too
+    const b = tools && tools.querySelector('[data-act="motion"]');
+    if (!b) return;
+    const w = paused ? UI.play : UI.pause;
+    b.setAttribute('aria-label', say(w.name));
+    for (const L of ['en', 'zh']) {
+      const s = b.querySelector('.' + L); // the English-only build drops the zh spans
+      if (s) s.textContent = w[L];
+    }
+  }
 
   function texts() {
     const L = lang();
@@ -348,6 +373,7 @@ async function start(root) {
     if (tools) tools.setAttribute('aria-label', UI.toolbar[L]);
     if (hint) { hint.textContent = say(coarse.matches ? UI.hintCoarse : UI.hintFine); hint.lang = htmlLang; }
     for (const p of parts) p.el.textContent = say(p.label);
+    applyMotion();
     measure();
     renderCard();
     requestFrame();
@@ -486,7 +512,7 @@ async function start(root) {
     const dt = Math.min(0.1, (now - last) / 1000);
     last = now;
     let busy = false;
-    const motion = !reduce.matches;
+    const motion = !paused;
 
     if (explodeT !== explodeTo) {
       if (!motion) explodeT = explodeTo;
@@ -585,7 +611,14 @@ async function start(root) {
       if (!b) return;
       const act = b.dataset.act;
       if (act === 'overlay') return;   // handled by its own button
-      if (act === 'explode') {
+      if (act === 'motion') {
+        paused = !paused;
+        chosen = paused ? 'paused' : 'playing';
+        keepMotionChoice(chosen);
+        if (paused && explodeT !== explodeTo) { explodeT = explodeTo; applyExplode(); }
+        last = performance.now();
+        applyMotion();
+      } else if (act === 'explode') {
         explodeTo = explodeTo ? 0 : 1;
         tweenFrom = explodeT;
         tweenStart = performance.now();
@@ -619,7 +652,9 @@ async function start(root) {
   new MutationObserver(onLang).observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang'] });
   const onMotion = () => {
     controls.enableDamping = !reduce.matches;
-    if (reduce.matches && explodeT !== explodeTo) { explodeT = explodeTo; applyExplode(); }
+    if (!chosen) paused = reduce.matches; // the device's setting rules until the visitor presses Pause / Play
+    if (paused && explodeT !== explodeTo) { explodeT = explodeTo; applyExplode(); }
+    applyMotion();
     requestFrame();
   };
   if (reduce.addEventListener) reduce.addEventListener('change', onMotion);

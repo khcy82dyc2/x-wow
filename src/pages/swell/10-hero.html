@@ -49,6 +49,7 @@
 #hero .cm-honest{position:absolute;z-index:3;top:12px;left:14px;right:14px;margin:0;font:600 10.5px/1.45 var(--mono);letter-spacing:.08em;color:var(--gold);pointer-events:none;text-shadow:0 0 6px var(--bg),0 0 2px var(--bg)}
 #hero .cm-honest::before{content:"";display:inline-block;width:7px;height:7px;margin-right:7px;border:1px solid var(--gold);vertical-align:0;animation:cm-blink 2.4s steps(2) infinite}
 @keyframes cm-blink{50%{background:var(--gold)} }
+#hero .is-paused .cm-honest::before{animation:none;background:var(--gold)}
 #hero .cm-hint{position:absolute;z-index:3;right:12px;bottom:10px;max-width:calc(100% - 24px);margin:0;padding:2px 6px;text-align:right;font:10px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:color-mix(in srgb,var(--bg) 78%,transparent);pointer-events:none}
 #hero .cm-hint:empty{display:none}
 #hero .cm-card{position:absolute;z-index:4;left:12px;bottom:12px;width:min(340px,calc(100% - 24px));margin:0;padding:12px 38px 12px 14px;text-align:left;background:var(--panel);border:1px solid var(--cyan);border-left-width:3px;box-shadow:0 0 24px color-mix(in srgb,var(--cyan) 16%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
@@ -173,6 +174,7 @@
 </div>
 
 <div class="cm-tools" role="toolbar" aria-label="Model controls" hidden>
+  <button type="button" class="cm-btn" data-act="motion" aria-label="Pause the model's motion"><span class="en">Pause</span><span class="zh">暂停</span></button>
   <button type="button" class="cm-btn" data-act="explode" aria-pressed="false"><span class="en">Exploded view</span><span class="zh">爆炸视图</span></button>
   <button type="button" class="cm-btn" data-act="labels" aria-pressed="true"><span class="en">Labels</span><span class="zh">标注</span></button>
   <button type="button" class="cm-btn" data-act="beam" aria-pressed="true"><span class="en">Light path</span><span class="zh">光路</span></button>

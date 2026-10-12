@@ -15,11 +15,12 @@
 
   <h3><span class="en">What your browser keeps</span><span class="zh">你的浏览器存了什么</span></h3>
   <p class="en">A few small notes at most, kept only in your browser and never sent to anyone:</p>
-  <p class="zh">最多四条很小的记录，只存在你的浏览器里，从不发给任何人：</p>
+  <p class="zh">最多几条很小的记录，只存在你的浏览器里，从不发给任何人：</p>
   <ul class="en">
     <li><code>xwow-lang</code> (local storage): only from earlier visits, when the site had an EN / 中文 button; the site no longer writes or reads it, and clearing the site's data removes it.</li>
     <li><code>xwow-board-sort</code> (local storage): only from earlier visits, when the site had an Inventions board you could sort; the site no longer writes or reads it, and clearing the site's data removes it.</li>
     <li><code>xwow-booted</code> (session storage): that the opening animation has already played in this tab, so it doesn't play again. It disappears when you close the tab, and is never written if your device asks for reduced motion.</li>
+    <li><code>xwow-model-motion</code> (session storage): written only if you press Pause or Play under SWELL's 3D model, so the model stays the way you left it on this tab. It disappears when you close the tab.</li>
     <li><code>shrink-v1</code> (local storage, written the first time you open SHRINK): your progress in the game, including the names you typed for your finds. “Start over” in the field guide empties it; clearing the site's data removes it.</li>
     <li><code>xwow-duck</code> (local storage): written only if you press “Hide the duck”, so it stays away; pressing “Bring the duck back” removes it.</li>
   </ul>
@@ -27,6 +28,7 @@
     <li><code>xwow-lang</code>（本地存储）：只来自以前的访问，那时网站有 EN / 中文 按钮；网站现在既不写入也不读取它，清除这个网站的数据就会删掉。</li>
     <li><code>xwow-board-sort</code>（本地存储）：只来自以前的访问，那时网站有可以排序的发明看板；网站现在既不写入也不读取它，清除这个网站的数据就会删掉。</li>
     <li><code>xwow-booted</code>（会话存储）：开场动画在这个标签页里已经播过，免得再播一遍。关掉标签页它就没了；如果你的设备设置了“减少动态效果”，它根本不会被写入。</li>
+    <li><code>xwow-model-motion</code>（会话存储）：只有在你按下 SWELL 3D 模型下面的“暂停”或“播放”时才会写入，好让模型在这个标签页里保持你选的样子。关掉标签页它就没了。</li>
     <li><code>shrink-v1</code>（本地存储，第一次打开“变小探险”时写入）：你在游戏里的进度，包括你给发现的东西起的名字。图鉴里的“全部重来”会把它清空；清除这个网站的数据就会把它删掉。</li>
     <li><code>xwow-duck</code>（本地存储）：只有在你按下“让小鸭走开”时才会写入，好让它不再出现；按“把小鸭叫回来”就会删掉。</li>
   </ul>
