@@ -315,16 +315,34 @@ def _line_gbp(r, col):
     return x if r["vat_incl"] == "yes" else x * 1.2
 
 
+# the owner, 2026-10-12: an unread line shows its earlier estimate (src/data/swell/bom_estimates.json: pm/BOM.csv at SWELL
+# commit 23df04c), labelled "estimate" on the page; estimated totals for the core and the full build sit beside the
+# targets, marked as estimates. Read (listed) prices are unchanged.
+_EST = json.loads((SITE / "src" / "data" / "swell" / "bom_estimates.json").read_text(encoding="utf-8"))["lines"]
+_F_EST = "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c)"
+_tot = {"core": [0.0, 0.0], "build": [0.0, 0.0]}
 for _r in csv.DictReader(ln for ln in _boms[0].open(encoding="utf-8-sig") if not ln.startswith("#")):
     _key = "line_" + _r["line_id"].lower().replace("-", "")
-    if _r["box"] not in ("core", "build") or "swell." + _key in N:
+    if _r["box"] not in ("core", "build"):
         continue
-    if _r["price_basis"] != "listed":   # D-78: an unpriced line shows no number
-        put(_key, "—", f"src/downloads/{_boms[0].name}: line {_r['line_id']}", "price not yet read (D-78)")
+    if _r["price_basis"] == "listed":
+        _lo, _hi = _line_gbp(_r, "unit_low"), _line_gbp(_r, "unit_high")
+    else:
+        _e = _EST[_r["line_id"]]
+        _lo, _hi = _line_gbp(_e, "unit_low"), _line_gbp(_e, "unit_high")
+    for _box in (("core", "build") if _r["box"] == "core" else ("build",)):
+        _tot[_box][0] += _lo
+        _tot[_box][1] += _hi
+    if "swell." + _key in N:
         continue
-    _lo, _hi = _line_gbp(_r, "unit_low"), _line_gbp(_r, "unit_high")
+    if _r["price_basis"] != "listed":
+        put(_key, "est. " + (gbp(_lo) if abs(_lo - _hi) < 0.005 else gbp_range(_lo, _hi)), f"{_F_EST}: line {_r['line_id']}",
+            "an estimate, not a price read from a supplier page")
+        continue
     _v = (f"£{_lo:,.2f}" if abs(_lo - round(_lo)) > 0.004 else gbp(_lo)) if abs(_lo - _hi) < 0.005 else gbp_range(_lo, _hi)
     put(_key, _v, f"src/downloads/{_boms[0].name}: line {_r['line_id']}", _r["price_basis"])
+put("core_est", "≈ " + gbp_range(*_tot["core"]), f"{_F_EST} and the read prices", "estimated core total: read prices where read, earlier estimates elsewhere, GBP incl. VAT")
+put("build_est", "≈ " + gbp_range(*_tot["build"]), f"{_F_EST} and the read prices", "estimated full-build total (core plus build lines), GBP incl. VAT")
 
 # ---------------------------------------------------------------- quoted (prose only)
 Q = [

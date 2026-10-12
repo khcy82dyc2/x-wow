@@ -1,10 +1,7 @@
 /* SWELL concept model: its 18 named parts, their shapes, the light path and the camera framing.
  * A concept: not the engineering CAD, and SWELL has never been built. Units are centimetres (the Pi 5 board is
  * 8.5 × 5.6, as the real one is 85 × 56 mm); y is up.
- * The Realistic view's renders are keyed to this file's SHA-256 together with model-kit.js (src/data/renders.json):
- * any edit here hides the button until `python tools/render/realistic_view.py swell` renders the model again.
- * mat: what each mesh would really be made of, read only by the renders (the wireframe ignores it); `mats` gives each
- * part's default. The renders' material library is tools/render/scene.py.
+ * mat: what each mesh would be made of (kept as a note; the wireframe ignores it); `mats` gives each part's default.
  */
 
 export const MODEL = {
@@ -122,23 +119,6 @@ export const MODEL = {
   /* the light-tight box, drawn as a faint dashed outline (not a pickable part) */
   box: { size: [36, 20, 22], at: [0, 10, 0] },
 
-  /* the Realistic view (tools/render/realistic_view.py): each render's camera angle (azimuth from the model's front
-     towards its right, elevation above the floor, degrees), its name and what its alt text says it shows, and what
-     this model's renders leave out */
-  renders: {
-    views: [
-      { id: 'front', az: 34, el: 21, name: { en: 'Front right', zh: '右前方' },
-        alt: { en: 'from the front right, a little above', zh: '从右前方稍高处看' } },
-      { id: 'left', az: 304, el: 18, name: { en: 'Front left', zh: '左前方' },
-        alt: { en: 'from the front left, where the pumps and bottles sit low', zh: '从左前方看，泵和瓶子放在低处' } },
-      { id: 'top', az: 18, el: 58, name: { en: 'From above', zh: '俯视' },
-        alt: { en: 'from above, showing how the parts are laid out', zh: '从上往下看，能看出各部件怎么摆放' } },
-      { id: 'back', az: 214, el: 20, name: { en: 'Back left', zh: '左后方' },
-        alt: { en: 'from the back left, behind the illumination arm', zh: '从左后方看，在照明支架后面' } },
-    ],
-    note: { en: 'Every light on the instrument is off, and the light-tight box is left out so the parts show. Parts the model draws without their holders hang where they would sit: the dark sheet above the sample is one of the two polariser films, and the small black switch high up is the lid interlock, which sits on the box\'s lid.',
-            zh: '仪器上所有的灯都关着，遮光箱没画出来，好让人看清部件。模型里没画支架的部件就悬在它们本该在的位置：样本上方那片深色薄片是两片偏振膜中的一片，高处的小黑开关是盖子联锁，它本来装在遮光箱的盖子上。' },
-  },
 
   /* the light path: [part, x, y, z] ends in each part's own frame, beam radius, photons, photon speed */
   beams: [

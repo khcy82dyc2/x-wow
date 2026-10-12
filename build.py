@@ -5,9 +5,7 @@ Stdlib only, so anyone can rebuild it:  python build.py
 Each page is src/pages/<slug>/ holding _meta.json plus NN-*.html fragments,
 joined in filename order and wrapped in src/layout.html.
 Placeholders: {{root}} (relative path to the site root), {{gh}} (the repo URL),
-{{n:key}} (a number from src/data/numbers_*.json, shown with its source), {{realistic:model}} (the Realistic
-view button, written only while the model's renders match its files: tools/realistic.py).
-python build.py --render first re-renders any stale model (needs Blender: tools/render/realistic_view.py).
+{{n:key}} (a number from src/data/numbers_*.json, shown with its source).
 The build fails on missing numbers, leftover placeholders, absolute internal
 links, broken internal links or anchors, and anything personal.
 """
@@ -24,7 +22,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "tools"))
 import evidence_bar  # noqa: E402  (stdlib only)
 import board  # noqa: E402  (stdlib only: the Inventions board, bars computed from proof files)
 import english_only  # noqa: E402  (stdlib: no hidden Chinese in the built pages)
-import realistic  # noqa: E402  (stdlib only: the Realistic view's renders, keyed to their model's hash)
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src"
@@ -164,17 +161,6 @@ def check_people_words():
     return problems
 
 
-REALISTIC = {}   # model -> 'fresh' | 'stale' | 'none', for every {{realistic:model}} the pages ask for
-
-
-def realistic_html(model, root):
-    """The Realistic view button while the renders match the model's files; nothing at all when they don't (a
-    render may never show a model that has moved on)."""
-    st, entry = realistic.status(model)
-    REALISTIC[model] = st
-    return realistic.button_html(model, root, entry) if st == "fresh" else ""
-
-
 def render(text, root, numbers, where):
     def num(m):
         key = m.group(1).strip()
@@ -202,7 +188,6 @@ def render(text, root, numbers, where):
         text = text.replace("{{board}}", board_html)
     if "{{newest_spark}}" in text:
         text = text.replace("{{newest_spark}}", board.newest_spark(root))
-    text = re.sub(r"\{\{realistic:([a-z0-9-]+)\}\}", lambda m: realistic_html(m.group(1), root), text)
     text = re.sub(r"\{\{evidence:([a-z0-9-]+)(:compact)?\}\}",
                   lambda m: evidence_html(m.group(1), bool(m.group(2)), root), text)
     text = re.sub(r"\{\{n:([^}]+)\}\}", num, text)
@@ -620,34 +605,7 @@ def check_secrets():
     return [] if r.returncode == 0 else ["secret_guard: " + r.stderr.strip()]
 
 
-def rerender_stale():
-    """--render: render again every model whose renders no longer match its files (Blender needed)."""
-    import subprocess
-    asked = set(re.findall(r"\{\{realistic:([a-z0-9-]+)\}\}",
-                           "".join(f.read_text(encoding="utf-8") for f in (SRC / "pages").rglob("*.html"))))
-    for model in sorted(asked | set(realistic.load().get("models", {}))):
-        if realistic.status(model)[0] != "fresh":
-            print(f"  render {model}: stale, rendering again")
-            r = subprocess.run([sys.executable, str(ROOT / "tools" / "render" / "realistic_view.py"), model])
-            if r.returncode:
-                print(f"  warn: rendering {model} failed; its Realistic view stays out")
-
-
-def unpublish_stale_renders():
-    """Renders of a model that has changed since are not copied to the site, and its button is left out."""
-    for model in sorted(set(REALISTIC) | set(realistic.load().get("models", {}))):
-        st = realistic.status(model)[0]
-        if st == "fresh":
-            print(f"  realistic view {model}: renders match the model")
-            continue
-        shutil.rmtree(OUT / "assets" / "renders" / model, ignore_errors=True)
-        print(f"  WARN realistic view {model}: renders {st}, so the button is left out and no render is published; "
-              f"render again with: python tools/render/realistic_view.py {model}")
-
-
 def main():
-    if "--render" in sys.argv[1:]:
-        rerender_stale()
     numbers = load_numbers()
     stored = SRC / "data" / "evidence.json"
     fresh = json.dumps(evidence_bar.compute(), ensure_ascii=False, indent=1) + "\n"
@@ -663,11 +621,10 @@ def main():
     print(f"numbers: {len(numbers)}")
     pages = build_pages(numbers)
     copy_static()
-    unpublish_stale_renders()
     build_redirects(pages)
     write_seo(pages)
     problems = (check_site() + check_anchor_maps() + check_root_files() + check_public_tree() + check_figures() + check_card_numbers(numbers)
-                + check_secrets() + check_people_words() + realistic.check())
+                + check_secrets() + check_people_words())
     for pr in problems:
         print("  PROBLEM " + pr)
     if problems:

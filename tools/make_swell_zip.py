@@ -58,7 +58,7 @@ REV = "ff2b610482f737ab5dce24bd0641106bd318b335"
 for _i, _a in enumerate(sys.argv):
     if _a == "--rev" and _i + 1 < len(sys.argv):
         REV = sys.argv[_i + 1]
-VERSION = {"2026-10-09": "v0.1.0-g0", "2026-10-11": "v0.2.0"}.get(DATE, DATE)
+VERSION = {"2026-10-09": "v0.1.0-g0", "2026-10-11": "v0.2.0", "2026-10-12": "v0.2.1"}.get(DATE, DATE)
 ZIP_NAME = f"swell-g0-{DATE}.zip"
 OUT_ZIP = SITE / "src" / "downloads" / ZIP_NAME
 ORIGINAL_ZIP = SITE / "src" / "downloads" / f"swell-g0-{ORIGINAL_DATE}.zip"
@@ -275,7 +275,7 @@ HOME_LAB_OK = (
 
 # Lab-only safety (life 5): SAFETY.md is built from the reviewed safety section of the SWELL page, so the zip and the
 # site say the same thing; every record file that mentions a reagent gets a banner pointing to it.
-SAFETY_SRC = SITE / "src" / "pages" / "swell" / "60-safety.html"
+SAFETY_SRC = SITE / "src" / "pages" / "swell~safety" / "60-safety.html"
 REAGENTS = re.compile(r"(?i)acrylamide|\bTEMED\b|\bAPS\b|persulfate|formaldehyde|sodium acrylate|acrylic acid|\bDMSO\b"
                       r"|Triton|NHS[- ]?(?:ester|label)|\bPLL\b|poly-L-lysine|proteinase|monomer solution"
                       r"|glutaraldehyde|\bAcX\b")
@@ -398,7 +398,7 @@ def _numbers() -> dict[str, str]:
 
 def _href(h: str) -> str:
     """A link as the zip can show it: an anchor on the SWELL page becomes its full address."""
-    h = html.unescape(h)
+    h = html.unescape(h).replace("{{root}}", "https://x-wow.com/")
     return "https://x-wow.com/swell/" + h if h.startswith("#") else h
 
 
@@ -590,7 +590,7 @@ animals. This is a summary, not legal advice; check the current rules where you 
 # the rating the part must carry where none is chosen. One tracked source (BOM_SAFETY) feeds the zip's pm/BOM.csv
 # column and docs/BOM.md section; the SWELL page's ratings table must show the same lines with the same words.
 BOM_SAFETY = SITE / "src" / "data" / "swell" / "bom_safety.json"
-BOM_SRC = SITE / "src" / "pages" / "swell" / "50-bom.html"
+BOM_SRC = SITE / "src" / "pages" / "swell~parts" / "50-bom.html"
 BOM_KINDS = {"maker-rating": "maker's rating", "required": "requirement (no maker rating)", "none": "none"}
 
 
@@ -869,6 +869,13 @@ CHANGES_BY_VERSION = {
   is priced from its shop page; H-10's price came from a search result, so it is not yet read (`pm/VERIFIED_FACTS.md`,
   F-30). `pm/RISKS.md` R29 carries a dated correction.""",
 }
+CHANGES_BY_VERSION["v0.2.1"] = CHANGES_BY_VERSION["v0.2.0"] + """
+- **Rebuilt 2026-10-12 (v0.2.1):** `SAFETY.md` and the BOM's safety ratings carry the stricter light rule of that
+  day: the excitation light, LED plus diffuser, must be in IEC 62471's Exempt or Risk Group 1 group as fitted,
+  inside the box whose lid cuts it, and the white and oblique LEDs in the Exempt group. Passages of D-54 and
+  D-55 in `pm/DECISIONS.md` about a comment wall, which held counts drawn from a third-party platform's data, are
+  left out of this copy, marked where they stood. Two wording updates follow the site: BOM line W-01 names the
+  Safety and lab page, and `SAFETY.md`'s link to the laser experiment's safety box is a full address."""
 
 
 def resolution_line(calc: dict) -> str:
@@ -1113,6 +1120,15 @@ def build(dump: Path | None) -> None:
         "download.zip_name": {"value": ZIP_NAME, "source": "tools/make_swell_zip.py: ZIP_NAME",
                               "how": "file name of this version"},
     }
+    # The version this one replaced keeps its fingerprint on the public record (a hash republishes nothing): v0.2.0,
+    # replaced on 2026-10-12, as recorded in src/data/numbers_download.json at site commit aa482a7.
+    if VERSION == "v0.2.1":
+        src_prev = "src/data/numbers_download.json at site commit aa482a7 (v0.2.0's own record)"
+        numbers.update({
+            "download.prev_version": {"value": "v0.2.0", "source": src_prev, "how": "the version this one replaced"},
+            "download.prev_date": {"value": "2026-10-11", "source": src_prev, "how": "its version date"},
+            "download.prev_sha256": {"value": "9996b636b5b0bfd7c5e6f6e3674afd0dd40aec179b7b804f01266406a71dfb49",
+                                     "source": src_prev, "how": "SHA-256 of its zip, as it was published"}})
     if ORIGINAL_ZIP.exists() and ORIGINAL_ZIP != OUT_ZIP:      # the dated original keeps its own fingerprint
         ob = ORIGINAL_ZIP.read_bytes()
         with zipfile.ZipFile(io.BytesIO(ob)) as oz:

@@ -174,6 +174,11 @@
   "source": "src/data/swell/strain_map_v1.json: scenarios.S1b.metrics.detection['under-digested patch']",
   "how": "area flagged by its own detector"
  },
+ "swell.build_est": {
+  "value": "≈ £805–£1,353",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c) and the read prices",
+  "how": "estimated full-build total (core plus build lines), GBP incl. VAT"
+ },
  "swell.build_floor": {
   "value": "≥ £214",
   "source": "src/data/swell/budget_v1.json: build.listed",
@@ -238,6 +243,11 @@
   "value": "5–50%",
   "source": "pm/DECISIONS.md, D-4 (SWELL project notes)",
   "how": "quoted"
+ },
+ "swell.core_est": {
+  "value": "≈ £568–£1,017",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c) and the read prices",
+  "how": "estimated core total: read prices where read, earlier estimates elsewhere, GBP incl. VAT"
  },
  "swell.core_floor": {
   "value": "≥ £103",
@@ -420,159 +430,159 @@
   "how": "emission wavelength used"
  },
  "swell.line_h01": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-01",
-  "how": "price not yet read (D-78)"
+  "value": "est. £8–£12",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-01",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h02": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-02",
-  "how": "price not yet read (D-78)"
+  "value": "est. £12–£20",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-02",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h03": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-03",
-  "how": "price not yet read (D-78)"
+  "value": "est. £10–£14",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-03",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h04": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-04",
-  "how": "price not yet read (D-78)"
+  "value": "est. £5–£7",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-04",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h05": {
   "value": "£54–£60",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-05",
+  "source": "src/downloads/swell-bom-2026-10-12.csv: line H-05",
   "how": "listed"
  },
  "swell.line_h06": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-06",
-  "how": "price not yet read (D-78)"
+  "value": "est. £12–£13",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-06",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h07": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-07",
-  "how": "price not yet read (D-78)"
+  "value": "est. £7–£10",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-07",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h08": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-08",
-  "how": "price not yet read (D-78)"
+  "value": "est. £5–£6",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-08",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h09": {
   "value": "£49.87",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-09",
+  "source": "src/downloads/swell-bom-2026-10-12.csv: line H-09",
   "how": "listed"
  },
  "swell.line_h10": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-10",
-  "how": "price not yet read (D-78)"
+  "value": "est. £112",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-10",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h11": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-11",
-  "how": "price not yet read (D-78)"
+  "value": "est. £45–£70",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-11",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h12": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-12",
-  "how": "price not yet read (D-78)"
+  "value": "est. £25–£32",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-12",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h13": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-13",
-  "how": "price not yet read (D-78)"
+  "value": "est. £12–£20",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-13",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h14": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-14",
-  "how": "price not yet read (D-78)"
+  "value": "est. £8–£15",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-14",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h15": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-15",
-  "how": "price not yet read (D-78)"
+  "value": "est. £100–£250",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-15",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h16": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-16",
-  "how": "price not yet read (D-78)"
+  "value": "est. £5–£8",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-16",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h17": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-17",
-  "how": "price not yet read (D-78)"
+  "value": "est. £8–£15",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-17",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h18": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-18",
-  "how": "price not yet read (D-78)"
+  "value": "est. £10–£15",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-18",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h19": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-19",
-  "how": "price not yet read (D-78)"
+  "value": "est. £50–£90",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-19",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h20": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-20",
-  "how": "price not yet read (D-78)"
+  "value": "est. £6–£10",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-20",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h21": {
   "value": "£111",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-21",
+  "source": "src/downloads/swell-bom-2026-10-12.csv: line H-21",
   "how": "listed"
  },
  "swell.line_h22": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-22",
-  "how": "price not yet read (D-78)"
+  "value": "est. £20–£40",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-22",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h23": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-23",
-  "how": "price not yet read (D-78)"
+  "value": "est. £40–£75",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-23",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h24": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-24",
-  "how": "price not yet read (D-78)"
+  "value": "est. £15–£30",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-24",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h25": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-25",
-  "how": "price not yet read (D-78)"
+  "value": "est. £8–£15",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-25",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h26": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-26",
-  "how": "price not yet read (D-78)"
+  "value": "est. £8–£15",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-26",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h27": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-27",
-  "how": "price not yet read (D-78)"
+  "value": "est. £1–£2",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-27",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h28": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-28",
-  "how": "price not yet read (D-78)"
+  "value": "est. £35–£50",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-28",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h29": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-29",
-  "how": "price not yet read (D-78)"
+  "value": "est. £0–£135",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-29",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h30": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-30",
-  "how": "price not yet read (D-78)"
+  "value": "est. £15–£35",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-30",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.line_h31": {
-  "value": "—",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: line H-31",
-  "how": "price not yet read (D-78)"
+  "value": "est. £8–£15",
+  "source": "src/data/swell/bom_estimates.json (pm/BOM.csv at SWELL commit 23df04c): line H-31",
+  "how": "an estimate, not a price read from a supplier page"
  },
  "swell.mag_a": {
   "value": "17.8×",
@@ -666,12 +676,12 @@
  },
  "swell.price_date": {
   "value": "2026-10-09",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: column date_checked",
+  "source": "src/downloads/swell-bom-2026-10-12.csv: column date_checked",
   "how": "the first date a BOM line was checked"
  },
  "swell.price_date_last": {
   "value": "2026-10-11",
-  "source": "src/downloads/swell-bom-2026-10-11.csv: column date_checked",
+  "source": "src/downloads/swell-bom-2026-10-12.csv: column date_checked",
   "how": "the last date a BOM line was checked"
  },
  "swell.project_floor": {

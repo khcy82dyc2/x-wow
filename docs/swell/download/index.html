@@ -61,34 +61,33 @@
 
 
 <div class="grid-3">
-  <div class="stat"><b><span class="num" tabindex="0" title="tools/make_swell_zip.py: VERSION · release name of this version">v0.2.0</span></b><span class="en">this version, <span class="num" tabindex="0" title="tools/make_swell_zip.py: DATE · date of this version (also in the zip name)">2026-10-11</span></span></div>
-  <div class="stat"><b><span class="num" tabindex="0" title="src/downloads/swell-g0-2026-10-11.zip · number of files in the zip">84</span></b><span class="en">files, <span class="num" tabindex="0" title="src/downloads/swell-g0-2026-10-11.zip · zip size, 3,939,216 bytes, in decimal megabytes (1 MB = 1,000,000 bytes)">3.9 MB</span></span></div>
+  <div class="stat"><b><span class="num" tabindex="0" title="tools/make_swell_zip.py: VERSION · release name of this version">v0.2.1</span></b><span class="en">this version, <span class="num" tabindex="0" title="tools/make_swell_zip.py: DATE · date of this version (also in the zip name)">2026-10-12</span></span></div>
+  <div class="stat"><b><span class="num" tabindex="0" title="src/downloads/swell-g0-2026-10-12.zip · number of files in the zip">84</span></b><span class="en">files, <span class="num" tabindex="0" title="src/downloads/swell-g0-2026-10-12.zip · zip size, 3,939,822 bytes, in decimal megabytes (1 MB = 1,000,000 bytes)">3.9 MB</span></span></div>
   <div class="stat"><b><span class="num" tabindex="0" title="tools/make_swell_zip.py: ORIGINAL_DATE · first-publication date of the G0 package">2026-10-09</span></b><span class="en">first published</span></div>
 </div>
 
 <div class="dl-row">
-  <a class="btn gold" href="../../downloads/swell-g0-2026-10-11.zip" download><span class="en">Download <span class="num" tabindex="0" title="tools/make_swell_zip.py: ZIP_NAME · file name of this version">swell-g0-2026-10-11.zip</span></span></a>
+  <a class="btn gold" href="../../downloads/swell-g0-2026-10-12.zip" download><span class="en">Download <span class="num" tabindex="0" title="tools/make_swell_zip.py: ZIP_NAME · file name of this version">swell-g0-2026-10-12.zip</span></span></a>
   <span class="tag sim"><span class="en">simulation only, never built</span></span>
 </div>
-<p class="en muted">This download dates from 11 October 2026. Since 12 October, SWELL's excitation light must be in IEC 62471's Exempt or Risk Group 1 group as fitted, and its white and oblique LEDs Exempt; the download's safety notes don't yet say so. The current rule is on <a href="../../swell/safety/#safety">Safety and lab</a>.</p>
 
 <p class="en"><b>Inside:</b> audit, decisions, errata, invariants, risks, the fact checks (<code>pm/VERIFIED_FACTS.md</code>), orders, ideas and the BOM (most lines not yet priced) with each part's safety rating (<code>pm/</code>); design reports and figures, including the red-team results and the prior-art search (<code>docs/</code>); simulation code, the red-team gel and the <a href="../../swell/ruler/#tool">swell-ruler</a> tool with its tests (<code>software/</code>); simulated data (<code>data/sim/</code>); toolchain scripts (<code>tools/</code>); a README with what changed, the licence map and the licence texts; <code>SAFETY.md</code> with the hazards of each hazardous reagent in its table, cited to the supplier's safety data sheet, and their handling (lab only).</p>
 
 <p class="en"><b>Not inside:</b> the original brief. It planned the gel chemistry in a home wet lab, a plan withdrawn on 9 October 2026; the chemistry belongs only in a laboratory with a fume hood (see <a href="../../swell/safety/#safety">Safety</a>). A few decisions and rows are also left out of this copy; the README lists each one and says why.</p>
 
 
-<p class="en">SHA-256 of <span class="num" tabindex="0" title="tools/make_swell_zip.py: ZIP_NAME · file name of this version">swell-g0-2026-10-11.zip</span>:</p>
+<p class="en">SHA-256 of <span class="num" tabindex="0" title="tools/make_swell_zip.py: ZIP_NAME · file name of this version">swell-g0-2026-10-12.zip</span>:</p>
 
-<p class="hash"><span class="num" tabindex="0" title="src/downloads/swell-g0-2026-10-11.zip · SHA-256 of the zip bytes (tools/make_swell_zip.py; deterministic build)">9996b636b5b0bfd7c5e6f6e3674afd0dd40aec179b7b804f01266406a71dfb49</span></p>
+<p class="hash"><span class="num" tabindex="0" title="src/downloads/swell-g0-2026-10-12.zip · SHA-256 of the zip bytes (tools/make_swell_zip.py; deterministic build)">6d31f96a739dd1f8cb6fc2d95878db7a64c5b8c2ce3a3a0c587e91065872a95f</span></p>
 
 
 <details class="more">
   <summary><span class="en">Check the file, rebuild the sims</span></summary>
   <p class="en">Compare the output of one of these with the hash above:</p>
   
-<pre>sha256sum swell-g0-2026-10-11.zip                 # Linux
-shasum -a 256 swell-g0-2026-10-11.zip             # macOS
-Get-FileHash swell-g0-2026-10-11.zip              # Windows PowerShell</pre>
+<pre>sha256sum swell-g0-2026-10-12.zip                 # Linux
+shasum -a 256 swell-g0-2026-10-12.zip             # macOS
+Get-FileHash swell-g0-2026-10-12.zip              # Windows PowerShell</pre>
   <p class="en">The simulations need Python 3.12 with numpy, scipy, matplotlib and pytest, plus MicroscPSF-Py for <code>software/sim/optics_v1.py</code>. Each script rewrites its own report in <code>docs/design/</code>, so you can diff your run against ours. The README lists the commands.</p>
   <p class="en">Rerun on our machine, with Python 3.12 and the numpy, scipy and matplotlib versions pinned in <code>software/requirements.lock</code>, red-team gel S3 (<code>software/redteam/s3_gen.py</code>) came out byte for byte the same as our original run once decompressed; the <code>.json.gz</code> files themselves differed only in the time stamped in their gzip header. Since 2026-10-10 the generator writes that header with no time stamp, and two more runs on our machine gave byte-identical <code>.json.gz</code> files. We have not tried another computer or other versions of Python, numpy or scipy; there the gel may come out different. To compare yours, print the SHA-256 of each decompressed file:</p>
   
@@ -104,10 +103,10 @@ python -c "import gzip,hashlib,sys;print(hashlib.sha256(gzip.open(sys.argv[1]).r
 
 <section class="page-history" id="corrections" aria-label="Page history">
 <details>
-  <summary><span class="en">Page history: 1 dated change, on 12 October 2026</span></summary>
+  <summary><span class="en">Page history: 2 dated changes, the latest on 12 October 2026</span></summary>
   <details class="ph-day">
     <summary><span class="en">12 October 2026</span></summary>
-    <ul class="en"><li>A note by the download button now says the download dates from 11 October 2026 and that SWELL's light requirement was made stricter on 12 October; the current rule is on Safety and lab.</li></ul>
+    <ul class="en"><li>The download is now version v0.2.1 (12 October 2026). Its safety notes carry SWELL's stricter light rule of that day, and two sentences in its decision log that held counts drawn from YouTube comments now carry an erasure note instead. The note saying the download predated the light rule is gone, and the SHA-256 above is the new file's.</li><li>A note by the download button now says the download dates from 11 October 2026 and that SWELL's light requirement was made stricter on 12 October; the current rule is on Safety and lab.</li></ul>
   </details>
 </details>
 </section>

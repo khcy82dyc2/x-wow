@@ -48,7 +48,7 @@
    "verified": 0,
    "cited": 10,
    "sim": 19,
-   "predicted": 20,
+   "predicted": 4,
    "untested": 12
   },
   "risks": {
@@ -74,7 +74,7 @@
    "s3_total": 7
   },
   "sources": {
-   "package": "swell-g0-2026-10-11.zip",
+   "package": "swell-g0-2026-10-12.zip",
    "simulation": "src/data/swell/strain_map_v2.json",
    "ladder": "src/data/ladder_results.json",
    "ladder_fetched": "2026-10-10"

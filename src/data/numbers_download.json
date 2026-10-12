@@ -1,17 +1,17 @@
 {
   "download.sha256": {
-    "value": "9996b636b5b0bfd7c5e6f6e3674afd0dd40aec179b7b804f01266406a71dfb49",
-    "source": "src/downloads/swell-g0-2026-10-11.zip",
+    "value": "6d31f96a739dd1f8cb6fc2d95878db7a64c5b8c2ce3a3a0c587e91065872a95f",
+    "source": "src/downloads/swell-g0-2026-10-12.zip",
     "how": "SHA-256 of the zip bytes (tools/make_swell_zip.py; deterministic build)"
   },
   "download.size_mb": {
     "value": "3.9 MB",
-    "source": "src/downloads/swell-g0-2026-10-11.zip",
-    "how": "zip size, 3,939,216 bytes, in decimal megabytes (1 MB = 1,000,000 bytes)"
+    "source": "src/downloads/swell-g0-2026-10-12.zip",
+    "how": "zip size, 3,939,822 bytes, in decimal megabytes (1 MB = 1,000,000 bytes)"
   },
   "download.files": {
     "value": "84",
-    "source": "src/downloads/swell-g0-2026-10-11.zip",
+    "source": "src/downloads/swell-g0-2026-10-12.zip",
     "how": "number of files in the zip"
   },
   "download.date": {
@@ -20,19 +20,34 @@
     "how": "first-publication date of the G0 package"
   },
   "download.version_date": {
-    "value": "2026-10-11",
+    "value": "2026-10-12",
     "source": "tools/make_swell_zip.py: DATE",
     "how": "date of this version (also in the zip name)"
   },
   "download.version": {
-    "value": "v0.2.0",
+    "value": "v0.2.1",
     "source": "tools/make_swell_zip.py: VERSION",
     "how": "release name of this version"
   },
   "download.zip_name": {
-    "value": "swell-g0-2026-10-11.zip",
+    "value": "swell-g0-2026-10-12.zip",
     "source": "tools/make_swell_zip.py: ZIP_NAME",
     "how": "file name of this version"
+  },
+  "download.prev_version": {
+    "value": "v0.2.0",
+    "source": "src/data/numbers_download.json at site commit aa482a7 (v0.2.0's own record)",
+    "how": "the version this one replaced"
+  },
+  "download.prev_date": {
+    "value": "2026-10-11",
+    "source": "src/data/numbers_download.json at site commit aa482a7 (v0.2.0's own record)",
+    "how": "its version date"
+  },
+  "download.prev_sha256": {
+    "value": "9996b636b5b0bfd7c5e6f6e3674afd0dd40aec179b7b804f01266406a71dfb49",
+    "source": "src/data/numbers_download.json at site commit aa482a7 (v0.2.0's own record)",
+    "how": "SHA-256 of its zip, as it was published"
   },
   "download.orig_sha256": {
     "value": "6003edff0165b19fc3cba11b94afa50ba5c025a49f5443130b167d0c3936d2a6",
@@ -55,13 +70,13 @@
     "how": "zip size, 2,201,489 bytes, in decimal megabytes; read from git history (commit 9710eba) and checked against the recorded SHA-256; the file is no longer offered"
   },
   "download.bom_csv": {
-    "value": "swell-bom-2026-10-11.csv",
-    "source": "src/downloads/swell-bom-2026-10-11.csv",
+    "value": "swell-bom-2026-10-12.csv",
+    "source": "src/downloads/swell-bom-2026-10-12.csv",
     "how": "pm/BOM.csv from this zip, after a UTF-8 byte-order mark and three '#' lines (what it is, AI authorship, licence)"
   },
   "download.bom_lines": {
     "value": "45",
-    "source": "src/downloads/swell-bom-2026-10-11.csv",
+    "source": "src/downloads/swell-bom-2026-10-12.csv",
     "how": "lines in the BOM, header excluded"
   },
   "download.wheel_name": {

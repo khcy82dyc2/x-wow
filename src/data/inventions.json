@@ -26,9 +26,9 @@
    "cost_key": "swell.build_floor", "cost_en": "{} for the parts priced so far; most aren't priced yet, so there is no full cost", "cost_zh": "已查到价格的零件合计 {}；大多数零件还没查价，所以还没有完整造价",
    "artifacts": {
     "concept": ["inventions/swell/card.md"],
-    "theory": ["zip:downloads/swell-g0-2026-10-11.zip!docs/design/calc_v0.md", "zip:downloads/swell-g0-2026-10-11.zip!docs/design/optics_v1.md"],
+    "theory": ["zip:downloads/swell-g0-2026-10-12.zip!docs/design/calc_v0.md", "zip:downloads/swell-g0-2026-10-12.zip!docs/design/optics_v1.md"],
     "design": [],
-    "parts": ["zip:downloads/swell-g0-2026-10-11.zip!pm/BOM.csv"],
+    "parts": ["zip:downloads/swell-g0-2026-10-12.zip!pm/BOM.csv"],
     "guide": [], "prototype": [], "validated": []},
    "stage_dates": {"concept": "2026-10-10", "theory": "2026-10-09", "parts": "2026-10-09"},
    "stage_dates_note": "The day each stage's proof file first existed in X-WOW's records: theory (calc_v0.md, optics_v1.md) and the priced parts list (BOM.csv) in the private SWELL repo on 2026-10-09; the gate card (card.md) on 2026-10-10. Recorded 2026-10-11 from those repos' git history."}

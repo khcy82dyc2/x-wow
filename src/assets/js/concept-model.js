@@ -593,7 +593,6 @@ async function start(root) {
       if (!b) return;
       const act = b.dataset.act;
       if (act === 'overlay') return;   // handled by its own button
-      if (ov && (act === 'explode' || act === 'reset')) { ovOff(); const ob = tools.querySelector('[data-act="overlay"]'); if (ob) ob.setAttribute('aria-pressed', 'false'); }
       if (act === 'explode') {
         explodeTo = explodeTo ? 0 : 1;
         tweenFrom = explodeT;
@@ -655,114 +654,6 @@ async function start(root) {
     requestFrame();
   }
   new ResizeObserver(resize).observe(stage);
-
-  /* ---- Overlay realistic: snap the 3D view to one render's camera and lay that render over it ---- */
-  const rvBlob = tools && tools.querySelector('.rv-data');
-  const RV = rvBlob ? JSON.parse(rvBlob.textContent) : null;
-  const ovViews = RV ? RV.views.filter((v) => v.camera && v.camera.target_cm) : [];
-  let ov = null;   // { view, img, bar } while the overlay is on
-  function ovSrc(v) {
-    const f = v.files;
-    return (f.webp && (f.webp['1600'] || f.webp['800'])) || (f.jpg && f.jpg['800']) || Object.values(Object.values(f)[0])[0];
-  }
-  function ovProject() {   // camera = the render's camera, mapped into this canvas with the picture fitted inside it
-    const c = ov.view.camera;
-    const Ai = ov.view.width / ov.view.height;
-    const hf = Math.atan((c.sensor_mm / 2) / c.lens_mm);          // half the render's horizontal field of view
-    const tv = Math.tan(hf) / Ai;                                    // tan(half vertical field) of the render
-    const wide = W / Hh > Ai;
-    const wi = wide ? Hh * Ai : W, hi = wide ? Hh : W / Ai;          // the picture's box inside the canvas
-    const T = new THREE.Vector3(...c.target_cm);
-    const a = THREE.MathUtils.degToRad(c.azimuth_deg), e = THREE.MathUtils.degToRad(c.elevation_deg);
-    const D = c.distance_m * 100;
-    camera.position.set(T.x + D * Math.sin(a) * Math.cos(e), T.y + D * Math.sin(e), T.z + D * Math.cos(a) * Math.cos(e));
-    controls.target.copy(T);
-    camera.lookAt(T);
-    camera.fov = THREE.MathUtils.radToDeg(2 * Math.atan(tv * (Hh / hi)));
-    camera.aspect = W / Hh;
-    camera.updateProjectionMatrix();
-    // Blender's lens shift moves the frame (fractions of the picture's width, for both axes)
-    const m = camera.projectionMatrix.elements;
-    m[8] += 2 * c.shift_x * (wi / W);
-    m[9] += 2 * c.shift_y * Ai * (hi / Hh);
-    camera.projectionMatrixInverse.copy(camera.projectionMatrix).invert();
-    scene.fog.near = D * 0.85;
-    scene.fog.far = D * 2.1;
-    Object.assign(ov.img.style, { left: (W - wi) / 2 + 'px', top: (Hh - hi) / 2 + 'px', width: wi + 'px', height: hi + 'px' });
-    requestFrame();
-  }
-  function ovShow(view) {
-    ov.view = view;
-    ov.img.alt = view.alt[document.documentElement.getAttribute('data-lang') === 'zh' ? 'zh' : 'en'];
-    ov.img.src = ovSrc(view);
-    ov.bar.querySelectorAll('[data-ov-view]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.ovView === view.id ? 'true' : 'false'));
-    ovProject();
-  }
-  function ovOn() {
-    if (!ovViews.length) return;
-    explodeTo = 0; explodeT = 0; applyExplode(); setPressed('explode', false);
-    controls.autoRotate = false;
-    controls.enabled = false;
-    const img = document.createElement('img');
-    img.className = 'cm-overlay';
-    img.decoding = 'async';
-    stage.appendChild(img);
-    const bar = document.createElement('div');
-    bar.className = 'cm-ovbar';
-    bar.innerHTML = '<label><span class="en">Realistic</span><span class="zh">写实</span> '
-      + '<input type="range" min="0" max="100" value="60" aria-label="Opacity of the realistic overlay"> '
-      + '<span class="en">Concept</span><span class="zh">概念</span></label>'
-      + ovViews.map((v) => '<button type="button" class="cm-btn" data-ov-view="' + v.id + '" aria-pressed="false"><span class="en">'
-        + v.name.en + '</span><span class="zh">' + v.name.zh + '</span></button>').join('')
-      + '<span class="cm-ovnote"><span class="en">' + RV.label.en + '; the 3D view is set to the same camera. Drag is off while the overlay is on.</span>'
-      + '<span class="zh">' + RV.label.zh + '；3D 视图已对准同一个机位。叠加时不能拖动。</span></span>';
-    tools.insertAdjacentElement('afterend', bar);
-    const range = bar.querySelector('input');
-    range.addEventListener('input', () => { img.style.opacity = String(range.value / 100); });
-    img.style.opacity = '0.6';
-    bar.addEventListener('click', (ev) => {
-      const b = ev.target.closest('[data-ov-view]');
-      if (b) ovShow(ovViews.find((v) => v.id === b.dataset.ovView));
-    });
-    ov = { view: null, img, bar };
-    root.classList.add('is-overlay');
-    // the render nearest to where the visitor was looking
-    const az = (THREE.MathUtils.radToDeg(Math.atan2(camera.position.x - controls.target.x, camera.position.z - controls.target.z)) + 360) % 360;
-    const near = ovViews.slice().sort((p, q) => {
-      const d = (x) => Math.min(Math.abs(x - az), 360 - Math.abs(x - az));
-      return d(p.camera.azimuth_deg) - d(q.camera.azimuth_deg);
-    })[0];
-    ovShow(near);
-  }
-  function ovOff() {
-    if (!ov) return;
-    ov.img.remove();
-    ov.bar.remove();
-    ov = null;
-    root.classList.remove('is-overlay');
-    controls.enabled = true;
-    camera.fov = 40;
-    camera.aspect = W / Hh;
-    camera.updateProjectionMatrix();
-    userMoved = false;
-    fit();
-    requestFrame();
-  }
-  if (tools && ovViews.length) {
-    const ob = document.createElement('button');
-    ob.type = 'button';
-    ob.className = 'cm-btn';
-    ob.dataset.act = 'overlay';
-    ob.setAttribute('aria-pressed', 'false');
-    ob.innerHTML = '<span class="en">Overlay realistic</span><span class="zh">叠加写实图</span>';
-    const rvb = tools.querySelector('[data-act="realistic"]');
-    if (rvb) rvb.insertAdjacentElement('afterend', ob); else tools.appendChild(ob);
-    ob.addEventListener('click', () => {
-      if (ov) ovOff(); else ovOn();
-      ob.setAttribute('aria-pressed', ov ? 'true' : 'false');
-    });
-    new ResizeObserver(() => { if (ov) ovProject(); }).observe(stage);
-  }
 
   /* ---- go ---- */
   resize();

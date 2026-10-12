@@ -1,0 +1,456 @@
+{
+ "about": "Earlier price figures for every SWELL BOM line, from pm/BOM.csv at SWELL commit 23df04c (2026-10-11), before unread prices were stripped from the page (D-78). price_basis says whether a figure was read from a supplier page (listed) or was an estimate; shown on the Parts and cost page as estimates (the owner, 2026-10-12). Not quotes.",
+ "source": "pm/BOM.csv at SWELL commit 23df04c",
+ "lines": {
+  "H-01": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "8",
+   "unit_high": "12",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-02": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "12",
+   "unit_high": "20",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-03": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "10",
+   "unit_high": "14",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-04": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "5",
+   "unit_high": "7",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-05": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "54",
+   "unit_high": "60",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "listed",
+   "date": "2026-10-09"
+  },
+  "H-06": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "12",
+   "unit_high": "13",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-07": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "7",
+   "unit_high": "10",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-08": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "5",
+   "unit_high": "6",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-09": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "49.87",
+   "unit_high": "49.87",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "listed",
+   "date": "2026-10-09"
+  },
+  "H-10": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "109",
+   "unit_high": "109",
+   "currency": "EUR",
+   "vat_incl": "no",
+   "basis": "listed",
+   "date": "2026-10-09"
+  },
+  "H-11": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "45",
+   "unit_high": "70",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-12": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "25",
+   "unit_high": "32",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-13": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "12",
+   "unit_high": "20",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-14": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "8",
+   "unit_high": "15",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-15": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "100",
+   "unit_high": "250",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-16": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "5",
+   "unit_high": "8",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-17": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "8",
+   "unit_high": "15",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-18": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "10",
+   "unit_high": "15",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-19": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "50",
+   "unit_high": "90",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-11"
+  },
+  "H-20": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "6",
+   "unit_high": "10",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-21": {
+   "box": "build",
+   "qty": "1",
+   "unit_low": "149",
+   "unit_high": "150",
+   "currency": "USD",
+   "vat_incl": "yes",
+   "basis": "listed",
+   "date": "2026-10-09"
+  },
+  "H-22": {
+   "box": "build",
+   "qty": "1",
+   "unit_low": "20",
+   "unit_high": "40",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-23": {
+   "box": "build",
+   "qty": "5",
+   "unit_low": "8",
+   "unit_high": "15",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-24": {
+   "box": "build",
+   "qty": "1",
+   "unit_low": "15",
+   "unit_high": "30",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-25": {
+   "box": "build",
+   "qty": "1",
+   "unit_low": "8",
+   "unit_high": "15",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-26": {
+   "box": "build",
+   "qty": "1",
+   "unit_low": "8",
+   "unit_high": "15",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "H-27": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "1",
+   "unit_high": "2",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-10"
+  },
+  "H-28": {
+   "box": "build",
+   "qty": "1",
+   "unit_low": "35",
+   "unit_high": "50",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-11"
+  },
+  "H-29": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "0",
+   "unit_high": "150.50",
+   "currency": "USD",
+   "vat_incl": "no",
+   "basis": "estimate",
+   "date": "2026-10-11"
+  },
+  "H-30": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "15",
+   "unit_high": "35",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-11"
+  },
+  "H-31": {
+   "box": "core",
+   "qty": "1",
+   "unit_low": "8",
+   "unit_high": "15",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-11"
+  },
+  "C-01": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "15",
+   "unit_high": "40",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "C-02": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "25",
+   "unit_high": "120",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "C-03": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "150",
+   "unit_high": "300",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "C-04": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "10",
+   "unit_high": "30",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "T-03": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "69.99",
+   "unit_high": "69.99",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "listed",
+   "date": "2026-10-09"
+  },
+  "T-04": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "20",
+   "unit_high": "35",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "O-01": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "80",
+   "unit_high": "110",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "O-02": {
+   "box": "no",
+   "qty": "6",
+   "unit_low": "40",
+   "unit_high": "40",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "listed",
+   "date": "2026-10-09"
+  },
+  "O-03": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "0",
+   "unit_high": "150",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "W-01": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "600",
+   "unit_high": "1000",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "W-02": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "150",
+   "unit_high": "250",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "W-03": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "0",
+   "unit_high": "0",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "estimate",
+   "date": "2026-10-09"
+  },
+  "S-01": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "0",
+   "unit_high": "0",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "listed",
+   "date": "2026-10-09"
+  },
+  "S-02": {
+   "box": "no",
+   "qty": "1",
+   "unit_low": "0",
+   "unit_high": "0",
+   "currency": "GBP",
+   "vat_incl": "yes",
+   "basis": "listed",
+   "date": "2026-10-09"
+  }
+ }
+}

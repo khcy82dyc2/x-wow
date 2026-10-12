@@ -14,8 +14,6 @@
 #hero .cm.is-loading .cm-fallback{opacity:.55}
 #hero .cm.is-live .cm-fallback{display:none}
 #hero .cm-load{display:block;margin:12px auto 0;white-space:nowrap}
-#hero .cm.is-overlay .cm-hint{display:none}
-#hero .cm-overlay{position:absolute;z-index:3;pointer-events:none;object-fit:contain}
 #hero .cm-ovbar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:center;margin:.6rem 0 0;font-size:.85rem}
 #hero .cm-ovbar input{vertical-align:middle;width:min(240px,50vw)}
 #hero .cm-ovnote{flex-basis:100%;text-align:center;color:var(--muted);font-size:.78rem}
@@ -89,8 +87,8 @@
   <h1 id="hero-title">SWELL</h1>
   <p class="lead en">An automated expansion microscope, designed to be cheap.<br>Swell a sample a few times bigger, image it with modest optics, and let the muscle's own stripes check the result.</p>
   <p class="lead zh">一台以低成本为目标设计的全自动膨胀显微镜：<br>把样本泡大几倍，用普通的镜头拍，再用肌肉自带的条纹当尺子检查结果。</p>
-  <p class="en"><b>What you can do today:</b> <a href="{{root}}swell/start/#start-here">measure chicken with a laser pointer</a> (a family experiment, with an adult), run the simulations and the ruler software on a computer (<a href="{{root}}swell/ruler/#tool">the tool</a>, <a href="{{root}}swell/download/#download">the download</a>), and read every design file. <b>What you can't yet:</b> build the instrument. Its CAD, its wet-lab protocol and its instrument software aren't written.</p>
-  <p class="zh"><b>今天就能做的：</b><a href="{{root}}swell/start/#start-here">用激光笔量鸡肉</a>（家庭小实验，要有大人一起），在电脑上跑模拟和标尺软件（<a href="{{root}}swell/ruler/#tool">工具</a>、<a href="{{root}}swell/download/#download">下载包</a>），读每一份设计文件。<b>现在还做不到的：</b>造出这台仪器。它的 CAD、湿实验流程和仪器软件都还没写。</p>
+  <p class="en"><b>Today:</b> <a href="{{root}}swell/start/#start-here">measure chicken with a laser pointer</a> (with an adult) · run the simulations and ruler software (<a href="{{root}}swell/ruler/#tool">the tool</a>, <a href="{{root}}swell/download/#download">the download</a>) · read every design file.<br><b>Not yet:</b> build it. The CAD, wet-lab protocol and instrument software aren't written.</p>
+  <p class="zh"><b>今天：</b><a href="{{root}}swell/start/#start-here">用激光笔量鸡肉</a>（要有大人一起）· 跑模拟和标尺软件（<a href="{{root}}swell/ruler/#tool">工具</a>、<a href="{{root}}swell/download/#download">下载包</a>）· 读每一份设计文件。<br><b>还不能：</b>造出它。CAD、湿实验流程和仪器软件都还没写。</p>
 </div>
 
 <div class="cm" data-model="swell">
@@ -183,7 +181,6 @@
   <button type="button" class="cm-btn" data-act="labels" aria-pressed="true"><span class="en">Labels</span><span class="zh">标注</span></button>
   <button type="button" class="cm-btn" data-act="beam" aria-pressed="true"><span class="en">Light path</span><span class="zh">光路</span></button>
   <button type="button" class="cm-btn" data-act="reset"><span class="en">Reset</span><span class="zh">复位</span></button>
-  {{realistic:swell}}
 </div>
 
 {{evidence:swell}}
@@ -194,5 +191,4 @@
 </div>
 
 <script type="module" src="{{root}}assets/js/concept-model.js"></script>
-<script type="module" src="{{root}}assets/js/realistic-view.js"></script>
 </section>

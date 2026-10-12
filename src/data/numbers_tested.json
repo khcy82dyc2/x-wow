@@ -201,17 +201,17 @@
   },
   "tested.s3_drift_planted": {
     "value": "+0.48%",
-    "source": "src/downloads/swell-g0-2026-10-11.zip!software/redteam/README.md, table of planted defects, row 'Expansion drift'",
+    "source": "src/downloads/swell-g0-2026-10-12.zip!software/redteam/README.md, table of planted defects, row 'Expansion drift'",
     "how": "quoted: the peak of the scan-time expansion drift the red team planted in S3, before it fell back"
   },
   "tested.flag_floor": {
     "value": "1%",
-    "source": "src/downloads/swell-g0-2026-10-11.zip!software/swell_ruler/swell_ruler/strainmap.py: FLOOR",
+    "source": "src/downloads/swell-g0-2026-10-12.zip!software/swell_ruler/swell_ruler/strainmap.py: FLOOR",
     "how": "smallest smoothed local change a map flag can fire on (four standard errors where that is larger)"
   },
   "tested.flag_kernel": {
     "value": "45 µm",
-    "source": "src/downloads/swell-g0-2026-10-11.zip!software/swell_ruler/swell_ruler/strainmap.py: KERNEL",
+    "source": "src/downloads/swell-g0-2026-10-12.zip!software/swell_ruler/swell_ruler/strainmap.py: KERNEL",
     "how": "standard deviation of the Gaussian that smooths the maps before the flags are judged"
   },
   "tested.s3_aniso_truth_axtr": {
@@ -311,7 +311,7 @@
   },
   "tested.slope_trials": {
     "value": "300",
-    "source": "src/downloads/swell-g0-2026-10-11.zip!software/sim/preimage_v1.py: slope_demo(trials=…)",
+    "source": "src/downloads/swell-g0-2026-10-12.zip!software/sim/preimage_v1.py: slope_demo(trials=…)",
     "how": "random draws behind each figure; every case draws its own, and no confidence interval is computed"
   },
   "tested.dpc_m": {
@@ -331,17 +331,17 @@
   },
   "tested.sim_m_fund": {
     "value": "10.5%",
-    "source": "src/downloads/swell-g0-2026-10-11.zip!software/sim/gen_dev.py: generate(m_pre=…, photons_pre=…) and pre_axial()'s weight on cos 2πφ (the same in software/sim/strain_map_sim.py: pre_post_profiles())",
+    "source": "src/downloads/swell-g0-2026-10-12.zip!software/sim/gen_dev.py: generate(m_pre=…, photons_pre=…) and pre_axial()'s weight on cos 2πφ (the same in software/sim/strain_map_sim.py: pre_post_profiles())",
     "how": "fundamental striation contrast of the simulated before-image: weight 0.7 × m_pre 0.15"
   },
   "tested.sim_photons_pre": {
     "value": "5,000",
-    "source": "src/downloads/swell-g0-2026-10-11.zip!software/sim/gen_dev.py: generate(m_pre=…, photons_pre=…) and pre_axial()'s weight on cos 2πφ (the same in software/sim/strain_map_sim.py: pre_post_profiles())",
+    "source": "src/downloads/swell-g0-2026-10-12.zip!software/sim/gen_dev.py: generate(m_pre=…, photons_pre=…) and pre_axial()'s weight on cos 2πφ (the same in software/sim/strain_map_sim.py: pre_post_profiles())",
     "how": "mean detected photons per sample of the simulated before-image, with Poisson (shot) noise only"
   },
   "tested.sim_q": {
     "value": "7.4",
-    "source": "src/downloads/swell-g0-2026-10-11.zip!software/sim/gen_dev.py: generate(m_pre=…, photons_pre=…) and pre_axial()'s weight on cos 2πφ (the same in software/sim/strain_map_sim.py: pre_post_profiles())",
+    "source": "src/downloads/swell-g0-2026-10-12.zip!software/sim/gen_dev.py: generate(m_pre=…, photons_pre=…) and pre_axial()'s weight on cos 2πφ (the same in software/sim/strain_map_sim.py: pre_post_profiles())",
     "how": "q = m·√N of the simulated before-image, as D-46 defines q"
   },
   "tested.pol_cover": {
