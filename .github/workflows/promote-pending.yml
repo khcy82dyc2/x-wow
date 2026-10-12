@@ -1,0 +1,31 @@
+# The veto window: every hour, move main forward to pending work that has waited 12 hours, unless a veto came first.
+# The logic and its reasons are in .github/scripts/promote.py. No third-party actions: only GitHub's API and Python.
+name: promote pending
+
+on:
+  schedule:
+    - cron: "23 * * * *"
+  push:
+    tags: ["veto-*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: promote-pending
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Veto or promote
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          curl -fsSL -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github.raw" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/.github/scripts/promote.py?ref=main" -o promote.py
+          python3 promote.py

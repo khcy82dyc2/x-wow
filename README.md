@@ -23,6 +23,9 @@ This needs Python 3.9+ with its standard library, and git (the Inventions board 
 - **Old links:** `src/redirects.json` maps old x-wow.com URLs to the new pages.
 - **Logo:** `python tools/make_brand.py` (needs Pillow and NumPy) makes every logo size, the icons and the social preview from the two original files of the old site in `src/assets/img/brand/original/`. Nothing is redrawn: it only removes the white around the logo, keeps the white inside the ring (and fills the old favicon's see-through centre with white to match), and shows the ® mark light on dark backgrounds.
 
+## How changes go live
+Changes are pushed to the `pending` branch first, after the same checks as before (the build, an AI review, an audit). Every hour, `.github/workflows/promote-pending.yml` moves `main` (what GitHub Pages serves) forward to pending work that has waited 12 hours and that the owner's computer has cleared; it clears work only after the owner has been told about it and no veto came. A veto resets `pending` to `main`. Without a clearance nothing goes live. The job is plain Python (`.github/scripts/promote.py`) using GitHub's own API, with no third-party actions. Two kinds of change go straight to `main`: a fix that only removes something to contain a problem (checked for secrets and private details first, with the full checks straight after), and changes to `.github/` itself, made only with the owner.
+
 ## Licences
 - **Text, data and code:** [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 - **Hardware design files:** [CERN-OHL-P v2](https://ohwr.org/cern_ohl_p_v2.txt).
